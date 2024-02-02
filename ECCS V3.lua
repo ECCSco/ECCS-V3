@@ -32,7 +32,6 @@ local ConsoleButton = Instance.new("ImageButton")
 local HoverButtons = Instance.new("Sound")
 local EditorButton = Instance.new("ImageButton")
 local MusicButton = Instance.new("ImageButton")
-local SettingsButton = Instance.new("ImageButton")
 local WelcomeLabel = Instance.new("TextLabel")
 local PlayerIcon = Instance.new("ImageLabel")
 local PlayerIconUI = Instance.new("UICorner")
@@ -371,7 +370,7 @@ CoreSystemFrameBackground.Parent = UIGui
 CoreSystemFrameBackground.AnchorPoint = Vector2.new(0.5, 0.5)
 CoreSystemFrameBackground.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
 CoreSystemFrameBackground.Position = UDim2.new(-0.03, 0, 0.5, 0)
-CoreSystemFrameBackground.Size = UDim2.new(0, 53.7, 0, 303)
+CoreSystemFrameBackground.Size = UDim2.new(0, 53.7, 0, 223)
 CoreSystemFrameBackground.ZIndex = 2
 
 CoreSystemFrameBackgroundUICorner.CornerRadius = UDim.new(0, 12)
@@ -382,7 +381,7 @@ CoreSystemFrame.Parent = CoreSystemFrameBackground
 CoreSystemFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 CoreSystemFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 CoreSystemFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
-CoreSystemFrame.Size = UDim2.new(0, 50, 0, 300)
+CoreSystemFrame.Size = UDim2.new(0, 50, 0, 220)
 CoreSystemFrame.ZIndex = 2
 
 CoreSystemFrameUICorner.CornerRadius = UDim.new(0, 12)
@@ -408,7 +407,6 @@ MainFrame:TweenPosition(UDim2.new(0.5, 0, -1, 0),"InOut","Sine",0.1)
 SearcherOpenUIButton.Image = "rbxassetid://15996914627"
 MusicButton.Image = "rbxassetid://15996975276"
 ConsoleButton.Image = "rbxassetid://16006754625"
-SettingsButton.Image = "rbxassetid://16007273090"
 EditorButton.Image = "rbxassetid://16006689419"
 if HomeButton.Image == "rbxassetid://15997029966" then
 Blur.Size = 100
@@ -437,7 +435,7 @@ MainFrame.Size = UDim2.new(0, 100, 0, 100)
 
 SearcherOpenUIButton.Parent = CoreSystemFrame
 SearcherOpenUIButton.Size = UDim2.new(0, 33, 0, 33)
-SearcherOpenUIButton.Position = UDim2.new(0.5, 0, 0.25, 0)
+SearcherOpenUIButton.Position = UDim2.new(0.5, 0, 0.28, 0)
 SearcherOpenUIButton.AnchorPoint = Vector2.new(0.5, 0.5)
 SearcherOpenUIButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 SearcherOpenUIButton.ZIndex = 2
@@ -455,7 +453,6 @@ GameFrameBackground:TweenPosition(UDim2.new(0.25, 0, -1, 0),"InOut","Sine",0.1)
 game.Workspace.CurrentCamera.FieldOfView  = 70
 HomeButton.Image = "rbxassetid://15997029966"
 MusicButton.Image = "rbxassetid://15996975276"
-SettingsButton.Image = "rbxassetid://16007273090"
 ConsoleButton.Image = "rbxassetid://16006754625"
 EditorButton.Image = "rbxassetid://16006689419"
 if SearcherOpenUIButton.Image == "rbxassetid://15996914627" then
@@ -477,7 +474,7 @@ end)
 
 EditorButton.Parent = CoreSystemFrame
 EditorButton.Size = UDim2.new(0, 33, 0, 33)
-EditorButton.Position = UDim2.new(0.5, 0, 0.55, 0)
+EditorButton.Position = UDim2.new(0.5, 0, 0.64, 0)
 EditorButton.AnchorPoint = Vector2.new(0.5, 0.5)
 EditorButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 EditorButton.ZIndex = 2
@@ -493,7 +490,6 @@ MainFrame:TweenPosition(UDim2.new(0.5, 0, -1, 0),"InOut","Sine",0.1)
 game.Workspace.CurrentCamera.FieldOfView  = 70
 HomeButton.Image = "rbxassetid://15997029966"
 ConsoleButton.Image = "rbxassetid://16006754625"
-SettingsButton.Image = "rbxassetid://16007273090"
 MusicButton.Image = "rbxassetid://15996975276"
 SearcherOpenUIButton.Image = "rbxassetid://15996914627"
 if EditorButton.Image == "rbxassetid://16006689419" then
@@ -515,7 +511,7 @@ end)
 
 ConsoleButton.Parent = CoreSystemFrame
 ConsoleButton.Size = UDim2.new(0, 33, 0, 33)
-ConsoleButton.Position = UDim2.new(0.5, 0, 0.4, 0)
+ConsoleButton.Position = UDim2.new(0.5, 0, 0.46, 0)
 ConsoleButton.AnchorPoint = Vector2.new(0.5, 0.5)
 ConsoleButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ConsoleButton.ZIndex = 2
@@ -531,7 +527,6 @@ MainFrame:TweenPosition(UDim2.new(0.5, 0, -1, 0),"InOut","Sine",0.1)
 game.Workspace.CurrentCamera.FieldOfView  = 70
 HomeButton.Image = "rbxassetid://15997029966"
 MusicButton.Image = "rbxassetid://15996975276"
-SettingsButton.Image = "rbxassetid://16007273090"
 SearcherOpenUIButton.Image = "rbxassetid://15996914627"
 EditorButton.Image = "rbxassetid://16006689419"
 if ConsoleButton.Image == "rbxassetid://16006754625" then
@@ -552,8 +547,8 @@ end
 end)
 
 MusicButton.Parent = CoreSystemFrame
-MusicButton.Size = UDim2.new(0, 33, 0, 33)
-MusicButton.Position = UDim2.new(0.5, 0, 0.7, 0)
+MusicButton.Size = UDim2.new(0, 30, 0, 30)
+MusicButton.Position = UDim2.new(0.5, 0, 0.82, 0)
 MusicButton.AnchorPoint = Vector2.new(0.5, 0.5)
 MusicButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 MusicButton.ZIndex = 2
@@ -568,7 +563,6 @@ GameFrameBackground:TweenPosition(UDim2.new(0.25, 0, -1, 0),"InOut","Sine",0.1)
 MainFrame:TweenPosition(UDim2.new(0.5, 0, -1, 0),"InOut","Sine",0.1)
 game.Workspace.CurrentCamera.FieldOfView  = 70
 HomeButton.Image = "rbxassetid://15997029966"
-SettingsButton.Image = "rbxassetid://16007273090"
 SearcherOpenUIButton.Image = "rbxassetid://15996914627"
 EditorButton.Image = "rbxassetid://16006689419"
 ConsoleButton.Image = "rbxassetid://16006754625"
@@ -589,46 +583,12 @@ end
 end
 end)
 
-SettingsButton.Parent = CoreSystemFrame
-SettingsButton.Size = UDim2.new(0, 33, 0, 33)
-SettingsButton.Position = UDim2.new(0.5, 0, 0.85, 0)
-SettingsButton.AnchorPoint = Vector2.new(0.5, 0.5)
-SettingsButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-SettingsButton.ZIndex = 2
-SettingsButton.Image = "rbxassetid://16007273090"
-SettingsButton.AutoButtonColor = false
-SettingsButton.BorderSizePixel = 0
 
-SettingsButton.MouseButton1Click:Connect(function()
-SondFrameBackground:TweenPosition(UDim2.new(0.5, 0, -1, 0),"InOut","Sine",0.1)
-EditorBackground:TweenPosition(UDim2.new(0.525, 0, -1, 0),"InOut","Sine",0.1)
-BackgroundConsole:TweenPosition(UDim2.new(0.525, 0, -1, 0),"InOut","Sine",0.1)
-GameFrameBackground:TweenPosition(UDim2.new(0.25, 0, -1, 0),"InOut","Sine",0.1)
-MainFrame:TweenPosition(UDim2.new(0.5, 0, -1, 0),"InOut","Sine",0.1)
-game.Workspace.CurrentCamera.FieldOfView  = 70
-HomeButton.Image = "rbxassetid://15997029966"
-SearcherOpenUIButton.Image = "rbxassetid://15996914627"
-EditorButton.Image = "rbxassetid://16006689419"
-MusicButton.Image = "rbxassetid://15996975276"
-if SettingsButton.Image == "rbxassetid://16007273090" then
-SettingsButton.Image = "rbxassetid://16007275371"
-OpenButtonUI:Play()
-Blur.Size = 100
-game.Workspace.CurrentCamera.FieldOfView  = 30
-else
-if SettingsButton.Image == "rbxassetid://16007275371" then
-SettingsButton.Image = "rbxassetid://16007273090"
-CloseUISound:Play()
-Blur.Size = 0
-game.Workspace.CurrentCamera.FieldOfView  = 70
-end
-end
-end)
 
 MinButton.Name = "MinButton"
 MinButton.Parent = UIGui
 MinButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-MinButton.Position = UDim2.new(0, 0, 0.45, 0)
+MinButton.Position = UDim2.new(0, 0, 0.48, 0)
 MinButton.Size = UDim2.new(0, 30, 0, 30)
 MinButton.AutoButtonColor = false
 MinButton.Font = Enum.Font.SourceSansBold
@@ -639,7 +599,7 @@ MinButton.BackgroundTransparency = 1
  
 Clock.Parent = CoreSystemFrame
 Clock.Size = UDim2.new(0, 55, 0, 32)
-Clock.Position = UDim2.new(0, -2.5, 0, 270)
+Clock.Position = UDim2.new(0, -2.5, 0, 195)
 Clock.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Clock.BackgroundTransparency = 1
 Clock.Text = os.date("%H:%M")
@@ -647,7 +607,7 @@ Clock.TextColor3 = Color3.fromRGB(200, 200, 200)
 Clock.Font = Enum.Font.SourceSansBold
 Clock.TextSize = 20
 
-MinButton:TweenPosition(UDim2.new(0.05, 0, 0.45, 0),"InOut","Sine",1)
+MinButton:TweenPosition(UDim2.new(0.05, 0, 0.48, 0),"InOut","Sine",1)
 CoreSystemFrameBackground:TweenPosition(UDim2.new(0.03, 0, 0.5, 0),"InOut","Sine",1)
 
 MinButton.MouseButton1Click:Connect(function()
@@ -663,16 +623,15 @@ HomeButton.Image = "rbxassetid://15997029966"
 SearcherOpenUIButton.Image = "rbxassetid://15996914627"
 MusicButton.Image = "rbxassetid://15996975276"
 ConsoleButton.Image = "rbxassetid://16006754625"
-SettingsButton.Image = "rbxassetid://16007273090"
 EditorButton.Image = "rbxassetid://16006689419"
 if MinButton.Text == "<" then
 MinButton.Text = ">"
 CoreSystemFrameBackground:TweenPosition(UDim2.new(-0.03, 0, 0.5, 0),"InOut","Sine",0.15)
-MinButton:TweenPosition(UDim2.new(0, 0, 0.45, 0),"InOut","Sine",0.15)
+MinButton:TweenPosition(UDim2.new(0, 0, 0.48, 0),"InOut","Sine",0.15)
 else
 if MinButton.Text == ">" then
 MinButton.Text = "<"
-MinButton:TweenPosition(UDim2.new(0.05, 0, 0.45, 0),"InOut","Sine",0.15)
+MinButton:TweenPosition(UDim2.new(0.05, 0, 0.48, 0),"InOut","Sine",0.15)
 CoreSystemFrameBackground.Visible = true
 CoreSystemFrameBackground:TweenPosition(UDim2.new(0.03, 0, 0.5, 0),"InOut","Sine",0.15)
 end
@@ -1319,7 +1278,7 @@ EditorTextBox.Position = UDim2.new(0.02, 0, 0.04, 0)
 EditorTextBox.Size = UDim2.new(0, 820, 0, 310)
 EditorTextBox.ClearTextOnFocus = false
 EditorTextBox.Font = Enum.Font.SourceSansBold
-EditorTextBox.PlaceholderText = "print(\"Hello world\")"
+EditorTextBox.PlaceholderText = "print(\"Hello World\")"
 EditorTextBox.Text = ""
 EditorTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 EditorTextBox.TextTransparency = 0
@@ -1695,8 +1654,7 @@ setHoverTransition(nil, UDim2.new(0, 40, 0, 40), HomeButton)
 setHoverTransition(nil, UDim2.new(0, 40, 0, 40), SearcherOpenUIButton)
 setHoverTransition(nil, UDim2.new(0, 40, 0, 40), ConsoleButton)
 setHoverTransition(nil, UDim2.new(0, 40, 0, 40), EditorButton)
-setHoverTransition(nil, UDim2.new(0, 40, 0, 40), MusicButton)
-setHoverTransition(nil, UDim2.new(0, 40, 0, 40), SettingsButton)
+setHoverTransition(nil, UDim2.new(0, 36, 0, 36), MusicButton)
 setHoverTransition(nil, UDim2.new(0, 865, 0, 410), BackgroundConsole)
 
 function createfolders(path)
@@ -1843,7 +1801,7 @@ function setHoverSysSize(Out2, to23, obj23)
 end
 
 setHoverSysSize(nil, UDim2.new(0, 303, 0, 63), MessageBackgroundFrame)
-setHoverSysSize(nil, UDim2.new(0, 55.7, 0, 305), CoreSystemFrameBackground)
+setHoverSysSize(nil, UDim2.new(0, 55.7, 0, 225), CoreSystemFrameBackground)
 
 
 
@@ -2033,6 +1991,7 @@ CopyButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
 
+
 SearchBox.FocusLost:Connect(function(enterPressed)
     if enterPressed then
 DescriptionScript.Visible = false
@@ -2049,7 +2008,6 @@ if enterPressed then
 HoverButtons:Play()
 end
 end)
-
 
 
 VolumeUpButton.MouseButton1Click:Connect(function()
@@ -2216,10 +2174,9 @@ ScriptListFrame:GetPropertyChangedSignal("CanvasPosition"):Connect(function()
     end
 end)
 
-
 local ReadECCSV3 = readfile("ECCS_V3/CoreSystem/Files/ECCSV3EDITOR.ECCS")
 EditorTextBox.Text = ""..ReadECCSV3
-WelcomeLabel.Text = "Welcome Home, "..game.Players.LocalPlayer.DisplayName
 PlayerIcon.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=999&height=999&format=png"
+WelcomeLabel.Text = "Welcome Home, "..game.Players.LocalPlayer.DisplayName
 MessageBackgroundFrame:TweenPosition(UDim2.new(0.8, 0, 0.8, 0),"InOut","Sine",0.8)
 StartUpSound:Play()
