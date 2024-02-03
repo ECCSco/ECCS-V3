@@ -186,7 +186,7 @@ local VolumeUpButton_2 = Instance.new("ImageButton")
 local VolumeUpButtonUICorner_2 = Instance.new("UICorner")
 local VolumeDownButton_2 = Instance.new("ImageButton")
 local VolumeDownButtonUICorner_2 = Instance.new("UICorner")
-
+ 
 local function format(Int)
 return string.format("%02i", Int)
 end
@@ -198,78 +198,78 @@ local Hours = (Minutes - Minutes%60)/60
 Minutes = Minutes - Hours*60
 return format(Hours)..":"..format(Minutes)..":"..format(Seconds)
 end
-
+ 
 UIGui.Name = "UIGui"
 UIGui.Parent = game.CoreGui
 UIGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 game.CoreGui.TopBarApp.TopBarFrame.LeftFrame.ChatIcon.Size = UDim2.new(0, 32, 1, 0)
 game.CoreGui.UIGui.Enabled = true
-
+ 
 Blur.Size = 0
 Blur.Parent = workspace.CurrentCamera
-
+ 
 UIClick.Parent = game:GetService("SoundService")
 UIClick.SoundId = "rbxassetid://626181985"
 UIClick.Playing = true
 UIClick.Looped = false
 UIClick.Volume = 1
 UIClick:Stop()
-
+ 
 CoreSound.Parent = game:GetService("SoundService")
 CoreSound.Playing = true
 CoreSound.Looped = true
 CoreSound.Volume = Volume
 CoreSound:Stop()
-
+ 
 CloseDescriptionSound.Parent = game:GetService("SoundService")
 CloseDescriptionSound.SoundId = "rbxassetid://6698737249"
 CloseDescriptionSound.Playing = true
 CloseDescriptionSound.Looped = false
 CloseDescriptionSound.Volume = 1
 CloseDescriptionSound:Stop()
-
+ 
 StartUpSound.Parent = game:GetService("SoundService")
 StartUpSound.SoundId = "rbxassetid://6228337171"
 StartUpSound.Playing = true
 StartUpSound.Looped = false
 StartUpSound.Volume = 1
 StartUpSound:Stop()
-
+ 
 OpenButtonUI.Parent = game:GetService("SoundService")
 OpenButtonUI.SoundId = "rbxassetid://3779036535"
 OpenButtonUI.Playing = true
 OpenButtonUI.Looped = false
 OpenButtonUI.Volume = 1
 OpenButtonUI:Stop()
-
+ 
 HoverButtons.Parent = game:GetService("SoundService")
 HoverButtons.SoundId = "rbxassetid://6698737249"
 HoverButtons.Playing = true
 HoverButtons.Looped = false
 HoverButtons.Volume = 1
 HoverButtons:Stop()
-
+ 
 CloseNotif.Parent = game:GetService("SoundService")
 CloseNotif.SoundId = "rbxassetid://2566705750"
 CloseNotif.Playing = true
 CloseNotif.Looped = false
 CloseNotif.Volume = 1
 CloseNotif:Stop()
-
+ 
 CloseUISound.Parent = game:GetService("SoundService")
 CloseUISound.SoundId = "rbxassetid://2570875942"
 CloseUISound.Playing = true
 CloseUISound.Looped = false
 CloseUISound.Volume = 1
 CloseUISound:Stop()
-
+ 
 OpenUIButtons.Parent = game:GetService("SoundService")
 OpenUIButtons.SoundId = "rbxassetid://3779036535"
 OpenUIButtons.Playing = true
 OpenUIButtons.Looped = false
 OpenUIButtons.Volume = 1
 OpenUIButtons:Stop()
-
+ 
 MessageBackgroundFrame.Name = "MessageBackgroundFrame"
 MessageBackgroundFrame.Parent = UIGui
 MessageBackgroundFrame.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -277,10 +277,10 @@ MessageBackgroundFrame.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
 MessageBackgroundFrame.Position = UDim2.new(0.5, 0, 2.5, 0)
 MessageBackgroundFrame.Size = UDim2.new(0, 300, 0, 60)
 MessageBackgroundFrame.ZIndex = 2
-
+ 
 MessageBackgroundFrameUICorner.CornerRadius = UDim.new(0, 12)
 MessageBackgroundFrameUICorner.Parent = MessageBackgroundFrame
-
+ 
 MessageFrame.Name = "MessageFrame"
 MessageFrame.Parent = MessageBackgroundFrame
 MessageFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -294,10 +294,10 @@ MessageFrame.TextYAlignment = Enum.TextYAlignment.Top
 MessageFrame.TextXAlignment = Enum.TextXAlignment.Right
 MessageFrame.TextSize = 30
 MessageFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-
+ 
 MessageFrameUICorner.CornerRadius = UDim.new(0, 12)
 MessageFrameUICorner.Parent = MessageFrame
-
+ 
 local emoji = ({
         ["01 01"] = "🎆",
         [(function(Year)
@@ -329,7 +329,7 @@ MessageBackgroundFrame:TweenPosition(UDim2.new(0.5, 0, 2.5, 0),"InOut","Sine",0.
 wait(0.5)
 MessageBackgroundFrame:Destroy()
 end)
-
+ 
 MessageImage.Name = "MessageImage"
 MessageImage.Parent = MessageFrame
 MessageImage.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -341,7 +341,7 @@ MessageImage.Image = "rbxassetid://15980315949"
  
 MessageImageUICorner.Parent = MessageImage
 MessageImageUICorner.CornerRadius = UDim.new(0.5, 0)
-
+ 
 TextLabel1.Name = "TextLabel1"
 TextLabel1.Parent = MessageFrame
 TextLabel1.BackgroundTransparency = 1
@@ -352,7 +352,7 @@ TextLabel1.Text = "Welcome to ECCS V3, "..game.Players.LocalPlayer.DisplayName
 TextLabel1.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel1.TextTransparency = 0.3
 TextLabel1.TextSize = 15
-
+ 
 spawn(function()
 repeat
 wait()
@@ -366,7 +366,7 @@ end
 until 
 MessageBackgroundFrame == nil
 end)
-
+ 
 CoreSystemFrameBackground.Name = "CoreSystemFrameBackground"
 CoreSystemFrameBackground.Parent = UIGui
 CoreSystemFrameBackground.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -374,10 +374,10 @@ CoreSystemFrameBackground.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
 CoreSystemFrameBackground.Position = UDim2.new(-0.03, 0, 0.45, 0)
 CoreSystemFrameBackground.Size = UDim2.new(0, 53.7, 0, 223)
 CoreSystemFrameBackground.ZIndex = 2
-
+ 
 CoreSystemFrameBackgroundUICorner.CornerRadius = UDim.new(0, 12)
 CoreSystemFrameBackgroundUICorner.Parent = CoreSystemFrameBackground
-
+ 
 CoreSystemFrame.Name = "CoreSystemFrame"
 CoreSystemFrame.Parent = CoreSystemFrameBackground
 CoreSystemFrame.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -385,10 +385,10 @@ CoreSystemFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 CoreSystemFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 CoreSystemFrame.Size = UDim2.new(0, 50, 0, 220)
 CoreSystemFrame.ZIndex = 2
-
+ 
 CoreSystemFrameUICorner.CornerRadius = UDim.new(0, 12)
 CoreSystemFrameUICorner.Parent = CoreSystemFrame
-
+ 
 HomeButton.Parent = CoreSystemFrame
 HomeButton.Size = UDim2.new(0, 33, 0, 33)
 HomeButton.Position = UDim2.new(0.5, 0, 0.1, 0)
@@ -397,7 +397,7 @@ HomeButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 HomeButton.ZIndex = 2
 HomeButton.Image = "rbxassetid://15997029966"
 HomeButton.AutoButtonColor = false
-
+ 
 HomeButtonUICorner.CornerRadius = UDim.new(0, 12)
 HomeButtonUICorner.Parent = HomeButton
 HomeButton.MouseButton1Click:Connect(function()
@@ -426,7 +426,7 @@ game.Workspace.CurrentCamera.FieldOfView  = 70
 end
 end
 end)
-
+ 
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = UIGui
 MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -434,7 +434,7 @@ MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 MainFrame.BackgroundTransparency = 1
 MainFrame.Position = UDim2.new(0.5, 0, -1, 0)
 MainFrame.Size = UDim2.new(0, 100, 0, 100)
-
+ 
 SearcherOpenUIButton.Parent = CoreSystemFrame
 SearcherOpenUIButton.Size = UDim2.new(0, 33, 0, 33)
 SearcherOpenUIButton.Position = UDim2.new(0.5, 0, 0.28, 0)
@@ -443,10 +443,10 @@ SearcherOpenUIButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 SearcherOpenUIButton.ZIndex = 2
 SearcherOpenUIButton.Image = "rbxassetid://15996914627"
 SearcherOpenUIButton.AutoButtonColor = false
-
+ 
 SearcherOpenUIButtonUICorner.CornerRadius = UDim.new(0, 12)
 SearcherOpenUIButtonUICorner.Parent = SearcherOpenUIButton
-
+ 
 SearcherOpenUIButton.MouseButton1Click:Connect(function()
 SondFrameBackground:TweenPosition(UDim2.new(0.5, 0, -1, 0),"InOut","Sine",0.1)
 EditorBackground:TweenPosition(UDim2.new(0.525, 0, -1, 0),"InOut","Sine",0.1)
@@ -473,7 +473,7 @@ game.Workspace.CurrentCamera.FieldOfView  = 70
 end
 end
 end)
-
+ 
 EditorButton.Parent = CoreSystemFrame
 EditorButton.Size = UDim2.new(0, 33, 0, 33)
 EditorButton.Position = UDim2.new(0.5, 0, 0.64, 0)
@@ -483,7 +483,7 @@ EditorButton.ZIndex = 2
 EditorButton.Image = "rbxassetid://16006689419"
 EditorButton.AutoButtonColor = false
 EditorButton.BorderSizePixel = 0
-
+ 
 EditorButton.MouseButton1Click:Connect(function()
 SondFrameBackground:TweenPosition(UDim2.new(0.5, 0, -1, 0),"InOut","Sine",0.1)
 BackgroundConsole:TweenPosition(UDim2.new(0.525, 0, -1, 0),"InOut","Sine",0.1)
@@ -510,7 +510,7 @@ game.Workspace.CurrentCamera.FieldOfView  = 70
 end
 end
 end)
-
+ 
 ConsoleButton.Parent = CoreSystemFrame
 ConsoleButton.Size = UDim2.new(0, 33, 0, 33)
 ConsoleButton.Position = UDim2.new(0.5, 0, 0.46, 0)
@@ -520,7 +520,7 @@ ConsoleButton.ZIndex = 2
 ConsoleButton.Image = "rbxassetid://16006754625"
 ConsoleButton.AutoButtonColor = false
 ConsoleButton.BorderSizePixel = 0
-
+ 
 ConsoleButton.MouseButton1Click:Connect(function()
 SondFrameBackground:TweenPosition(UDim2.new(0.5, 0, -1, 0),"InOut","Sine",0.1)
 EditorBackground:TweenPosition(UDim2.new(0.525, 0, -1, 0),"InOut","Sine",0.1)
@@ -547,7 +547,7 @@ game.Workspace.CurrentCamera.FieldOfView  = 70
 end
 end
 end)
-
+ 
 MusicButton.Parent = CoreSystemFrame
 MusicButton.Size = UDim2.new(0, 30, 0, 30)
 MusicButton.Position = UDim2.new(0.5, 0, 0.82, 0)
@@ -557,7 +557,7 @@ MusicButton.ZIndex = 2
 MusicButton.Image = "rbxassetid://15996975276"
 MusicButton.AutoButtonColor = false
 MusicButton.BorderSizePixel = 0
-
+ 
 MusicButton.MouseButton1Click:Connect(function()
 EditorBackground:TweenPosition(UDim2.new(0.525, 0, -1, 0),"InOut","Sine",0.1)
 BackgroundConsole:TweenPosition(UDim2.new(0.525, 0, -1, 0),"InOut","Sine",0.1)
@@ -584,9 +584,9 @@ game.Workspace.CurrentCamera.FieldOfView  = 70
 end
 end
 end)
-
-
-
+ 
+ 
+ 
 MinButton.Name = "MinButton"
 MinButton.Parent = UIGui
 MinButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -608,10 +608,10 @@ Clock.Text = os.date("%H:%M")
 Clock.TextColor3 = Color3.fromRGB(200, 200, 200)
 Clock.Font = Enum.Font.SourceSansBold
 Clock.TextSize = 20
-
+ 
 MinButton:TweenPosition(UDim2.new(0.05, 0, 0.43, 0),"InOut","Sine",1)
 CoreSystemFrameBackground:TweenPosition(UDim2.new(0.03, 0, 0.45, 0),"InOut","Sine",1)
-
+ 
 MinButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 Blur.Size = 0
@@ -639,7 +639,7 @@ CoreSystemFrameBackground:TweenPosition(UDim2.new(0.03, 0, 0.45, 0),"InOut","Sin
 end
 end
 end)
-
+ 
 PlayerIcon.Name = "PlayerIcon"
 PlayerIcon.Parent = PlayerIconBackground
 PlayerIcon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -795,7 +795,7 @@ ServerLive.TextSize = 25
 ServerLive.BackgroundTransparency = 0.8
 ServerLive.TextScaled = true
 ServerLive.TextWrapped = true
-
+ 
 ServerLiveUICorner.Parent = ServerLive
 ServerLiveUICorner.CornerRadius = UDim.new(0, 12)
  
@@ -811,7 +811,7 @@ Executor.BackgroundTransparency = 0.8
  
 ExecutorUICorner.Parent = Executor
 ExecutorUICorner.CornerRadius = UDim.new(0, 12)
-
+ 
 spawn(function()
 repeat
 wait()
@@ -833,7 +833,7 @@ until
 PingLabel == nil
 end)
  
-
+ 
 SearchBox.Name = "SearchBox"
 SearchBox.Parent = MainFrame
 SearchBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -849,7 +849,7 @@ SearchBox.TextTransparency = 0
 SearchBox.TextScaled = true
 SearchBox.TextSize = 14.000
 SearchBox.TextWrapped = true
-
+ 
 UICorner_3.CornerRadius = UDim.new(0, 12)
 UICorner_3.Parent = SearchBox
  
@@ -939,7 +939,7 @@ ExecuteButton.TextWrapped = true
  
 UICorner_7.CornerRadius = UDim.new(0, 12)
 UICorner_7.Parent = ExecuteButton
-
+ 
 CopyLinkButtonBackground.Name = "CopyLinkButtonBackground"
 CopyLinkButtonBackground.Parent = ScriptFrame
 CopyLinkButtonBackground.BackgroundColor3 = Color3.fromRGB(55,55, 55)
@@ -1210,7 +1210,7 @@ DescriptionScriptUICorner.CornerRadius = UDim.new(0, 12)
 DescriptionScriptUICorner.Parent = DescriptionScript
  
 DescriptionScript.Visible = false
-
+ 
 BackgroundConsole.Name = "BackgroundConsole"
 BackgroundConsole.Parent = UIGui
 BackgroundConsole.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -1406,7 +1406,7 @@ function(Message)
     end
 end
 )
-
+ 
 SondFrameBackground.Name = "SondFrameBackground"
 SondFrameBackground.Parent = UIGui
 SondFrameBackground.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -1630,8 +1630,8 @@ VolumeFrame.BackgroundColor3 = Color3.new(255, 255, 255)
  
 VolumeFrameUICorner.CornerRadius = UDim.new(1, 0)
 VolumeFrameUICorner.Parent = VolumeFrame
-
-
+ 
+ 
 function setHoverTransition(from, to, obj)
     from = from or obj.Size
     
@@ -1658,7 +1658,7 @@ setHoverTransition(nil, UDim2.new(0, 40, 0, 40), ConsoleButton)
 setHoverTransition(nil, UDim2.new(0, 40, 0, 40), EditorButton)
 setHoverTransition(nil, UDim2.new(0, 36, 0, 36), MusicButton)
 setHoverTransition(nil, UDim2.new(0, 865, 0, 410), BackgroundConsole)
-
+ 
 function createfolders(path)
  local pathtbl = string.split(path, "/")
  for i, v in pairs(pathtbl) do
@@ -1688,7 +1688,7 @@ createfolders("ECCS_V3/CoreSystem/Files")
 if not isfile("ECCS_V3/CoreSystem/Files/ECCSV3EDITOR.ECCS") then
 writefile("ECCS_V3/CoreSystem/Files/ECCSV3EDITOR.ECCS", ""..EditorTextBox.Text)
 end
-
+ 
 if not isfile("ECCS_V3/CoreSystem/Files/ECCSV3Player.ECCS") then
 writefile("ECCS_V3/CoreSystem/Files/ECCSV3Player.ECCS", " ")
 end
@@ -1715,7 +1715,7 @@ end)
 ClearButton.MouseButton1Click:Connect(function()
 EditorTextBox.Text = ""
 end)
-
+ 
 function setHoverColor(Out, to2, obj2)
     Out = Out or obj2.BackgroundColor3
     
@@ -1735,8 +1735,8 @@ function setHoverColor(Out, to2, obj2)
  
     end)
 end
-
-
+ 
+ 
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), CoreSystemFrameBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), MessageBackgroundFrame)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), GameFrameBackground)
@@ -1753,35 +1753,35 @@ setHoverColor(nil, Color3.fromRGB(200, 200, 200), SaveButtonBackground_2)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), PlaylistButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), VolumeDownButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), VolumeUpButtonBackground)
-
+ 
 Stop_PlayButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 SaveButtonBackground_2.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 PlaylistButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 VolumeDownButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 VolumeUpButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 GameFrameBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 PlayerIconBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 function setHoverSysSize(Out2, to23, obj23)
     Out2 = Out2 or obj23.Size
     
@@ -1801,19 +1801,19 @@ function setHoverSysSize(Out2, to23, obj23)
  
     end)
 end
-
+ 
 setHoverSysSize(nil, UDim2.new(0, 303, 0, 63), MessageBackgroundFrame)
 setHoverSysSize(nil, UDim2.new(0, 55.7, 0, 225), CoreSystemFrameBackground)
-
-
-
+ 
+ 
+ 
 local getfakeasset = getcustomasset or getsynasset
  
 local HttpService = game:GetService("HttpService")
 local TweenService = game:GetService("TweenService")
 local TextService = game:GetService("TextService")
  
-
+ 
  
 local page = 1
 local gquery = ""
@@ -1861,7 +1861,7 @@ function fetchScripts(query, page)
 end
  
 function fixScript(scriptObj)
-
+ 
             local req = HttpService:JSONDecode(game:HttpGetAsync("https://www.scriptblox.com/api/script/".. scriptObj.slug)).script
             scriptObj["script"] = _if(scriptObj["script"], scriptObj["script"], req.script)
             scriptObj["features"] = _if(scriptObj["features"], scriptObj["features"], req.features)
@@ -1920,29 +1920,29 @@ function addScripts(scriptTbl)
             newScript.CopyLinkButton.MouseButton1Click:Connect(function()
             setclipboard("https://scriptblox.com/script/".. v.slug)
 end)
-
-
+ 
+ 
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.ExecuteButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.CopyLinkButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.CopyScriptBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.OpenDescriptionBackground)
-
+ 
 newScript.ExecuteButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 newScript.CopyLinkButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 newScript.CopyScriptBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 newScript.OpenDescriptionBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 newScript.CopyScriptButton.MouseButton1Click:Connect(function()
 setclipboard(v.script)
 end)
@@ -1970,30 +1970,30 @@ end)
 BackgroundConsole.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
-
+ 
+ 
 ExecuteButtonBackground_3.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 ExecuteButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 ClearButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
+ 
 SaveButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
-
+ 
+ 
 CopyButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
-
+ 
+ 
 SearchBox.FocusLost:Connect(function(enterPressed)
     if enterPressed then
 DescriptionScript.Visible = false
@@ -2010,8 +2010,8 @@ if enterPressed then
 HoverButtons:Play()
 end
 end)
-
-
+ 
+ 
 VolumeUpButton.MouseButton1Click:Connect(function()
 Volume = Volume + 0.5
 end)
@@ -2165,7 +2165,7 @@ end
 until 
 SaveButton_2 == nil
 end)
-
+ 
 refreshScripts(fetchScripts(gquery, 1))
  
 ScriptListFrame:GetPropertyChangedSignal("CanvasPosition"):Connect(function()
@@ -2175,7 +2175,7 @@ ScriptListFrame:GetPropertyChangedSignal("CanvasPosition"):Connect(function()
         addScripts(fetchScripts(gquery, page))
     end
 end)
-
+ 
 local ReadECCSV3 = readfile("ECCS_V3/CoreSystem/Files/ECCSV3EDITOR.ECCS")
 EditorTextBox.Text = ""..ReadECCSV3
 PlayerIcon.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=999&height=999&format=png"
