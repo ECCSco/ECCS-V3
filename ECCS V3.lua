@@ -274,7 +274,7 @@ MessageBackgroundFrame.Name = "MessageBackgroundFrame"
 MessageBackgroundFrame.Parent = UIGui
 MessageBackgroundFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 MessageBackgroundFrame.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-MessageBackgroundFrame.Position = UDim2.new(1.5, 0, 0.8, 0)
+MessageBackgroundFrame.Position = UDim2.new(0.5, 0, 2.5, 0)
 MessageBackgroundFrame.Size = UDim2.new(0, 300, 0, 60)
 MessageBackgroundFrame.ZIndex = 2
 
@@ -325,7 +325,7 @@ local emoji = ({
     end
 MessageFrame.MouseButton1Click:Connect(function()
 CloseNotif:Play()
-MessageBackgroundFrame:TweenPosition(UDim2.new(1.5, 0, 0.8, 0),"InOut","Sine",0.3)
+MessageBackgroundFrame:TweenPosition(UDim2.new(0.5, 0, 2.5, 0),"InOut","Sine",0.3)
 wait(0.5)
 MessageBackgroundFrame:Destroy()
 end)
@@ -356,10 +356,12 @@ TextLabel1.TextSize = 15
 spawn(function()
 repeat
 wait()
-if  MessageBackgroundFrame.Position == UDim2.new(0.8, 0, 0.8, 0) then
+if  MessageBackgroundFrame.Position == UDim2.new(0.5, 0, 0.9, 0) then
 wait(4)
-MessageBackgroundFrame:TweenPosition(UDim2.new(1.5, 0, 0.8, 0),"InOut","Sine",0.8)
+MessageBackgroundFrame:TweenPosition(UDim2.new(0.5, 0, 2.5, 0),"InOut","Sine",0.8)
 CloseNotif:Play()
+wait(0.5)
+MessageBackgroundFrame:Destroy()
 end
 until 
 MessageBackgroundFrame == nil
@@ -369,7 +371,7 @@ CoreSystemFrameBackground.Name = "CoreSystemFrameBackground"
 CoreSystemFrameBackground.Parent = UIGui
 CoreSystemFrameBackground.AnchorPoint = Vector2.new(0.5, 0.5)
 CoreSystemFrameBackground.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-CoreSystemFrameBackground.Position = UDim2.new(-0.03, 0, 0.5, 0)
+CoreSystemFrameBackground.Position = UDim2.new(-0.03, 0, 0.45, 0)
 CoreSystemFrameBackground.Size = UDim2.new(0, 53.7, 0, 223)
 CoreSystemFrameBackground.ZIndex = 2
 
@@ -588,7 +590,7 @@ end)
 MinButton.Name = "MinButton"
 MinButton.Parent = UIGui
 MinButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-MinButton.Position = UDim2.new(0, 0, 0.48, 0)
+MinButton.Position = UDim2.new(0, 0, 0.43, 0)
 MinButton.Size = UDim2.new(0, 30, 0, 30)
 MinButton.AutoButtonColor = false
 MinButton.Font = Enum.Font.SourceSansBold
@@ -607,8 +609,8 @@ Clock.TextColor3 = Color3.fromRGB(200, 200, 200)
 Clock.Font = Enum.Font.SourceSansBold
 Clock.TextSize = 20
 
-MinButton:TweenPosition(UDim2.new(0.05, 0, 0.48, 0),"InOut","Sine",1)
-CoreSystemFrameBackground:TweenPosition(UDim2.new(0.03, 0, 0.5, 0),"InOut","Sine",1)
+MinButton:TweenPosition(UDim2.new(0.05, 0, 0.43, 0),"InOut","Sine",1)
+CoreSystemFrameBackground:TweenPosition(UDim2.new(0.03, 0, 0.45, 0),"InOut","Sine",1)
 
 MinButton.MouseButton1Click:Connect(function()
 UIClick:Play()
@@ -626,14 +628,14 @@ ConsoleButton.Image = "rbxassetid://16006754625"
 EditorButton.Image = "rbxassetid://16006689419"
 if MinButton.Text == "<" then
 MinButton.Text = ">"
-CoreSystemFrameBackground:TweenPosition(UDim2.new(-0.03, 0, 0.5, 0),"InOut","Sine",0.15)
-MinButton:TweenPosition(UDim2.new(0, 0, 0.48, 0),"InOut","Sine",0.15)
+CoreSystemFrameBackground:TweenPosition(UDim2.new(-0.03, 0, 0.45, 0),"InOut","Sine",0.15)
+MinButton:TweenPosition(UDim2.new(0, 0, 0.43, 0),"InOut","Sine",0.15)
 else
 if MinButton.Text == ">" then
 MinButton.Text = "<"
-MinButton:TweenPosition(UDim2.new(0.05, 0, 0.48, 0),"InOut","Sine",0.15)
+MinButton:TweenPosition(UDim2.new(0.05, 0, 0.43, 0),"InOut","Sine",0.15)
 CoreSystemFrameBackground.Visible = true
-CoreSystemFrameBackground:TweenPosition(UDim2.new(0.03, 0, 0.5, 0),"InOut","Sine",0.15)
+CoreSystemFrameBackground:TweenPosition(UDim2.new(0.03, 0, 0.45, 0),"InOut","Sine",0.15)
 end
 end
 end)
@@ -2178,5 +2180,5 @@ local ReadECCSV3 = readfile("ECCS_V3/CoreSystem/Files/ECCSV3EDITOR.ECCS")
 EditorTextBox.Text = ""..ReadECCSV3
 PlayerIcon.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=999&height=999&format=png"
 WelcomeLabel.Text = "Welcome Home, "..game.Players.LocalPlayer.DisplayName
-MessageBackgroundFrame:TweenPosition(UDim2.new(0.8, 0, 0.8, 0),"InOut","Sine",0.8)
+MessageBackgroundFrame:TweenPosition(UDim2.new(0.5, 0, 0.9, 0),"InOut","Sine",0.8)
 StartUpSound:Play()
