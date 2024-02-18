@@ -1257,7 +1257,7 @@ HistoryButton.AnchorPoint = Vector2.new(0.5, 0.5)
 HistoryButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 HistoryButton.Position = UDim2.new(0.5, 0, 0.5, 0)
 HistoryButton.Size = UDim2.new(0, 41, 0, 41)
-HistoryButton.Image = "rbxassetid://16423666389"
+HistoryButton.Image = "rbxassetid://16428302388"
 HistoryButton.AutoButtonColor = false
  
 HistoryButtonUICorner.CornerRadius = UDim.new(0, 12)
