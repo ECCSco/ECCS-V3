@@ -190,6 +190,10 @@ ReloadBackgroundButton = Instance.new("Frame")
 ReloadBackgroundButtonUICorner = Instance.new("UICorner")
 ReloadButton = Instance.new("ImageButton")
 ReloadButtonUICorner = Instance.new("UICorner")
+HistoryBackgroundButton = Instance.new("Frame")
+HistoryBackgroundButtonUICorner = Instance.new("UICorner")
+HistoryButton = Instance.new("ImageButton")
+HistoryButtonUICorner = Instance.new("UICorner")
 
 local function format(Int)
 return string.format("%02i", Int)
@@ -1219,8 +1223,8 @@ ReloadBackgroundButton.Name = "ReloadBackgroundButton"
 ReloadBackgroundButton.Parent = MainFrame
 ReloadBackgroundButton.AnchorPoint = Vector2.new(0.5, 0.5)
 ReloadBackgroundButton.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-ReloadBackgroundButton.Position = UDim2.new(-3.9, 0, 2.2, 0)
-ReloadBackgroundButton.Size = UDim2.new(0, 50, 0, 50)
+ReloadBackgroundButton.Position = UDim2.new(-3.9, 0, 2.3, 0)
+ReloadBackgroundButton.Size = UDim2.new(0, 46, 0, 46)
  
 ReloadBackgroundButtonUICorner.CornerRadius = UDim.new(0, 15)
 ReloadBackgroundButtonUICorner.Parent = ReloadBackgroundButton
@@ -1230,12 +1234,34 @@ ReloadButton.Parent = ReloadBackgroundButton
 ReloadButton.AnchorPoint = Vector2.new(0.5, 0.5)
 ReloadButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ReloadButton.Position = UDim2.new(0.5, 0, 0.5, 0)
-ReloadButton.Size = UDim2.new(0, 45, 0, 45)
+ReloadButton.Size = UDim2.new(0, 41, 0, 41)
 ReloadButton.Image = "rbxassetid://16422858330"
 ReloadButton.AutoButtonColor = false
  
 ReloadButtonUICorner.CornerRadius = UDim.new(0, 12)
 ReloadButtonUICorner.Parent = ReloadButton
+
+HistoryBackgroundButton.Name = "HistoryBackgroundButton"
+HistoryBackgroundButton.Parent = MainFrame
+HistoryBackgroundButton.AnchorPoint = Vector2.new(0.5, 0.5)
+HistoryBackgroundButton.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+HistoryBackgroundButton.Position = UDim2.new(-3.9, 0, 1.8, 0)
+HistoryBackgroundButton.Size = UDim2.new(0, 46, 0, 46)
+ 
+HistoryBackgroundButtonUICorner.CornerRadius = UDim.new(0, 15)
+HistoryBackgroundButtonUICorner.Parent = HistoryBackgroundButton
+ 
+HistoryButton.Name = "HistoryButton"
+HistoryButton.Parent = HistoryBackgroundButton
+HistoryButton.AnchorPoint = Vector2.new(0.5, 0.5)
+HistoryButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+HistoryButton.Position = UDim2.new(0.5, 0, 0.5, 0)
+HistoryButton.Size = UDim2.new(0, 41, 0, 41)
+HistoryButton.Image = "rbxassetid://16423666389"
+HistoryButton.AutoButtonColor = false
+ 
+HistoryButtonUICorner.CornerRadius = UDim.new(0, 12)
+HistoryButtonUICorner.Parent = HistoryButton
 
 BackgroundConsole.Name = "BackgroundConsole"
 BackgroundConsole.Parent = UIGui
@@ -1705,7 +1731,7 @@ function createfolders(path)
  end
 end
  
-if not isfile("ECCS_V3/CoreSystem/Files/ECCSV3EDITOR.ECCS") and isfile("ECCS_V3/CoreSystem/Files/ECCSV3Player.ECCS") and isfolder("ECCS_V3") then
+if not isfile("ECCS_V3/CoreSystem/Files/ECCSV3EDITOR.ECCS") and isfile("ECCS_V3/CoreSystem/Files/ECCSV3Player.ECCS") and isfile("ECCS_V3/CoreSystem/Files/ECCSV3SearchHistory.ECCS") and isfolder("ECCS_V3") then
 delfolder("ECCS_V3")
 end
  
@@ -1718,7 +1744,11 @@ end
 if not isfile("ECCS_V3/CoreSystem/Files/ECCSV3Player.ECCS") then
 writefile("ECCS_V3/CoreSystem/Files/ECCSV3Player.ECCS", " ")
 end
- 
+
+if not isfile("ECCS_V3/CoreSystem/Files/ECCSV3SearchHistory.ECCS") then
+writefile("ECCS_V3/CoreSystem/Files/ECCSV3SearchHistory.ECCS", "")
+end
+
 ExecuteButton_3.MouseButton1Click:Connect(function()
 loadstring(EditorTextBox.Text)()
 end)
@@ -1799,6 +1829,7 @@ setHoverColor(nil, Color3.fromRGB(200, 200, 200), PlaylistButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), VolumeDownButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), VolumeUpButtonBackground)
 setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), ReloadBackgroundButton)
+setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), HistoryBackgroundButton)
 
 Stop_PlayButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
@@ -2048,6 +2079,7 @@ ScriptListFrame.Visible = true
         page = 1
         local scriptsTbl = fetchScripts(SearchBox.Text, 1)
         refreshScripts(scriptsTbl)
+   writefile("ECCS_V3/CoreSystem/Files/ECCSV3SearchHistory.ECCS", ""..SearchBox.Text)
     end
 end)
 
@@ -2063,7 +2095,21 @@ ReloadButton.MouseButton1Click:Connect(function()
   HoverButtons:Play()
  end)
 
- 
+HistoryButton.MouseButton1Click:Connect(function()
+  HoverButtons:Play()
+ end)
+
+HistoryButton.MouseButton1Click:Connect(function()
+local ReadECCSV3History = readfile("ECCS_V3/CoreSystem/Files/ECCSV3SearchHistory.ECCS")
+SearchBox.Text = ""..ReadECCSV3History
+DescriptionScript.Visible = false
+ScriptListFrame.Visible = true
+        gquery = SearchBox.Text
+        page = 1
+        local scriptsTbl = fetchScripts(SearchBox.Text, 1)
+        refreshScripts(scriptsTbl)
+end)
+
 SearchBox.FocusLost:Connect(function(enterPressed)
 if enterPressed then
 HoverButtons:Play()
