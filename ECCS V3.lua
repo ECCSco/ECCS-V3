@@ -1245,7 +1245,7 @@ HistoryBackgroundButton.Name = "HistoryBackgroundButton"
 HistoryBackgroundButton.Parent = MainFrame
 HistoryBackgroundButton.AnchorPoint = Vector2.new(0.5, 0.5)
 HistoryBackgroundButton.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-HistoryBackgroundButton.Position = UDim2.new(-3.9, 0, 0.5, 0)
+HistoryBackgroundButton.Position = UDim2.new(-3.9, 0, 2.2, 0)
 HistoryBackgroundButton.Size = UDim2.new(0, 50, 0, 50)
  
 HistoryBackgroundButtonUICorner.CornerRadius = UDim.new(0, 15)
