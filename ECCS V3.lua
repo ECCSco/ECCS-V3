@@ -1779,7 +1779,7 @@ setHoverColor(nil, Color3.fromRGB(200, 200, 200), SaveButtonBackground_2)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), PlaylistButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), VolumeDownButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), VolumeUpButtonBackground)
-setHoverColor(nil, Color3.fromRGB(200, 200, 200), RealodBackgroundButton)
+setHoverColor(nil, Color3.fromRGB(200, 200, 200), ReloadBackgroundButton)
 
 Stop_PlayButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
