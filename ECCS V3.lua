@@ -1762,7 +1762,26 @@ function setHoverColor(Out, to2, obj2)
     end)
 end
  
+function setHoverColor_2(Out2, to3, obj3)
+    Out2 = Out2 or obj3.BackgroundColor3
+    
+    obj3.MouseEnter:Connect(function()
  
+        TweenService:Create(obj3, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
+            BackgroundColor3 = to3
+}):Play()
+ 
+    end)
+    
+    obj3.MouseLeave:Connect(function()
+ 
+        TweenService:Create(obj3, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
+            BackgroundColor3 = Out2
+ }):Play()
+ 
+    end)
+end
+
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), CoreSystemFrameBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), MessageBackgroundFrame)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), GameFrameBackground)
@@ -1779,8 +1798,7 @@ setHoverColor(nil, Color3.fromRGB(200, 200, 200), SaveButtonBackground_2)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), PlaylistButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), VolumeDownButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), VolumeUpButtonBackground)
-setHoverColor(nil, Color3.fromRGB(200, 200, 200), ReloadBackgroundButton)
---setHoverColor(nil, Color3.fromRGB(200, 200, 200), ReloadBackgroundButton)
+setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), ReloadBackgroundButton)
 
 Stop_PlayButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
