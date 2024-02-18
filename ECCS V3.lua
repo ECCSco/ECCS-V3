@@ -186,7 +186,11 @@ local VolumeUpButton_2 = Instance.new("ImageButton")
 local VolumeUpButtonUICorner_2 = Instance.new("UICorner")
 local VolumeDownButton_2 = Instance.new("ImageButton")
 local VolumeDownButtonUICorner_2 = Instance.new("UICorner")
- 
+ReloadBackgroundButton = Instance.new("Frame")
+ReloadBackgroundButtonUICorner = Instance.new("UICorner")
+ReloadButton = Instance.new("ImageButton")
+ReloadButtonUICorner = Instance.new("UICorner")
+
 local function format(Int)
 return string.format("%02i", Int)
 end
@@ -1210,7 +1214,29 @@ DescriptionScriptUICorner.CornerRadius = UDim.new(0, 12)
 DescriptionScriptUICorner.Parent = DescriptionScript
  
 DescriptionScript.Visible = false
+
+ReloadBackgroundButton.Name = "ReloadBackgroundButton"
+ReloadBackgroundButton.Parent = MainFrame
+ReloadBackgroundButton.AnchorPoint = Vector2.new(0.5, 0.5)
+ReloadBackgroundButton.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+ReloadBackgroundButton.Position = UDim2.new(-3.9, 0, 2.2, 0)
+ReloadBackgroundButton.Size = UDim2.new(0, 50, 0, 50)
  
+ReloadBackgroundButtonUICorner.CornerRadius = UDim.new(0, 15)
+ReloadBackgroundButtonUICorner.Parent = ReloadBackgroundButton
+ 
+ReloadButton.Name = "ReloadButton"
+ReloadButton.Parent = ReloadBackgroundButton
+ReloadButton.AnchorPoint = Vector2.new(0.5, 0.5)
+ReloadButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ReloadButton.Position = UDim2.new(0.5, 0, 0.5, 0)
+ReloadButton.Size = UDim2.new(0, 45, 0, 45)
+ReloadButton.Image = "rbxassetid://16422858330"
+ReloadButton.AutoButtonColor = false
+ 
+ReloadButtonUICorner.CornerRadius = UDim.new(0, 12)
+ReloadButtonUICorner.Parent = ReloadButton
+
 BackgroundConsole.Name = "BackgroundConsole"
 BackgroundConsole.Parent = UIGui
 BackgroundConsole.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -1753,7 +1779,8 @@ setHoverColor(nil, Color3.fromRGB(200, 200, 200), SaveButtonBackground_2)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), PlaylistButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), VolumeDownButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), VolumeUpButtonBackground)
- 
+setHoverColor(nil, Color3.fromRGB(200, 200, 200), RealodBackgroundButton)
+
 Stop_PlayButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
@@ -2004,6 +2031,19 @@ ScriptListFrame.Visible = true
         refreshScripts(scriptsTbl)
     end
 end)
+
+ReloadButton.MouseButton1Click:Connect(function()
+DescriptionScript.Visible = false
+ScriptListFrame.Visible = true
+        gquery = SearchBox.Text
+        page = 1
+        local scriptsTbl = fetchScripts(SearchBox.Text, 1)
+        refreshScripts(scriptsTbl)
+end)
+ReloadButton.MouseButton1Click:Connect(function()
+  HoverButtons:Play()
+ end)
+
  
 SearchBox.FocusLost:Connect(function(enterPressed)
 if enterPressed then
