@@ -190,10 +190,6 @@ ReloadBackgroundButton = Instance.new("Frame")
 ReloadBackgroundButtonUICorner = Instance.new("UICorner")
 ReloadButton = Instance.new("ImageButton")
 ReloadButtonUICorner = Instance.new("UICorner")
-HistoryBackgroundButton = Instance.new("Frame")
-HistoryBackgroundButtonUICorner = Instance.new("UICorner")
-HistoryButton = Instance.new("ImageButton")
-HistoryButtonUICorner = Instance.new("UICorner")
 
 local function format(Int)
 return string.format("%02i", Int)
@@ -1240,28 +1236,6 @@ ReloadButton.AutoButtonColor = false
  
 ReloadButtonUICorner.CornerRadius = UDim.new(0, 12)
 ReloadButtonUICorner.Parent = ReloadButton
-
-HistoryBackgroundButton.Name = "HistoryBackgroundButton"
-HistoryBackgroundButton.Parent = MainFrame
-HistoryBackgroundButton.AnchorPoint = Vector2.new(0.5, 0.5)
-HistoryBackgroundButton.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-HistoryBackgroundButton.Position = UDim2.new(-3.9, 0, -2, 0)
-HistoryBackgroundButton.Size = UDim2.new(0, 50, 0, 50)
- 
-HistoryBackgroundButtonUICorner.CornerRadius = UDim.new(0, 15)
-HistoryBackgroundButtonUICorner.Parent = HistoryBackgroundButton
- 
-HistoryButton.Name = "HistoryButton"
-HistoryButton.Parent = HistoryBackgroundButton
-HistoryButton.AnchorPoint = Vector2.new(0.5, 0.5)
-HistoryButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-HistoryButton.Position = UDim2.new(0.5, 0, 0.5, 0)
-HistoryButton.Size = UDim2.new(0, 45, 0, 45)
-HistoryButton.Image = "rbxassetid://16423666389"
-HistoryButton.AutoButtonColor = false
- 
-HistoryButtonUICorner.CornerRadius = UDim.new(0, 12)
-HistoryButtonUICorner.Parent = HistoryButton
 
 BackgroundConsole.Name = "BackgroundConsole"
 BackgroundConsole.Parent = UIGui
