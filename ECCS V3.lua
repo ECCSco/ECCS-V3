@@ -2091,11 +2091,11 @@ ScriptListFrame.Visible = true
         local scriptsTbl = fetchScripts(SearchBox.Text, 1)
         refreshScripts(scriptsTbl)
 end)
-ReloadButton.MouseButton1Click:Connect(function()
+
+ReloadButton.MouseEnter:Connect(function()
   HoverButtons:Play()
  end)
-
-HistoryButton.MouseButton1Click:Connect(function()
+HistoryButton.MouseEnter:Connect(function()
   HoverButtons:Play()
  end)
 
