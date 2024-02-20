@@ -194,6 +194,10 @@ HistoryBackgroundButton = Instance.new("Frame")
 HistoryBackgroundButtonUICorner = Instance.new("UICorner")
 HistoryButton = Instance.new("ImageButton")
 HistoryButtonUICorner = Instance.new("UICorner")
+ClearAndSearchBackground = Instance.new("Frame")
+ClearAndSearchBackgroundUICorner = Instance.new("UICorner")
+ClearAndSearch = Instance.new("ImageButton")
+ClearAndSearchUICorner = Instance.new("UICorner")
 
 local function format(Int)
 return string.format("%02i", Int)
@@ -1263,6 +1267,28 @@ HistoryButton.AutoButtonColor = false
 HistoryButtonUICorner.CornerRadius = UDim.new(0, 12)
 HistoryButtonUICorner.Parent = HistoryButton
 
+ClearAndSearchBackground.Name = "ClearAndSearchBackground"
+ClearAndSearchBackground.Parent = MainFrame
+ClearAndSearchBackground.AnchorPoint = Vector2.new(0.5, 0.5)
+ClearAndSearchBackground.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+ClearAndSearchBackground.Position = UDim2.new(-3.9, 0, -1.2, 0)
+ClearAndSearchBackground.Size = UDim2.new(0, 46, 0, 46)
+ 
+ClearAndSearchBackgroundUICorner.CornerRadius = UDim.new(0, 15)
+ClearAndSearchBackgroundUICorner.Parent = ClearAndSearchBackground
+ 
+ClearAndSearch.Name = "ClearAndSearch"
+ClearAndSearch.Parent = ClearAndSearchBackground
+ClearAndSearch.AnchorPoint = Vector2.new(0.5, 0.5)
+ClearAndSearch.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ClearAndSearch.Position = UDim2.new(0.5, 0, 0.5, 0)
+ClearAndSearch.Size = UDim2.new(0, 41, 0, 41)
+ClearAndSearch.Image = "rbxassetid://16449084806"
+ClearAndSearch.AutoButtonColor = false
+ 
+ClearAndSearchUICorner.CornerRadius = UDim.new(0, 12)
+ClearAndSearchUICorner.Parent = ClearAndSearch
+
 BackgroundConsole.Name = "BackgroundConsole"
 BackgroundConsole.Parent = UIGui
 BackgroundConsole.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -1830,8 +1856,13 @@ setHoverColor(nil, Color3.fromRGB(200, 200, 200), VolumeDownButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), VolumeUpButtonBackground)
 setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), ReloadBackgroundButton)
 setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), HistoryBackgroundButton)
+setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), ClearAndSearchBackground)
 
 Stop_PlayButtonBackground.MouseEnter:Connect(function()
+HoverButtons:Play()
+end)
+
+ClearAndSearchBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
  
@@ -2152,6 +2183,10 @@ SoundTextBox.Text = ""
 end
 end)
  
+ClearAndSearch.MouseButton1Click:Connect(function()
+SearchBox:CaptureFocus()
+end)
+
 Stop_PlayButton.MouseButton1Click:Connect(function()
 if Stop_PlayButton.Image == "rbxassetid://16139639068" and SoundTextBox.Text == "" then
 SoundTextBox.PlaceholderText = "Enter Id here"
