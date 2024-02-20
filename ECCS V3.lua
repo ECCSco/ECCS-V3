@@ -2182,6 +2182,7 @@ end
 end)
  
 ClearAndSearch.MouseButton1Click:Connect(function()
+SearchBox.Text = ""
 SearchBox:CaptureFocus()
 end)
 
