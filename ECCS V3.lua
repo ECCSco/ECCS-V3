@@ -1806,16 +1806,14 @@ function setHoverColor(Out, to2, obj2)
         TweenService:Create(obj2, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
             BackgroundColor3 = to2
 }):Play()
- 
-    end)
+ end)
     
     obj2.MouseLeave:Connect(function()
  
         TweenService:Create(obj2, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
             BackgroundColor3 = Out
  }):Play()
- 
-    end)
+ end)
 end
  
 function setHoverColor_2(Out2, to3, obj3)
