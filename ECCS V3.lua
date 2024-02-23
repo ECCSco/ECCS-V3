@@ -198,6 +198,10 @@ ClearAndSearchBackground = Instance.new("Frame")
 ClearAndSearchBackgroundUICorner = Instance.new("UICorner")
 ClearAndSearch = Instance.new("ImageButton")
 ClearAndSearchUICorner = Instance.new("UICorner")
+ClearButton_2Background = Instance.new("Frame")
+ClearButton_2BackgroundUICorner = Instance.new("UICorner")
+ClearButton_2 = Instance.new("ImageButton")
+ClearButton_2UICorner = Instance.new("UICorner")
 
 local function format(Int)
 return string.format("%02i", Int)
@@ -1150,8 +1154,7 @@ CopyScriptButton_2.TextWrapped = true
  
 CopyScriptButtonUICorner_2.CornerRadius = UDim.new(0, 12)
 CopyScriptButtonUICorner_2.Parent = CopyScriptButton_2
- 
- 
+
 OpenDescriptionBackground_2.Name = "OpenDescriptionBackground"
 OpenDescriptionBackground_2.Parent = VerifiedScriptFrame
 OpenDescriptionBackground_2.BackgroundColor3 = Color3.fromRGB(55,55, 55)
@@ -1160,8 +1163,7 @@ OpenDescriptionBackground_2.Size = UDim2.new(0, 205, 0, 55)
  
 OpenDescriptionBackgroundUICorner_2.Parent = OpenDescriptionBackground_2
 OpenDescriptionBackgroundUICorner_2.CornerRadius = UDim.new(0, 15)
- 
- 
+
 OpenDescriptionButton_2.Name = "OpenDescriptionButton"
 OpenDescriptionButton_2.Parent = VerifiedScriptFrame
 OpenDescriptionButton_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -1469,22 +1471,29 @@ ClearButton.TextWrapped = true
  
 ClearButtonUICorner.CornerRadius = UDim.new(0, 12)
 ClearButtonUICorner.Parent = ClearButton
+
+ClearButton_2Background.Name = "ClearButton_2Background"
+ClearButton_2Background.Parent = BackgroundConsole
+ClearButton_2Background.AnchorPoint = Vector2.new(0.5, 0.5)
+ClearButton_2Background.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+ClearButton_2Background.Position = UDim2.new(-0.04, 0, 0.945, 0)
+ClearButton_2Background.Size = UDim2.new(0, 46, 0, 46)
  
-game:GetService("LogService").MessageOut:Connect(
-function(Message)
-    repeat
-        wait()
-    until Message
-    logTable[#logTable + 1] = Message
-    ConsoleOutput.Text = (table.concat(logTable, "\n"))
-    for i, v in pairs(logTable) do
-        if i == 30 then
-            table.remove(logTable, 1)
-        end
-    end
-end
-)
+ClearButton_2BackgroundUICorner.CornerRadius = UDim.new(0, 15)
+ClearButton_2BackgroundUICorner.Parent = ClearButton_2Background
  
+ClearButton_2.Name = "ClearButton_2"
+ClearButton_2.Parent = ClearButton_2Background
+ClearButton_2.AnchorPoint = Vector2.new(0.5, 0.5)
+ClearButton_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ClearButton_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+ClearButton_2.Size = UDim2.new(0, 41, 0, 41)
+ClearButton_2.Image = "rbxassetid://16477707611"
+ClearButton_2.AutoButtonColor = false
+ 
+ClearButton_2UICorner.CornerRadius = UDim.new(0, 12)
+ClearButton_2UICorner.Parent = ClearButton_2
+
 SondFrameBackground.Name = "SondFrameBackground"
 SondFrameBackground.Parent = UIGui
 SondFrameBackground.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -1710,7 +1719,7 @@ VolumeFrameUICorner.CornerRadius = UDim.new(1, 0)
 VolumeFrameUICorner.Parent = VolumeFrame
  
  
-function setHoverTransition(from, to, obj)
+function setHoverDef(from, to, obj)
     from = from or obj.Size
     
     obj.MouseEnter:Connect(function()
@@ -1730,13 +1739,11 @@ function setHoverTransition(from, to, obj)
     end)
 end
  
-setHoverTransition(nil, UDim2.new(0, 40, 0, 40), HomeButton)
-setHoverTransition(nil, UDim2.new(0, 40, 0, 40), SearcherOpenUIButton)
-setHoverTransition(nil, UDim2.new(0, 40, 0, 40), ConsoleButton)
-setHoverTransition(nil, UDim2.new(0, 40, 0, 40), EditorButton)
-setHoverTransition(nil, UDim2.new(0, 36, 0, 36), MusicButton)
-setHoverTransition(nil, UDim2.new(0, 865, 0, 410), BackgroundConsole)
- 
+setHoverDef(nil, UDim2.new(0, 40, 0, 40), HomeButton)
+setHoverDef(nil, UDim2.new(0, 40, 0, 40), SearcherOpenUIButton)
+setHoverDef(nil, UDim2.new(0, 40, 0, 40), ConsoleButton)
+setHoverDef(nil, UDim2.new(0, 40, 0, 40), EditorButton)
+setHoverDef(nil, UDim2.new(0, 36, 0, 36), MusicButton) 
 function createfolders(path)
  local pathtbl = string.split(path, "/")
  for i, v in pairs(pathtbl) do
@@ -1855,6 +1862,8 @@ setHoverColor(nil, Color3.fromRGB(200, 200, 200), VolumeUpButtonBackground)
 setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), ReloadBackgroundButton)
 setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), HistoryBackgroundButton)
 setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), ClearAndSearchBackground)
+setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), ClearButton_2Background)
+
 
 Stop_PlayButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
@@ -1888,6 +1897,21 @@ PlayerIconBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
  
+game:GetService("LogService").MessageOut:Connect(
+function(Message)
+    repeat
+        wait()
+    until Message
+    logTable[#logTable + 1] = Message
+    ConsoleOutput.Text = (table.concat(logTable, "\n"))
+    for i, v in pairs(logTable) do
+        if i == 30 then
+            table.remove(logTable, 1)
+        end
+    end
+end
+)
+
 function setHoverSysSize(Out2, to23, obj23)
     Out2 = Out2 or obj23.Size
     
@@ -2125,6 +2149,14 @@ ReloadButton.MouseEnter:Connect(function()
   HoverButtons:Play()
  end)
 HistoryButton.MouseEnter:Connect(function()
+  HoverButtons:Play()
+ end)
+
+ClearButton_2.MouseButton1Click:Connect(function()
+ConsoleOutput.Text = "Notifications, warnings and script errors will be displayed here to simplify working with them."
+end)
+
+ClearButton_2.MouseEnter:Connect(function()
   HoverButtons:Play()
  end)
 
