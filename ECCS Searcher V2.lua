@@ -1408,95 +1408,7 @@ UIListLayout_3.Parent = Comments_2
 UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout_3.Padding = UDim.new(0, 5)
 
-NotifSound.Parent = game.Workspace
-NotifSound.SoundId = "rbxassetid://5153734608"
-NotifSound.Playing = true
-NotifSound.Looped = false
-NotifSound.Volume = 1
-NotifSound:Stop()
- 
-DeveloperImage.Visible = false
-Label1.Visible = false
-Label2.Visible = false
- 
-NotifFrame.Name = "NotifFrame"
-NotifFrame.Parent = UIGui
-NotifFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-NotifFrame.BackgroundTransparency = 0.5
-NotifFrame.Position = UDim2.new(0.3, 0, 0.15, 0)
-NotifFrame.Size = UDim2.new(0, 0, 0, 0)
-NotifFrame.BorderSizePixel = 0
-NotifFrameUICorner.Parent = NotifFrame
- 
-DeveloperImage.Name = "PlayerIcon"
-DeveloperImage.Parent = NotifFrame
-DeveloperImage.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-DeveloperImage.BackgroundTransparency = 0.5
-DeveloperImage.Position = UDim2.new(0.86, 0, 0.78, 0)
-DeveloperImage.Size = UDim2.new(0, 50, 0, 50)
-DeveloperImage.BorderSizePixel = 0
-DeveloperImage.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=3323558881&width=999&height=999&format=png"
- 
-DeveloperImageUICorner.Parent = DeveloperImage
-DeveloperImageUICorner.CornerRadius = UDim.new(0.5, 0)
- 
-Label1.Name = "Label1"
-Label1.Parent = NotifFrame
-Label1.BackgroundTransparency = 1
-Label1.Position = UDim2.new(0.5, 0, 0.05, 0)
-Label1.Size = UDim2.new(0, 1, 0, 1)
-Label1.Font = Enum.Font.SourceSansBold
-Label1.Text = "!WARNING!"
-Label1.TextColor3 = Color3.fromRGB(255, 255, 255)
-Label1.TextSize = 50
- 
-Label2.Name = "Label2"
-Label2.Parent = NotifFrame
-Label2.BackgroundTransparency = 1
-Label2.Position = UDim2.new(0.5, 0, 0.5, 0)
-Label2.Size = UDim2.new(0, 1, 0, 1)
-Label2.Font = Enum.Font.SourceSansBold
-Label2.Text = "The developer \"ERROR_CODE\"\n has joined to the experience. \nDon't swear until he \ngets out of the experience and everything will be fine."
-Label2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Label2.TextSize = 20
 
-game.Players.PlayerAdded:Connect(function(player)
-if player.UserId == DeveloperID then
-NotifSound:Play()
-NotifFrame:TweenSize(UDim2.new(0, 400, 0, 250), 'Out', 4, true)
-wait(0.5)
-Label2.Text = "The developer \"ERROR_CODE\"\n has joined to the experience. \nDon't swear until he \ngets out of the experience and everything will be fine."
-DeveloperImage.Visible = true
-Label1.Visible = true
-Label2.Visible = true
-wait(4.5)
-DeveloperImage.Visible = false
-Label1.Visible = false
-Label2.Visible = false
-NotifFrame:TweenSize(UDim2.new(0, 0, 0, 0), 'Out', 4, true)
-wait(0.5)
-NotifFrame.Visible = false
-end
-end)
- 
-game.Players.PlayerRemoving:Connect(function(player)
-if player.UserId == DeveloperID then
-NotifSound:Play()
-NotifFrame:TweenSize(UDim2.new(0, 400, 0, 250), 'Out', 4, true)
-wait(0.5)
-Label2.Text = "The developer \"ERROR_CODE\"\n has leaved."
-DeveloperImage.Visible = true
-Label1.Visible = true
-Label2.Visible = true
-wait(4.5)
-DeveloperImage.Visible = false
-Label1.Visible = false
-Label2.Visible = false
-NotifFrame:TweenSize(UDim2.new(0, 0, 0, 0), 'Out', 4, true)
-wait(0.5)
-NotifFrame.Visible = false
-end
-end)
 
 if not isfile("ES.ECCS") then
 writefile("ES.ECCS", ""..ExecutorTextBox.Text)
@@ -1505,38 +1417,7 @@ end
 local ESR = readfile("ES.ECCS")
 ExecutorTextBox.Text = ""..ESR
 
-assert(assert, "Assert couldn't assert itself!")
 
-function createfolders(path)
-	local pathtbl = string.split(path, "/")
-	for i, v in pairs(pathtbl) do
-		if i == 1 then
-			if not isfolder(v) then
-				makefolder(v)
-			end
-		else
-			local newpath = pathtbl[1]
-			for i2=2, i-1 do
-				newpath = newpath.. "/" ..pathtbl[i2]
-			end
-			newpath = newpath.. "/" ..v
-			if not isfolder(newpath) then
-				makefolder(newpath)
-			end
-		end
-	end
-end
-
-if not isfile("ScriptBlox/Searcher/Cache.json") and isfolder("ScriptBlox") then
-	delfolder("ScriptBlox")
-end
-
-createfolders("ScriptBlox/Searcher/ImageCache/Scripts")
-createfolders("ScriptBlox/Searcher/ImageCache/ProfilePictures")
-
-if not isfile("ScriptBlox/Searcher/Cache.json") then
-	writefile("ScriptBlox/Searcher/Cache.json", "{}")
-end
 
 UIGui.MainFrame.InfoBox.Visible = false
 
@@ -1546,7 +1427,7 @@ local HttpService = game:GetService("HttpService")
 local TweenService = game:GetService("TweenService")
 local TextService = game:GetService("TextService")
 
-local cache = HttpService:JSONDecode(readfile("ScriptBlox/Searcher/Cache.json"))
+
 
 local page = 1
 local gquery = ""
@@ -1626,48 +1507,22 @@ function fetchComments(scriptId, page)
 	return req.comments
 end
 
-function loadImage(url, id, ispfp)
-	ispfp = _if(type(ispfp) == "boolean", ispfp, false)
-	
-	local path = "ScriptBlox/Searcher/ImageCache/" .._if(ispfp, "ProfilePictures/", "Scripts/")..id..".png"
-	ProfilePicture.Image = "ScriptBlox/Searcher/ImageCache/" .._if(ispfp, "ProfilePictures/", "Scripts/")..id..".png"
-	if table.find(string.split(url, "/"), "user-default.png") then
-		path = "ScriptBlox/Searcher/ImageCache/ProfilePictures/user-default.png"
-	end
-	
-	if isfile(path) then
-		return getfakeasset(path)
-	else
-		local img = game:HttpGetAsync(url)
-		writefile(path, img)
-		
-		return getfakeasset(path)
-	end
-end
 
 function fixScript(scriptObj)
 	if not scriptObj["script"] or not scriptObj["owner"] or not scriptObj["features"] then
-		local cacheObj = cache[scriptObj["_id"]]
-		if cacheObj then
-			scriptObj["script"] = _if(scriptObj["script"], scriptObj["script"], cacheObj.script)
-			scriptObj["features"] = _if(scriptObj["features"], scriptObj["features"], cacheObj.features)
-			scriptObj["owner"] = _if(scriptObj["owner"], scriptObj["owner"], cacheObj.owner)
-		else
+		
 			local req = HttpService:JSONDecode(game:HttpGetAsync("https://www.scriptblox.com/api/script/".. scriptObj.slug)).script
 			scriptObj["script"] = _if(scriptObj["script"], scriptObj["script"], req.script)
 			scriptObj["features"] = _if(scriptObj["features"], scriptObj["features"], req.features)
 			scriptObj["owner"] = _if(scriptObj["owner"], scriptObj["owner"], req.owner)
 			
-			cache[scriptObj["_id"]] = req
+			
 		end
-	end
+	
 	return scriptObj
 end
 
-function updateCache(newCache)
-	cache = newCache
-	writefile("ScriptBlox/Searcher/Cache.json", HttpService:JSONEncode(cache))
-end
+
 
 function updateInfoBox(scriptObj)
 	scriptObj = fixScript(scriptObj)
