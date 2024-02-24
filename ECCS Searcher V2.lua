@@ -1676,8 +1676,6 @@ writefile("ES.ECCS", ""..ExecutorTextBox.Text)
 		end)
 	end
 	
-	updateCache(cache)
-	
 	pagefetchrunning = false
 end
 
