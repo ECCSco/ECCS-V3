@@ -12,7 +12,6 @@ local UICorner_2 = Instance.new("UICorner")
 local SearchBox = Instance.new("TextBox")
 local UICorner_3 = Instance.new("UICorner")
 local Title = Instance.new("TextLabel")
-local CloseButton = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
 local UICorner_5 = Instance.new("UICorner")
 local ScriptAuthor = Instance.new("TextLabel")
@@ -313,7 +312,7 @@ SearchButton.Name = "SearchButton"
 SearchButton.Parent = MainFrame
 SearchButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 SearchButton.Position = UDim2.new(0, 363, 0, 5)
-SearchButton.Size = UDim2.new(0, 50, 0, 25)
+SearchButton.Size = UDim2.new(0, 80, 0, 25)
 SearchButton.AutoButtonColor = false
 SearchButton.Font = Enum.Font.Code
 SearchButton.Text = "🔎"
@@ -333,23 +332,6 @@ Title.Font = Enum.Font.Code
 Title.Text = ""
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextSize = 28
-
-CloseButton.Name = "CloseButton"
-CloseButton.Position = UDim2.new(0.93, 0, 0.02, 0)
-CloseButton.Parent = MainFrame
-CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-CloseButton.BackgroundTransparency = 0.5
-CloseButton.LayoutOrder = 1
-CloseButton.Size = UDim2.new(0, 25, 0, 25)
-CloseButton.AutoButtonColor = false
-CloseButton.Font = Enum.Font.Code
-CloseButton.Text = "X"
-CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-CloseButton.TextScaled = true
-CloseButton.TextSize = 14.000
-CloseButton.TextWrapped = true
-
-UICorner_4.Parent = CloseButton
 
 DevelopersButton.Name = "DevelopersButton"
 DevelopersButton.Position = UDim2.new(0, 20, 0.135, 10)
@@ -1723,13 +1705,6 @@ gquery = UIGui.MainFrame.SearchBox.Text
 		refreshScripts(scriptsTbl)
 end)
 
-CloseButton.MouseButton1Click:Connect(function()
-UIClick:Play()
-writefile("ES.ECCS", ""..ExecutorTextBox.Text)
-UIGui:Destroy()
-end)
-
-setHoverTransition(nil, Color3.fromRGB(0, 0, 0), UIGui.MainFrame.CloseButton)
 
 CloseDescButton.MouseButton1Click:Connect(function()
 UIClick:Play()
