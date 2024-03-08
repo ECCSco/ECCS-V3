@@ -1,0 +1,137 @@
+if game:GetService("CoreGui"):FindFirstChild("ScreenGui") then
+game:GetService("CoreGui"):FindFirstChild("ScreenGui"):Destroy()
+end
+local ScreenGui = Instance.new("ScreenGui")
+local CoreFrame = Instance.new("Frame")
+local DestroyGuiButton = Instance.new("ImageButton")
+local RedPlayer = Instance.new("TextButton")
+local BluePlayer = Instance.new("TextButton")
+local ClickValue1 = 0
+local ClickValue2 = 0
+local Level1 = Instance.new("TextLabel")
+local Level2 = Instance.new("TextLabel")
+local LevelValue1 = 0
+local LevelValue2 = 0
+local ClickSound = Instance.new("Sound")
+local LevelUpSound = Instance.new("Sound")
+
+ClickSound.Parent = game:GetService("SoundService")
+ClickSound.SoundId = "rbxassetid://6895079853"
+ClickSound.Playing = true
+ClickSound.Looped = false
+ClickSound.Volume = 1
+ClickSound:Stop()
+
+LevelUpSound.Parent = game:GetService("SoundService")
+LevelUpSound.SoundId = "rbxassetid://271111328"
+LevelUpSound.Playing = true
+LevelUpSound.Looped = false
+LevelUpSound.Volume = 1
+LevelUpSound:Stop()
+
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.CoreGui
+game.CoreGui.ScreenGui.Enabled = true
+
+CoreFrame.Parent = ScreenGui
+CoreFrame.Size = UDim2.new(1,0,1,100)
+CoreFrame.Position = UDim2.new(0,0,0,-100)
+
+RedPlayer.Name = "ReadPlayer"
+RedPlayer.Parent = CoreFrame
+RedPlayer.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+RedPlayer.Position = UDim2.new(0, -30, 0, 50)
+RedPlayer.Size = UDim2.new(0, 510, 0, 500)
+RedPlayer.AutoButtonColor = false
+RedPlayer.Font = Enum.Font.SourceSansBold
+RedPlayer.Text = ClickValue1
+RedPlayer.TextColor3 = Color3.fromRGB(255, 255, 255)
+RedPlayer.TextSize = 999
+RedPlayer.BorderSizePixel = 0
+RedPlayer.Rotation = 90
+
+BluePlayer.Name = "BluePlayer"
+BluePlayer.Parent = CoreFrame
+BluePlayer.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+BluePlayer.Position = UDim2.new(0, 470, 0, 50)
+BluePlayer.Size = UDim2.new(0, 510, 0, 500)
+BluePlayer.AutoButtonColor = false
+BluePlayer.Font = Enum.Font.SourceSansBold
+BluePlayer.Text = ClickValue2
+BluePlayer.TextColor3 = Color3.fromRGB(255, 255, 255)
+BluePlayer.TextSize = 999
+BluePlayer.BorderSizePixel = 0
+BluePlayer.Rotation = -90
+
+Level1.Name = "Level1"
+Level1.Parent = CoreFrame
+Level1.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Level1.Position = UDim2.new(0, 0, 0, 100)
+Level1.Size = UDim2.new(0, 50, 0, 50)
+Level1.Font = Enum.Font.SourceSansBold
+Level1.Text = LevelValue1
+Level1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Level1.TextSize = 999
+Level1.BorderSizePixel = 0
+Level1.Rotation = 90
+
+Level2.Name = "Level2"
+Level2.Parent = CoreFrame
+Level2.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+Level2.Position = UDim2.new(0, 900, 0, 450)
+Level2.Size = UDim2.new(0, 50, 0, 50)
+Level2.Font = Enum.Font.SourceSansBold
+Level2.Text = LevelValue2
+Level2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Level2.TextSize = 999
+Level2.BorderSizePixel = 0
+Level2.Rotation = -90
+
+DestroyGuiButton.Name = "DestroyGuiButton"
+DestroyGuiButton.Parent = CoreFrame
+DestroyGuiButton.BackgroundTransparency = 1
+DestroyGuiButton.Position = UDim2.new(0, 450, 0, 460)
+DestroyGuiButton.Size = UDim2.new(0, 50, 0, 50)
+DestroyGuiButton.Image = "rbxassetid://15997029966"
+
+DestroyGuiButton.MouseButton1Click:Connect(function()
+ScreenGui:Destroy()
+end)
+
+RedPlayer.MouseButton1Click:Connect(function()
+ClickSound:Play()
+ClickValue1 = ClickValue1 + 1
+ClickValue2 = ClickValue2 - 1
+RedPlayer.Text = ClickValue1
+BluePlayer.Text = ClickValue2
+if RedPlayer.Text == "100" then
+LevelUpSound:Play()
+ClickValue1 = 0
+ClickValue2 = 0
+LevelValue1 = LevelValue1 + 1
+LevelValue2 = LevelValue2 - 1
+Level1.Text = LevelValue1
+Level2.Text = LevelValue2
+RedPlayer.Text = ClickValue1
+BluePlayer.Text = ClickValue2
+end
+end)
+
+BluePlayer.MouseButton1Click:Connect(function()
+ClickSound:Play()
+ClickValue1 = ClickValue1 - 1
+ClickValue2 = ClickValue2 + 1
+RedPlayer.Text = ClickValue1
+BluePlayer.Text = ClickValue2
+if BluePlayer.Text == "100" then
+LevelUpSound:Play()
+ClickValue1 = 0
+ClickValue2 = 0
+LevelValue1 = LevelValue1 - 1
+LevelValue2 = LevelValue2 + 1
+Level1.Text = LevelValue1
+Level2.Text = LevelValue2
+RedPlayer.Text = ClickValue1
+BluePlayer.Text = ClickValue2
+end
+end)
