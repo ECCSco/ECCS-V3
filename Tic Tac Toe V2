@@ -1,0 +1,751 @@
+if game:GetService("CoreGui"):FindFirstChild("ScreenGui") then
+game:GetService("CoreGui"):FindFirstChild("ScreenGui"):Destroy()
+end
+local ScreenGui = Instance.new("ScreenGui")
+local CoreFrame = Instance.new("ImageLabel")
+local DestroyGuiButton = Instance.new("ImageButton")
+local Wand1 = Instance.new("Frame")
+local Wand2 = Instance.new("Frame")
+local Wand3 = Instance.new("Frame")
+local Wand4 = Instance.new("Frame")
+local TicTacToeButton1 = Instance.new("ImageButton")
+local TicTacToeButton2 = Instance.new("ImageButton")
+local TicTacToeButton3 = Instance.new("ImageButton")
+local TicTacToeButton4 = Instance.new("ImageButton")
+local TicTacToeButton5 = Instance.new("ImageButton")
+local TicTacToeButton6 = Instance.new("ImageButton")
+local TicTacToeButton7 = Instance.new("ImageButton")
+local TicTacToeButton8 = Instance.new("ImageButton")
+local TicTacToeButton9 = Instance.new("ImageButton")
+local FaceTicTacToeButton1 = Instance.new("TextButton")
+local FaceTicTacToeButton2 = Instance.new("TextButton")
+local FaceTicTacToeButton3 = Instance.new("TextButton")
+local FaceTicTacToeButton4 = Instance.new("TextButton")
+local FaceTicTacToeButton5 = Instance.new("TextButton")
+local FaceTicTacToeButton6 = Instance.new("TextButton")
+local FaceTicTacToeButton7 = Instance.new("TextButton")
+local FaceTicTacToeButton8 = Instance.new("TextButton")
+local FaceTicTacToeButton9 = Instance.new("TextButton")
+local TicTacToeValue = 0
+local TicTacToeStartSymbol = Instance.new("ImageLabel")
+local ClearField = Instance.new("ImageButton")
+local ClickSound = Instance.new("Sound")
+local LevelValue = 0
+local LevelValue2 = 0
+local LevelLabel = Instance.new("TextLabel")
+local LevelLabel2 = Instance.new("TextLabel")
+local WinSound = Instance.new("Sound")
+local WandUICorner1 = Instance.new("UICorner")
+local WandUICorner2 = Instance.new("UICorner")
+local WandUICorner3 = Instance.new("UICorner")
+local WandUICorner4 = Instance.new("UICorner")
+
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.CoreGui
+game.CoreGui.ScreenGui.Enabled = true
+
+ClickSound.Parent = game:GetService("SoundService")
+ClickSound.SoundId = "rbxassetid://6895079853"
+ClickSound.Playing = true
+ClickSound.Looped = false
+ClickSound.Volume = 1
+ClickSound:Stop()
+
+WinSound.Parent = game:GetService("SoundService")
+WinSound.SoundId = "rbxassetid://1839997916"
+WinSound.Playing = true
+WinSound.Looped = false
+WinSound.Volume = 1
+WinSound:Stop()
+
+CoreFrame.Parent = ScreenGui
+CoreFrame.Size = UDim2.new(1,0,1,100)
+CoreFrame.Position = UDim2.new(0,0,0,-100)
+CoreFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CoreFrame.Image = "rbxassetid://16768230713"
+
+TicTacToeStartSymbol.Name = "TicTacToeStartSymbol"
+TicTacToeStartSymbol.Parent = CoreFrame
+TicTacToeStartSymbol.BackgroundTransparency = 1
+TicTacToeStartSymbol.Position = UDim2.new(0, 900, 0, 340)
+TicTacToeStartSymbol.Size = UDim2.new(0, 50, 0, 50)
+TicTacToeStartSymbol.Image = "rbxassetid://16669996240"
+TicTacToeStartSymbol.Rotation = -90
+
+Wand1.Name = "Wand"
+Wand1.Parent = CoreFrame
+Wand1.BackgroundColor3 = Color3.fromRGB(92, 56, 45)
+Wand1.Position = UDim2.new(0, 400, 0, 100)
+Wand1.Size = UDim2.new(0, 20, 0, 380)
+Wand1.BorderSizePixel = 0
+
+WandUICorner1.CornerRadius = UDim.new(0, 12)
+WandUICorner1.Parent = Wand1
+
+Wand2.Name = "Wand"
+Wand2.Parent = CoreFrame
+Wand2.BackgroundColor3 = Color3.fromRGB(92, 56, 45)
+Wand2.Position = UDim2.new(0, 540, 0, 100)
+Wand2.Size = UDim2.new(0, 20, 0, 380)
+Wand2.BorderSizePixel = 0
+
+WandUICorner2.CornerRadius = UDim.new(0, 12)
+WandUICorner2.Parent = Wand2
+
+Wand3.Name = "Wand"
+Wand3.Parent = CoreFrame
+Wand3.BackgroundColor3 = Color3.fromRGB(92, 56, 45)
+Wand3.Position = UDim2.new(0, 470, 0, 40)
+Wand3.Size = UDim2.new(0, 20, 0, 350)
+Wand3.BorderSizePixel = 0
+Wand3.Rotation = 90
+
+WandUICorner3.CornerRadius = UDim.new(0, 12)
+WandUICorner3.Parent = Wand3
+
+Wand4.Name = "Wand"
+Wand4.Parent = CoreFrame
+Wand4.BackgroundColor3 = Color3.fromRGB(92, 56, 45)
+Wand4.Position = UDim2.new(0, 470, 0, 190)
+Wand4.Size = UDim2.new(0, 20, 0, 350)
+Wand4.BorderSizePixel = 0
+Wand4.Rotation = 90
+
+WandUICorner4.CornerRadius = UDim.new(0, 12)
+WandUICorner4.Parent = Wand4
+
+TicTacToeButton1.Name = "TicTacToeButton1"
+TicTacToeButton1.Parent = CoreFrame
+TicTacToeButton1.BackgroundTransparency = 1
+TicTacToeButton1.Position = UDim2.new(0, 430, 0, 100)
+TicTacToeButton1.Size = UDim2.new(0, 100, 0, 100)
+TicTacToeButton1.AutoButtonColor = false
+TicTacToeButton1.Image = "rbxassetid://0"
+
+FaceTicTacToeButton1.Name = "FaceTicTacToeButton1"
+FaceTicTacToeButton1.Parent = CoreFrame
+FaceTicTacToeButton1.BackgroundTransparency = 1
+FaceTicTacToeButton1.Position = UDim2.new(0, 430, 0, 100)
+FaceTicTacToeButton1.Size = UDim2.new(0, 100, 0, 100)
+FaceTicTacToeButton1.AutoButtonColor = false
+FaceTicTacToeButton1.Text = ""
+FaceTicTacToeButton1.TextSize = 999
+FaceTicTacToeButton1.TextColor3 = Color3.fromRGB(0, 0, 255)
+
+TicTacToeButton2.Name = "TicTacToeButton2"
+TicTacToeButton2.Parent = CoreFrame
+TicTacToeButton2.BackgroundTransparency = 1
+TicTacToeButton2.Position = UDim2.new(0, 430, 0, 240)
+TicTacToeButton2.Size = UDim2.new(0, 100, 0, 100)
+TicTacToeButton2.AutoButtonColor = false
+TicTacToeButton2.Image = "rbxassetid://0"
+
+FaceTicTacToeButton2.Name = "FaceTicTacToeButton2"
+FaceTicTacToeButton2.Parent = CoreFrame
+FaceTicTacToeButton2.BackgroundTransparency = 1
+FaceTicTacToeButton2.Position = UDim2.new(0, 430, 0, 240)
+FaceTicTacToeButton2.Size = UDim2.new(0, 100, 0, 100)
+FaceTicTacToeButton2.AutoButtonColor = false
+FaceTicTacToeButton2.Text = ""
+FaceTicTacToeButton2.TextSize = 999
+FaceTicTacToeButton2.TextColor3 = Color3.fromRGB(0, 0, 255)
+
+TicTacToeButton3.Name = "TicTacToeButton3"
+TicTacToeButton3.Parent = CoreFrame
+TicTacToeButton3.BackgroundTransparency = 1
+TicTacToeButton3.Position = UDim2.new(0, 430, 0, 380)
+TicTacToeButton3.Size = UDim2.new(0, 100, 0, 100)
+TicTacToeButton3.AutoButtonColor = false
+TicTacToeButton3.Image = "rbxassetid://0"
+
+FaceTicTacToeButton3.Name = "FaceTicTacToeButton3"
+FaceTicTacToeButton3.Parent = CoreFrame
+FaceTicTacToeButton3.BackgroundTransparency = 1
+FaceTicTacToeButton3.Position = UDim2.new(0, 430, 0, 380)
+FaceTicTacToeButton3.Size = UDim2.new(0, 100, 0, 100)
+FaceTicTacToeButton3.AutoButtonColor = false
+FaceTicTacToeButton3.Text = ""
+FaceTicTacToeButton3.TextSize = 999
+FaceTicTacToeButton3.TextColor3 = Color3.fromRGB(0, 0, 255)
+
+TicTacToeButton4.Name = "TicTacToeButton4"
+TicTacToeButton4.Parent = CoreFrame
+TicTacToeButton4.BackgroundTransparency = 1
+TicTacToeButton4.Position = UDim2.new(0, 295, 0, 100)
+TicTacToeButton4.Size = UDim2.new(0, 100, 0, 100)
+TicTacToeButton4.AutoButtonColor = false
+TicTacToeButton4.Image = "rbxassetid://0"
+
+FaceTicTacToeButton4.Name = "FaceTicTacToeButton4"
+FaceTicTacToeButton4.Parent = CoreFrame
+FaceTicTacToeButton4.BackgroundTransparency = 1
+FaceTicTacToeButton4.Position = UDim2.new(0, 295, 0, 100)
+FaceTicTacToeButton4.Size = UDim2.new(0, 100, 0, 100)
+FaceTicTacToeButton4.AutoButtonColor = false
+FaceTicTacToeButton4.Text = ""
+FaceTicTacToeButton4.TextSize = 999
+FaceTicTacToeButton4.TextColor3 = Color3.fromRGB(0, 0, 255)
+
+TicTacToeButton5.Name = "TicTacToeButton5"
+TicTacToeButton5.Parent = CoreFrame
+TicTacToeButton5.BackgroundTransparency = 1
+TicTacToeButton5.Position = UDim2.new(0, 565, 0, 100)
+TicTacToeButton5.Size = UDim2.new(0, 100, 0, 100)
+TicTacToeButton5.AutoButtonColor = false
+TicTacToeButton5.Image = "rbxassetid://0"
+
+FaceTicTacToeButton5.Name = "FaceTicTacToeButton5"
+FaceTicTacToeButton5.Parent = CoreFrame
+FaceTicTacToeButton5.BackgroundTransparency = 1
+FaceTicTacToeButton5.Position = UDim2.new(0, 565, 0, 100)
+FaceTicTacToeButton5.Size = UDim2.new(0, 100, 0, 100)
+FaceTicTacToeButton5.AutoButtonColor = false
+FaceTicTacToeButton5.Text = ""
+FaceTicTacToeButton5.TextSize = 999
+FaceTicTacToeButton5.TextColor3 = Color3.fromRGB(0, 0, 255)
+
+TicTacToeButton6.Name = "TicTacToeButton6"
+TicTacToeButton6.Parent = CoreFrame
+TicTacToeButton6.BackgroundTransparency = 1
+TicTacToeButton6.Position = UDim2.new(0, 295, 0, 240)
+TicTacToeButton6.Size = UDim2.new(0, 100, 0, 100)
+TicTacToeButton6.AutoButtonColor = false
+TicTacToeButton6.Image = "rbxassetid://0"
+
+FaceTicTacToeButton6.Name = "FaceTicTacToeButton6"
+FaceTicTacToeButton6.Parent = CoreFrame
+FaceTicTacToeButton6.BackgroundTransparency = 1
+FaceTicTacToeButton6.Position = UDim2.new(0, 295, 0, 240)
+FaceTicTacToeButton6.Size = UDim2.new(0, 100, 0, 100)
+FaceTicTacToeButton6.AutoButtonColor = false
+FaceTicTacToeButton6.Text = ""
+FaceTicTacToeButton6.TextSize = 999
+FaceTicTacToeButton6.TextColor3 = Color3.fromRGB(0, 0, 255)
+
+TicTacToeButton7.Name = "TicTacToeButton7"
+TicTacToeButton7.Parent = CoreFrame
+TicTacToeButton7.BackgroundTransparency = 1
+TicTacToeButton7.Position = UDim2.new(0, 565, 0, 240)
+TicTacToeButton7.Size = UDim2.new(0, 100, 0, 100)
+TicTacToeButton7.AutoButtonColor = false
+TicTacToeButton7.Image = "rbxassetid://0"
+
+FaceTicTacToeButton7.Name = "FaceTicTacToeButton7"
+FaceTicTacToeButton7.Parent = CoreFrame
+FaceTicTacToeButton7.BackgroundTransparency = 1
+FaceTicTacToeButton7.Position = UDim2.new(0, 565, 0, 240)
+FaceTicTacToeButton7.Size = UDim2.new(0, 100, 0, 100)
+FaceTicTacToeButton7.AutoButtonColor = false
+FaceTicTacToeButton7.Text = ""
+FaceTicTacToeButton7.TextSize = 999
+FaceTicTacToeButton7.TextColor3 = Color3.fromRGB(0, 0, 255)
+
+TicTacToeButton8.Name = "TicTacToeButton8"
+TicTacToeButton8.Parent = CoreFrame
+TicTacToeButton8.BackgroundTransparency = 1
+TicTacToeButton8.Position = UDim2.new(0, 565, 0, 380)
+TicTacToeButton8.Size = UDim2.new(0, 100, 0, 100)
+TicTacToeButton8.AutoButtonColor = false
+TicTacToeButton8.Image = "rbxassetid://0"
+
+FaceTicTacToeButton8.Name = "FaceTicTacToeButton8"
+FaceTicTacToeButton8.Parent = CoreFrame
+FaceTicTacToeButton8.BackgroundTransparency = 1
+FaceTicTacToeButton8.Position = UDim2.new(0, 565, 0, 380)
+FaceTicTacToeButton8.Size = UDim2.new(0, 100, 0, 100)
+FaceTicTacToeButton8.AutoButtonColor = false
+FaceTicTacToeButton8.Text = ""
+FaceTicTacToeButton8.TextSize = 999
+FaceTicTacToeButton8.TextColor3 = Color3.fromRGB(0, 0, 255)
+
+TicTacToeButton9.Name = "TicTacToeButton9"
+TicTacToeButton9.Parent = CoreFrame
+TicTacToeButton9.BackgroundTransparency = 1
+TicTacToeButton9.Position = UDim2.new(0, 295, 0, 380)
+TicTacToeButton9.Size = UDim2.new(0, 100, 0, 100)
+TicTacToeButton9.AutoButtonColor = false
+TicTacToeButton9.Image = "rbxassetid://0"
+
+FaceTicTacToeButton9.Name = "FaceTicTacToeButton9"
+FaceTicTacToeButton9.Parent = CoreFrame
+FaceTicTacToeButton9.BackgroundTransparency = 1
+FaceTicTacToeButton9.Position = UDim2.new(0, 295, 0, 380)
+FaceTicTacToeButton9.Size = UDim2.new(0, 100, 0, 100)
+FaceTicTacToeButton9.AutoButtonColor = false
+FaceTicTacToeButton9.Text = ""
+FaceTicTacToeButton9.TextSize = 999
+FaceTicTacToeButton9.TextColor3 = Color3.fromRGB(0, 0, 255)
+
+FaceTicTacToeButton1.Visible = false
+FaceTicTacToeButton2.Visible = false
+FaceTicTacToeButton3.Visible = false
+FaceTicTacToeButton4.Visible = false
+FaceTicTacToeButton5.Visible = false
+FaceTicTacToeButton6.Visible = false
+FaceTicTacToeButton7.Visible = false
+FaceTicTacToeButton8.Visible = false
+FaceTicTacToeButton9.Visible = false
+
+DestroyGuiButton.Name = "DestroyGuiButton"
+DestroyGuiButton.Parent = CoreFrame
+DestroyGuiButton.BackgroundTransparency = 1
+DestroyGuiButton.Position = UDim2.new(0, 900, 0, 460)
+DestroyGuiButton.Size = UDim2.new(0, 50, 0, 50)
+DestroyGuiButton.Image = "rbxassetid://15997029966"
+DestroyGuiButton.ImageColor3 = Color3.fromRGB(0, 0, 0)
+DestroyGuiButton.Rotation = -90
+
+ClearField.Name = "ClearField"
+ClearField.Parent = CoreFrame
+ClearField.BackgroundTransparency = 1
+ClearField.Position = UDim2.new(0, 900, 0, 400)
+ClearField.Size = UDim2.new(0, 50, 0, 50)
+ClearField.Image = "rbxassetid://16670294395"
+ClearField.Rotation = -90
+
+LevelLabel.Name = "LevelLabel"
+LevelLabel.Parent = CoreFrame
+LevelLabel.BackgroundTransparency = 1
+LevelLabel.Position = UDim2.new(0, 800, 0, 100)
+LevelLabel.Size = UDim2.new(0, 100, 0, 100)
+LevelLabel.Font = Enum.Font.SourceSansBold
+LevelLabel.Text = LevelValue
+LevelLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+LevelLabel.TextSize = 999
+LevelLabel.Rotation = -90
+
+LevelLabel2.Name = "LevelLabel"
+LevelLabel2.Parent = CoreFrame
+LevelLabel2.BackgroundTransparency = 1
+LevelLabel2.Position = UDim2.new(0, 20, 0, 400)
+LevelLabel2.Size = UDim2.new(0, 100, 0, 100)
+LevelLabel2.Font = Enum.Font.SourceSansBold
+LevelLabel2.Text = LevelValue2
+LevelLabel2.TextColor3 = Color3.fromRGB(0, 0, 0)
+LevelLabel2.TextSize = 999
+LevelLabel2.Rotation = 90
+
+DestroyGuiButton.MouseButton1Click:Connect(function()
+ScreenGui:Destroy()
+end)
+
+ClearField.MouseButton1Click:Connect(function()
+TicTacToeButton1.Image = "rbxassetid://0"
+TicTacToeButton2.Image = "rbxassetid://0"
+TicTacToeButton3.Image = "rbxassetid://0"
+TicTacToeButton4.Image = "rbxassetid://0"
+TicTacToeButton5.Image = "rbxassetid://0"
+TicTacToeButton6.Image = "rbxassetid://0"
+TicTacToeButton7.Image = "rbxassetid://0"
+TicTacToeButton8.Image = "rbxassetid://0"
+TicTacToeButton9.Image = "rbxassetid://0"
+TicTacToeStartSymbol.Image = "rbxassetid://16669996240"
+WinValue = 0
+FaceTicTacToeButton1.Visible = false
+FaceTicTacToeButton2.Visible = false
+FaceTicTacToeButton3.Visible = false
+FaceTicTacToeButton4.Visible = false
+FaceTicTacToeButton5.Visible = false
+FaceTicTacToeButton6.Visible = false
+FaceTicTacToeButton7.Visible = false
+FaceTicTacToeButton8.Visible = false
+FaceTicTacToeButton9.Visible = false
+end)
+
+spawn(function()
+while wait() do
+if TicTacToeStartSymbol.Image == "rbxassetid://16669996240" then
+TicTacToeValue = 16669996240
+end
+if TicTacToeStartSymbol.Image == "rbxassetid://16669993918" then
+TicTacToeValue = 16669993918
+end
+LevelLabel.Text = LevelValue
+LevelLabel2.Text = LevelValue2
+end
+end)
+
+TicTacToeButton1.MouseButton1Click:Connect(function()
+ClickSound:Play()
+TicTacToeButton1.Size = UDim2.new(0, 0, 0, 0)
+TicTacToeButton1:TweenSize(UDim2.new(0, 100, 0, 100), 'Out', 'Bounce', 0.5, true)
+FaceTicTacToeButton1.Visible = true
+if TicTacToeValue == 16669996240 then
+TicTacToeButton1.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669993918"
+end
+
+if TicTacToeValue == 16669993918 then
+TicTacToeButton1.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669996240"
+end
+
+if TicTacToeButton1.Image == "rbxassetid://16669996240" and TicTacToeButton2.Image == "rbxassetid://16669996240" and TicTacToeButton3.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton1.Image == "rbxassetid://16669996240" and TicTacToeButton4.Image == "rbxassetid://16669996240" and TicTacToeButton5.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton1.Image == "rbxassetid://16669993918" and TicTacToeButton2.Image == "rbxassetid://16669993918" and TicTacToeButton3.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+WandWin.Visible = true
+end
+
+if TicTacToeButton1.Image == "rbxassetid://16669993918" and TicTacToeButton4.Image == "rbxassetid://16669993918" and TicTacToeButton5.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+end)
+
+TicTacToeButton2.MouseButton1Click:Connect(function()
+ClickSound:Play()
+TicTacToeButton2.Size = UDim2.new(0, 0, 0, 0)
+TicTacToeButton2:TweenSize(UDim2.new(0, 100, 0, 100), 'Out', 'Bounce', 0.5, true)
+FaceTicTacToeButton2.Visible = true
+if TicTacToeValue == 16669996240 then
+TicTacToeButton2.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669993918"
+end
+
+if TicTacToeValue == 16669993918 then
+TicTacToeButton2.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669996240"
+end
+
+if TicTacToeButton1.Image == "rbxassetid://16669996240" and TicTacToeButton2.Image == "rbxassetid://16669996240" and TicTacToeButton3.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669996240" and TicTacToeButton6.Image == "rbxassetid://16669996240" and TicTacToeButton7.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669996240" and TicTacToeButton4.Image == "rbxassetid://16669996240" and TicTacToeButton8.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669996240" and TicTacToeButton5.Image == "rbxassetid://16669996240" and TicTacToeButton9.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton1.Image == "rbxassetid://16669993918" and TicTacToeButton2.Image == "rbxassetid://16669993918" and TicTacToeButton3.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669993918" and TicTacToeButton6.Image == "rbxassetid://16669993918" and TicTacToeButton7.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669993918" and TicTacToeButton4.Image == "rbxassetid://16669993918" and TicTacToeButton8.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669993918" and TicTacToeButton5.Image == "rbxassetid://16669993918" and TicTacToeButton9.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+end)
+
+TicTacToeButton3.MouseButton1Click:Connect(function()
+ClickSound:Play()
+TicTacToeButton3.Size = UDim2.new(0, 0, 0, 0)
+TicTacToeButton3:TweenSize(UDim2.new(0, 100, 0, 100), 'Out', 'Bounce', 0.5, true)
+FaceTicTacToeButton3.Visible = true
+if TicTacToeValue == 16669996240 then
+TicTacToeButton3.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669993918"
+end
+
+if TicTacToeValue == 16669993918 then
+TicTacToeButton3.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669996240"
+end
+
+if TicTacToeButton1.Image == "rbxassetid://16669996240" and TicTacToeButton2.Image == "rbxassetid://16669996240" and TicTacToeButton3.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton3.Image == "rbxassetid://16669996240" and TicTacToeButton8.Image == "rbxassetid://16669996240" and TicTacToeButton9.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton1.Image == "rbxassetid://16669993918" and TicTacToeButton2.Image == "rbxassetid://16669993918" and TicTacToeButton3.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton3.Image == "rbxassetid://16669993918" and TicTacToeButton8.Image == "rbxassetid://16669993918" and TicTacToeButton9.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+end)
+
+TicTacToeButton4.MouseButton1Click:Connect(function()
+ClickSound:Play()
+TicTacToeButton4.Size = UDim2.new(0, 0, 0, 0)
+TicTacToeButton4:TweenSize(UDim2.new(0, 100, 0, 100), 'Out', 'Bounce', 0.5, true)
+FaceTicTacToeButton4.Visible = true
+if TicTacToeValue == 16669996240 then
+TicTacToeButton4.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669993918"
+end
+
+if TicTacToeValue == 16669993918 then
+TicTacToeButton4.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669996240"
+end
+
+if TicTacToeButton4.Image == "rbxassetid://16669996240" and TicTacToeButton6.Image == "rbxassetid://16669996240" and TicTacToeButton9.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton1.Image == "rbxassetid://16669996240" and TicTacToeButton4.Image == "rbxassetid://16669996240" and TicTacToeButton5.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669996240" and TicTacToeButton4.Image == "rbxassetid://16669996240" and TicTacToeButton8.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton4.Image == "rbxassetid://16669993918" and TicTacToeButton6.Image == "rbxassetid://16669993918" and TicTacToeButton9.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton1.Image == "rbxassetid://16669993918" and TicTacToeButton4.Image == "rbxassetid://16669993918" and TicTacToeButton5.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669993918" and TicTacToeButton4.Image == "rbxassetid://16669993918" and TicTacToeButton8.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+end)
+
+TicTacToeButton5.MouseButton1Click:Connect(function()
+ClickSound:Play()
+TicTacToeButton5.Size = UDim2.new(0, 0, 0, 0)
+TicTacToeButton5:TweenSize(UDim2.new(0, 100, 0, 100), 'Out', 'Bounce', 0.5, true)
+FaceTicTacToeButton5.Visible = true
+if TicTacToeValue == 16669996240 then
+TicTacToeButton5.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669993918"
+end
+
+if TicTacToeValue == 16669993918 then
+TicTacToeButton5.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669996240"
+end
+
+if TicTacToeButton5.Image == "rbxassetid://16669996240" and TicTacToeButton7.Image == "rbxassetid://16669996240" and TicTacToeButton8.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton1.Image == "rbxassetid://16669996240" and TicTacToeButton4.Image == "rbxassetid://16669996240" and TicTacToeButton5.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669996240" and TicTacToeButton5.Image == "rbxassetid://16669996240" and TicTacToeButton9.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton5.Image == "rbxassetid://16669993918" and TicTacToeButton7.Image == "rbxassetid://16669993918" and TicTacToeButton8.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton1.Image == "rbxassetid://16669993918" and TicTacToeButton4.Image == "rbxassetid://16669993918" and TicTacToeButton5.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669993918" and TicTacToeButton5.Image == "rbxassetid://16669993918" and TicTacToeButton9.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+end)
+
+TicTacToeButton6.MouseButton1Click:Connect(function()
+ClickSound:Play()
+TicTacToeButton6.Size = UDim2.new(0, 0, 0, 0)
+TicTacToeButton6:TweenSize(UDim2.new(0, 100, 0, 100), 'Out', 'Bounce', 0.5, true)
+FaceTicTacToeButton6.Visible = true
+if TicTacToeValue == 16669996240 then
+TicTacToeButton6.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669993918"
+end
+
+if TicTacToeValue == 16669993918 then
+TicTacToeButton6.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669996240"
+end
+
+if TicTacToeButton4.Image == "rbxassetid://16669996240" and TicTacToeButton6.Image == "rbxassetid://16669996240" and TicTacToeButton9.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669996240" and TicTacToeButton6.Image == "rbxassetid://16669996240" and TicTacToeButton7.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton4.Image == "rbxassetid://16669993918" and TicTacToeButton6.Image == "rbxassetid://16669993918" and TicTacToeButton9.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669993918" and TicTacToeButton6.Image == "rbxassetid://16669993918" and TicTacToeButton7.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+end)
+
+TicTacToeButton7.MouseButton1Click:Connect(function()
+ClickSound:Play()
+TicTacToeButton7.Size = UDim2.new(0, 0, 0, 0)
+TicTacToeButton7:TweenSize(UDim2.new(0, 100, 0, 100), 'Out', 'Bounce', 0.5, true)
+FaceTicTacToeButton7.Visible = true
+if TicTacToeValue == 16669996240 then
+TicTacToeButton7.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669993918"
+end
+
+if TicTacToeValue == 16669993918 then
+TicTacToeButton7.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669996240"
+end
+
+if TicTacToeButton5.Image == "rbxassetid://16669996240" and TicTacToeButton7.Image == "rbxassetid://16669996240" and TicTacToeButton8.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669996240" and TicTacToeButton6.Image == "rbxassetid://16669996240" and TicTacToeButton7.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton5.Image == "rbxassetid://16669993918" and TicTacToeButton7.Image == "rbxassetid://16669993918" and TicTacToeButton8.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669993918" and TicTacToeButton6.Image == "rbxassetid://16669993918" and TicTacToeButton7.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+end)
+
+TicTacToeButton8.MouseButton1Click:Connect(function()
+ClickSound:Play()
+TicTacToeButton8.Size = UDim2.new(0, 0, 0, 0)
+TicTacToeButton8:TweenSize(UDim2.new(0, 100, 0, 100), 'Out', 'Bounce', 0.5, true)
+FaceTicTacToeButton8.Visible = true
+if TicTacToeValue == 16669996240 then
+TicTacToeButton8.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669993918"
+end
+
+if TicTacToeValue == 16669993918 then
+TicTacToeButton8.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669996240"
+end
+
+if TicTacToeButton5.Image == "rbxassetid://16669996240" and TicTacToeButton7.Image == "rbxassetid://16669996240" and TicTacToeButton8.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton3.Image == "rbxassetid://16669996240" and TicTacToeButton8.Image == "rbxassetid://16669996240" and TicTacToeButton9.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669996240" and TicTacToeButton4.Image == "rbxassetid://16669996240" and TicTacToeButton8.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton5.Image == "rbxassetid://16669993918" and TicTacToeButton7.Image == "rbxassetid://16669993918" and TicTacToeButton8.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton3.Image == "rbxassetid://16669993918" and TicTacToeButton8.Image == "rbxassetid://16669993918" and TicTacToeButton9.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669993918" and TicTacToeButton4.Image == "rbxassetid://16669993918" and TicTacToeButton8.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+end)
+
+TicTacToeButton9.MouseButton1Click:Connect(function()
+ClickSound:Play()
+TicTacToeButton9.Size = UDim2.new(0, 0, 0, 0)
+TicTacToeButton9:TweenSize(UDim2.new(0, 100, 0, 100), 'Out', 'Bounce', 0.5, true)
+FaceTicTacToeButton9.Visible = true
+if TicTacToeValue == 16669996240 then
+TicTacToeButton9.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669993918"
+end
+
+if TicTacToeValue == 16669993918 then
+TicTacToeButton9.Image = "rbxassetid://"..TicTacToeValue
+TicTacToeStartSymbol.Image = "rbxassetid://16669996240"
+end
+
+if TicTacToeButton4.Image == "rbxassetid://16669996240" and TicTacToeButton6.Image == "rbxassetid://16669996240" and TicTacToeButton9.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton3.Image == "rbxassetid://16669996240" and TicTacToeButton8.Image == "rbxassetid://16669996240" and TicTacToeButton9.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669996240" and TicTacToeButton5.Image == "rbxassetid://16669996240" and TicTacToeButton9.Image == "rbxassetid://16669996240" then
+WinSound:Play()
+LevelValue = LevelValue + 1
+end
+
+if TicTacToeButton4.Image == "rbxassetid://16669993918" and TicTacToeButton6.Image == "rbxassetid://16669993918" and TicTacToeButton9.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton3.Image == "rbxassetid://16669993918" and TicTacToeButton8.Image == "rbxassetid://16669993918" and TicTacToeButton9.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+
+if TicTacToeButton2.Image == "rbxassetid://16669993918" and TicTacToeButton5.Image == "rbxassetid://16669993918" and TicTacToeButton9.Image == "rbxassetid://16669993918" then
+WinSound:Play()
+LevelValue2 = LevelValue2 + 1
+end
+end)
