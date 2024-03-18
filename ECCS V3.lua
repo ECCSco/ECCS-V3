@@ -217,6 +217,7 @@ end
  
 UIGui.Name = "UIGui"
 UIGui.Parent = game.CoreGui
+UIGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 game.CoreGui.UIGui.Enabled = true
  
 Blur.Size = 0
