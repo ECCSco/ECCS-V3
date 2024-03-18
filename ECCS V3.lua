@@ -217,8 +217,6 @@ end
  
 UIGui.Name = "UIGui"
 UIGui.Parent = game.CoreGui
-UIGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-game.CoreGui.TopBarApp.TopBarFrame.LeftFrame.ChatIcon.Size = UDim2.new(0, 32, 1, 0)
 game.CoreGui.UIGui.Enabled = true
  
 Blur.Size = 0
