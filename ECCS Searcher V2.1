@@ -1630,7 +1630,11 @@ writefile("ES.ECCS", ""..ExecutorTextBox.Text)
 		   setclipboard(v.script)
 	       end)
 			setHoverTransition(newScript.ExecuteButton.BackgroundColor3, Color3.new(0, 0, 0), newScript.ExecuteButton)
-
+newScript.DescScriptButton.MouseButton1Click:Connect(function()
+UIClick:Play()
+ScriptListFrame.Visible = true
+InfoBoxDescription.Visible = false
+end)
 			newScript.CopyLinkButton.MouseButton1Click:Connect(function()
             setclipboard("https://scriptblox.com/script/".. v.slug)
             end)
@@ -1697,12 +1701,6 @@ gquery = UIGui.MainFrame.SearchBox.Text
 		refreshScripts(scriptsTbl)
 end)
 
-
-DescScriptButton.MouseButton1Click:Connect(function()
-UIClick:Play()
-ScriptListFrame.Visible = true
-InfoBoxDescription.Visible = false
-end)
 
 local gui = MainFrame
 
