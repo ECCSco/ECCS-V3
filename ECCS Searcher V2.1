@@ -146,6 +146,8 @@ local OpenInExecutorButton = Instance.new("TextButton")
 local OpenInExecutorButtonUICorner = Instance.new("UICorner")
 local OpenInExecutorButton_2 = Instance.new("TextButton")
 local OpenInExecutorButtonUICorner_2 = Instance.new("UICorner")
+local PasteScriptButton = Instance.new("TextButton")
+local PasteScriptButtonUICorner = Instance.new("UICorner")
 
 local Region, Country = pcall(function()
 return LocalizationService:GetCountryRegionForPlayerAsync(game.Players.LocalPlayer)
@@ -192,10 +194,11 @@ MainFrame.Parent = UIGui
 MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 MainFrame.BackgroundTransparency = 0.7
-MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+MainFrame.Position = UDim2.new(0.5, 0, -0.5, 0)
 MainFrame.Size = UDim2.new(0, 450, 0, 400)
 MainFrame.ZIndex = 2
 MainFrame.Image = "rbxassetid://16788870379"
+MainFrame:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.3)
 
 UIAspectRatioConstraint.Parent = MainFrame
 UIAspectRatioConstraint.AspectRatio = 1.778
@@ -354,6 +357,7 @@ DevelopersButtonUICorner.CornerRadius = UDim.new(0, 12)
 
 DevelopersButton.MouseButton1Click:Connect(function()
 UIClick:Play()
+PasteScriptButton.Visible = false
 ScriptListFrame.Visible = false
 PlayerDataFrame.Visible = false
 ExecutorMenuScrollingFrame.Visible = false
@@ -427,6 +431,7 @@ DevelopersFrame.Visible = false
 ExecutorMenuScrollingFrame.Visible = true
 ClearTextBoxButton.Visible = true
 CopyTextBoxButton.Visible = true
+PasteScriptButton.Visible = true
 ExecuteTextBoxButton.Visible = true
 InfoBoxDescription.Visible = false
 PlayerIcon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -474,7 +479,7 @@ ClearTextBoxButton.Name = "ClearTextBoxButton"
 ClearTextBoxButton.Parent = MainFrame
 ClearTextBoxButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ClearTextBoxButton.Position = UDim2.new(0, 95, 0.75, 10)
-ClearTextBoxButton.Size = UDim2.new(0, 100, 0, 30)
+ClearTextBoxButton.Size = UDim2.new(0, 80, 0, 30)
 ClearTextBoxButton.AutoButtonColor = false
 ClearTextBoxButton.Font = Enum.Font.Code
 ClearTextBoxButton.Text = "Clear"
@@ -496,8 +501,8 @@ ClearTextBoxButton.Visible = false
 CopyTextBoxButton.Name = "CopyTextBoxButton"
 CopyTextBoxButton.Parent = MainFrame
 CopyTextBoxButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-CopyTextBoxButton.Position = UDim2.new(0, 200, 0.75, 10)
-CopyTextBoxButton.Size = UDim2.new(0, 100, 0, 30)
+CopyTextBoxButton.Position = UDim2.new(0, 180, 0.75, 10)
+CopyTextBoxButton.Size = UDim2.new(0, 80, 0, 30)
 CopyTextBoxButton.AutoButtonColor = false
 CopyTextBoxButton.Font = Enum.Font.Code
 CopyTextBoxButton.Text = "Copy"
@@ -519,8 +524,8 @@ CopyTextBoxButton.Visible = false
 ExecuteTextBoxButton.Name = "ExecuteTextBoxButton"
 ExecuteTextBoxButton.Parent = MainFrame
 ExecuteTextBoxButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ExecuteTextBoxButton.Position = UDim2.new(0, 305, 0.75, 10)
-ExecuteTextBoxButton.Size = UDim2.new(0, 100, 0, 30)
+ExecuteTextBoxButton.Position = UDim2.new(0, 265, 0.75, 10)
+ExecuteTextBoxButton.Size = UDim2.new(0, 80, 0, 30)
 ExecuteTextBoxButton.AutoButtonColor = false
 ExecuteTextBoxButton.Font = Enum.Font.Code
 ExecuteTextBoxButton.Text = "Execute"
@@ -531,10 +536,30 @@ ExecuteTextBoxButton.BackgroundTransparency = 0.5
 ExecuteTextBoxButtonUICorner.CornerRadius = UDim.new(0, 12)
 ExecuteTextBoxButtonUICorner.Parent = ExecuteTextBoxButton
 
+PasteScriptButton.Name = "PasteScriptButton"
+PasteScriptButton.Parent = MainFrame
+PasteScriptButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+PasteScriptButton.Position = UDim2.new(0, 348, 0.75, 10)
+PasteScriptButton.Size = UDim2.new(0, 80, 0, 30)
+PasteScriptButton.AutoButtonColor = false
+PasteScriptButton.Font = Enum.Font.Code
+PasteScriptButton.Text = "Paste"
+PasteScriptButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+PasteScriptButton.TextSize = 20
+PasteScriptButton.BackgroundTransparency = 0.5
+PasteScriptButton.Visible = false
+PasteScriptButtonUICorner.CornerRadius = UDim.new(0, 12)
+PasteScriptButtonUICorner.Parent = PasteScriptButton
+
 ExecuteTextBoxButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 writefile("ES.ECCS", ""..ExecutorTextBox.Text)
 loadstring(ExecutorTextBox.Text)()
+end)
+
+PasteScriptButton.MouseButton1Click:Connect(function()
+UIClick:Play()
+ExecutorTextBox.Text = getclipboard()
 end)
 
 ExecuteTextBoxButton.Visible = false
@@ -562,6 +587,7 @@ PlayerIconUICorner.CornerRadius = UDim.new(0, 12)
 
 PlayerIcon.MouseButton1Click:Connect(function()
 UIClick:Play()
+PasteScriptButton.Visible = false
 ScriptListFrame.Visible = false
 PlayerDataFrame.Visible = true
 ExecutorMenuScrollingFrame.Visible = false
@@ -595,6 +621,7 @@ SearcherMenuButtonUICorner.CornerRadius = UDim.new(0, 12)
 
 SearcherMenuButton.MouseButton1Click:Connect(function()
 UIClick:Play()
+PasteScriptButton.Visible = false
 ScriptListFrame.Visible = true
 PlayerDataFrame.Visible = false
 ExecutorMenuScrollingFrame.Visible = false
