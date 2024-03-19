@@ -1678,6 +1678,7 @@ end
 UIGui.MainFrame.SearchBox.FocusLost:Connect(function(enterPressed)
 	if enterPressed then
 UIClick:Play()
+PasteScriptButton.Visible = false
 ScriptListFrame.Visible = true
 PlayerDataFrame.Visible = false
 ExecutorMenuScrollingFrame.Visible = false
@@ -1700,6 +1701,7 @@ end)
 
 SearchButton.MouseButton1Click:Connect(function()
 UIClick:Play()
+PasteScriptButton.Visible = false
 ScriptListFrame.Visible = true
 PlayerDataFrame.Visible = false
 ExecutorMenuScrollingFrame.Visible = false
