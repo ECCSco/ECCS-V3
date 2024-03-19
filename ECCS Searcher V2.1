@@ -62,7 +62,7 @@ local CopyScriptBloxLink = Instance.new("TextButton")
 local UICorner_17 = Instance.new("UICorner")
 local ExecuteButton_3 = Instance.new("TextButton")
 local UICorner_19 = Instance.new("UICorner")
-local InfoBoxDescription = Instance.new("TextLabel")
+local InfoBoxDescription = Instance.new("TextButton")
 local Comments = Instance.new("Frame")
 local UICorner_20 = Instance.new("UICorner")
 local Inner = Instance.new("Frame")
@@ -881,22 +881,6 @@ DescScriptButton_2.BackgroundTransparency = 0.7
 DescScriptButtonUICorner_2.CornerRadius = UDim.new(0, 12)
 DescScriptButtonUICorner_2.Parent = DescScriptButton_2
 
-CloseDescButton.Name = "CloseDescButton"
-CloseDescButton.Parent = InfoBoxDescription
-CloseDescButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-CloseDescButton.Position = UDim2.new(0.8, 0, 0.8, 0)
-CloseDescButton.Size = UDim2.new(0, 60, 0, 30)
-CloseDescButton.AutoButtonColor = false
-CloseDescButton.Font = Enum.Font.Code
-CloseDescButton.Text = "Close"
-CloseDescButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-CloseDescButton.TextSize = 22
-CloseDescButton.BackgroundTransparency = 0.7
-
-CloseDescButtonUICorner.CornerRadius = UDim.new(0, 12)
-CloseDescButtonUICorner.Parent = CloseDescButton
-
-
 OpenInExecutorButton.Name = "OpenInExecutorButton"
 OpenInExecutorButton.Parent = ScriptFrame
 OpenInExecutorButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -1714,7 +1698,7 @@ gquery = UIGui.MainFrame.SearchBox.Text
 end)
 
 
-CloseDescButton.MouseButton1Click:Connect(function()
+DescScriptButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 ScriptListFrame.Visible = true
 InfoBoxDescription.Visible = false
