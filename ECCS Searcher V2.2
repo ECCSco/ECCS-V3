@@ -1247,7 +1247,7 @@ Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 MainFrame:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.3)
 end
 end
-
+local getfakeasset = getcustomasset or getsynasset
 local HttpService = game:GetService("HttpService")
 local TextService = game:GetService("TextService")
 
@@ -1278,7 +1278,9 @@ function fastmodeExec(func)
 		func()
 	end
 end
-
+function _if(a, b, c)
+    if a then return b else return c end
+end
 function fetchScripts(query, page)
 	page = page or 1
 	query = HttpService:UrlEncode(query)
