@@ -115,20 +115,10 @@ local AutoExecuteButton_2 = Instance.new("TextButton")
 local AutoExecuteButtonUICorner_2 = Instance.new("UICorner")
 local Hint = Instance.new("TextLabel")
 local HintUICorner = Instance.new("UICorner")
-local StartUp = Instance.new("StringValue")
-local StartUpFrame = Instance.new("ImageButton")
-local NextPageButton = Instance.new("ImageButton")
-local Image1 = "rbxassetid://16975200741"
-local Image2 = "rbxassetid://16975203218"
-local Image3 = "rbxassetid://16975205513"
-local Image4 = "rbxassetid://16975208083"
-local StartUpSound = Instance.new("Sound")
 
 local Region, Country = pcall(function()
 return LocalizationService:GetCountryRegionForPlayerAsync(game.Players.LocalPlayer)
 end)
-
-StartUp.Value = "On"
 
 UIClick.Parent = game.Workspace
 UIClick.SoundId = "rbxassetid://9119707097"
@@ -144,55 +134,10 @@ UINoScriptsFound.Looped = false
 UINoScriptsFound.Volume = 1
 UINoScriptsFound:Stop()
 
-StartUpSound.Parent = game.Workspace
-StartUpSound.SoundId = "rbxassetid://3379455742"
-StartUpSound.Playing = true
-StartUpSound.Looped = false
-StartUpSound.Volume = 1
-StartUpSound:Stop()
-
 UIGui.Name = "UIGui"
 UIGui.Parent = game.CoreGui
 UIGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 game.CoreGui.UIGui.Enabled = true
-
-StartUpFrame.Parent = UIGui
-StartUpFrame.Size = UDim2.new(1,0,1.8,100)
-StartUpFrame.Position = UDim2.new(0,0,0,-220)
-StartUpFrame.Image = Image1
-StartUpFrame.Visible = false
-
-NextPageButton.Parent = StartUpFrame
-NextPageButton.Size = UDim2.new(0, 100, 0, 50)
-NextPageButton.Position = UDim2.new(0, 700, 0, 540)
-NextPageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-NextPageButton.BackgroundTransparency = 1
-
-NextPageButton.MouseButton1Click:Connect(function()
-UIClick:Play()
-if StartUpFrame.Image == Image1 then
-StartUpFrame.Size = UDim2.new(1,0,1.3,100)
-StartUpFrame.Position = UDim2.new(0,0,0,-140)
-NextPageButton.Position = UDim2.new(0, 710, 0, 490)
-StartUpFrame.Image = Image2
-else
-if StartUpFrame.Image == Image2 then
-StartUpFrame.Image = Image3
-else 
-if StartUpFrame.Image == Image3 then
-StartUpFrame.Image = Image4
-else
-if StartUpFrame.Image == Image4 then
-MainFrame:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.3)
-OpenCloseSearcherButton.Visible = true
-Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
-StartUpFrame:Destroy()
-StartUpSound:Play()
-end
-end
-end
-end
-end)
 
 OpenCloseSearcherButton.Parent = UIGui
 OpenCloseSearcherButton.Size = UDim2.new(0, 43.5, 0, 43.5)
@@ -207,8 +152,6 @@ OpenCloseSearcherButton.AutoButtonColor = false
 
 OpenCloseSearcherButtonUICorner.Parent = OpenCloseSearcherButton
 OpenCloseSearcherButtonUICorner.CornerRadius = UDim.new(1, 0)
-
-OpenCloseSearcherButton.Visible = false
 
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = UIGui
@@ -1223,30 +1166,13 @@ if not isfile("ECCS_Searcher_V2.2/AutoExecute.ECCS") then
 writefile("ECCS_Searcher_V2.2/AutoExecute.ECCS", " ")
 end
 
-if not isfile("ECCS_Searcher_V2.2/StartUp.ECCS") then
-writefile("ECCS_Searcher_V2.2/StartUp.ECCS", StartUp.Value)
-end
-
 local File1 = readfile("ECCS_Searcher_V2.2/Executor.ECCS")
 ExecutorTextBox.Text = File1
 
 local File2 = readfile("ECCS_Searcher_V2.2/AutoExecute.ECCS")
 loadstring(File2)()
 
-local File3= readfile("ECCS_Searcher_V2.2/StartUp.ECCS")
-StartUp.Value = File3
 
-if StartUp.Value == "On" then
-writefile("ECCS_Searcher_V2.2/StartUp.ECCS", "Off")
-StartUpFrame.Visible = true
-else
-if StartUp.Value == "Off" then
-StartUpFrame:Destroy()
-OpenCloseSearcherButton.Visible = true
-Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
-MainFrame:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.3)
-end
-end
 local getfakeasset = getcustomasset or getsynasset
 local HttpService = game:GetService("HttpService")
 local TextService = game:GetService("TextService")
@@ -1463,7 +1389,8 @@ ScriptListFrame.Visible = true
 InfoBoxDescription.Visible = false
 end)
 local gui = MainFrame
-
+MainFrame:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.3)
+Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 local dragging
 local dragInput
 local dragStart
