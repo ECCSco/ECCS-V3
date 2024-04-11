@@ -1,0 +1,739 @@
+if game:GetService("CoreGui"):FindFirstChild("BloxBook") then
+game:GetService("CoreGui"):FindFirstChild("BloxBook"):Destroy()
+end
+BloxBook = Instance.new("ScreenGui")
+MainFrame = Instance.new("Frame")
+UICorner = Instance.new("UICorner")
+TopBarFrame = Instance.new("Frame")
+UICorner_2 = Instance.new("UICorner")
+SearchBox = Instance.new("TextBox")
+UICorner_3 = Instance.new("UICorner")
+ScriptListFrame = Instance.new("ScrollingFrame")
+UIPadding = Instance.new("UIPadding")
+Scripts = Instance.new("Folder")
+UIGridLayout = Instance.new("UIGridLayout")
+ScriptFrame = Instance.new("Frame")
+UICorner_6 = Instance.new("UICorner")
+ScriptTitle = Instance.new("TextLabel")
+InfoButton = Instance.new("TextButton")
+UICorner_8 = Instance.new("UICorner")
+ScriptAuthor = Instance.new("TextLabel")
+ScriptGame = Instance.new("TextLabel")
+VerifiedScriptFrame = Instance.new("Frame")
+UICorner_9 = Instance.new("UICorner")
+ScriptTitle_2 = Instance.new("TextLabel")
+VerifiedIcon = Instance.new("ImageLabel")
+InfoButton_2 = Instance.new("TextButton")
+UICorner_11 = Instance.new("UICorner")
+ScriptAuthor_2 = Instance.new("TextLabel")
+ScriptGame_2 = Instance.new("TextLabel")
+InfoBox = Instance.new("ScrollingFrame")
+UIListLayout = Instance.new("UIListLayout")
+UICorner_13 = Instance.new("UICorner")
+Info = Instance.new("Frame")
+PreviewImage = Instance.new("ImageLabel")
+UICorner_14 = Instance.new("UICorner")
+Author = Instance.new("Frame")
+InfoBoxAuthor = Instance.new("TextLabel")
+ProfilePicture = Instance.new("ImageLabel")
+UICorner_15 = Instance.new("UICorner")
+Title_2 = Instance.new("Frame")
+InfoBoxTitle = Instance.new("TextLabel")
+Game = Instance.new("TextLabel")
+Buttons = Instance.new("Frame")
+UIListLayout_2 = Instance.new("UIListLayout")
+Close = Instance.new("TextButton")
+UICorner_16 = Instance.new("UICorner")
+InfoBoxDescription = Instance.new("TextLabel")
+Comments = Instance.new("Frame")
+UICorner_20 = Instance.new("UICorner")
+Inner = Instance.new("Frame")
+UICorner_21 = Instance.new("UICorner")
+Line = Instance.new("Frame")
+CommentsText = Instance.new("TextLabel")
+Comments_2 = Instance.new("ScrollingFrame")
+Comment = Instance.new("Frame")
+Content = Instance.new("TextLabel")
+Author_2 = Instance.new("TextLabel")
+ProfilePicture_2 = Instance.new("ImageLabel")
+UICorner_22 = Instance.new("UICorner")
+UIListLayout_3 = Instance.new("UIListLayout")
+CloseFrame = Instance.new("ImageButton")
+PreviewImage_2 = Instance.new("ImageLabel")
+PreviewImageUICorner_2 = Instance.new("UIcorner")
+
+BloxBook.Name = "BloxBook"
+BloxBook.Parent = game.CoreGui
+BloxBook.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+game.CoreGui.BloxBook.Enabled = true
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = BloxBook
+MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+MainFrame.Size = UDim2.new(0, 400, 0, 450)
+MainFrame.ZIndex = 2
+
+UICorner.CornerRadius = UDim.new(0, 12)
+UICorner.Parent = MainFrame
+
+SearchBox.Name = "SearchBox"
+SearchBox.Parent = MainFrame
+SearchBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+SearchBox.Position = UDim2.new(0, 5, 0, 5)
+SearchBox.Size = UDim2.new(0, 220, 0, 30)
+SearchBox.ClearTextOnFocus = false
+SearchBox.Font = Enum.Font.Gotham
+SearchBox.PlaceholderText = "Search"
+SearchBox.Text = ""
+SearchBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+SearchBox.TextScaled = true
+SearchBox.TextSize = 14.000
+SearchBox.TextWrapped = true
+
+UICorner_3.CornerRadius = UDim.new(0, 12)
+UICorner_3.Parent = SearchBox
+
+ScriptListFrame.Name = "ScriptListFrame"
+ScriptListFrame.Parent = MainFrame
+ScriptListFrame.Active = true
+ScriptListFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptListFrame.BackgroundTransparency = 1.000
+ScriptListFrame.BorderSizePixel = 0
+ScriptListFrame.Position = UDim2.new(0.035, 0, 0.08, 0)
+ScriptListFrame.Size = UDim2.new(0, 380, 0, 700)
+ScriptListFrame.ZIndex = 2
+ScriptListFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+UIPadding.Parent = ScriptListFrame
+UIPadding.PaddingBottom = UDim.new(0, 1)
+UIPadding.PaddingLeft = UDim.new(0, 0)
+UIPadding.PaddingRight = UDim.new(0, 0)
+UIPadding.PaddingTop = UDim.new(0, 1)
+
+Scripts.Name = "Scripts"
+Scripts.Parent = ScriptListFrame
+
+UIGridLayout.Parent = Scripts
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellPadding = UDim2.new(0, 10, 0, 10)
+UIGridLayout.CellSize = UDim2.new(0, 370, 0, 700)
+
+ScriptFrame.Name = "ScriptFrame"
+ScriptFrame.Parent = Scripts
+ScriptFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ScriptFrame.Size = UDim2.new(0, 370, 0, 600)
+
+UICorner_6.CornerRadius = UDim.new(0, 12)
+UICorner_6.Parent = ScriptFrame
+
+ScriptTitle.Name = "ScriptTitle"
+ScriptTitle.Parent = ScriptFrame
+ScriptTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptTitle.BackgroundTransparency = 1.000
+ScriptTitle.Position = UDim2.new(0, 10, 0, 10)
+ScriptTitle.Size = UDim2.new(0, 280, 0, 40)
+ScriptTitle.Font = Enum.Font.Gotham
+ScriptTitle.Text = "Script Title"
+ScriptTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScriptTitle.TextScaled = true
+ScriptTitle.TextSize = 14.000
+ScriptTitle.TextWrapped = true
+ScriptTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+InfoButton.Name = "InfoButton"
+InfoButton.Parent = ScriptFrame
+InfoButton.BackgroundColor3 = Color3.fromRGB(19, 24, 52)
+InfoButton.Position = UDim2.new(0.533333361, 0, 0.733333349, 0)
+InfoButton.Size = UDim2.new(0, 130, 0, 30)
+InfoButton.AutoButtonColor = false
+InfoButton.Font = Enum.Font.GothamBold
+InfoButton.Text = "Info"
+InfoButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfoButton.TextSize = 14.000
+
+UICorner_8.CornerRadius = UDim.new(0, 12)
+UICorner_8.Parent = InfoButton
+
+ScriptAuthor.Name = "ScriptAuthor"
+ScriptAuthor.Parent = ScriptFrame
+ScriptAuthor.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptAuthor.BackgroundTransparency = 1.000
+ScriptAuthor.Position = UDim2.new(0, 10, 0, 55)
+ScriptAuthor.Size = UDim2.new(0, 280, 0, 25)
+ScriptAuthor.Font = Enum.Font.Gotham
+ScriptAuthor.Text = "ScriptAuthor"
+ScriptAuthor.TextColor3 = Color3.fromRGB(192, 192, 192)
+ScriptAuthor.TextSize = 14.000
+ScriptAuthor.TextWrapped = true
+ScriptAuthor.TextXAlignment = Enum.TextXAlignment.Left
+
+ScriptGame.Name = "ScriptGame"
+ScriptGame.Parent = ScriptFrame
+ScriptGame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptGame.BackgroundTransparency = 1.000
+ScriptGame.Position = UDim2.new(0, 10, 0, 80)
+ScriptGame.Size = UDim2.new(0, 280, 0, 25)
+ScriptGame.Font = Enum.Font.Gotham
+ScriptGame.Text = "Game"
+ScriptGame.TextColor3 = Color3.fromRGB(192, 192, 192)
+ScriptGame.TextSize = 14.000
+ScriptGame.TextWrapped = true
+ScriptGame.TextXAlignment = Enum.TextXAlignment.Left
+
+VerifiedScriptFrame.Name = "VerifiedScriptFrame"
+VerifiedScriptFrame.Parent = Scripts
+VerifiedScriptFrame.BackgroundColor3 = Color3.fromRGB(39, 48, 88)
+VerifiedScriptFrame.Size = UDim2.new(0, 300, 0, 150)
+
+UICorner_9.CornerRadius = UDim.new(0, 12)
+UICorner_9.Parent = VerifiedScriptFrame
+
+ScriptTitle_2.Name = "ScriptTitle"
+ScriptTitle_2.Parent = VerifiedScriptFrame
+ScriptTitle_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptTitle_2.BackgroundTransparency = 1.000
+ScriptTitle_2.Position = UDim2.new(0, 50, 0, 10)
+ScriptTitle_2.Size = UDim2.new(0, 240, 0, 40)
+ScriptTitle_2.Font = Enum.Font.Gotham
+ScriptTitle_2.Text = "Script Title"
+ScriptTitle_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScriptTitle_2.TextScaled = true
+ScriptTitle_2.TextSize = 14.000
+ScriptTitle_2.TextWrapped = true
+ScriptTitle_2.TextXAlignment = Enum.TextXAlignment.Left
+
+VerifiedIcon.Name = "VerifiedIcon"
+VerifiedIcon.Parent = VerifiedScriptFrame
+VerifiedIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+VerifiedIcon.BackgroundTransparency = 1.000
+VerifiedIcon.Position = UDim2.new(0, 10, 0, 15)
+VerifiedIcon.Size = UDim2.new(0, 30, 0, 30)
+VerifiedIcon.Image = "rbxassetid://"
+
+InfoButton_2.Name = "InfoButton"
+InfoButton_2.Parent = VerifiedScriptFrame
+InfoButton_2.BackgroundColor3 = Color3.fromRGB(19, 24, 52)
+InfoButton_2.Position = UDim2.new(0.533333361, 0, 0.733333349, 0)
+InfoButton_2.Size = UDim2.new(0, 130, 0, 30)
+InfoButton_2.AutoButtonColor = false
+InfoButton_2.Font = Enum.Font.GothamBold
+InfoButton_2.Text = "Info"
+InfoButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfoButton_2.TextSize = 14.000
+
+UICorner_11.CornerRadius = UDim.new(0, 12)
+UICorner_11.Parent = InfoButton_2
+
+ScriptAuthor_2.Name = "ScriptAuthor"
+ScriptAuthor_2.Parent = VerifiedScriptFrame
+ScriptAuthor_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptAuthor_2.BackgroundTransparency = 1.000
+ScriptAuthor_2.Position = UDim2.new(0.0399999991, 0, 0.366666675, 0)
+ScriptAuthor_2.Size = UDim2.new(0, 280, 0, 25)
+ScriptAuthor_2.Font = Enum.Font.Gotham
+ScriptAuthor_2.Text = "by ScriptAuthor"
+ScriptAuthor_2.TextColor3 = Color3.fromRGB(192, 192, 192)
+ScriptAuthor_2.TextSize = 14.000
+ScriptAuthor_2.TextWrapped = true
+ScriptAuthor_2.TextXAlignment = Enum.TextXAlignment.Left
+
+ScriptGame_2.Name = "ScriptGame"
+ScriptGame_2.Parent = VerifiedScriptFrame
+ScriptGame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptGame_2.BackgroundTransparency = 1.000
+ScriptGame_2.Position = UDim2.new(0, 10, 0, 80)
+ScriptGame_2.Size = UDim2.new(0, 280, 0, 25)
+ScriptGame_2.Font = Enum.Font.Gotham
+ScriptGame_2.Text = "Game"
+ScriptGame_2.TextColor3 = Color3.fromRGB(192, 192, 192)
+ScriptGame_2.TextSize = 14.000
+ScriptGame_2.TextWrapped = true
+ScriptGame_2.TextXAlignment = Enum.TextXAlignment.Left
+
+InfoBox.Name = "InfoBox"
+InfoBox.Parent = MainFrame
+InfoBox.Active = true
+InfoBox.BackgroundColor3 = Color3.fromRGB(13, 18, 39)
+InfoBox.BorderSizePixel = 0
+InfoBox.Position = UDim2.new(0, 10, 0, 50)
+InfoBox.Size = UDim2.new(0, 995, 0, 510)
+InfoBox.ZIndex = 3
+InfoBox.CanvasSize = UDim2.new(0, 0, 0, 0)
+InfoBox.VerticalScrollBarInset = Enum.ScrollBarInset.ScrollBar
+
+UIListLayout.Parent = InfoBox
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 10)
+
+UICorner_13.CornerRadius = UDim.new(0, 12)
+UICorner_13.Parent = InfoBox
+
+Info.Name = "Info"
+Info.Parent = InfoBox
+Info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Info.BackgroundTransparency = 1.000
+Info.Size = UDim2.new(0, 995, 0, 207)
+
+PreviewImage.Name = "PreviewImage"
+PreviewImage.Parent = ScriptFrame
+PreviewImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PreviewImage.BackgroundTransparency = 1
+PreviewImage.Position = UDim2.new(0, 5, 0, 5)
+PreviewImage.Size = UDim2.new(0, 480, 0, 270)
+PreviewImage.Image = "rbxassetid://17093295752"
+
+UICorner_14.CornerRadius = UDim.new(0, 24)
+UICorner_14.Parent = PreviewImage
+
+PreviewImage_2.Name = "PreviewImage"
+PreviewImage_2.Parent = VerifiedScriptFrame
+PreviewImage_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PreviewImage_2.BackgroundTransparency = 1
+PreviewImage_2.Position = UDim2.new(0, 5, 0, 5)
+PreviewImage_2.Size = UDim2.new(0, 480, 0, 270)
+PreviewImage_2.Image = "rbxassetid://17093295752"
+
+PreviewImageUICorner_2.CornerRadius = UDim.new(0, 24)
+PreviewImageUICorner_2.Parent = PreviewImage_2
+
+Author.Name = "Author"
+Author.Parent = Info
+Author.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Author.BackgroundTransparency = 1.000
+Author.Position = UDim2.new(0, 395, 0, 110)
+Author.Size = UDim2.new(0, 250, 0, 40)
+
+InfoBoxAuthor.Name = "InfoBoxAuthor"
+InfoBoxAuthor.Parent = Author
+InfoBoxAuthor.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+InfoBoxAuthor.BackgroundTransparency = 1.000
+InfoBoxAuthor.BorderSizePixel = 0
+InfoBoxAuthor.Position = UDim2.new(0, 45, 0, 0)
+InfoBoxAuthor.Size = UDim2.new(0, 150, 0, 40)
+InfoBoxAuthor.Font = Enum.Font.Gotham
+InfoBoxAuthor.Text = "Author"
+InfoBoxAuthor.TextColor3 = Color3.fromRGB(140, 125, 233)
+InfoBoxAuthor.TextSize = 20.000
+InfoBoxAuthor.TextWrapped = true
+InfoBoxAuthor.TextXAlignment = Enum.TextXAlignment.Left
+
+ProfilePicture.Name = "ProfilePicture"
+ProfilePicture.Parent = Author
+ProfilePicture.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ProfilePicture.BackgroundTransparency = 1.000
+ProfilePicture.Size = UDim2.new(0, 40, 0, 40)
+ProfilePicture.Image = "rbxassetid://17093333262"
+
+UICorner_15.CornerRadius = UDim.new(1, 0)
+UICorner_15.Parent = ProfilePicture
+
+Title_2.Name = "Title"
+Title_2.Parent = Info
+Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.BackgroundTransparency = 1.000
+Title_2.Position = UDim2.new(0, 395, 0, 10)
+Title_2.Size = UDim2.new(0, 550, 0, 50)
+
+InfoBoxTitle.Name = "InfoBoxTitle"
+InfoBoxTitle.Parent = Title_2
+InfoBoxTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+InfoBoxTitle.BackgroundTransparency = 1.000
+InfoBoxTitle.Size = UDim2.new(0, 550, 0, 50)
+InfoBoxTitle.Font = Enum.Font.GothamSemibold
+InfoBoxTitle.Text = "Script Title"
+InfoBoxTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfoBoxTitle.TextScaled = true
+InfoBoxTitle.TextSize = 14.000
+InfoBoxTitle.TextWrapped = true
+InfoBoxTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+Game.Name = "Game"
+Game.Parent = Info
+Game.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Game.BackgroundTransparency = 1.000
+Game.Position = UDim2.new(0, 395, 0, 70)
+Game.Size = UDim2.new(0, 250, 0, 25)
+Game.Font = Enum.Font.Gotham
+Game.Text = "Game Name"
+Game.TextColor3 = Color3.fromRGB(255, 255, 255)
+Game.TextSize = 22.000
+Game.TextXAlignment = Enum.TextXAlignment.Left
+
+Buttons.Name = "Buttons"
+Buttons.Parent = InfoBox
+Buttons.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Buttons.BackgroundTransparency = 1.000
+Buttons.Position = UDim2.new(0.0100502511, 0, 0.911764622, 0)
+Buttons.Size = UDim2.new(0, 975, 0, 35)
+
+UIListLayout_2.Parent = Buttons
+UIListLayout_2.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_2.Padding = UDim.new(0, 40)
+
+Close.Name = "Close"
+Close.Parent = Buttons
+Close.BackgroundColor3 = Color3.fromRGB(19, 24, 52)
+Close.LayoutOrder = 3
+Close.Position = UDim2.new(0, 735, 0, 465)
+Close.Size = UDim2.new(0, 200, 0, 35)
+Close.ZIndex = 2
+Close.AutoButtonColor = false
+Close.Font = Enum.Font.GothamBold
+Close.Text = "Close"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextSize = 14.000
+
+UICorner_16.CornerRadius = UDim.new(0, 12)
+UICorner_16.Parent = Close
+
+
+InfoBoxDescription.Name = "InfoBoxDescription"
+InfoBoxDescription.Parent = InfoBox
+InfoBoxDescription.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+InfoBoxDescription.BackgroundTransparency = 1.000
+InfoBoxDescription.Size = UDim2.new(0, 960, 0, 0)
+InfoBoxDescription.Font = Enum.Font.Gotham
+InfoBoxDescription.Text = "Desc"
+InfoBoxDescription.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfoBoxDescription.TextSize = 20.000
+InfoBoxDescription.TextWrapped = true
+InfoBoxDescription.TextXAlignment = Enum.TextXAlignment.Left
+InfoBoxDescription.TextYAlignment = Enum.TextYAlignment.Top
+
+Comments.Name = "Comments"
+Comments.Parent = InfoBox
+Comments.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Comments.Size = UDim2.new(0, 950, 0, 200)
+
+UICorner_20.CornerRadius = UDim.new(0, 12)
+UICorner_20.Parent = Comments
+
+Inner.Name = "Inner"
+Inner.Parent = Comments
+Inner.AnchorPoint = Vector2.new(0.5, 0.5)
+Inner.BackgroundColor3 = Color3.fromRGB(13, 18, 39)
+Inner.Position = UDim2.new(0.5, 0, 0.5, 0)
+Inner.Size = UDim2.new(0, 946, 0, 196)
+
+UICorner_21.CornerRadius = UDim.new(0, 12)
+UICorner_21.Parent = Inner
+
+Line.Name = "Line"
+Line.Parent = Inner
+Line.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Line.BorderSizePixel = 0
+Line.LayoutOrder = 1
+Line.Position = UDim2.new(0, 0, 0, 25)
+Line.Size = UDim2.new(0, 946, 0, 2)
+
+CommentsText.Name = "CommentsText"
+CommentsText.Parent = Inner
+CommentsText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CommentsText.BackgroundTransparency = 1.000
+CommentsText.Size = UDim2.new(0, 976, 0, 25)
+CommentsText.Font = Enum.Font.GothamBold
+CommentsText.Text = "Comments"
+CommentsText.TextColor3 = Color3.fromRGB(255, 255, 255)
+CommentsText.TextSize = 14.000
+
+Comments_2.Name = "Comments"
+Comments_2.Parent = Inner
+Comments_2.Active = true
+Comments_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Comments_2.BackgroundTransparency = 1.000
+Comments_2.BorderSizePixel = 0
+Comments_2.Position = UDim2.new(0, 5, 0, 30)
+Comments_2.Size = UDim2.new(0, 935, 0, 160)
+Comments_2.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+Comment.Name = "Comment"
+Comment.Parent = Comments_2
+Comment.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Comment.BackgroundTransparency = 1.000
+Comment.Size = UDim2.new(0, 920, 0, 50)
+
+Content.Name = "Content"
+Content.Parent = Comment
+Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Content.BackgroundTransparency = 1.000
+Content.Position = UDim2.new(0, 50, 0, 30)
+Content.Size = UDim2.new(0, 880, 0, 20)
+Content.Font = Enum.Font.Gotham
+Content.Text = "Pretty Cool Comment"
+Content.TextColor3 = Color3.fromRGB(255, 255, 255)
+Content.TextSize = 14.000
+Content.TextWrapped = true
+Content.TextXAlignment = Enum.TextXAlignment.Left
+Content.TextYAlignment = Enum.TextYAlignment.Top
+
+Author_2.Name = "Author"
+Author_2.Parent = Comment
+Author_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Author_2.BackgroundTransparency = 1.000
+Author_2.BorderSizePixel = 0
+Author_2.Position = UDim2.new(0, 50, 0, 5)
+Author_2.Size = UDim2.new(0, 200, 0, 25)
+Author_2.Font = Enum.Font.GothamBold
+Author_2.Text = "Author"
+Author_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Author_2.TextSize = 20.000
+Author_2.TextWrapped = true
+Author_2.TextXAlignment = Enum.TextXAlignment.Left
+
+ProfilePicture_2.Name = "ProfilePicture"
+ProfilePicture_2.Parent = Comment
+ProfilePicture_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ProfilePicture_2.BackgroundTransparency = 1.000
+ProfilePicture_2.Position = UDim2.new(0, 5, 0, 5)
+ProfilePicture_2.Size = UDim2.new(0, 40, 0, 40)
+ProfilePicture_2.Image = "rbxassetid://17093333262"
+
+UICorner_22.CornerRadius = UDim.new(1, 0)
+UICorner_22.Parent = ProfilePicture_2
+
+UIListLayout_3.Parent = Comments_2
+UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_3.Padding = UDim.new(0, 5)
+
+
+ 
+InfoBox.Visible = false
+ 
+getfakeasset = getcustomasset or getsynasset
+ 
+HttpService = game:GetService("HttpService")
+TweenService = game:GetService("TweenService")
+TextService = game:GetService("TextService")
+ 
+ 
+page = 1
+gquery = ""
+ 
+function tableConcat(t1,t2)
+ for i, v in pairs(t2) do
+  table.insert(t1, v)
+ end
+ return t1
+end
+ 
+
+BloxBook.MainFrame.ScriptListFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+BloxBook.MainFrame.ScriptListFrame.ScrollBarImageTransparency = 1
+BloxBook.MainFrame.InfoBox.InfoBoxDescription.AutomaticSize = Enum.AutomaticSize.Y
+BloxBook.MainFrame.ScriptListFrame.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
+BloxBook.MainFrame.InfoBox.AutomaticCanvasSize = Enum.AutomaticSize.Y
+BloxBook.MainFrame.InfoBox.Comments.Inner.Comments.AutomaticCanvasSize = Enum.AutomaticSize.Y
+BloxBook.MainFrame.InfoBox.Comments.Inner.Comments.ScrollBarImageColor3 = Color3.new(0, 0, 0)
+BloxBook.MainFrame.InfoBox.ScrollBarImageColor3 = Color3.new(0, 0, 0)
+
+VerifiedScript = BloxBook.MainFrame.ScriptListFrame.Scripts.VerifiedScriptFrame:Clone()
+Script = BloxBook.MainFrame.ScriptListFrame.Scripts.ScriptFrame:Clone()
+BloxBook.MainFrame.ScriptListFrame.Scripts.ScriptFrame:Destroy()
+BloxBook.MainFrame.ScriptListFrame.Scripts.VerifiedScriptFrame:Destroy()
+ 
+Comment = BloxBook.MainFrame.InfoBox.Comments.Inner.Comments.Comment:Clone()
+BloxBook.MainFrame.InfoBox.Comments.Inner.Comments.Comment:Destroy()
+ 
+
+
+ 
+
+ 
+function _if(a, b, c)
+ if a then return b else return c end
+end
+ 
+function fastmodeExec(func)
+ if getgenv().fastmode == true then
+  task.spawn(func)
+ else
+  func()
+ end
+end
+ 
+
+function fetchScripts(query, page)
+ page = page or 1
+ query = HttpService:UrlEncode(query)
+ 
+ url = _if(query == "", "https://www.scriptblox.com/api/script/fetch?page="..tostring(page), "https://scriptblox.com/api/script/search?q="..query.."&max=100&mode=free&page=".. tostring(page))
+ req = HttpService:JSONDecode(game:HttpGetAsync(url)).result
+ 
+ return req.scripts
+end
+ 
+function fetchComments(scriptId, page)
+ page = page or 1 
+ 
+ url = "https://scriptblox.com/api/comment/" ..scriptId.. "?page=" ..tostring(page).. "&max=20"
+ req = HttpService:JSONDecode(game:HttpGetAsync(url)).result
+ 
+ return req.comments
+
+end
+ 
+ 
+ 
+
+ 
+function fixScript(scriptObj)
+   local req = HttpService:JSONDecode(game:HttpGetAsync("https://www.scriptblox.com/api/script/".. scriptObj.slug)).script
+   scriptObj["script"] = _if(scriptObj["script"], scriptObj["script"], req.script)
+   scriptObj["features"] = _if(scriptObj["features"], scriptObj["features"], req.features)
+   scriptObj["owner"] = _if(scriptObj["owner"], scriptObj["owner"], req.owner)
+   
+ return scriptObj
+end
+ 
+
+ 
+function updateInfoBox(scriptObj)
+ scriptObj = fixScript(scriptObj)
+ 
+InfoBoxAuthor.Text = scriptObj.owner.username
+InfoBoxTitle.Text = scriptObj.title
+Game.Text = scriptObj.game.name
+InfoBoxDescription.Text = scriptObj.features or "API ERROR!!!"
+ 
+
+ 
+ Close.MouseButton1Click:Connect(function()
+  
+  InfoBox.Visible = false
+  ScriptListFrame.Visible = true
+ end)
+ 
+  commentsUIListLayout = BloxBook.MainFrame.InfoBox.Comments.Inner.Comments.UIListLayout:Clone()
+ BloxBook.MainFrame.InfoBox.Comments.Inner.Comments:ClearAllChildren()
+ commentsUIListLayout.Parent = BloxBook.MainFrame.InfoBox.Comments.Inner.Comments
+ 
+ task.spawn(function()
+
+  for _, v in pairs(fetchComments(scriptObj["_id"])) do
+
+  newComment = Comment:Clone()
+   newComment.Parent = BloxBook.MainFrame.InfoBox.Comments.Inner.Comments
+   newComment.Content.Text = v.text
+   newComment.Author.Text = v.commentBy.username
+
+  end
+ end)
+end
+ 
+
+function refreshScripts(scriptTbl)
+ if #scriptTbl <= 0 then
+ print("ScriptNotFounded")
+ end
+ 
+ UIGridLayoutCopy = Scripts.UIGridLayout:Clone()
+ Scripts:ClearAllChildren()
+ UIGridLayoutCopy.Parent = Scripts
+ 
+ addScripts(scriptTbl)
+end
+ 
+function addScripts(scriptTbl)
+ for i, v in pairs(scriptTbl) do
+  fastmodeExec(function()
+   local newScript
+ 
+   v = fixScript(v)
+ 
+   if v.verified == true then
+    newScript = VerifiedScript:Clone()
+    newScript.ScriptTitle.Text = v.title
+    newScript.ScriptAuthor.Text = v.owner.username
+    newScript.ScriptGame.Text = v.game.name
+    newScript.Parent = Scripts
+   else
+    newScript = Script:Clone()
+    newScript.ScriptTitle.Text = v.title
+    newScript.ScriptAuthor.Text = v.owner.username
+    newScript.ScriptGame.Text = v.game.name
+    newScript.Parent = Scripts
+   end
+ 
+   newScript.InfoButton.MouseButton1Click:Connect(function()
+    updateInfoBox(v)
+    task.wait()
+    InfoBox.Visible = true
+   ScriptListFrame.Visible = false
+   end)
+ 
+  end)
+ end
+ 
+
+ 
+ pagefetchrunning = false
+end
+ 
+
+SearchBox.FocusLost:Connect(function(enterPressed)
+ if enterPressed then
+  gquery = SearchBox.Text
+  page = 1
+  local scriptsTbl = fetchScripts(SearchBox.Text, 1)
+  refreshScripts(scriptsTbl)
+ end
+end)
+ 
+ 
+
+ 
+
+local UserInputService = game:GetService("UserInputService")
+local gui = MainFrame
+ 
+local dragging
+local dragInput
+local dragStart
+local startPos
+ 
+local function update(input)
+ local delta = input.Position - dragStart
+ gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+ 
+gui.InputBegan:Connect(function(input)
+ if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+  dragging = true
+  dragStart = input.Position
+  startPos = gui.Position
+ 
+  input.Changed:Connect(function()
+   if input.UserInputState == Enum.UserInputState.End then
+    dragging = false
+   end
+  end)
+ end
+end)
+ 
+gui.InputChanged:Connect(function(input)
+ if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+  dragInput = input
+ end
+end)
+ 
+UserInputService.InputChanged:Connect(function(input)
+ if input == dragInput and dragging then
+  update(input)
+ end
+end)
+ 
+refreshScripts(fetchScripts(gquery, 1))
+ 
+ScriptListFrame:GetPropertyChangedSignal("CanvasPosition"):Connect(function()
+ if (ScriptListFrame.CanvasPosition.Y + ScriptListFrame.AbsoluteSize.Y) >= ScriptListFrame.AbsoluteCanvasSize.Y -200 and not pagefetchrunning then
+  page = page + 1
+  pagefetchrunning = true
+  addScripts(fetchScripts(gquery, page))
+ end
+end)
