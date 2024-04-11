@@ -60,7 +60,7 @@ UICorner_22 = Instance.new("UICorner")
 UIListLayout_3 = Instance.new("UIListLayout")
 CloseFrame = Instance.new("ImageButton")
 PreviewImage_2 = Instance.new("ImageLabel")
-PreviewImageUICorner_2 = Instance.new("UIcorner")
+PreviewImageUICorner_2 = Instance.new("UICorner")
 
 BloxBook.Name = "BloxBook"
 BloxBook.Parent = game.CoreGui
