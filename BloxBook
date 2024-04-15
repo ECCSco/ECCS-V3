@@ -137,8 +137,9 @@ InfoBox.Parent = MainFrame
 InfoBox.Active = true
 InfoBox.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 InfoBox.BorderSizePixel = 0
+InfoBox.BackgroundTransparency = 1
 InfoBox.Position = UDim2.new(0, 0, 0.08, 0)
-InfoBox.Size = UDim2.new(0, 400, 0, 414)
+InfoBox.Size = UDim2.new(0, 400, 0, 400)
 InfoBox.ZIndex = 3
 InfoBox.CanvasSize = UDim2.new(0, 0, 0, 0)
 InfoBox.VerticalScrollBarInset = Enum.ScrollBarInset.ScrollBar
@@ -528,7 +529,7 @@ Comments_2.Active = true
 Comments_2.BackgroundTransparency = 1
 Comments_2.BorderSizePixel = 0
 Comments_2.Position = UDim2.new(0, 0, 0, 10)
-Comments_2.Size = UDim2.new(0, 415, 0, 400)
+Comments_2.Size = UDim2.new(0, 415, 0, 390)
 Comments_2.CanvasSize = UDim2.new(0, 0, 0, 0)
 
 Comment.Name = "Comment"
@@ -732,6 +733,7 @@ ScriptListFrame.Visible = true
 InfoBox.Visible = false
 SearchBox.Visible = true
 CloseInfoBox.Visible = false
+MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 end)
 
 newScript.OpenInfo.MouseButton1Click:Connect(function()
@@ -740,6 +742,7 @@ ScriptListFrame.Visible = false
 InfoBox.Visible = true
 SearchBox.Visible = false
 CloseInfoBox.Visible = true
+MainFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 end)
 
 newScript.Share.MouseButton1Click:Connect(function()
@@ -747,7 +750,6 @@ setclipboard(v.slug)
 end)
   end)
  end
- 
  pagefetchrunning = false
 end
 CloseButton.MouseButton1Click:Connect(function()
