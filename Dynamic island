@@ -136,7 +136,6 @@ wait()
 DinamicIsland2TextTransparency = DinamicIsland2TextTransparency + 0.1
 DinamicIsland2.TextTransparency = DinamicIsland2TextTransparency
 end
-wait(1)
 if DinamicIsland2TextTransparency <= 1 then
 for i = 1,10 do
 wait()
