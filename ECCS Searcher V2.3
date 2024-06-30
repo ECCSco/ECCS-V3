@@ -286,11 +286,6 @@ Loading.TextColor3 = Color3.fromRGB(255, 255, 255)
 Loading.TextSize = 30
 
 OpenCloseSearcherButton.MouseButton1Click:Connect(function()
-spawn(function()
-OpenCloseSearcherButton:TweenSize(UDim2.new(0, 50, 0, 50),"InOut","Sine",0.05)
-wait(0.1)
-OpenCloseSearcherButton:TweenSize(UDim2.new(0, 70, 0, 70),"InOut","Sine",0.05)
-end)
 writefile("ES.ECCS", ""..ExecutorTextBox.Text)
 if OpenCloseSearcherButton.Text == "⭐" then
 OpenCloseSearcherButton.Text = " ⭐ "
@@ -1422,11 +1417,6 @@ end)
 
 UserInputService.InputBegan:Connect(function(input)
 if input.KeyCode == Enum.KeyCode.Q then
-spawn(function()
-OpenCloseSearcherButton:TweenSize(UDim2.new(0, 50, 0, 50),"InOut","Sine",0.05)
-wait(0.1)
-OpenCloseSearcherButton:TweenSize(UDim2.new(0, 70, 0, 70),"InOut","Sine",0.05)
-end)
 writefile("ES.ECCS", ""..ExecutorTextBox.Text)
 if OpenCloseSearcherButton.Text == "⭐" then
 OpenCloseSearcherButton.Text = " ⭐ "
