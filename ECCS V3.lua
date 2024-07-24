@@ -2,190 +2,190 @@ if game:GetService("CoreGui"):FindFirstChild("UIGui") then
 game:GetService("CoreGui"):FindFirstChild("UIGui"):Destroy()
 game.Workspace.CurrentCamera.FieldOfView  = 70
 end
-local UIGui = Instance.new("ScreenGui")
-local CoreSystemFrame = Instance.new("Frame")
-local CoreSystemFrameBackground = Instance.new("Frame")
-local CoreSystemFrameUICorner = Instance.new("UICorner")
-local CoreSystemFrameBackgroundUICorner = Instance.new("UICorner")
-local MinButton = Instance.new("TextButton")
-local UIClick = Instance.new("Sound")
-local MessageFrame = Instance.new("TextButton")
-local MessageFrameUICorner = Instance.new("UICorner")
-local Clock = Instance.new("TextLabel")
-local StartUpSound = Instance.new("Sound")
-local OpenButtonUI = Instance.new("Sound")
-local MessageBackgroundFrame = Instance.new("Frame")
-local TextLabel1 = Instance.new("TextLabel")
-local MessageBackgroundFrameUICorner = Instance.new("UICorner")
-local MessageImage = Instance.new("ImageLabel")
-local CloseNotif = Instance.new("Sound")
-local MessageImageUICorner = Instance.new("UICorner")
-local OpenUIButtons = Instance.new("Sound")
-local HomeButton = Instance.new("ImageButton")
-local HomeButtonUICorner = Instance.new("UICorner")
-local CloseUISound = Instance.new("Sound")
-local Blur = Instance.new("BlurEffect")
-local TweenService = game:GetService("TweenService")
-local SearcherOpenUIButton = Instance.new("ImageButton")
-local SearcherOpenUIButtonUICorner = Instance.new("UICorner")
-local ConsoleButton = Instance.new("ImageButton")
-local HoverButtons = Instance.new("Sound")
-local EditorButton = Instance.new("ImageButton")
-local MusicButton = Instance.new("ImageButton")
-local WelcomeLabel = Instance.new("TextLabel")
-local PlayerIcon = Instance.new("ImageLabel")
-local PlayerIconUI = Instance.new("UICorner")
-local PlayerIconBackground = Instance.new("Frame")
-local PlayerIconBackgroundUI = Instance.new("UICorner")
-local GameFrameBackground = Instance.new("Frame")
-local GameFrameBackgroundUICorner = Instance.new("UICorner")
-local GameFrame = Instance.new("ImageLabel")
-local GameFrameUICorner = Instance.new("UICorner")
-local FPSLabel = Instance.new("TextLabel")
-local FPSLabelUICorner = Instance.new("UICorner")
-local RunService = game:GetService("RunService")
-local RenderStepped = RunService.RenderStepped
-local sec = nil
-local FPS = {}
-local PingLabel = Instance.new("TextLabel")
-local PingLabelUICorner = Instance.new("UICorner")
-local CPULabel = Instance.new("TextLabel")
-local CPUUICorner = Instance.new("UICorner")
-local GPULabel = Instance.new("TextLabel")
-local GPUUICorner = Instance.new("UICorner")
-local PlayersInServer = Instance.new("TextLabel")
-local PlayersInServerUICorner = Instance.new("UICorner")
-local ServerSize = Instance.new("TextLabel")
-local ServerSizeUICorner = Instance.new("UICorner")
-local ServerLive = Instance.new("TextLabel")
-local ServerLiveUICorner = Instance.new("UICorner")
-local Executor = Instance.new("TextLabel")
-local ExecutorUICorner = Instance.new("UICorner")
-local MainFrame = Instance.new("Frame")
-local SearchBox = Instance.new("TextBox")
-local UICorner_3 = Instance.new("UICorner")
-local ScriptAuthor = Instance.new("TextLabel")
-local ScriptListFrame = Instance.new("ScrollingFrame")
-local UIPadding = Instance.new("UIPadding")
-local Scripts = Instance.new("Folder")
-local UIGridLayout = Instance.new("UIGridLayout")
-local ScriptFrame = Instance.new("ImageLabel")
-local UICorner_6 = Instance.new("UICorner")
-local ScriptTitle = Instance.new("TextLabel")
-local ExecuteButton = Instance.new("TextButton")
-local UICorner_7 = Instance.new("UICorner")
-local InfoButton = Instance.new("TextButton")
-local UICorner_8 = Instance.new("UICorner")
-local ScriptGame = Instance.new("TextLabel")
-local VerifiedScriptFrame = Instance.new("ImageLabel")
-local UICorner_9 = Instance.new("UICorner")
-local ScriptTitle_2 = Instance.new("TextLabel")
-local VerifiedIcon = Instance.new("ImageLabel")
-local ExecuteButton_2 = Instance.new("TextButton")
-local UICorner_10 = Instance.new("UICorner")
-local UICorner_11 = Instance.new("UICorner")
-local ScriptAuthor_2 = Instance.new("TextLabel")
-local ScriptGame_2 = Instance.new("TextLabel")
-local ExecuteButtonBackground = Instance.new("Frame")
-local ExecuteButtonBackgroundUICorner = Instance.new("UICorner")
-local CopyLinkButton = Instance.new("TextButton")
-local CopyLinkButtonUICorner = Instance.new("UICorner")
-local CopyLinkButton_2 = Instance.new("TextButton")
-local CopyLinkButtonUICorner_2 = Instance.new("UICorner")
-local CopyScriptButton = Instance.new("TextButton")
-local CopyScriptButtonUICorner = Instance.new("UICorner")
-local CopyScriptButton_2 = Instance.new("TextButton")
-local CopyScriptButtonUICorner_2 = Instance.new("UICorner")
-local OpenDescriptionButton = Instance.new("TextButton")
-local OpenDescriptionButtonUICorner = Instance.new("UICorner")
-local OpenDescriptionButton_2 = Instance.new("TextButton")
-local OpenDescriptionButtonUICorner_2 = Instance.new("UICorner")
-local CopyLinkButtonBackground = Instance.new("Frame")
-local CopyLinkButtonBackgroundUICorner = Instance.new("UICorner")
-local CopyScriptBackground = Instance.new("Frame")
-local CopyScriptBackgroundUICorner = Instance.new("UICorner")
-local OpenDescriptionBackground = Instance.new("Frame")
-local OpenDescriptionBackgroundUICorner = Instance.new("UICorner")
-local ExecuteButtonBackground_2 = Instance.new("Frame")
-local ExecuteButtonBackgroundUICorner_2 = Instance.new("UICorner")
-local CopyLinkButtonBackground_2 = Instance.new("Frame")
-local CopyLinkButtonBackgroundUICorner_2 = Instance.new("UICorner")
-local CopyScriptBackground_2 = Instance.new("Frame")
-local CopyScriptBackgroundUICorner_2 = Instance.new("UICorner")
-local OpenDescriptionBackground_2 = Instance.new("Frame")
-local OpenDescriptionBackgroundUICorner_2 = Instance.new("UICorner")
-local DescriptionScript = Instance.new("TextButton")
-local DescriptionScriptUICorner = Instance.new("UICorner")
-local BackgroundImage = Instance.new("ImageLabel")
-local ConsoleOutput = Instance.new("TextLabel")
-local BackgroundImageUICorner = Instance.new("UICorner")
-local ConsoleOutputUICorner = Instance.new("UICorner")
-local BackgroundConsoleUICorner = Instance.new("UICorner")
-local BackgroundConsole = Instance.new("Frame")
-local logTable = {}
-local CloseDescriptionSound = Instance.new("Sound")
-local EditorBackground = Instance.new("Frame")
-local EditorMainFrame = Instance.new("ImageLabel")
-local EditorTextBox = Instance.new("TextBox")
-local ExecuteButtonBackground_3 = Instance.new("Frame")
-local ExecuteButton_3 = Instance.new("TextButton")
-local EditorBackgroundUICorner = Instance.new("UICorner")
-local EditorMainFrameUICorner = Instance.new("UICorner")
-local ExecuteButtonBackgroundUICorner_3 = Instance.new("UICorner")
-local ExecuteButtonUICorner_3 = Instance.new("UICorner")
-local SaveButtonBackground = Instance.new("Frame")
-local SaveButtonBackgroundUICorner = Instance.new("UICorner")
-local SaveButton = Instance.new("TextButton")
-local SaveButtonUICorner = Instance.new("UICorner")
-local ClearButtonBackground = Instance.new("Frame")
-local ClearButtonBackgroundUICorner = Instance.new("UICorner")
-local ClearButton = Instance.new("TextButton")
-local ClearButtonUICorner = Instance.new("UICorner")
-local EditorTextBoxUICorner = Instance.new("UICorner")
-local EditorTextBoxBackgroundUICorner = Instance.new("UICorner")
-local CopyButtonBackground = Instance.new("Frame")
-local CopyButtonBackgroundUICorner = Instance.new("UICorner")
-local CopyButton = Instance.new("TextButton")
-local CopyButtonUICorner = Instance.new("UICorner")
-local SondFrameBackground = Instance.new("Frame")
-local SondFrame = Instance.new("ImageLabel")
-local MainSondFrame = Instance.new("Frame")
-local SoundTextBox = Instance.new("TextBox")
-local SondFrameBackgroundUICorner = Instance.new("UICorner")
-local SondFrameUICorner = Instance.new("UICorner")
-local MainSondFrameUICorner = Instance.new("UICorner")
-local SoundTextBoxUICorner = Instance.new("UICorner")
-local CoreSound = Instance.new("Sound")
-local Stop_PlayButton = Instance.new("ImageButton")
-local AudioName = Instance.new("TextLabel")
-local Stop_PlayButtonBackground = Instance.new("Frame")
-local Stop_PlayButtonBackgroundUICorner = Instance.new("UICorner")
-local Stop_PlayButtonBackground_2 = Instance.new("Frame")
-local Stop_PlayButtonBackgroundUICorner_2 = Instance.new("UICorner")
-local Volume = 1
-local SaveButtonBackground_2 = Instance.new("Frame")
-local SaveButtonBackgroundUICorner_2 = Instance.new("UICorner")
-local SaveButton_2 = Instance.new("ImageButton")
-local SaveButtonUICorner_2 = Instance.new("UICorner")
-local PlaylistButtonBackground = Instance.new("Frame")
-local PlaylistButtonBackgroundUICorner = Instance.new("UICorner")
-local PlaylistButtonBackground_2 = Instance.new("Frame")
-local PlaylistButtonBackgroundUICorner_2 = Instance.new("UICorner")
-local PlaylistButton = Instance.new("ImageButton")
-local VolumeFrame = Instance.new("Frame")
-local VolumeFrameUICorner = Instance.new("UICorner")
-local VolumeUpButtonBackground = Instance.new("Frame")
-local VolumeUpButtonBackgroundUICorner = Instance.new("UICorner")
-local VolumeUpButton = Instance.new("ImageButton")
-local VolumeUpButtonUICorner = Instance.new("UICorner")
-local VolumeDownButtonBackground = Instance.new("Frame")
-local VolumeDownButtonBackgroundUICorner = Instance.new("UICorner")
-local VolumeDownButton = Instance.new("ImageButton")
-local VolumeDownButtonUICorner = Instance.new("UICorner")
-local VolumeUpButton_2 = Instance.new("ImageButton")
-local VolumeUpButtonUICorner_2 = Instance.new("UICorner")
-local VolumeDownButton_2 = Instance.new("ImageButton")
-local VolumeDownButtonUICorner_2 = Instance.new("UICorner")
+UIGui = Instance.new("ScreenGui")
+CoreSystemFrame = Instance.new("Frame")
+CoreSystemFrameBackground = Instance.new("Frame")
+CoreSystemFrameUICorner = Instance.new("UICorner")
+CoreSystemFrameBackgroundUICorner = Instance.new("UICorner")
+MinButton = Instance.new("TextButton")
+UIClick = Instance.new("Sound")
+MessageFrame = Instance.new("TextButton")
+MessageFrameUICorner = Instance.new("UICorner")
+Clock = Instance.new("TextLabel")
+StartUpSound = Instance.new("Sound")
+OpenButtonUI = Instance.new("Sound")
+MessageBackgroundFrame = Instance.new("Frame")
+TextLabel1 = Instance.new("TextLabel")
+MessageBackgroundFrameUICorner = Instance.new("UICorner")
+MessageImage = Instance.new("ImageLabel")
+CloseNotif = Instance.new("Sound")
+MessageImageUICorner = Instance.new("UICorner")
+OpenUIButtons = Instance.new("Sound")
+HomeButton = Instance.new("ImageButton")
+HomeButtonUICorner = Instance.new("UICorner")
+CloseUISound = Instance.new("Sound")
+Blur = Instance.new("BlurEffect")
+TweenService = game:GetService("TweenService")
+SearcherOpenUIButton = Instance.new("ImageButton")
+SearcherOpenUIButtonUICorner = Instance.new("UICorner")
+ConsoleButton = Instance.new("ImageButton")
+HoverButtons = Instance.new("Sound")
+EditorButton = Instance.new("ImageButton")
+MusicButton = Instance.new("ImageButton")
+WelcomeLabel = Instance.new("TextLabel")
+PlayerIcon = Instance.new("ImageLabel")
+PlayerIconUI = Instance.new("UICorner")
+PlayerIconBackground = Instance.new("Frame")
+PlayerIconBackgroundUI = Instance.new("UICorner")
+GameFrameBackground = Instance.new("Frame")
+GameFrameBackgroundUICorner = Instance.new("UICorner")
+GameFrame = Instance.new("ImageLabel")
+GameFrameUICorner = Instance.new("UICorner")
+FPSLabel = Instance.new("TextLabel")
+FPSLabelUICorner = Instance.new("UICorner")
+RunService = game:GetService("RunService")
+RenderStepped = RunService.RenderStepped
+sec = nil
+FPS = {}
+PingLabel = Instance.new("TextLabel")
+PingLabelUICorner = Instance.new("UICorner")
+CPULabel = Instance.new("TextLabel")
+CPUUICorner = Instance.new("UICorner")
+GPULabel = Instance.new("TextLabel")
+GPUUICorner = Instance.new("UICorner")
+PlayersInServer = Instance.new("TextLabel")
+PlayersInServerUICorner = Instance.new("UICorner")
+ServerSize = Instance.new("TextLabel")
+ServerSizeUICorner = Instance.new("UICorner")
+ServerLive = Instance.new("TextLabel")
+ServerLiveUICorner = Instance.new("UICorner")
+Executor = Instance.new("TextLabel")
+ExecutorUICorner = Instance.new("UICorner")
+MainFrame = Instance.new("Frame")
+SearchBox = Instance.new("TextBox")
+UICorner_3 = Instance.new("UICorner")
+ScriptAuthor = Instance.new("TextLabel")
+ScriptListFrame = Instance.new("ScrollingFrame")
+UIPadding = Instance.new("UIPadding")
+Scripts = Instance.new("Folder")
+UIGridLayout = Instance.new("UIGridLayout")
+ScriptFrame = Instance.new("ImageLabel")
+UICorner_6 = Instance.new("UICorner")
+ScriptTitle = Instance.new("TextLabel")
+ExecuteButton = Instance.new("TextButton")
+UICorner_7 = Instance.new("UICorner")
+InfoButton = Instance.new("TextButton")
+UICorner_8 = Instance.new("UICorner")
+ScriptGame = Instance.new("TextLabel")
+VerifiedScriptFrame = Instance.new("ImageLabel")
+UICorner_9 = Instance.new("UICorner")
+ScriptTitle_2 = Instance.new("TextLabel")
+VerifiedIcon = Instance.new("ImageLabel")
+ExecuteButton_2 = Instance.new("TextButton")
+UICorner_10 = Instance.new("UICorner")
+UICorner_11 = Instance.new("UICorner")
+ScriptAuthor_2 = Instance.new("TextLabel")
+ScriptGame_2 = Instance.new("TextLabel")
+ExecuteButtonBackground = Instance.new("Frame")
+ExecuteButtonBackgroundUICorner = Instance.new("UICorner")
+CopyLinkButton = Instance.new("TextButton")
+CopyLinkButtonUICorner = Instance.new("UICorner")
+CopyLinkButton_2 = Instance.new("TextButton")
+CopyLinkButtonUICorner_2 = Instance.new("UICorner")
+CopyScriptButton = Instance.new("TextButton")
+CopyScriptButtonUICorner = Instance.new("UICorner")
+CopyScriptButton_2 = Instance.new("TextButton")
+CopyScriptButtonUICorner_2 = Instance.new("UICorner")
+OpenDescriptionButton = Instance.new("TextButton")
+OpenDescriptionButtonUICorner = Instance.new("UICorner")
+OpenDescriptionButton_2 = Instance.new("TextButton")
+OpenDescriptionButtonUICorner_2 = Instance.new("UICorner")
+CopyLinkButtonBackground = Instance.new("Frame")
+CopyLinkButtonBackgroundUICorner = Instance.new("UICorner")
+CopyScriptBackground = Instance.new("Frame")
+CopyScriptBackgroundUICorner = Instance.new("UICorner")
+OpenDescriptionBackground = Instance.new("Frame")
+OpenDescriptionBackgroundUICorner = Instance.new("UICorner")
+ExecuteButtonBackground_2 = Instance.new("Frame")
+ExecuteButtonBackgroundUICorner_2 = Instance.new("UICorner")
+CopyLinkButtonBackground_2 = Instance.new("Frame")
+CopyLinkButtonBackgroundUICorner_2 = Instance.new("UICorner")
+CopyScriptBackground_2 = Instance.new("Frame")
+CopyScriptBackgroundUICorner_2 = Instance.new("UICorner")
+OpenDescriptionBackground_2 = Instance.new("Frame")
+OpenDescriptionBackgroundUICorner_2 = Instance.new("UICorner")
+DescriptionScript = Instance.new("TextButton")
+DescriptionScriptUICorner = Instance.new("UICorner")
+BackgroundImage = Instance.new("ImageLabel")
+ConsoleOutput = Instance.new("TextLabel")
+BackgroundImageUICorner = Instance.new("UICorner")
+ConsoleOutputUICorner = Instance.new("UICorner")
+BackgroundConsoleUICorner = Instance.new("UICorner")
+BackgroundConsole = Instance.new("Frame")
+logTable = {}
+CloseDescriptionSound = Instance.new("Sound")
+EditorBackground = Instance.new("Frame")
+EditorMainFrame = Instance.new("ImageLabel")
+EditorTextBox = Instance.new("TextBox")
+ExecuteButtonBackground_3 = Instance.new("Frame")
+ExecuteButton_3 = Instance.new("TextButton")
+EditorBackgroundUICorner = Instance.new("UICorner")
+EditorMainFrameUICorner = Instance.new("UICorner")
+ExecuteButtonBackgroundUICorner_3 = Instance.new("UICorner")
+ExecuteButtonUICorner_3 = Instance.new("UICorner")
+SaveButtonBackground = Instance.new("Frame")
+SaveButtonBackgroundUICorner = Instance.new("UICorner")
+SaveButton = Instance.new("TextButton")
+SaveButtonUICorner = Instance.new("UICorner")
+ClearButtonBackground = Instance.new("Frame")
+ClearButtonBackgroundUICorner = Instance.new("UICorner")
+ClearButton = Instance.new("TextButton")
+ClearButtonUICorner = Instance.new("UICorner")
+EditorTextBoxUICorner = Instance.new("UICorner")
+EditorTextBoxBackgroundUICorner = Instance.new("UICorner")
+CopyButtonBackground = Instance.new("Frame")
+CopyButtonBackgroundUICorner = Instance.new("UICorner")
+CopyButton = Instance.new("TextButton")
+CopyButtonUICorner = Instance.new("UICorner")
+SondFrameBackground = Instance.new("Frame")
+SondFrame = Instance.new("ImageLabel")
+MainSondFrame = Instance.new("Frame")
+SoundTextBox = Instance.new("TextBox")
+SondFrameBackgroundUICorner = Instance.new("UICorner")
+SondFrameUICorner = Instance.new("UICorner")
+MainSondFrameUICorner = Instance.new("UICorner")
+SoundTextBoxUICorner = Instance.new("UICorner")
+CoreSound = Instance.new("Sound")
+Stop_PlayButton = Instance.new("ImageButton")
+AudioName = Instance.new("TextLabel")
+Stop_PlayButtonBackground = Instance.new("Frame")
+Stop_PlayButtonBackgroundUICorner = Instance.new("UICorner")
+Stop_PlayButtonBackground_2 = Instance.new("Frame")
+Stop_PlayButtonBackgroundUICorner_2 = Instance.new("UICorner")
+Volume = 1
+SaveButtonBackground_2 = Instance.new("Frame")
+SaveButtonBackgroundUICorner_2 = Instance.new("UICorner")
+SaveButton_2 = Instance.new("ImageButton")
+SaveButtonUICorner_2 = Instance.new("UICorner")
+PlaylistButtonBackground = Instance.new("Frame")
+PlaylistButtonBackgroundUICorner = Instance.new("UICorner")
+PlaylistButtonBackground_2 = Instance.new("Frame")
+PlaylistButtonBackgroundUICorner_2 = Instance.new("UICorner")
+PlaylistButton = Instance.new("ImageButton")
+VolumeFrame = Instance.new("Frame")
+VolumeFrameUICorner = Instance.new("UICorner")
+VolumeUpButtonBackground = Instance.new("Frame")
+VolumeUpButtonBackgroundUICorner = Instance.new("UICorner")
+VolumeUpButton = Instance.new("ImageButton")
+VolumeUpButtonUICorner = Instance.new("UICorner")
+VolumeDownButtonBackground = Instance.new("Frame")
+VolumeDownButtonBackgroundUICorner = Instance.new("UICorner")
+VolumeDownButton = Instance.new("ImageButton")
+VolumeDownButtonUICorner = Instance.new("UICorner")
+VolumeUpButton_2 = Instance.new("ImageButton")
+VolumeUpButtonUICorner_2 = Instance.new("UICorner")
+VolumeDownButton_2 = Instance.new("ImageButton")
+VolumeDownButtonUICorner_2 = Instance.new("UICorner")
 ReloadBackgroundButton = Instance.new("Frame")
 ReloadBackgroundButtonUICorner = Instance.new("UICorner")
 ReloadButton = Instance.new("ImageButton")
@@ -202,6 +202,14 @@ ClearButton_2Background = Instance.new("Frame")
 ClearButton_2BackgroundUICorner = Instance.new("UICorner")
 ClearButton_2 = Instance.new("ImageButton")
 ClearButton_2UICorner = Instance.new("UICorner")
+AutoExecuteBackground = Instance.new("Frame")
+AutoExecuteBackgroundUICorner = Instance.new("UICorner")
+AutoExecute = Instance.new("TextButton")
+AutoExecuteUICorner = Instance.new("UICorner")
+AutoExecuteBackground_2 = Instance.new("Frame")
+AutoExecuteBackgroundUICorner_2 = Instance.new("UICorner")
+AutoExecute_2 = Instance.new("TextButton")
+AutoExecuteUICorner_2 = Instance.new("UICorner")
 
 local function format(Int)
 return string.format("%02i", Int)
@@ -341,8 +349,6 @@ local emoji = ({
 MessageFrame.MouseButton1Click:Connect(function()
 CloseNotif:Play()
 MessageBackgroundFrame:TweenPosition(UDim2.new(0.5, 0, 2.5, 0),"InOut","Sine",0.3)
-wait(0.5)
-MessageBackgroundFrame:Destroy()
 end)
  
 MessageImage.Name = "MessageImage"
@@ -375,8 +381,6 @@ if  MessageBackgroundFrame.Position == UDim2.new(0.5, 0, 0.9, 0) then
 wait(4)
 MessageBackgroundFrame:TweenPosition(UDim2.new(0.5, 0, 2.5, 0),"InOut","Sine",0.8)
 CloseNotif:Play()
-wait(0.5)
-MessageBackgroundFrame:Destroy()
 end
 until 
 MessageBackgroundFrame == nil
@@ -599,8 +603,6 @@ game.Workspace.CurrentCamera.FieldOfView  = 70
 end
 end
 end)
- 
- 
  
 MinButton.Name = "MinButton"
 MinButton.Parent = UIGui
@@ -979,8 +981,7 @@ CopyLinkButton.TextWrapped = true
  
 CopyLinkButtonUICorner.CornerRadius = UDim.new(0, 12)
 CopyLinkButtonUICorner.Parent = CopyLinkButton
- 
- 
+
 CopyScriptBackground.Name = "CopyScriptBackground"
 CopyScriptBackground.Parent = ScriptFrame
 CopyScriptBackground.BackgroundColor3 = Color3.fromRGB(55 ,55, 55)
@@ -989,7 +990,6 @@ CopyScriptBackground.Size = UDim2.new(0, 205, 0, 55)
  
 CopyScriptBackgroundUICorner.Parent = CopyScriptBackground
 CopyScriptBackgroundUICorner.CornerRadius = UDim.new(0, 15)
- 
  
 CopyScriptButton.Name = "CopyScriptButton"
 CopyScriptButton.Parent = ScriptFrame
@@ -1007,7 +1007,6 @@ CopyScriptButton.TextWrapped = true
 CopyScriptButtonUICorner.CornerRadius = UDim.new(0, 12)
 CopyScriptButtonUICorner.Parent = CopyScriptButton
  
- 
 OpenDescriptionBackground.Name = "OpenDescriptionBackground"
 OpenDescriptionBackground.Parent = ScriptFrame
 OpenDescriptionBackground.BackgroundColor3 = Color3.fromRGB(55,55, 55)
@@ -1016,8 +1015,7 @@ OpenDescriptionBackground.Size = UDim2.new(0, 205, 0, 55)
  
 OpenDescriptionBackgroundUICorner.Parent = OpenDescriptionBackground
 OpenDescriptionBackgroundUICorner.CornerRadius = UDim.new(0, 15)
- 
- 
+
 OpenDescriptionButton.Name = "OpenDescriptionButton"
 OpenDescriptionButton.Parent = ScriptFrame
 OpenDescriptionButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -1127,7 +1125,56 @@ CopyLinkButton_2.TextWrapped = true
 CopyLinkButtonUICorner_2.CornerRadius = UDim.new(0, 12)
 CopyLinkButtonUICorner_2.Parent = CopyLinkButton_2
  
+AutoExecuteBackground.Name = "AutoExecuteBackground"
+AutoExecuteBackground.Parent = ScriptFrame
+AutoExecuteBackground.AnchorPoint = Vector2.new(0.5, 0.5)
+AutoExecuteBackground.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+AutoExecuteBackground.Position = UDim2.new(0.04, 0, 0.72, 0)
+AutoExecuteBackground.Size = UDim2.new(0, 46, 0, 46)
  
+AutoExecuteBackgroundUICorner.CornerRadius = UDim.new(0, 15)
+AutoExecuteBackgroundUICorner.Parent = AutoExecuteBackground
+ 
+AutoExecute.Name = "AutoExecute"
+AutoExecute.Parent = ScriptFrame
+AutoExecute.AnchorPoint = Vector2.new(0.5, 0.5)
+AutoExecute.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AutoExecute.Position = AutoExecuteBackground.Position
+AutoExecute.Size = UDim2.new(0, 41, 0, 41)
+AutoExecute.Text = "★"
+AutoExecute.AutoButtonColor = false
+AutoExecute.Font = Enum.Font.SourceSansBold
+AutoExecute.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoExecute.TextSize = 35
+
+AutoExecuteUICorner.CornerRadius = UDim.new(0, 12)
+AutoExecuteUICorner.Parent = AutoExecute
+ 
+AutoExecuteBackground_2.Name = "AutoExecuteBackground"
+AutoExecuteBackground_2.Parent = VerifiedScriptFrame
+AutoExecuteBackground_2.AnchorPoint = Vector2.new(0.5, 0.5)
+AutoExecuteBackground_2.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+AutoExecuteBackground_2.Position = AutoExecuteBackground.Position
+AutoExecuteBackground_2.Size = UDim2.new(0, 46, 0, 46)
+ 
+AutoExecuteBackgroundUICorner_2.CornerRadius = UDim.new(0, 15)
+AutoExecuteBackgroundUICorner_2.Parent = AutoExecuteBackground_2
+ 
+AutoExecute_2.Name = "AutoExecute"
+AutoExecute_2.Parent = VerifiedScriptFrame
+AutoExecute_2.AnchorPoint = Vector2.new(0.5, 0.5)
+AutoExecute_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AutoExecute_2.Position = AutoExecuteBackground.Position
+AutoExecute_2.Size = UDim2.new(0, 41, 0, 41)
+AutoExecute_2.Text = "★"
+AutoExecute_2.AutoButtonColor = false
+AutoExecute_2.Font = Enum.Font.SourceSansBold
+AutoExecute_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoExecute_2.TextSize = 35
+
+AutoExecuteUICorner_2.CornerRadius = UDim.new(0, 12)
+AutoExecuteUICorner_2.Parent = AutoExecute_2
+
 CopyScriptBackground_2.Name = "CopyScriptBackground"
 CopyScriptBackground_2.Parent = VerifiedScriptFrame
 CopyScriptBackground_2.BackgroundColor3 = Color3.fromRGB(55,55, 55)
@@ -1136,7 +1183,6 @@ CopyScriptBackground_2.Size = UDim2.new(0, 205, 0, 55)
  
 CopyScriptBackgroundUICorner_2.Parent = CopyScriptBackground_2
 CopyScriptBackgroundUICorner_2.CornerRadius = UDim.new(0, 15)
- 
  
 CopyScriptButton_2.Name = "CopyScriptButton"
 CopyScriptButton_2.Parent = VerifiedScriptFrame
@@ -1763,16 +1809,18 @@ function createfolders(path)
  end
 end
  
-if not isfile("ECCS_V3/CoreSystem/Files/ECCSV3EDITOR.ECCS") and isfile("ECCS_V3/CoreSystem/Files/ECCSV3Player.ECCS") and isfile("ECCS_V3/CoreSystem/Files/ECCSV3SearchHistory.ECCS") and isfolder("ECCS_V3") then
-delfolder("ECCS_V3")
-end
- 
+if not isfolder("ECCS_V3") then
 createfolders("ECCS_V3/CoreSystem/Files")
+end
  
 if not isfile("ECCS_V3/CoreSystem/Files/ECCSV3EDITOR.ECCS") then
 writefile("ECCS_V3/CoreSystem/Files/ECCSV3EDITOR.ECCS", ""..EditorTextBox.Text)
 end
  
+if not isfile("ECCS_V3/CoreSystem/Files/AUTOEXECUTE.ECCS") then
+writefile("ECCS_V3/CoreSystem/Files/AUTOEXECUTE.ECCS", " ")
+end
+
 if not isfile("ECCS_V3/CoreSystem/Files/ECCSV3Player.ECCS") then
 writefile("ECCS_V3/CoreSystem/Files/ECCSV3Player.ECCS", " ")
 end
@@ -1780,6 +1828,11 @@ end
 if not isfile("ECCS_V3/CoreSystem/Files/ECCSV3SearchHistory.ECCS") then
 writefile("ECCS_V3/CoreSystem/Files/ECCSV3SearchHistory.ECCS", "")
 end
+
+local ReadAE = readfile("ECCS_V3/CoreSystem/Files/AUTOEXECUTE.ECCS")
+spawn(function()
+loadstring(ReadAE)()
+end)
 
 ExecuteButton_3.MouseButton1Click:Connect(function()
 loadstring(EditorTextBox.Text)()
@@ -1938,9 +1991,9 @@ setHoverSysSize(nil, UDim2.new(0, 55.7, 0, 225), CoreSystemFrameBackground)
  
 local getfakeasset = getcustomasset or getsynasset
  
-local HttpService = game:GetService("HttpService")
-local TweenService = game:GetService("TweenService")
-local TextService = game:GetService("TextService")
+HttpService = game:GetService("HttpService")
+TweenService = game:GetService("TweenService")
+TextService = game:GetService("TextService")
  
  
  
@@ -2050,12 +2103,34 @@ function addScripts(scriptTbl)
             setclipboard("https://scriptblox.com/script/".. v.slug)
 end)
  
- 
+newScript.AutoExecute.MouseButton1Click:Connect(function()
+local ReadAE = readfile("ECCS_V3/CoreSystem/Files/AUTOEXECUTE.ECCS")
+if ReadAE ~= v.script then
+writefile("ECCS_V3/CoreSystem/Files/AUTOEXECUTE.ECCS", v.script)
+MessageFrame.Text = "Script Saved"
+TextLabel1.Text = "Script added in auto-execute"
+MessageBackgroundFrame:TweenPosition(UDim2.new(0.5, 0, 0.9, 0),"InOut","Sine",0.8)
+else
+if ReadAE == v.script then
+writefile("ECCS_V3/CoreSystem/Files/AUTOEXECUTE.ECCS", " ")
+MessageFrame.Text = "Script Deleted"
+TextLabel1.Text = "Script deleted from auto-execute"
+MessageBackgroundFrame:TweenPosition(UDim2.new(0.5, 0, 0.9, 0),"InOut","Sine",0.8)
+end
+end
+end)
+
+
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.ExecuteButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.CopyLinkButtonBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.CopyScriptBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.OpenDescriptionBackground)
- 
+setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.AutoExecuteBackground)
+
+newScript.AutoExecuteBackground.MouseEnter:Connect(function()
+HoverButtons:Play()
+end)
+
 newScript.ExecuteButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
@@ -2345,10 +2420,11 @@ ScriptListFrame:GetPropertyChangedSignal("CanvasPosition"):Connect(function()
         addScripts(fetchScripts(gquery, page))
     end
 end)
- 
 local ReadECCSV3 = readfile("ECCS_V3/CoreSystem/Files/ECCSV3EDITOR.ECCS")
 EditorTextBox.Text = ""..ReadECCSV3
 PlayerIcon.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=999&height=999&format=png"
 WelcomeLabel.Text = "Welcome Home, "..game.Players.LocalPlayer.DisplayName
+MessageFrame.Text = "Successfully Loaded"
+TextLabel1.Text = "Welcome to ECCS V3, "..game.Players.LocalPlayer.DisplayName
 MessageBackgroundFrame:TweenPosition(UDim2.new(0.5, 0, 0.9, 0),"InOut","Sine",0.8)
 StartUpSound:Play()
