@@ -1836,8 +1836,6 @@ end)
 
 local ReadECCSV3 = readfile("ECCS_V3/CoreSystem/Files/ECCSV3EDITOR.ECCS")
 EditorTextBox.Text = ""..ReadECCSV3
-PlayerIcon.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=999&height=999&format=png"
-WelcomeLabel.Text = "Welcome Home, "..game.Players.LocalPlayer.DisplayName
 
 ExecuteButton_3.MouseButton1Click:Connect(function()
 loadstring(EditorTextBox.Text)()
@@ -2425,6 +2423,8 @@ ScriptListFrame:GetPropertyChangedSignal("CanvasPosition"):Connect(function()
         addScripts(fetchScripts(gquery, page))
     end
 end)
+PlayerIcon.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=999&height=999&format=png"
+WelcomeLabel.Text = "Welcome Home, "..game.Players.LocalPlayer.DisplayName
 MessageFrame.Text = "Successfully Loaded"
 TextLabel1.Text = "Welcome to ECCS V3, "..game.Players.LocalPlayer.DisplayName
 MessageBackgroundFrame:TweenPosition(UDim2.new(0.5, 0, 0.9, 0),"InOut","Sine",0.8)
