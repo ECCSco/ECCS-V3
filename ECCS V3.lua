@@ -2151,7 +2151,11 @@ end)
 VolumeUpButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
- 
+
+CloseCommentsButton.MouseEnter:Connect(function()
+HoverButtons:Play()
+end)
+
 GameFrameBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
