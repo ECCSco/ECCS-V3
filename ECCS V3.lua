@@ -242,7 +242,10 @@ CloseCommentsButtonBackground = Instance.new("Frame")
 CloseCommentsButtonBackgroundUICorner = Instance.new("UICorner")
 CloseCommentsButton = Instance.new("ImageButton")
 CloseCommentsButtonUICorner = Instance.new("UICorner")
-
+LikeImg = Instance.new("ImageLabel")
+DisLikeImg = Instance.new("ImageLabel")
+LikeCount = Instance.new("TextLabel")
+DislikeCount = Instance.new("TextLabel")
 
 local function format(Int)
 return string.format("%02i", Int)
@@ -1459,7 +1462,6 @@ Comments_2.CanvasSize = UDim2.new(0, 0, 0, 0)
  
 Comment.Name = "Comment"
 Comment.Parent = Comments_2
-Comment.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Comment.BackgroundTransparency = 1
 Comment.Size = UDim2.new(0, 860, 0, 150)
  
@@ -1488,7 +1490,7 @@ Author_2.Name = "Author"
 Author_2.Parent = Comment
 Author_2.BackgroundTransparency = 1
 Author_2.Position = UDim2.new(0, 50, 0, 5)
-Author_2.Size = UDim2.new(0, 700, 0, 40)
+Author_2.Size = UDim2.new(0, 620, 0, 40)
 Author_2.Font = Enum.Font.SourceSansBold
 Author_2.Text = "Author"
 Author_2.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -1498,12 +1500,53 @@ Author_2.TextXAlignment = Enum.TextXAlignment.Left
  
 ProfilePicture_2.Name = "ProfilePicture"
 ProfilePicture_2.Parent = Comment
-ProfilePicture_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ProfilePicture_2.BackgroundTransparency = 1.000
+ProfilePicture_2.BackgroundTransparency = 1
 ProfilePicture_2.Position = UDim2.new(0, 5, 0, 5)
 ProfilePicture_2.Size = UDim2.new(0, 40, 0, 40)
 ProfilePicture_2.Image = "rbxassetid://17093333262"
  
+LikeImg.Name = "LikeImg"
+LikeImg.Parent = Comment
+LikeImg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LikeImg.BackgroundTransparency = 1
+LikeImg.Position = UDim2.new(0, 672, 0, 10)
+LikeImg.Size = UDim2.new(0, 25, 0, 25)
+LikeImg.Image = "rbxassetid://18949293967"
+
+DisLikeImg.Name = "DisLikeImg"
+DisLikeImg.Parent = Comment
+DisLikeImg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DisLikeImg.BackgroundTransparency = 1
+DisLikeImg.Position = UDim2.new(0, 760, 0, 10)
+DisLikeImg.Size = UDim2.new(0, 25, 0, 25)
+DisLikeImg.Image = "rbxassetid://18949332467"
+
+LikeCount.Name = "LikeCount"
+LikeCount.Parent = Comment
+LikeCount.BackgroundTransparency = 1
+LikeCount.Position = UDim2.new(0, 710, 0, 10)
+LikeCount.Size = UDim2.new(0, 50, 0, 25)
+LikeCount.Font = Enum.Font.SourceSansBold
+LikeCount.Text = "0"
+LikeCount.TextColor3 = Color3.fromRGB(255, 255, 255)
+LikeCount.TextScaled = true
+LikeCount.TextWrapped = true
+LikeCount.TextXAlignment = Enum.TextXAlignment.Left
+LikeCount.TextYAlignment = Enum.TextYAlignment.Bottom
+
+DislikeCount.Name = "DislikeCount"
+DislikeCount.Parent = Comment
+DislikeCount.BackgroundTransparency = 1
+DislikeCount.Position = UDim2.new(0, 797, 0, 10)
+DislikeCount.Size = UDim2.new(0, 50, 0, 25)
+DislikeCount.Font = Enum.Font.SourceSansBold
+DislikeCount.Text = "0"
+DislikeCount.TextColor3 = Color3.fromRGB(255, 255, 255)
+DislikeCount.TextScaled = true
+DislikeCount.TextWrapped = true
+DislikeCount.TextXAlignment = Enum.TextXAlignment.Left
+DislikeCount.TextYAlignment = Enum.TextYAlignment.Bottom
+
 UICorner_22.CornerRadius = UDim.new(1, 0)
 UICorner_22.Parent = ProfilePicture_2
  
@@ -2151,11 +2194,7 @@ end)
 VolumeUpButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
-
-CloseCommentsButton.MouseEnter:Connect(function()
-HoverButtons:Play()
-end)
-
+ 
 GameFrameBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
@@ -2293,7 +2332,8 @@ end
    newComment.Parent = MainFrame.InfoBox.Comments.Inner.Comments
    newComment.Content.Text = v.text
    newComment.Author.Text = v.commentBy.username
- 
+   newComment.LikeCount.Text = v.likeCount
+   newComment.DislikeCount.Text = v.dislikeCount
 if Content.Visible == true then
 NoComments.Visible = false
 end
