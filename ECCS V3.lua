@@ -210,6 +210,39 @@ AutoExecuteBackground_2 = Instance.new("Frame")
 AutoExecuteBackgroundUICorner_2 = Instance.new("UICorner")
 AutoExecute_2 = Instance.new("TextButton")
 AutoExecuteUICorner_2 = Instance.new("UICorner")
+CommentsBackground = Instance.new("Frame")
+CommentsBackgroundUICorner = Instance.new("UICorner")
+CommentsButton = Instance.new("ImageButton")
+CommentsButtonUICorner = Instance.new("UICorner")
+CommentsBackground_2 = Instance.new("Frame")
+CommentsBackgroundUICorner_2 = Instance.new("UICorner")
+CommentsButton_2 = Instance.new("ImageButton")
+CommentsButtonUICorner_2 = Instance.new("UICorner")
+InfoBox = Instance.new("Frame")
+InfoBoxUICorner = Instance.new("UICorner")
+Info = Instance.new("Frame")
+Author = Instance.new("Frame")
+InfoBoxAuthor = Instance.new("TextLabel")
+ProfilePicture = Instance.new("ImageLabel")
+Comments = Instance.new("Frame")
+Inner = Instance.new("Frame")
+UICorner_21 = Instance.new("UICorner")
+Line = Instance.new("Frame")
+CommentsText = Instance.new("TextLabel")
+Comments_2 = Instance.new("ScrollingFrame")
+Comment = Instance.new("Frame")
+Content = Instance.new("TextLabel")
+Author_2 = Instance.new("TextLabel")
+ProfilePicture_2 = Instance.new("ImageLabel")
+UICorner_22 = Instance.new("UICorner")
+UIListLayout_3 = Instance.new("UIListLayout")
+NoComments = Instance.new("TextLabel")
+CommentsWhiteLine = Instance.new("Frame")
+CloseCommentsButtonBackground = Instance.new("Frame")
+CloseCommentsButtonBackgroundUICorner = Instance.new("UICorner")
+CloseCommentsButton = Instance.new("ImageButton")
+CloseCommentsButtonUICorner = Instance.new("UICorner")
+
 
 local function format(Int)
 return string.format("%02i", Int)
@@ -851,6 +884,20 @@ PingLabel == nil
 end)
  
  
+InfoBox.Visible = false
+ 
+InfoBox.Name = "InfoBox"
+InfoBox.Parent = MainFrame
+InfoBox.BackgroundTransparency = 0.2
+InfoBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+InfoBox.BorderSizePixel = 0
+InfoBox.Position = UDim2.new(-3.55, 0, -1.4, 0)
+InfoBox.Size = UDim2.new(0, 855, 0, 400)
+InfoBox.ZIndex = 3
+ 
+InfoBoxUICorner.CornerRadius = UDim.new(0, 12)
+InfoBoxUICorner.Parent = InfoBox
+
 SearchBox.Name = "SearchBox"
 SearchBox.Parent = MainFrame
 SearchBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -1150,6 +1197,50 @@ AutoExecute.TextSize = 35
 AutoExecuteUICorner.CornerRadius = UDim.new(0, 12)
 AutoExecuteUICorner.Parent = AutoExecute
  
+CommentsBackground.Name = "CommentsBackground"
+CommentsBackground.Parent = ScriptFrame
+CommentsBackground.AnchorPoint = Vector2.new(0.5, 0.5)
+CommentsBackground.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+CommentsBackground.Position = UDim2.new(0.96, 0, 0.72, 0)
+CommentsBackground.Size = UDim2.new(0, 46, 0, 46)
+ 
+CommentsBackgroundUICorner.CornerRadius = UDim.new(0, 15)
+CommentsBackgroundUICorner.Parent = CommentsBackground
+ 
+CommentsButton.Name = "CommentsButton"
+CommentsButton.Parent = ScriptFrame
+CommentsButton.AnchorPoint = Vector2.new(0.5, 0.5)
+CommentsButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CommentsButton.Position = CommentsBackground.Position
+CommentsButton.Size = UDim2.new(0, 41, 0, 41)
+CommentsButton.Image = "rbxassetid://18946598838"
+CommentsButton.AutoButtonColor = false
+
+CommentsButtonUICorner.CornerRadius = UDim.new(0, 12)
+CommentsButtonUICorner.Parent = CommentsButton
+
+CommentsBackground_2.Name = "CommentsBackground"
+CommentsBackground_2.Parent = VerifiedScriptFrame
+CommentsBackground_2.AnchorPoint = Vector2.new(0.5, 0.5)
+CommentsBackground_2.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+CommentsBackground_2.Position = UDim2.new(0.96, 0, 0.72, 0)
+CommentsBackground_2.Size = UDim2.new(0, 46, 0, 46)
+ 
+CommentsBackgroundUICorner_2.CornerRadius = UDim.new(0, 15)
+CommentsBackgroundUICorner_2.Parent = CommentsBackground_2
+ 
+CommentsButton_2.Name = "CommentsButton"
+CommentsButton_2.Parent = VerifiedScriptFrame
+CommentsButton_2.AnchorPoint = Vector2.new(0.5, 0.5)
+CommentsButton_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CommentsButton_2.Position = CommentsBackground_2.Position
+CommentsButton_2.Size = UDim2.new(0, 41, 0, 41)
+CommentsButton_2.Image = "rbxassetid://18946598838"
+CommentsButton_2.AutoButtonColor = false
+
+CommentsButtonUICorner_2.CornerRadius = UDim.new(0, 12)
+CommentsButtonUICorner_2.Parent = CommentsButton_2
+
 AutoExecuteBackground_2.Name = "AutoExecuteBackground"
 AutoExecuteBackground_2.Parent = VerifiedScriptFrame
 AutoExecuteBackground_2.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -1335,6 +1426,122 @@ ClearAndSearch.AutoButtonColor = false
  
 ClearAndSearchUICorner.CornerRadius = UDim.new(0, 12)
 ClearAndSearchUICorner.Parent = ClearAndSearch
+
+Info.Name = "Info"
+Info.Parent = InfoBox
+Info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Info.BackgroundTransparency = 1
+Info.Size = UDim2.new(0, 995, 0, 100)
+ 
+Comments.Name = "Comments"
+Comments.Parent = InfoBox
+Comments.BackgroundTransparency = 1
+Comments.Size = UDim2.new(0, 400, 0, 414)
+ 
+Inner.Name = "Inner"
+Inner.Parent = Comments
+Inner.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Inner.Position = UDim2.new(0, 0, 0, 10)
+Inner.BackgroundTransparency = 1
+Inner.Size = UDim2.new(0, 400, 0, 414)
+ 
+UICorner_21.CornerRadius = UDim.new(0, 12)
+UICorner_21.Parent = Inner
+ 
+Comments_2.Name = "Comments"
+Comments_2.Parent = Inner
+Comments_2.Active = true
+Comments_2.BackgroundTransparency = 1
+Comments_2.BorderSizePixel = 0
+Comments_2.Position = UDim2.new(0, 3.5, 0, -6.5)
+Comments_2.Size = UDim2.new(0, 860, 0, 400)
+Comments_2.CanvasSize = UDim2.new(0, 0, 0, 0)
+ 
+Comment.Name = "Comment"
+Comment.Parent = Comments_2
+Comment.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Comment.BackgroundTransparency = 1
+Comment.Size = UDim2.new(0, 860, 0, 150)
+ 
+Content.Name = "Content"
+Content.Parent = Comment
+Content.BackgroundTransparency = 1
+Content.Position = UDim2.new(0, 0, 0, 49)
+Content.Size = UDim2.new(0, 855, 0, 100)
+Content.Font = Enum.Font.SourceSansBold
+Content.Text = "Comment"
+Content.TextColor3 = Color3.fromRGB(255, 255, 255)
+Content.TextSize = 14
+Content.TextWrapped = true
+Content.TextXAlignment = Enum.TextXAlignment.Left
+Content.TextYAlignment = Enum.TextYAlignment.Top
+Content.TextScaled = true
+ 
+CommentsWhiteLine.Name = "CommentsWhiteLine"
+CommentsWhiteLine.Parent = Content
+CommentsWhiteLine.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CommentsWhiteLine.BorderSizePixel = 0
+CommentsWhiteLine.Size = UDim2.new(0, 860, 0, 1)
+CommentsWhiteLine.Position = UDim2.new(0, 0, 0, 99)
+
+Author_2.Name = "Author"
+Author_2.Parent = Comment
+Author_2.BackgroundTransparency = 1
+Author_2.Position = UDim2.new(0, 50, 0, 5)
+Author_2.Size = UDim2.new(0, 700, 0, 40)
+Author_2.Font = Enum.Font.SourceSansBold
+Author_2.Text = "Author"
+Author_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Author_2.TextScaled = true
+Author_2.TextWrapped = true
+Author_2.TextXAlignment = Enum.TextXAlignment.Left
+ 
+ProfilePicture_2.Name = "ProfilePicture"
+ProfilePicture_2.Parent = Comment
+ProfilePicture_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ProfilePicture_2.BackgroundTransparency = 1.000
+ProfilePicture_2.Position = UDim2.new(0, 5, 0, 5)
+ProfilePicture_2.Size = UDim2.new(0, 40, 0, 40)
+ProfilePicture_2.Image = "rbxassetid://17093333262"
+ 
+UICorner_22.CornerRadius = UDim.new(1, 0)
+UICorner_22.Parent = ProfilePicture_2
+ 
+UIListLayout_3.Parent = Comments_2
+UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_3.Padding = UDim.new(0, 0)
+ 
+NoComments.Name = "NoComments"
+NoComments.Parent = InfoBox
+NoComments.BackgroundTransparency = 1
+NoComments.Position = UDim2.new(0.49, 0, 0.5, 0)
+NoComments.Size = UDim2.new(0, 10, 0, 5)
+NoComments.Font = Enum.Font.SourceSansBold
+NoComments.Text = "There are no comments yet"
+NoComments.TextColor3 = Color3.fromRGB(255, 255, 255)
+NoComments.TextSize = 50
+
+CloseCommentsButtonBackground.Name = "CloseCommentsButtonBackground"
+CloseCommentsButtonBackground.Parent = InfoBox
+CloseCommentsButtonBackground.AnchorPoint = Vector2.new(0.5, 0.5)
+CloseCommentsButtonBackground.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+CloseCommentsButtonBackground.Position = UDim2.new(1.03, 0, 0.058, 0)
+CloseCommentsButtonBackground.Size = UDim2.new(0, 46, 0, 46)
+ 
+CloseCommentsButtonBackgroundUICorner.CornerRadius = UDim.new(0, 15)
+CloseCommentsButtonBackgroundUICorner.Parent = CloseCommentsButtonBackground
+ 
+CloseCommentsButton.Name = "CloseCommentsButton"
+CloseCommentsButton.Parent = CloseCommentsButtonBackground
+CloseCommentsButton.AnchorPoint = Vector2.new(0.5, 0.5)
+CloseCommentsButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CloseCommentsButton.Position = UDim2.new(0.5, 0, 0.5, 0)
+CloseCommentsButton.Size = UDim2.new(0, 41, 0, 41)
+CloseCommentsButton.Image = "rbxassetid://18946644800"
+CloseCommentsButton.AutoButtonColor = false
+
+CloseCommentsButtonUICorner.CornerRadius = UDim.new(0, 12)
+CloseCommentsButtonUICorner.Parent = CloseCommentsButton
 
 BackgroundConsole.Name = "BackgroundConsole"
 BackgroundConsole.Parent = UIGui
@@ -1789,6 +1996,7 @@ setHoverDef(nil, UDim2.new(0, 40, 0, 40), SearcherOpenUIButton)
 setHoverDef(nil, UDim2.new(0, 40, 0, 40), ConsoleButton)
 setHoverDef(nil, UDim2.new(0, 40, 0, 40), EditorButton)
 setHoverDef(nil, UDim2.new(0, 36, 0, 36), MusicButton) 
+
 function createfolders(path)
  local pathtbl = string.split(path, "/")
  for i, v in pairs(pathtbl) do
@@ -1918,7 +2126,7 @@ setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), ReloadBackgroundButton)
 setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), HistoryBackgroundButton)
 setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), ClearAndSearchBackground)
 setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), ClearButton_2Background)
-
+setHoverColor_2(nil, Color3.fromRGB(200, 200, 200), CloseCommentsButtonBackground)
 
 Stop_PlayButtonBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
@@ -1996,7 +2204,6 @@ local getfakeasset = getcustomasset or getsynasset
  
 HttpService = game:GetService("HttpService")
 TweenService = game:GetService("TweenService")
-TextService = game:GetService("TextService")
  
  
  
@@ -2012,15 +2219,17 @@ end
  
  
 ScriptListFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
- 
 ScriptListFrame.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.InfoBox.Comments.Inner.Comments.AutomaticCanvasSize = Enum.AutomaticSize.Y
+MainFrame.InfoBox.Comments.Inner.Comments.ScrollBarImageColor3 = Color3.new(0, 0, 0)
+MainFrame.InfoBox.Comments.Inner.Comments.ScrollBarImageTransparency = 1
  
- 
-local VerifiedScript = VerifiedScriptFrame:Clone()
-local Script = ScriptFrame:Clone()
+VerifiedScript = VerifiedScriptFrame:Clone()
+Script = ScriptFrame:Clone()
 ScriptFrame:Destroy()
 VerifiedScriptFrame:Destroy()
- 
+Comment = MainFrame.InfoBox.Comments.Inner.Comments.Comment:Clone()
+MainFrame.InfoBox.Comments.Inner.Comments.Comment:Destroy()
  
  
 function _if(a, b, c)
@@ -2045,6 +2254,15 @@ function fetchScripts(query, page)
     return req.scripts
 end
  
+function fetchComments(scriptId, page)
+ page = page or 1 
+ 
+ url = "https://scriptblox.com/api/comment/" ..scriptId.. "?page=" ..tostring(page).. "&max=100"
+ req = HttpService:JSONDecode(game:HttpGetAsync(url)).result
+ 
+ return req.comments
+end
+
 function fixScript(scriptObj)
  
             local req = HttpService:JSONDecode(game:HttpGetAsync("https://www.scriptblox.com/api/script/".. scriptObj.slug)).script
@@ -2056,7 +2274,28 @@ function fixScript(scriptObj)
     return scriptObj
 end
  
+ function updateInfoBox(scriptObj)
+ scriptObj = fixScript(scriptObj)
  
+ 
+ commentsUIListLayout = MainFrame.InfoBox.Comments.Inner.Comments.UIListLayout:Clone()
+ MainFrame.InfoBox.Comments.Inner.Comments:ClearAllChildren()
+ commentsUIListLayout.Parent = MainFrame.InfoBox.Comments.Inner.Comments
+ 
+ task.spawn(function()
+  for _, v in pairs(fetchComments(scriptObj["_id"])) do
+ 
+   newComment = Comment:Clone()
+   newComment.Parent = MainFrame.InfoBox.Comments.Inner.Comments
+   newComment.Content.Text = v.text
+   newComment.Author.Text = v.commentBy.username
+ 
+if Content.Visible == true then
+NoComments.Visible = false
+end
+  end
+ end)
+end
  
 function refreshScripts(scriptTbl)
     if #scriptTbl <= 0 then
@@ -2129,8 +2368,13 @@ setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.CopyLinkButtonBackgr
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.CopyScriptBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.OpenDescriptionBackground)
 setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.AutoExecuteBackground)
+setHoverColor(nil, Color3.fromRGB(200, 200, 200), newScript.CommentsBackground)
 
 newScript.AutoExecuteBackground.MouseEnter:Connect(function()
+HoverButtons:Play()
+end)
+
+newScript.CommentsBackground.MouseEnter:Connect(function()
 HoverButtons:Play()
 end)
 
@@ -2159,7 +2403,12 @@ DescriptionScript.Visible = true
 DescriptionScript.Text = v.features
 ScriptListFrame.Visible = false
 end)
- 
+
+newScript.CommentsButton.MouseButton1Click:Connect(function()
+updateInfoBox(v)
+ScriptListFrame.Visible = false
+InfoBox.Visible = true
+end)
  
 end)
 end
@@ -2167,7 +2416,11 @@ end
     
     pagefetchrunning = false
 end
- 
+CloseCommentsButton.MouseButton1Click:Connect(function()
+InfoBox.Visible = false
+ScriptListFrame.Visible = true
+CloseDescriptionSound:Play()
+end)
 DescriptionScript.MouseButton1Click:Connect(function()
 DescriptionScript.Visible = false
 ScriptListFrame.Visible = true
@@ -2203,6 +2456,7 @@ end)
  
 SearchBox.FocusLost:Connect(function(enterPressed)
     if enterPressed then
+InfoBox.Visible = false
 DescriptionScript.Visible = false
 ScriptListFrame.Visible = true
         gquery = SearchBox.Text
@@ -2214,6 +2468,7 @@ ScriptListFrame.Visible = true
 end)
 
 ReloadButton.MouseButton1Click:Connect(function()
+InfoBox.Visible = false
 DescriptionScript.Visible = false
 ScriptListFrame.Visible = true
         gquery = SearchBox.Text
@@ -2238,6 +2493,7 @@ ClearButton_2.MouseEnter:Connect(function()
  end)
 
 HistoryButton.MouseButton1Click:Connect(function()
+InfoBox.Visible = false
 local ReadECCSV3History = readfile("ECCS_V3/CoreSystem/Files/ECCSV3SearchHistory.ECCS")
 SearchBox.Text = ""..ReadECCSV3History
 DescriptionScript.Visible = false
