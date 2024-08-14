@@ -2408,6 +2408,7 @@ newScript.CommentsButton.MouseButton1Click:Connect(function()
 updateInfoBox(v)
 ScriptListFrame.Visible = false
 InfoBox.Visible = true
+NoComments.Visible = true
 end)
  
 end)
