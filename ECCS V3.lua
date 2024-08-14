@@ -1481,7 +1481,7 @@ CommentsWhiteLine.Name = "CommentsWhiteLine"
 CommentsWhiteLine.Parent = Content
 CommentsWhiteLine.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 CommentsWhiteLine.BorderSizePixel = 0
-CommentsWhiteLine.Size = UDim2.new(0, 860, 0, 1)
+CommentsWhiteLine.Size = UDim2.new(0, 850, 0, 1)
 CommentsWhiteLine.Position = UDim2.new(0, 0, 0, 99)
 
 Author_2.Name = "Author"
