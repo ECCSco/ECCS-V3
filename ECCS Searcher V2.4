@@ -223,10 +223,8 @@ DescFrame.Name = "DescFrame"
 DescFrame.Parent = HeadFrame
 DescFrame.BackgroundTransparency = 1
 DescFrame.Size = UDim2.new(0, 360, 0, 200)
-DescFrame.Position = UDim2.new(0, 0, 0.5, 0)
+DescFrame.Position = UDim2.new(1, 0, 0.5, 0)
 DescFrame.ZIndex = 2
-
-DescFrame.Visible = false
 
 ScriptImg.Name = "ScriptImg"
 ScriptImg.Parent = DescFrame
@@ -259,14 +257,12 @@ InfoBoxDescription.TextYAlignment = Enum.TextYAlignment.Center
 DescUICorner.CornerRadius = UDim.new(0, 12)
 DescUICorner.Parent = InfoBoxDescription
 
-InfoBox.Visible = false
-
 InfoBox.Name = "InfoBox"
 InfoBox.Parent = HeadFrame
 InfoBox.BackgroundTransparency = 0.7
 InfoBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 InfoBox.BorderSizePixel = 0
-InfoBox.Position = UDim2.new(0, 0, 0.5, 0)
+InfoBox.Position = UDim2.new(-1, 0, 0.5, 0)
 InfoBox.Size = UDim2.new(0, 360, 0, 200)
 InfoBox.ZIndex = 3
 
@@ -426,9 +422,6 @@ DevelopersButtonUICorner.CornerRadius = UDim.new(0, 12)
 
 DevelopersButton.MouseButton1Click:Connect(function()
 UIClick:Play()
-DescFrame.Visible = false
-InfoBox.Visible = false
-ScriptListFrame.Visible = true
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 2.49, 0),"InOut","Sine",0.3)
 PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
@@ -488,9 +481,6 @@ ExecutorMenuButtonUICorner.CornerRadius = UDim.new(0, 12)
 
 ExecutorMenuButton.MouseButton1Click:Connect(function()
 UIClick:Play()
-DescFrame.Visible = false
-InfoBox.Visible = false
-ScriptListFrame.Visible = true
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 1.32, 0),"InOut","Sine",0.3)
 PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
@@ -648,9 +638,6 @@ PlayerIconUICorner.CornerRadius = UDim.new(0, 12)
 
 PlayerIcon.MouseButton1Click:Connect(function()
 UIClick:Play()
-DescFrame.Visible = false
-InfoBox.Visible = false
-ScriptListFrame.Visible = true
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, -1.2, 0),"InOut","Sine",0.3)
 PlayerIcon:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
 SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
@@ -678,9 +665,6 @@ SearcherMenuButtonUICorner.CornerRadius = UDim.new(0, 12)
 
 SearcherMenuButton.MouseButton1Click:Connect(function()
 UIClick:Play()
-DescFrame.Visible = false
-InfoBox.Visible = false
-ScriptListFrame.Visible = true
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 SearcherMenuButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
@@ -1139,8 +1123,6 @@ ScriptGame_2.TextSize = 20
 ScriptGame_2.TextWrapped = true
 ScriptGame_2.TextXAlignment = Enum.TextXAlignment.Left
 
-DescFrame.Visible = false
-
 Info.Name = "Info"
 Info.Parent = InfoBox
 Info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -1295,8 +1277,7 @@ NoComments.TextSize = 30
 
 BackButtonInfoBox.MouseButton1Click:Connect(function()
 UIClick:Play()
-InfoBox.Visible = false
-ScriptListFrame.Visible = true
+HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 NoComments.Visible = false
 end)
 
@@ -1510,8 +1491,7 @@ function addScripts(scriptTbl)
 			end
 			newScript.DescScriptButton.MouseButton1Click:Connect(function()
 			UIClick:Play()
-			ScriptListFrame.Visible = false
-			DescFrame.Visible = true
+			HeadFrame:TweenPosition(UDim2.new(-0.5, 0, 0, 0),"InOut","Sine",0.3)
 			if v.game.name == "Universal Script 📌" then
  		   ScriptImg.Image = "rbxassetid://70411669238044"
 			else
@@ -1521,9 +1501,8 @@ function addScripts(scriptTbl)
 			end)
             newScript.ChatButton.MouseButton1Click:Connect(function()
 			UIClick:Play()
-			InfoBox.Visible = true
 			updateInfoBox(v)
-			ScriptListFrame.Visible = false
+			HeadFrame:TweenPosition(UDim2.new(1.5, 0, 0, 0),"InOut","Sine",0.3)
 			NoComments.Visible = true
 			end)
 			newScript.ExecuteButton.MouseButton1Click:Connect(function()
@@ -1581,9 +1560,6 @@ end
 SearchBox.FocusLost:Connect(function(enterPressed)
 	if enterPressed then
 UIClick:Play()
-DescFrame.Visible = false
-InfoBox.Visible = false
-ScriptListFrame.Visible = true
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 SearcherMenuButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
@@ -1605,8 +1581,7 @@ end)
 
 InfoBoxDescription.MouseButton1Click:Connect(function()
 UIClick:Play()
-ScriptListFrame.Visible = true
-DescFrame.Visible = false
+HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 end)
 
 local gui = MainFrame
