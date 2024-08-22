@@ -408,8 +408,9 @@ CloseUIButtonUICorner.CornerRadius = UDim.new(0, 12)
 CloseUIButtonUICorner.Parent = CloseUIButton
 
 DevelopersButton.Name = "DevelopersButton"
-DevelopersButton.Position = UDim2.new(0, 20, 0.135, 10)
-DevelopersButton.Parent = MainFrame
+DevelopersButton.Position = UDim2.new(0.5, 0, 0.13, 0)
+DevelopersButton.Parent = MenuBarFrame
+DevelopersButton.AnchorPoint = Vector2.new(0.5, 0.5)
 DevelopersButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 DevelopersButton.BackgroundTransparency = 0.7
 DevelopersButton.LayoutOrder = 1
@@ -426,10 +427,10 @@ DevelopersButtonUICorner.CornerRadius = UDim.new(0, 12)
 DevelopersButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 2.49, 0),"InOut","Sine",0.3)
-PlayerIcon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-DevelopersButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-SearcherMenuButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ExecutorMenuButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+ExecutorMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+DevelopersButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
 writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
 end)
 
@@ -466,8 +467,9 @@ DevDescUICorner.CornerRadius = UDim.new(0, 12)
 DevDescUICorner.Parent = DevDesc
 
 ExecutorMenuButton.Name = "ExecutorMenuButton"
-ExecutorMenuButton.Position = UDim2.new(0, 20, 0.325, 10)
-ExecutorMenuButton.Parent = MainFrame
+ExecutorMenuButton.Position = UDim2.new(0.5, 0, 0.37, 0)
+ExecutorMenuButton.Parent = MenuBarFrame
+ExecutorMenuButton.AnchorPoint = Vector2.new(0.5, 0.5)
 ExecutorMenuButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ExecutorMenuButton.BackgroundTransparency = 0.7
 ExecutorMenuButton.LayoutOrder = 1
@@ -484,10 +486,10 @@ ExecutorMenuButtonUICorner.CornerRadius = UDim.new(0, 12)
 ExecutorMenuButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 1.32, 0),"InOut","Sine",0.3)
-PlayerIcon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-DevelopersButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-SearcherMenuButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ExecutorMenuButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+ExecutorMenuButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
+DevelopersButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
 end)
 
@@ -626,10 +628,11 @@ Hint.Text = "Script executed!"
 end)
 
 PlayerIcon.Name = "PlayerIcon"
-PlayerIcon.Parent = MainFrame
+PlayerIcon.Parent = MenuBarFrame
 PlayerIcon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 PlayerIcon.BackgroundTransparency = 0.7
-PlayerIcon.Position = UDim2.new(0, 20, 0.705, 10)
+PlayerIcon.AnchorPoint = Vector2.new(0.5, 0.5)
+PlayerIcon.Position = UDim2.new(0.5, 0, 0.87, 0)
 PlayerIcon.Size = UDim2.new(0, 40, 0, 40)
 PlayerIcon.AutoButtonColor = false
 PlayerIcon.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=999&height=999&format=png"
@@ -640,20 +643,21 @@ PlayerIconUICorner.CornerRadius = UDim.new(0, 12)
 PlayerIcon.MouseButton1Click:Connect(function()
 UIClick:Play()
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, -1.2, 0),"InOut","Sine",0.3)
-PlayerIcon.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-DevelopersButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-SearcherMenuButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ExecutorMenuButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+PlayerIcon:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
+SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+ExecutorMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+DevelopersButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
 end)
 
 SearcherMenuButton.Name = "SearcherMenuButton"
-SearcherMenuButton.Position = UDim2.new(0, 20, 0.515, 10)
-SearcherMenuButton.Parent = MainFrame
-SearcherMenuButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+SearcherMenuButton.Position = UDim2.new(0.5, 0, 0.61, 0)
+SearcherMenuButton.Parent = MenuBarFrame
+SearcherMenuButton.AnchorPoint = Vector2.new(0.5, 0.5)
+SearcherMenuButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 SearcherMenuButton.BackgroundTransparency = 0.7
 SearcherMenuButton.LayoutOrder = 1
-SearcherMenuButton.Size = UDim2.new(0, 40, 0, 40)
+SearcherMenuButton.Size = UDim2.new(0, 45, 0, 45)
 SearcherMenuButton.AutoButtonColor = false
 SearcherMenuButton.Font = Enum.Font.Cartoon
 SearcherMenuButton.Text = "🔎"
@@ -666,10 +670,10 @@ SearcherMenuButtonUICorner.CornerRadius = UDim.new(0, 12)
 SearcherMenuButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
-PlayerIcon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-DevelopersButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-SearcherMenuButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-ExecutorMenuButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+SearcherMenuButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
+ExecutorMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+DevelopersButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
 end)
 
@@ -1522,10 +1526,10 @@ Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Script opened in executor!"
    ExecutorTextBox.Text = ""..v.script
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 1.32, 0),"InOut","Sine",0.3)
-PlayerIcon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-DevelopersButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-SearcherMenuButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ExecutorMenuButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+ExecutorMenuButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
+DevelopersButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
 			end)
 			newScript.CopyScriptsButton.MouseButton1Click:Connect(function()
@@ -1566,10 +1570,10 @@ SearchBox.FocusLost:Connect(function(enterPressed)
 	if enterPressed then
 UIClick:Play()
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
-PlayerIcon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-DevelopersButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-SearcherMenuButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-ExecutorMenuButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+SearcherMenuButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
+ExecutorMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+DevelopersButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
 		gquery = SearchBox.Text
 		page = 1
