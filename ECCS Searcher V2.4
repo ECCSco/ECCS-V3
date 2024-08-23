@@ -26,7 +26,6 @@ ScriptGame = Instance.new("TextLabel")
 VerifiedScriptFrame = Instance.new("Frame")
 UICorner_9 = Instance.new("UICorner")
 ScriptTitle_2 = Instance.new("TextLabel")
-VerifiedIcon = Instance.new("ImageLabel")
 ExecuteButton_2 = Instance.new("TextButton")
 UICorner_10 = Instance.new("UICorner")
 UICorner_11 = Instance.new("UICorner")
@@ -424,7 +423,7 @@ DevelopersButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 if HeadFrame.Position == UDim2.new(-0.5, 0, 0, 0) or HeadFrame.Position == UDim2.new(1.5, 0, 0, 0) then
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
-wait(0.35)
+wait(0.3)
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 2.49, 0),"InOut","Sine",0.3)
 PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
@@ -493,7 +492,7 @@ ExecutorMenuButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 if HeadFrame.Position == UDim2.new(-0.5, 0, 0, 0) or HeadFrame.Position == UDim2.new(1.5, 0, 0, 0) then
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
-wait(0.35)
+wait(0.3)
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 1.32, 0),"InOut","Sine",0.3)
 PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
@@ -660,7 +659,7 @@ PlayerIcon.MouseButton1Click:Connect(function()
 UIClick:Play()
 if HeadFrame.Position == UDim2.new(-0.5, 0, 0, 0) or HeadFrame.Position == UDim2.new(1.5, 0, 0, 0) then
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
-wait(0.35)
+wait(0.3)
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, -1.2, 0),"InOut","Sine",0.3)
 PlayerIcon:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
 SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
@@ -697,7 +696,7 @@ SearcherMenuButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 if HeadFrame.Position == UDim2.new(-0.5, 0, 0, 0) or HeadFrame.Position == UDim2.new(1.5, 0, 0, 0) then
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
-wait(0.35)
+wait(0.3)
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 SearcherMenuButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
@@ -858,10 +857,9 @@ UICorner_6.Parent = ScriptFrame
 
 ScriptTitle.Name = "ScriptTitle"
 ScriptTitle.Parent = ScriptFrame
-ScriptTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScriptTitle.BackgroundTransparency = 1.000
+ScriptTitle.BackgroundTransparency = 1
 ScriptTitle.Position = UDim2.new(0, 10, 0, 10)
-ScriptTitle.Size = UDim2.new(0, 180, 0, 40)
+ScriptTitle.Size = UDim2.new(0, 280, 0, 40)
 ScriptTitle.Font = Enum.Font.Cartoon
 ScriptTitle.Text = "Script Title"
 ScriptTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -1041,10 +1039,9 @@ UICorner_9.Parent = VerifiedScriptFrame
 
 ScriptTitle_2.Name = "ScriptTitle"
 ScriptTitle_2.Parent = VerifiedScriptFrame
-ScriptTitle_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScriptTitle_2.BackgroundTransparency = 1.000
-ScriptTitle_2.Position = UDim2.new(0, 50, 0, 10)
-ScriptTitle_2.Size = UDim2.new(0, 240, 0, 40)
+ScriptTitle_2.BackgroundTransparency = 1
+ScriptTitle_2.Position = ScriptTitle.Position
+ScriptTitle_2.Size = ScriptTitle.Size
 ScriptTitle_2.Font = Enum.Font.Cartoon
 ScriptTitle_2.Text = "Script Title"
 ScriptTitle_2.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -1052,15 +1049,6 @@ ScriptTitle_2.TextScaled = true
 ScriptTitle_2.TextSize = 14.000
 ScriptTitle_2.TextWrapped = true
 ScriptTitle_2.TextXAlignment = Enum.TextXAlignment.Left
-
-VerifiedIcon.Name = "VerifiedIcon"
-VerifiedIcon.Parent = VerifiedScriptFrame
-VerifiedIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-VerifiedIcon.BackgroundTransparency = 0
-VerifiedIcon.Position = UDim2.new(0, 10, 0, 15)
-VerifiedIcon.Size = UDim2.new(0, 40, 0, 30)
-VerifiedIcon.Image = "rbxassetid://15621211889"
-VerifiedIcon.BackgroundTransparency = 1
 
 ExecuteButton_2.Name = "ExecuteButton"
 ExecuteButton_2.Parent = VerifiedScriptFrame
@@ -1140,12 +1128,12 @@ CopyLinkButtonUICorner_2.Parent = CopyLinkButton_2
 ScriptAuthor_2.Name = "ScriptAuthor"
 ScriptAuthor_2.Parent = VerifiedScriptFrame
 ScriptAuthor_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScriptAuthor_2.BackgroundTransparency = 1.000
+ScriptAuthor_2.BackgroundTransparency = 1
 ScriptAuthor_2.Position = ScriptAuthor.Position
 ScriptAuthor_2.Size = UDim2.new(0, 280, 0, 25)
 ScriptAuthor_2.Font = Enum.Font.Cartoon
 ScriptAuthor_2.Text = "By ScriptAuthor"
-ScriptAuthor_2.TextColor3 = Color3.fromRGB(192, 192, 192)
+ScriptAuthor_2.TextColor3 = Color3.fromRGB(0, 125, 255)
 ScriptAuthor_2.TextSize = 20
 ScriptAuthor_2.TextWrapped = true
 ScriptAuthor_2.TextXAlignment = Enum.TextXAlignment.Left
