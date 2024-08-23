@@ -1,5 +1,5 @@
-local ShiftlockStarterGui = Instance.new("ScreenGui")
-local ImageButton = Instance.new("ImageButton")
+ShiftlockStarterGui = Instance.new("ScreenGui")
+ImageButton = Instance.new("ImageButton")
 
 
 ShiftlockStarterGui.Name = "Shiftlock"
@@ -14,49 +14,49 @@ ImageButton.Size = UDim2.new(0.0636147112, 0, 0.0661305636, 0)
 ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeXX
 ImageButton.Image = "http://www.roblox.com/asset/?id=182223762"
 
-local function TLQOYN_fake_script()
+function TLQOYN_fake_script()
 	local script = Instance.new('LocalScript', ImageButton)
 
-	local MobileCameraFramework = {}
-	local players = game:GetService("Players")
-	local runservice = game:GetService("RunService")
-	local CAS = game:GetService("ContextActionService")
-	local player = players.LocalPlayer
-	local character = player.Character or player.CharacterAdded:Wait()
-	local root = character:WaitForChild("HumanoidRootPart")
-	local humanoid = character.Humanoid
-	local camera = workspace.CurrentCamera
-	local button = script.Parent
+	MobileCameraFramework = {}
+	players = game:GetService("Players")
+	runservice = game:GetService("RunService")
+	CAS = game:GetService("ContextActionService")
+	player = players.LocalPlayer
+	character = player.Character or player.CharacterAdded:Wait()
+	root = character:WaitForChild("HumanoidRootPart")
+	humanoid = character.Humanoid
+	camera = workspace.CurrentCamera
+	button = script.Parent
 	
 
 	uis = game:GetService("UserInputService")
 	ismobile = uis.TouchEnabled
 	button.Visible = ismobile
 	
-	local states = {
+	states = {
 		OFF = "rbxasset://textures/ui/mouseLock_off@2x.png",
 		ON = "rbxasset://textures/ui/mouseLock_on@2x.png"
 	}
-	local MAX_LENGTH = 900000
-	local active = false
-	local ENABLED_OFFSET = CFrame.new(1.7, 0, 0)
-	local DISABLED_OFFSET = CFrame.new(-1.7, 0, 0)
-	local function UpdateImage(STATE)
+	MAX_LENGTH = 900000
+	active = false
+	ENABLED_OFFSET = CFrame.new(1.7, 0, 0)
+	DISABLED_OFFSET = CFrame.new(-1.7, 0, 0)
+	function UpdateImage(STATE)
 		button.Image = states[STATE]
 	end
-	local function UpdateAutoRotate(BOOL)
+	function UpdateAutoRotate(BOOL)
 		humanoid.AutoRotate = BOOL
 	end
-	local function GetUpdatedCameraCFrame(ROOT, CAMERA)
+	function GetUpdatedCameraCFrame(ROOT, CAMERA)
 		return CFrame.new(root.Position, Vector3.new(CAMERA.CFrame.LookVector.X * MAX_LENGTH, root.Position.Y, CAMERA.CFrame.LookVector.Z * MAX_LENGTH))
 	end
-	local function EnableShiftlock()
+	function EnableShiftlock()
 		UpdateAutoRotate(false)
 		UpdateImage("ON")
 		root.CFrame = GetUpdatedCameraCFrame(root, camera)
 		camera.CFrame = camera.CFrame * ENABLED_OFFSET
 	end
-	local function DisableShiftlock()
+	function DisableShiftlock()
 		UpdateAutoRotate(true)
 		UpdateImage("OFF")
 		camera.CFrame = camera.CFrame * DISABLED_OFFSET
@@ -76,7 +76,7 @@ local function TLQOYN_fake_script()
 			DisableShiftlock()
 		end
 	end
-	local ShiftLockButton = CAS:BindAction("ShiftLOCK", ShiftLock, false, "On")
+	ShiftLockButton = CAS:BindAction("ShiftLOCK", ShiftLock, false, "On")
 	CAS:SetPosition("ShiftLOCK", UDim2.new(0.8, 0, 0.8, 0))
 	button.MouseButton1Click:Connect(function()
 		if not active then
@@ -91,27 +91,27 @@ local function TLQOYN_fake_script()
 	
 end
 coroutine.wrap(TLQOYN_fake_script)()
-local function OMQRQRC_fake_script() -- ShiftlockStarterGui.LocalScript 
+function OMQRQRC_fake_script() -- ShiftlockStarterGui.LocalScript 
 	local script = Instance.new('LocalScript', ShiftlockStarterGui)
 
-	local Players = game:GetService("Players")
-	local UserInputService = game:GetService("UserInputService")
-	local Settings = UserSettings()
-	local GameSettings = Settings.GameSettings
-	local ShiftLockController = {}
-	while not Players.LocalPlayer do
+	Players = game:GetService("Players")
+	UserInputService = game:GetService("UserInputService")
+	Settings = UserSettings()
+	GameSettings = Settings.GameSettings
+	ShiftLockController = {}
+	not Players.LocalPlayer do
 		wait()
 	end
-	local LocalPlayer = Players.LocalPlayer
-	local Mouse = LocalPlayer:GetMouse()
-	local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
-	local ScreenGui, ShiftLockIcon, InputCn
-	local IsShiftLockMode = true
-	local IsShiftLocked = true
-	local IsActionBound = false
-	local IsInFirstPerson = false
+	LocalPlayer = Players.LocalPlayer
+	Mouse = LocalPlayer:GetMouse()
+	PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+	ScreenGui, ShiftLockIcon, InputCn
+	IsShiftLockMode = true
+	IsShiftLocked = true
+	IsActionBound = false
+	IsInFirstPerson = false
 	ShiftLockController.OnShiftLockToggled = Instance.new("BindableEvent")
-	local function isShiftLockMode()
+	function isShiftLockMode()
 		return LocalPlayer.DevEnableMouseLock and GameSettings.ControlMode == Enum.ControlMode.MouseLockSwitch and LocalPlayer.DevComputerMovementMode ~= Enum.DevComputerMovementMode.ClickToMove and GameSettings.ComputerMovementMode ~= Enum.ComputerMovementMode.ClickToMove and LocalPlayer.DevComputerMovementMode ~= Enum.DevComputerMovementMode.Scriptable
 	end
 	if not UserInputService.TouchEnabled then
@@ -121,7 +121,7 @@ local function OMQRQRC_fake_script() -- ShiftlockStarterGui.LocalScript
 		IsShiftLocked = not IsShiftLocked
 		ShiftLockController.OnShiftLockToggled:Fire()
 	end
-	local initialize = function()
+	initialize = function()
 		print("enabled")
 	end
 	function ShiftLockController:IsShiftLocked()
@@ -130,7 +130,7 @@ local function OMQRQRC_fake_script() -- ShiftlockStarterGui.LocalScript
 	function ShiftLockController:SetIsInFirstPerson(isInFirstPerson)
 		IsInFirstPerson = isInFirstPerson
 	end
-	local function mouseLockSwitchFunc(actionName, inputState, inputObject)
+	function mouseLockSwitchFunc(actionName, inputState, inputObject)
 		if IsShiftLockMode then
 			onShiftLockToggled()
 		end
@@ -148,14 +148,14 @@ local function OMQRQRC_fake_script() -- ShiftlockStarterGui.LocalScript
 		IsActionBound = false
 		ShiftLockController.OnShiftLockToggled:Fire()
 	end
-	local onShiftInputBegan = function(inputObject, isProcessed)
+	onShiftInputBegan = function(inputObject, isProcessed)
 		if isProcessed then
 			return
 		end
 		if inputObject.UserInputType ~= Enum.UserInputType.Keyboard or inputObject.KeyCode == Enum.KeyCode.LeftShift or inputObject.KeyCode == Enum.KeyCode.RightShift then
 		end
 	end
-	local function enableShiftLock()
+	function enableShiftLock()
 		IsShiftLockMode = isShiftLockMode()
 		if IsShiftLockMode then
 			if ScreenGui then
