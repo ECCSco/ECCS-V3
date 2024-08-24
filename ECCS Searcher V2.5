@@ -1373,12 +1373,16 @@ end)
 IYButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
+Hint.Text = "Infinite Yield Loaded!"
 end)
 
 ShadersButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 if ShadersButton.TextColor3 == Color3.fromRGB(255, 255, 255) then
 ShadersButton.TextColor3 = Color3.fromRGB(118, 255, 122)
+Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
+Hint.Text = "Shaders are Enabled!"
 Sky = Instance.new("Sky")
 Bloom = Instance.new("BloomEffect")
 Blur = Instance.new("BlurEffect")
@@ -1419,6 +1423,8 @@ SunRays.Parent = Light
 else
 if ShadersButton.TextColor3 == Color3.fromRGB(118, 255, 122) then
 ShadersButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
+Hint.Text = "Shaders are Disabled!"
 for i,v in pairs(Light:GetChildren()) do
 v:Destroy()
 end
@@ -1443,6 +1449,8 @@ end
 end)
 coroutine.resume(Rejoin)
 else
+Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
+Hint.Text = "Rejoining..."
 local Rejoin = coroutine.create(function()
 local Success, ErrorMessage = pcall(function()
 TeleportService:Teleport(game.PlaceId, plr)
@@ -1459,6 +1467,8 @@ AntiAfkButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 if AntiAfkButton.TextColor3 == Color3.fromRGB(255, 255, 255) then
 AntiAfkButton.TextColor3 = Color3.fromRGB(118, 255, 122)
+Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
+Hint.Text = "Anti Afk Enabled!"
 AntiAFKFunction = plr.Idled:Connect(function()
 VirtualUser = game:GetService("VirtualUser")
 VirtualUser:CaptureController()
@@ -1467,6 +1477,8 @@ end)
 else
 if AntiAfkButton.TextColor3 == Color3.fromRGB(118, 255, 122) then
 AntiAfkButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
+Hint.Text = "Anti Afk Disabled!"
 AntiAFKFunction:Disconnect()
 end
 end
@@ -1528,6 +1540,8 @@ TouchFlingButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 if TouchFlingButton.TextColor3 == Color3.fromRGB(255, 255, 255) then
 TouchFlingButton.TextColor3 = Color3.fromRGB(118, 255, 122)
+Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
+Hint.Text = "Touch Fling Enabled!"
 fixpos = GetRoot(plr).Position
 ToggleFling(true)
 ToggleVoidProtection(true)
@@ -1536,6 +1550,8 @@ ToggleVoidProtection(false)
 else
 if TouchFlingButton.TextColor3 == Color3.fromRGB(118, 255, 122) then
 TouchFlingButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
+Hint.Text = "Touch Fling Disabled!"
 ToggleVoidProtection(false)
 end
 end
@@ -1545,6 +1561,8 @@ AntiFlingButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 if AntiFlingButton.TextColor3 == Color3.fromRGB(255, 255, 255) then
 AntiFlingButton.TextColor3 = Color3.fromRGB(118, 255, 122)
+Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
+Hint.Text = "Anti Fling Enabled!"
 RunService = game:GetService("RunService")
 AntiFlingFunction = nil
 AntiFlingFunction = RunService.Stepped:Connect(function()
@@ -1575,6 +1593,8 @@ end)
 else
 if AntiFlingButton.TextColor3 == Color3.fromRGB(118, 255, 122) then
 AntiFlingButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
+Hint.Text = "Anti Fling Disabled!"
 AntiFlingFunction:Disconnect()
 end
 end
