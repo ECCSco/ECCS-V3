@@ -1443,7 +1443,6 @@ end
 end)
 coroutine.resume(Rejoin)
 else
-game.Players.LocalPlayer:Kick("Rejoining...")
 local Rejoin = coroutine.create(function()
 local Success, ErrorMessage = pcall(function()
 TeleportService:Teleport(game.PlaceId, plr)
