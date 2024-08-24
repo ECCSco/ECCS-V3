@@ -443,7 +443,7 @@ HeadFrame:TweenPosition(UDim2.new(0.5, 0, 2.49, 0),"InOut","Sine",0.3)
 else
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 2.49, 0),"InOut","Sine",0.3)
 end
-writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
+writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 end)
 
 DevelopersFrame.Name = "DevelopersFrame"
@@ -504,7 +504,7 @@ HeadFrame:TweenPosition(UDim2.new(0.5, 0, 1.32, 0),"InOut","Sine",0.3)
 else
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 1.32, 0),"InOut","Sine",0.3)
 end
-writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
+writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 end)
 
 ExecutorMenuScrollingFrame.CanvasSize = UDim2.new(0, 0, 4, 0)
@@ -559,7 +559,7 @@ ClearTextBoxButtonUICorner.Parent = ClearTextBoxButton
 ClearTextBoxButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 ExecutorTextBox.Text = ""
-writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
+writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Executor is clear!"
 end)
@@ -582,7 +582,7 @@ CopyTextBoxButtonUICorner.Parent = CopyTextBoxButton
 CopyTextBoxButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 setclipboard(ExecutorTextBox.Text)
-writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
+writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Script copied into your clipboard!"
 end)
@@ -618,7 +618,7 @@ PasteScriptButtonUICorner.Parent = PasteScriptButton
 
 ExecuteTextBoxButton.MouseButton1Click:Connect(function()
 UIClick:Play()
-writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
+writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 loadstring(ExecutorTextBox.Text)()
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Script executed!"
@@ -634,7 +634,7 @@ end)
 ExecutorTextBox.FocusLost:Connect(function(enterPressed)
     if enterPressed then
        UIClick:Play()
-writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
+writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 loadstring(ExecutorTextBox.Text)()
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Script executed!"
@@ -663,7 +663,7 @@ HeadFrame:TweenPosition(UDim2.new(0.5, 0, -1.2, 0),"InOut","Sine",0.3)
 else
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, -1.2, 0),"InOut","Sine",0.3)
 end
-writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
+writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 end)
 
 SearcherMenuButton.Name = "SearcherMenuButton"
@@ -692,7 +692,7 @@ HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 else
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 end
-writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
+writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 end)
 
 spawn(function()
@@ -755,7 +755,7 @@ ShadersButton.Size = UDim2.new(0, 165, 0, 50)
 ShadersButton.AutoButtonColor = false
 ShadersButton.Font = Enum.Font.Cartoon
 ShadersButton.Text = "Shaders"
-ShadersButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ShadersButton.TextColor3 = Color3.fromRGB(255, 118, 122)
 ShadersButton.TextSize = 25
 
 ShadersButtonUICorner.Parent = ShadersButton
@@ -785,7 +785,7 @@ AntiAfkButton.Size = UDim2.new(0, 165, 0, 50)
 AntiAfkButton.AutoButtonColor = false
 AntiAfkButton.Font = Enum.Font.Cartoon
 AntiAfkButton.Text = "Anti Afk"
-AntiAfkButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiAfkButton.TextColor3 = Color3.fromRGB(255, 118, 122)
 AntiAfkButton.TextSize = 25
 
 AntiAfkButtonUICorner.Parent = AntiAfkButton
@@ -800,7 +800,7 @@ TouchFlingButton.Size = UDim2.new(0, 165, 0, 50)
 TouchFlingButton.AutoButtonColor = false
 TouchFlingButton.Font = Enum.Font.Cartoon
 TouchFlingButton.Text = "Touch Fling"
-TouchFlingButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TouchFlingButton.TextColor3 = Color3.fromRGB(255, 118, 122)
 TouchFlingButton.TextSize = 25
 
 TouchFlingButtonUICorner.Parent = TouchFlingButton
@@ -815,7 +815,7 @@ AntiFlingButton.Size = UDim2.new(0, 165, 0, 50)
 AntiFlingButton.AutoButtonColor = false
 AntiFlingButton.Font = Enum.Font.Cartoon
 AntiFlingButton.Text = "Anti Fling"
-AntiFlingButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiFlingButton.TextColor3 = Color3.fromRGB(255, 118, 122)
 AntiFlingButton.TextSize = 25
 
 AntiFlingButtonUICorner.Parent = AntiFlingButton
@@ -1347,22 +1347,22 @@ function createfolders(path)
 end
 
 
-if not isfolder("ECCS_Searcher_V2.4") then
-createfolders("ECCS_Searcher_V2.4")
+if not isfolder("ECCS_Searcher_V2.5") then
+createfolders("ECCS_Searcher_V2.5")
 end
 
-if not isfile("ECCS_Searcher_V2.4/Executor.ECCS") then
-writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
+if not isfile("ECCS_Searcher_V2.5/Executor.ECCS") then
+writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 end
 
-if not isfile("ECCS_Searcher_V2.4/AutoExecute.ECCS") then
-writefile("ECCS_Searcher_V2.4/AutoExecute.ECCS", " ")
+if not isfile("ECCS_Searcher_V2.5/AutoExecute.ECCS") then
+writefile("ECCS_Searcher_V2.5/AutoExecute.ECCS", " ")
 end
 
-File1 = readfile("ECCS_Searcher_V2.4/Executor.ECCS")
+File1 = readfile("ECCS_Searcher_V2.5/Executor.ECCS")
 ExecutorTextBox.Text = File1
 
-File2 = readfile("ECCS_Searcher_V2.4/AutoExecute.ECCS")
+File2 = readfile("ECCS_Searcher_V2.5/AutoExecute.ECCS")
 spawn(function()
 loadstring(File2)()
 end)
@@ -1376,7 +1376,7 @@ end)
 
 ShadersButton.MouseButton1Click:Connect(function()
 UIClick:Play()
-if ShadersButton.TextColor3 == Color3.fromRGB(255, 255, 255) then
+if ShadersButton.TextColor3 == Color3.fromRGB(255, 118, 122) then
 ShadersButton.TextColor3 = Color3.fromRGB(118, 255, 122)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Shaders are Enabled!"
@@ -1419,7 +1419,7 @@ SunRays.Spread = 0.8
 SunRays.Parent = Light
 else
 if ShadersButton.TextColor3 == Color3.fromRGB(118, 255, 122) then
-ShadersButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ShadersButton.TextColor3 = Color3.fromRGB(255, 118, 122)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Shaders are Disabled!"
 for i,v in pairs(Light:GetChildren()) do
@@ -1462,7 +1462,7 @@ end)
 
 AntiAfkButton.MouseButton1Click:Connect(function()
 UIClick:Play()
-if AntiAfkButton.TextColor3 == Color3.fromRGB(255, 255, 255) then
+if AntiAfkButton.TextColor3 == Color3.fromRGB(255, 118, 122) then
 AntiAfkButton.TextColor3 = Color3.fromRGB(118, 255, 122)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Anti Afk Enabled!"
@@ -1473,7 +1473,7 @@ VirtualUser:ClickButton2(Vector2.new())
 end)
 else
 if AntiAfkButton.TextColor3 == Color3.fromRGB(118, 255, 122) then
-AntiAfkButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiAfkButton.TextColor3 = Color3.fromRGB(255, 118, 122)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Anti Afk Disabled!"
 AntiAFKFunction:Disconnect()
@@ -1518,9 +1518,9 @@ RunService.RenderStepped:wait()
 GetRoot(plr).Velocity = RVelocity
 end)
 RunService.Heartbeat:wait()
-until TouchFlingButton.TextColor3 == Color3.fromRGB(255, 255, 255)
+until TouchFlingButton.TextColor3 == Color3.fromRGB(255, 118, 122)
 else
-TouchFlingButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TouchFlingButton.TextColor3 = Color3.fromRGB(255, 118, 122)
 end
 end)
 end
@@ -1535,7 +1535,7 @@ end
 
 TouchFlingButton.MouseButton1Click:Connect(function()
 UIClick:Play()
-if TouchFlingButton.TextColor3 == Color3.fromRGB(255, 255, 255) then
+if TouchFlingButton.TextColor3 == Color3.fromRGB(255, 118, 122) then
 TouchFlingButton.TextColor3 = Color3.fromRGB(118, 255, 122)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Touch Fling Enabled!"
@@ -1546,7 +1546,7 @@ TeleportTO(fixpos.X,fixpos.Y,fixpos.Z,"pos","safe")
 ToggleVoidProtection(false)
 else
 if TouchFlingButton.TextColor3 == Color3.fromRGB(118, 255, 122) then
-TouchFlingButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TouchFlingButton.TextColor3 = Color3.fromRGB(255, 118, 122)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Touch Fling Disabled!"
 ToggleVoidProtection(false)
@@ -1556,7 +1556,7 @@ end)
 
 AntiFlingButton.MouseButton1Click:Connect(function()
 UIClick:Play()
-if AntiFlingButton.TextColor3 == Color3.fromRGB(255, 255, 255) then
+if AntiFlingButton.TextColor3 == Color3.fromRGB(255, 118, 122) then
 AntiFlingButton.TextColor3 = Color3.fromRGB(118, 255, 122)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Anti Fling Enabled!"
@@ -1589,7 +1589,7 @@ end
 end)
 else
 if AntiFlingButton.TextColor3 == Color3.fromRGB(118, 255, 122) then
-AntiFlingButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiFlingButton.TextColor3 = Color3.fromRGB(255, 118, 122)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Anti Fling Disabled!"
 AntiFlingFunction:Disconnect()
@@ -1761,7 +1761,7 @@ PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 ExecutorMenuButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
 DevelopersButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
+writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 			end)
 			newScript.CopyScriptsButton.MouseButton1Click:Connect(function()
 		   setclipboard(v.script)
@@ -1771,14 +1771,14 @@ UIClick:Play()
 	       end)
 newScript.AutoExecuteButton.MouseButton1Click:Connect(function()
 UIClick:Play()
-local File2 = readfile("ECCS_Searcher_V2.4/AutoExecute.ECCS")
+local File2 = readfile("ECCS_Searcher_V2.5/AutoExecute.ECCS")
 if File2 ~= v.script then
-writefile("ECCS_Searcher_V2.4/AutoExecute.ECCS", v.script)
+writefile("ECCS_Searcher_V2.5/AutoExecute.ECCS", v.script)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Added in autoexecute!"
 else
 if File2 == v.script then
-writefile("ECCS_Searcher_V2.4/AutoExecute.ECCS", " ")
+writefile("ECCS_Searcher_V2.5/AutoExecute.ECCS", " ")
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Removed from autoexecute!"
 end
@@ -1805,7 +1805,7 @@ PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 SearcherMenuButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
 ExecutorMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 DevelopersButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
+writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 		gquery = SearchBox.Text
 		page = 1
 		local scriptsTbl = fetchScripts(SearchBox.Text, 1)
@@ -1814,7 +1814,7 @@ writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
 end)
 CloseUIButton.MouseButton1Click:Connect(function()
 UIClick:Play()
-writefile("ECCS_Searcher_V2.4/Executor.ECCS", ExecutorTextBox.Text)
+writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 OpenCloseSearcherButton:TweenSize(UDim2.new(0, 80, 0, 80),"InOut","Sine",0.2)
 MainFrame:TweenPosition(UDim2.new(-1, 0, 0.5, 0),"InOut","Sine",0.2)
 end)
