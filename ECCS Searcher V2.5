@@ -149,11 +149,13 @@ players = game:GetService("Players")
 plr = players.LocalPlayer
 TeleportService = game:GetService("TeleportService")
 RunService = game:GetService("RunService")
+
 local function GetCharacter(Player)
 if Player.Character then
 return Player.Character
 end
 end
+
 local function GetRoot(Player)
 if GetCharacter(Player):FindFirstChild("HumanoidRootPart") then
 return GetCharacter(Player).HumanoidRootPart
@@ -826,7 +828,7 @@ ScriptListFrame.Parent = HeadFrame
 ScriptListFrame.Active = true
 ScriptListFrame.BackgroundTransparency = 1
 ScriptListFrame.Position = UDim2.new(0, 0, 0.5, 0)
-ScriptListFrame.Size = UDim2.new(0, 360, 0, 199)
+ScriptListFrame.Size = UDim2.new(0, 365, 0, 199)
 ScriptListFrame.ZIndex = 2
 ScriptListFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 
@@ -845,7 +847,7 @@ ScriptAuthor.TextXAlignment = Enum.TextXAlignment.Left
 
 UIPadding.Parent = ScriptListFrame
 UIPadding.PaddingBottom = UDim.new(0, 0)
-UIPadding.PaddingLeft = UDim.new(0, 15)
+UIPadding.PaddingLeft = UDim.new(0, 7.5)
 UIPadding.PaddingRight = UDim.new(0, 0)
 UIPadding.PaddingTop = UDim.new(0, 5)
 
@@ -854,14 +856,14 @@ Scripts.Parent = ScriptListFrame
 
 UIGridLayout.Parent = Scripts
 UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellPadding = UDim2.new(0, 0, 0, 20)
-UIGridLayout.CellSize = UDim2.new(0, 330, 0, 190)
+UIGridLayout.CellPadding = UDim2.new(0, 0, 0, 5)
+UIGridLayout.CellSize = UDim2.new(0, 345, 0, 190)
 
 ScriptFrame.Name = "ScriptFrame"
 ScriptFrame.Parent = Scripts
 ScriptFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ScriptFrame.BackgroundTransparency = 0.7
-ScriptFrame.Size = UDim2.new(0, 9999, 0, 500)
+ScriptFrame.Size = UDim2.new(0, 345, 0, 190)
 ScriptFrame.Position = UDim2.new(0, 0, 0, 0)
 
 UICorner_6.CornerRadius = UDim.new(0, 12)
