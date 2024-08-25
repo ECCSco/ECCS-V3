@@ -197,8 +197,8 @@ MainFrame.Name = "MainFrame"
 MainFrame.Parent = UIGui
 MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-MainFrame.Position = UDim2.new(-1, 0, 0.5, 0)
-MainFrame.Size = UDim2.new(0, 450, 0, 400)
+MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+MainFrame.Size = UDim2.new(0, 0, 0, 0)
 MainFrame.ZIndex = 2
 MainFrame.Image = "rbxassetid://128894131728959"
 
@@ -316,8 +316,8 @@ Loading.TextSize = 30
 
 OpenCloseSearcherButton.MouseButton1Click:Connect(function()
 writefile("ES.ECCS", ""..ExecutorTextBox.Text)
-OpenCloseSearcherButton:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.2)
-MainFrame:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
+OpenCloseSearcherButton:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.3)
+MainFrame:TweenSize(UDim2.new(0, 450, 0, 400),"InOut","Sine",0.3)
 end)
 
 spawn(function()
@@ -326,16 +326,6 @@ if OpenCloseSearcherButton.Size == UDim2.new(0, 0, 0, 0) then
 OpenCloseSearcherButton.Visible = false
 else
 OpenCloseSearcherButton.Visible = true
-end
-end
-end)
-
-spawn(function()
-while wait() do
-if MainFrame.Position == UDim2.new(-1, 0, 0.5, 0) then
-MainFrame.Visible = false
-else
-MainFrame.Visible = true
 end
 end
 end)
@@ -419,6 +409,30 @@ CloseUIButton.BackgroundTransparency = 0.7
 CloseUIButtonUICorner.CornerRadius = UDim.new(0, 12)
 CloseUIButtonUICorner.Parent = CloseUIButton
 
+MenuBarFrame.Visible = false
+ScriptListBackgroundFrame.Visible = false
+SearchBox.Visible = false
+ScriptListBackgroundFrame_2.Visible = false
+CloseUIButton.Visible = false
+
+spawn(function()
+while wait() do
+if MainFrame.Size == UDim2.new(0, 450, 0, 400) then
+MenuBarFrame.Visible = true
+ScriptListBackgroundFrame.Visible = true
+SearchBox.Visible = true
+ScriptListBackgroundFrame_2.Visible = true
+CloseUIButton.Visible = true
+else
+MenuBarFrame.Visible = false
+ScriptListBackgroundFrame.Visible = false
+SearchBox.Visible = false
+ScriptListBackgroundFrame_2.Visible = false
+CloseUIButton.Visible = false
+end
+end
+end)
+
 DevelopersButton.Name = "DevelopersButton"
 DevelopersButton.Position = UDim2.new(0.5, 0, 0.13, 0)
 DevelopersButton.Parent = MenuBarFrame
@@ -439,7 +453,7 @@ DevelopersButtonUICorner.CornerRadius = UDim.new(0, 12)
 DevelopersButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 if HeadFrame.Position == UDim2.new(-0.5, 0, 0, 0) or HeadFrame.Position == UDim2.new(1.5, 0, 0, 0) then
-HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.2)
+HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 wait(0.35)
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 2.49, 0),"InOut","Sine",0.3)
 else
@@ -500,7 +514,7 @@ ExecutorMenuButtonUICorner.CornerRadius = UDim.new(0, 12)
 ExecutorMenuButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 if HeadFrame.Position == UDim2.new(-0.5, 0, 0, 0) or HeadFrame.Position == UDim2.new(1.5, 0, 0, 0) then
-HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.2)
+HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 wait(0.35)
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 1.32, 0),"InOut","Sine",0.3)
 else
@@ -659,7 +673,7 @@ PlayerIconUICorner.CornerRadius = UDim.new(0, 12)
 PlayerIcon.MouseButton1Click:Connect(function()
 UIClick:Play()
 if HeadFrame.Position == UDim2.new(-0.5, 0, 0, 0) or HeadFrame.Position == UDim2.new(1.5, 0, 0, 0) then
-HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.2)
+HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 wait(0.35)
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, -1.2, 0),"InOut","Sine",0.3)
 else
@@ -688,7 +702,7 @@ SearcherMenuButtonUICorner.CornerRadius = UDim.new(0, 12)
 SearcherMenuButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 if HeadFrame.Position == UDim2.new(-0.5, 0, 0, 0) or HeadFrame.Position == UDim2.new(1.5, 0, 0, 0) then
-HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.2)
+HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 wait(0.35)
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 else
@@ -1319,12 +1333,12 @@ NoComments.TextSize = 30
 
 BackButtonInfoBox.MouseButton1Click:Connect(function()
 UIClick:Play()
-HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.2)
+HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 NoComments.Visible = false
 end)
 
 Hint.MouseButton1Click:Connect(function()
-Hint:TweenPosition(UDim2.new(0.5, 0, 2, 0),"InOut","Sine",0.3)
+Hint:TweenPosition(UDim2.new(0.5, 0, 2, 0),"InOut","Sine",0.2)
 UIClick:Play()
 end)
 
@@ -1733,7 +1747,7 @@ function addScripts(scriptTbl)
 			end
 			newScript.DescScriptButton.MouseButton1Click:Connect(function()
 			UIClick:Play()
-			HeadFrame:TweenPosition(UDim2.new(-0.5, 0, 0, 0),"InOut","Sine",0.2)
+			HeadFrame:TweenPosition(UDim2.new(-0.5, 0, 0, 0),"InOut","Sine",0.3)
 			if v.game.name == "Universal Script 📌" then
  		   ScriptImg.Image = "rbxassetid://93934217411745"
 			else
@@ -1744,7 +1758,7 @@ function addScripts(scriptTbl)
             newScript.ChatButton.MouseButton1Click:Connect(function()
 			UIClick:Play()
 			updateInfoBox(v)
-			HeadFrame:TweenPosition(UDim2.new(1.5, 0, 0, 0),"InOut","Sine",0.2)
+			HeadFrame:TweenPosition(UDim2.new(1.5, 0, 0, 0),"InOut","Sine",0.3)
 			NoComments.Visible = true
 			end)
 			newScript.ExecuteButton.MouseButton1Click:Connect(function()
@@ -1817,13 +1831,18 @@ end)
 CloseUIButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
-OpenCloseSearcherButton:TweenSize(UDim2.new(0, 80, 0, 80),"InOut","Sine",0.2)
-MainFrame:TweenPosition(UDim2.new(-1, 0, 0.5, 0),"InOut","Sine",0.2)
+OpenCloseSearcherButton:TweenSize(UDim2.new(0, 80, 0, 80),"InOut","Sine",0.3)
+MainFrame:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.3)
+MenuBarFrame.Visible = false
+ScriptListBackgroundFrame.Visible = false
+SearchBox.Visible = false
+ScriptListBackgroundFrame_2.Visible = false
+CloseUIButton.Visible = false
 end)
 
 InfoBoxDescription.MouseButton1Click:Connect(function()
 UIClick:Play()
-HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.2)
+HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 end)
 
 local gui = MainFrame
