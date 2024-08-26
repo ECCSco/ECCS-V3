@@ -1515,6 +1515,11 @@ end
 end
 PushFlingTool.Activated:Connect(function()
 ActivateTool()
+TouchFlingButton.TextColor3 = Color3.fromRGB(118, 255, 122)
+ToggleFling(true)
+ToggleVoidProtection(true)
+TeleportTO(fixpos.X,fixpos.Y,fixpos.Z,"pos","safe")
+ToggleVoidProtection(false)
 end)
 PushFlingTool.Parent = plr.Backpack
 end
