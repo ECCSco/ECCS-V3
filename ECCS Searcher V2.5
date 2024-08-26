@@ -1477,9 +1477,12 @@ GetRoot(plr).CFrame = CFrame.new((pos.X)+(vel.X)*(GetPing()*3.5),(pos.Y)+(vel.Y)
 end
 end
 
-
+PushFlingTool = Instance.new("Tool")
 PushFlingButton.MouseButton1Click:Connect(function()
 UIClick:Play()
+if PushFlingTool.Parent == plr.Backpack then
+PushFlingTool:Remove()
+end
 if TouchFlingButton.TextColor3 == Color3.fromRGB(255, 118, 122) or TouchFlingButton.TextColor3 == Color3.fromRGB(118, 255, 122) then
 TouchFlingButton.TextColor3 = Color3.fromRGB(118, 255, 122)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
@@ -1489,7 +1492,7 @@ ToggleFling(true)
 ToggleVoidProtection(true)
 TeleportTO(fixpos.X,fixpos.Y,fixpos.Z,"pos","safe")
 ToggleVoidProtection(false)
-PushFlingTool = Instance.new("Tool")
+
 PushFlingTool.Name = "PushFlingToo"
 PushFlingTool.RequiresHandle = false
 PushFlingTool.TextureId = "rbxassetid://9134785384"
