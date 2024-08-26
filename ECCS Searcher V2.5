@@ -149,6 +149,8 @@ players = game:GetService("Players")
 plr = players.LocalPlayer
 TeleportService = game:GetService("TeleportService")
 RunService = game:GetService("RunService")
+TabsLine = Instance.new("Frame")
+TabsLineUICorner = Instance.new("UICorner")
 
 local function GetCharacter(Player)
 if Player.Character then
@@ -433,6 +435,16 @@ end
 end
 end)
 
+TabsLine.Name = "TabsLine"
+TabsLine.Parent = MenuBarFrame
+TabsLine.AnchorPoint = Vector2.new(0.5, 0.5)
+TabsLine.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+TabsLine.Position = UDim2.new(0.1, 0, 0.61, 0)
+TabsLine.Size = UDim2.new(0, 7, 0, 35)
+
+TabsLineUICorner.Parent = TabsLine
+TabsLineUICorner.CornerRadius = UDim.new(0, 12)
+
 DevelopersButton.Name = "DevelopersButton"
 DevelopersButton.Position = UDim2.new(0.5, 0, 0.13, 0)
 DevelopersButton.Parent = MenuBarFrame
@@ -689,7 +701,7 @@ SearcherMenuButton.AnchorPoint = Vector2.new(0.5, 0.5)
 SearcherMenuButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 SearcherMenuButton.BackgroundTransparency = 0.7
 SearcherMenuButton.LayoutOrder = 1
-SearcherMenuButton.Size = UDim2.new(0, 45, 0, 45)
+SearcherMenuButton.Size = UDim2.new(0, 40, 0, 40)
 SearcherMenuButton.AutoButtonColor = false
 SearcherMenuButton.Font = Enum.Font.Cartoon
 SearcherMenuButton.Text = "🔎"
@@ -714,28 +726,16 @@ end)
 spawn(function()
 while wait() do
 if HeadFrame.Position == UDim2.new(0.5, 0, 0, 0) then
-PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-SearcherMenuButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
-ExecutorMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-DevelopersButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+TabsLine:TweenPosition(UDim2.new(0.1, 0, 0.61, 0),"InOut","Sine",0.3)
 end
 if HeadFrame.Position == UDim2.new(0.5, 0, -1.2, 0) then
-PlayerIcon:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
-SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-ExecutorMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-DevelopersButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+TabsLine:TweenPosition(UDim2.new(0.1, 0, 0.87, 0),"InOut","Sine",0.3)
 end
 if HeadFrame.Position == UDim2.new(0.5, 0, 1.32, 0) then
-PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-ExecutorMenuButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
-DevelopersButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
+TabsLine:TweenPosition(UDim2.new(0.1, 0, 0.37, 0),"InOut","Sine",0.3)
 end
 if HeadFrame.Position == UDim2.new(0.5, 0, 2.49, 0) then
-PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-ExecutorMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-DevelopersButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
+TabsLine:TweenPosition(UDim2.new(0.1, 0, 0.13, 0),"InOut","Sine",0.3)
 end
 end
 end)
