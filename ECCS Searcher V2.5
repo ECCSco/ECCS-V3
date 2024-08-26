@@ -151,7 +151,6 @@ RunService = game:GetService("RunService")
 TabsLine = Instance.new("Frame")
 TabsLineUICorner = Instance.new("UICorner")
 mouse = plr:GetMouse()
-PushFlingTool = Instance.new("Tool")
 
 local function GetPing()
 return (game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue())/1000
@@ -1490,7 +1489,8 @@ ToggleFling(true)
 ToggleVoidProtection(true)
 TeleportTO(fixpos.X,fixpos.Y,fixpos.Z,"pos","safe")
 ToggleVoidProtection(false)
-PushFlingTool.Name = "PushFlingToo"
+PushFlingTool = Instance.new("Tool")
+PushFlingTool.Name = "PushFlingTool"
 PushFlingTool.RequiresHandle = false
 PushFlingTool.TextureId = "rbxassetid://9134785384"
 PushFlingTool.ToolTip = "Push Fling"
