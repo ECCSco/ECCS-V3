@@ -1772,10 +1772,6 @@ Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Script opened in executor!"
    ExecutorTextBox.Text = ""..v.script
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 1.32, 0),"InOut","Sine",0.3)
-PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-SearcherMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-ExecutorMenuButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
-DevelopersButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 			end)
 			newScript.CopyScriptsButton.MouseButton1Click:Connect(function()
@@ -1816,10 +1812,6 @@ SearchBox.FocusLost:Connect(function(enterPressed)
 	if enterPressed then
 UIClick:Play()
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
-PlayerIcon:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-SearcherMenuButton:TweenSize(UDim2.new(0, 45, 0, 45),"InOut","Sine",0.3)
-ExecutorMenuButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
-DevelopersButton:TweenSize(UDim2.new(0, 40, 0, 40),"InOut","Sine",0.3)
 writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 		gquery = SearchBox.Text
 		page = 1
