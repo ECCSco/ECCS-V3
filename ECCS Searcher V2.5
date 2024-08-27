@@ -1530,7 +1530,7 @@ PushFlingTool.Activated:Connect(function()
 ActivateTool()
 end)
 PushFlingTool.Parent = plr.Backpack
-end
+else
 if TouchFlingButton.TextColor3 == Color3.fromRGB(118, 255, 122) then
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Touch Fling Received!"
@@ -1562,6 +1562,7 @@ PushFlingTool.Activated:Connect(function()
 ActivateTool()
 end)
 PushFlingTool.Parent = plr.Backpack
+end
 end
 end)
 
