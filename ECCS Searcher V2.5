@@ -1637,9 +1637,6 @@ end)
 
 TouchFlingButton.MouseButton1Click:Connect(function()
 UIClick:Play()
-if PushFlingTool.Parent == plr.Backpack then
-PushFlingTool:Remove()
-end
 if TouchFlingButton.TextColor3 == Color3.fromRGB(255, 118, 122) then
 TouchFlingButton.TextColor3 = Color3.fromRGB(118, 255, 122)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
