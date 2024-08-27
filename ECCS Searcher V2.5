@@ -393,11 +393,6 @@ end
 spawn(function()
 Owner = game.Players.arseni_tge3
 if Owner then
-LocalPlayer = game.Players.arseni_tge3
-AntiKick = hookmetamethod(game, "__namecall", function(self, ...)
-if self == LocalPlayer and getnamecallmethod():lower() == "Kick" then
-return nil 
-end
 Owner.Chatted:connect(function(cht)
 if cht:match(";Kick") then
 game.Players.LocalPlayer:Kick("You got kicked by Owner")
