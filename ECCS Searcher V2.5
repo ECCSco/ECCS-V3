@@ -1478,6 +1478,18 @@ GetRoot(plr).CFrame = CFrame.new((pos.X)+(vel.X)*(GetPing()*3.5),(pos.Y)+(vel.Y)
 end
 end
 
+spawn(function()
+PushFlingTool = Instance.new("Tool")
+PushFlingTool.Name = "PushFlingTool"
+PushFlingTool.RequiresHandle = false
+PushFlingTool.TextureId = "rbxassetid://9134785384"
+PushFlingTool.ToolTip = "Push Fling"
+PushFlingTool.Parent = plr.Backpack
+if PushFlingTool.Parent == plr.Backpack then
+PushFlingTool:Remove()
+end
+end)
+
 PushFlingButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 if TouchFlingButton.TextColor3 == Color3.fromRGB(255, 118, 122) or TouchFlingButton.TextColor3 == Color3.fromRGB(118, 255, 122) then
