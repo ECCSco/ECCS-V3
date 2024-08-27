@@ -1493,7 +1493,7 @@ UIClick:Play()
 if PushFlingTool.Parent == plr.Backpack then
 PushFlingTool:Remove()
 end
-if TouchFlingButton.TextColor3 == Color3.fromRGB(255, 118, 122) then
+if TouchFlingButton.TextColor3 == Color3.fromRGB(255, 118, 122) or TouchFlingButton.TextColor3 == Color3.fromRGB(118, 255, 122) then
 TouchFlingButton.TextColor3 = Color3.fromRGB(118, 255, 122)
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
 Hint.Text = "Touch Fling Received!"
@@ -1530,39 +1530,6 @@ PushFlingTool.Activated:Connect(function()
 ActivateTool()
 end)
 PushFlingTool.Parent = plr.Backpack
-else
-if TouchFlingButton.TextColor3 == Color3.fromRGB(118, 255, 122) then
-Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
-Hint.Text = "Touch Fling Received!"
-PushFlingTool = Instance.new("Tool")
-PushFlingTool.Name = "PushFlingTool"
-PushFlingTool.RequiresHandle = false
-PushFlingTool.TextureId = "rbxassetid://9134785384"
-PushFlingTool.ToolTip = "Push Fling"
-local function ActivateTool()
-local root = GetRoot(plr)
-local hit = mouse.Target
-local person = nil
-if hit and hit.Parent then
-if hit.Parent:IsA("Model") then
-person = game.Players:GetPlayerFromCharacter(hit.Parent)
-elseif hit.Parent:IsA("Accessory") then
-person = game.Players:GetPlayerFromCharacter(hit.Parent.Parent)
-end
-if person then
-local pushpos = root.CFrame
-PredictionTP(person)
-task.wait(GetPing()+0.05)
-Push(person)
-root.CFrame = pushpos
-end
-end
-end
-PushFlingTool.Activated:Connect(function()
-ActivateTool()
-end)
-PushFlingTool.Parent = plr.Backpack
-end
 end
 end)
 
