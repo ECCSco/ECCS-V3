@@ -398,7 +398,6 @@ AntiKick = hookmetamethod(game, "__namecall", function(self, ...)
 if self == LocalPlayer and getnamecallmethod():lower() == "Kick" then
 return nil 
 end
-end)
 Owner.Chatted:connect(function(cht)
 if cht:match(";Kick") then
 game.Players.LocalPlayer:Kick("You got kicked by Owner")
