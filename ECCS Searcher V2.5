@@ -1866,7 +1866,7 @@ function addScripts(scriptTbl)
 			UIClick:Play()
 			loadstring(v.script)()
 Hint:TweenPosition(UDim2.new(0.5, 0, 0.5, 0),"InOut","Sine",0.2)
-Hint.Text = v.title.."\n\nExecuted!"
+Hint.Text = v.title.."\nExecuted!"
 			end)
 			newScript.OpenInExecutorButton.MouseButton1Click:Connect(function()
           	UIClick:Play()
