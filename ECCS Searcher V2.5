@@ -1883,7 +1883,7 @@ Hint.Text = v.title.."\nExecuted!"
 			newScript.OpenInExecutorButton.MouseButton1Click:Connect(function()
           	UIClick:Play()
 HintBackground:TweenPosition(UDim2.new(0.85, 0, 0.85, 0),"InOut","Sine",0.2)
-Hint.Text = "Script opened in executor!"
+Hint.Text = v.title.."opened in executor!"
    ExecutorTextBox.Text = ""..v.script
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 1.32, 0),"InOut","Sine",0.3)
 writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
@@ -1891,7 +1891,7 @@ writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
 			newScript.CopyScriptsButton.MouseButton1Click:Connect(function()
 		   setclipboard(v.script)
 HintBackground:TweenPosition(UDim2.new(0.85, 0, 0.85, 0),"InOut","Sine",0.2)
-Hint.Text = "Script copied into your clipboard!"
+Hint.Text = "Copied into your clipboard!"
 UIClick:Play()
 	       end)
 newScript.AutoExecuteButton.MouseButton1Click:Connect(function()
