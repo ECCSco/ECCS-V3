@@ -1,0 +1,162 @@
+if game.Players.LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R6 then
+if game:GetService("CoreGui"):FindFirstChild("HUGUI") then
+game:GetService("CoreGui"):FindFirstChild("HUGUI"):Destroy()
+end
+HUGUI = Instance.new("ScreenGui")
+HFrame = Instance.new("Frame")
+HTopBar = Instance.new("Frame")
+CloseButton = Instance.new("TextButton")
+HugButton = Instance.new("TextButton")
+HugLabel = Instance.new("TextLabel")
+UserInputService = game:GetService("UserInputService")
+MinTab = Instance.new("TextButton")
+
+HUGUI.Name = "HUGUI"
+HUGUI.Parent = game.CoreGui
+HUGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+game.CoreGui.HUGUI.Enabled = true
+
+
+
+
+
+
+
+
+HTopBar.Name = "HTopBar"
+HTopBar.Parent = HUGUI
+HTopBar.AnchorPoint = Vector2.new(0.5, 0.5)
+HTopBar.Position = UDim2.new(0.5, 0, 0.5, 0)
+HTopBar.Size = UDim2.new(0, 250, 0, 50)
+HTopBar.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+HTopBar.ZIndex = 2
+
+CloseButton.Name = "CloseButton"
+CloseButton.Parent = HTopBar
+CloseButton.AnchorPoint = Vector2.new(0.5, 0.5)
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+CloseButton.Position = UDim2.new(0.845, 0, 0.5, 0)
+CloseButton.Size = UDim2.new(0, 80, 0, 50)
+CloseButton.Font = Enum.Font.SourceSans
+CloseButton.TextSize = 35
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.Text = "X"
+
+CloseButton.MouseButton1Click:Connect(function()
+HUGUI:Destroy()
+end)
+
+MinTab.Name = "MinTab"
+MinTab.Parent = HTopBar
+MinTab.AnchorPoint = Vector2.new(0.5, 0.5)
+MinTab.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+MinTab.Position = UDim2.new(0.54, 0, 0.5, 0)
+MinTab.Size = UDim2.new(0, 80, 0, 50)
+MinTab.Font = Enum.Font.SourceSans
+MinTab.TextSize = 50
+MinTab.TextColor3 = Color3.fromRGB(255, 255, 255)
+MinTab.Text = "-"
+
+MinTab.MouseButton1Click:Connect(function()
+if MinTab.Text == "-" then
+MinTab.Text = "+"
+HFrame.Visible = false
+else
+if MinTab.Text == "+" then
+MinTab.Text = "-"
+HFrame.Visible = true
+end
+end
+end)
+
+HFrame.Name = "HFrame"
+HFrame.Parent = HTopBar
+HFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+HFrame.Position = UDim2.new(0.5, 0, 2.5, 0)
+HFrame.Size = UDim2.new(0, 250, 0, 150)
+HFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+
+HugButton.Name = "HugButton"
+HugButton.Parent = HFrame
+HugButton.AnchorPoint = Vector2.new(0.5, 0.5)
+HugButton.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+HugButton.Position = UDim2.new(0.5, 0, 0.7, 0)
+HugButton.Size = UDim2.new(0, 180, 0, 80)
+HugButton.Font = Enum.Font.SourceSans
+HugButton.TextSize = 50
+HugButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+HugButton.Text = "HUG\nOff"
+
+HugButton.MouseButton1Click:Connect(function()
+if HugButton.Text == "HUG\nOff" then
+HugButton.Text = "HUG\nOn"
+Anim_1 = Instance.new("Animation")
+Anim_1.AnimationId = "rbxassetid://283545583"
+Play_1 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim_1)
+Anim_2 = Instance.new("Animation")
+Anim_2.AnimationId = "rbxassetid://225975820"
+Play_2 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim_2)
+Play_1:Play()
+Play_2:Play()
+else
+if HugButton.Text == "HUG\nOn" then
+HugButton.Text = "HUG\nOff"
+Play_1:Stop()
+Play_2:Stop()
+end
+end
+end)
+
+HugLabel.Name = "HugLabel"
+HugLabel.Parent = HFrame
+HugLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+HugLabel.BackgroundTransparency = 1
+HugLabel.Position = UDim2.new(0.5, 0, 0.15, 0)
+HugLabel.Size = UDim2.new(0, 180, 0, 80)
+HugLabel.Font = Enum.Font.SourceSans
+HugLabel.TextSize = 28
+HugLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+HugLabel.Text = "Go up to the man and hug him >_<"
+HugLabel.TextWrapped = true
+
+local gui = HTopBar
+ 
+local dragging
+local dragInput
+local dragStart
+local startPos
+ 
+local function update(input)
+    local delta = input.Position - dragStart
+    gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+ 
+gui.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = gui.Position
+ 
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+ 
+gui.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+ 
+UserInputService.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        update(input)
+    end
+end)
+
+else
+warn("Need R6")
+end
