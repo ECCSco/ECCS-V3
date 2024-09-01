@@ -16,13 +16,6 @@ HUGUI.Parent = game.CoreGui
 HUGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 game.CoreGui.HUGUI.Enabled = true
 
-
-
-
-
-
-
-
 HTopBar.Name = "HTopBar"
 HTopBar.Parent = HUGUI
 HTopBar.AnchorPoint = Vector2.new(0.5, 0.5)
