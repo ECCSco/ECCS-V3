@@ -552,7 +552,7 @@ ExecutorTextBox.Parent = ExecutorMenuScrollingFrame
 ExecutorTextBox.BackgroundColor3 = Color3.new(0, 0, 0)
 ExecutorTextBox.BackgroundTransparency = 0.6
 ExecutorTextBox.Position = UDim2.new(0.06, 0, 0, 0)
-ExecutorTextBox.Size = UDim2.new(0, 335, 0, 1040)
+ExecutorTextBox.Size = UDim2.new(0, 335, 0, 4000)
 ExecutorTextBox.Font = Enum.Font.Code
 ExecutorTextBox.ClearTextOnFocus = false
 ExecutorTextBox.FontSize = Enum.FontSize.Size18
@@ -1874,7 +1874,7 @@ Hint.Text = v.title.."\nExecuted!"
 			newScript.OpenInExecutorButton.MouseButton1Click:Connect(function()
           	UIClick:Play()
 HintBackground:TweenPosition(UDim2.new(0.85, 0, 0.85, 0),"InOut","Sine",0.2)
-Hint.Text = v.title.."opened in executor!"
+Hint.Text = v.title.." opened in executor!"
    ExecutorTextBox.Text = ""..v.script
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 1.32, 0),"InOut","Sine",0.3)
 writefile("ECCS_Searcher_V2.5/Executor.ECCS", ExecutorTextBox.Text)
