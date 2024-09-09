@@ -44,7 +44,7 @@ PlayerIcon = Instance.new("ImageButton")
 PlayerIconUICorner = Instance.new("UICorner")
 MenuBarFrame = Instance.new("Frame")
 MenuBarFrameUICorner = Instance.new("UICorner")
-SearcherMenuButton = Instance.new("TextButton")
+SearcherMenuButton = Instance.new("ImageButton")
 SearcherMenuButtonUICorner = Instance.new("UICorner")
 ExecutorMenuButton = Instance.new("TextButton")
 ExecutorMenuButtonUICorner = Instance.new("UICorner")
@@ -701,10 +701,7 @@ SearcherMenuButton.BackgroundTransparency = 0.6
 SearcherMenuButton.LayoutOrder = 1
 SearcherMenuButton.Size = UDim2.new(0, 40, 0, 40)
 SearcherMenuButton.AutoButtonColor = false
-SearcherMenuButton.Font = Enum.Font.ArimoBold
-SearcherMenuButton.Text = "🔎"
-SearcherMenuButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-SearcherMenuButton.TextSize = 25
+SearcherMenuButton.Image = "rbxassetid://130743082926263"
 
 SearcherMenuButtonUICorner.Parent = SearcherMenuButton
 SearcherMenuButtonUICorner.CornerRadius = UDim.new(0, 12)
@@ -1490,6 +1487,9 @@ PushFlingTool.Parent = plr.Backpack
 PushFlingTool:Remove()
 end)
 
+local FlingValueForPush
+FlingValueForPush = false
+ 
 PushFlingButton.MouseButton1Click:Connect(function()
 UIClick:Play()
 if PushFlingTool.Parent == plr.Backpack then
@@ -1531,7 +1531,21 @@ end
 PushFlingTool.Activated:Connect(function()
 ActivateTool()
 end)
+PushFlingTool.Equipped:Connect(function()
+FlingValueForPush = true
+end)
+PushFlingTool.Unequipped:Connect(function()
+FlingValueForPush = false
+end)
 PushFlingTool.Parent = plr.Backpack
+end
+end)
+ 
+spawn(function()
+while wait() do
+if FlingValueForPush == true then
+TouchFlingButton.TextColor3 = Color3.fromRGB(118, 255, 122)
+end
 end
 end)
 
