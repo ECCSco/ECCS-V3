@@ -1986,7 +1986,11 @@ gui.InputChanged:Connect(function(input)
 		dragInput = input
 	end
 end)
-
+UserInputService.InputBegan:Connect(function(input)
+if input.KeyCode == Enum.KeyCode.Q then
+SearchBox:CaptureFocus()
+end 
+end)
 UserInputService.InputChanged:Connect(function(input)
 	if input == dragInput and dragging then
 		update(input)
