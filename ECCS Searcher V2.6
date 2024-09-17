@@ -2374,13 +2374,13 @@ gui.InputChanged:Connect(function(input)
 	end
 end)
 UserInputService.InputBegan:Connect(function(input)
-if input.KeyCode == Enum.KeyCode.Q and MainFrame.Size == UDim2.new(0, 450, 0, 400) then
+if input.KeyCode == Enum.KeyCode.Q and MainFrame.Size == UDim2.new(0, 500, 0, 450) then
 SearchBox:CaptureFocus()
 else
 if input.KeyCode == Enum.KeyCode.Q and MainFrame.Size == UDim2.new(0, 0, 0, 0) then
 writefile("ES.ECCS", ""..ExecutorTextBox.Text)
 OpenCloseSearcherButton:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.3)
-MainFrame:TweenSize(UDim2.new(0, 450, 0, 400),"InOut","Sine",0.3)
+MainFrame:TweenSize(UDim2.new(0, 500, 0, 450),"InOut","Sine",0.3)
 SearchBox:CaptureFocus()
 end
 end
