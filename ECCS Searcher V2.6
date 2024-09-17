@@ -220,6 +220,7 @@ UINoScriptsFound:Stop()
 UIGui.Name = "UIGui"
 UIGui.Parent = game.CoreGui
 UIGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+UIGui.DisplayOrder = 999999999999999999999999999999999999999999999999999999999999999999999
 game.CoreGui.UIGui.Enabled = true
 
 OpenCloseSearcherButton.Parent = UIGui
@@ -397,13 +398,27 @@ end
 end
 end)
 
+spawn(function()
+for i = 1, 30 do
+wait()
+if game:GetService("UserInputService").TouchEnabled and game:GetService("UserInputService").KeyboardEnabled == false then
+OpenCloseSearcherButton.TouchTap:Connect(function()
+writefile("ECCS_Searcher_V2.6/Executor.ECCS", ""..ExecutorTextBox.Text)
+OpenCloseSearcherButton:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.4)
+MainFrame:TweenSize(UDim2.new(0, 500, 0, 450),"InOut","Sine",0.4)
+end)
+else
+HintWait.Size = UDim2.new(0, 0, 0, 5)
+HintWait:TweenSize(UDim2.new(0, 244, 0, 5),"Out","Linear",3)
+Hint.Text = "You are on PC, press 'Right Alt' to open or close UI"
+OpenCloseSearcherButton.Position = UDim2.new(9999999999, 0, 9999999999, 0)
 UserInputService.InputBegan:Connect(function(input)
-if input.KeyCode == Enum.KeyCode.Z and MainFrame.Size == UDim2.new(0, 0, 0, 0) then
+if input.KeyCode == Enum.KeyCode.RightAlt and MainFrame.Size == UDim2.new(0, 0, 0, 0) then
 writefile("ECCS_Searcher_V2.6/Executor.ECCS", ""..ExecutorTextBox.Text)
 OpenCloseSearcherButton:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.4)
 MainFrame:TweenSize(UDim2.new(0, 500, 0, 450),"InOut","Sine",0.4)
 else
-if input.KeyCode == Enum.KeyCode.Z and MainFrame.Size == UDim2.new(0, 500, 0, 450) then
+if input.KeyCode == Enum.KeyCode.RightAlt and MainFrame.Size == UDim2.new(0, 500, 0, 450) then
 writefile("ECCS_Searcher_V2.6/Executor.ECCS", ExecutorTextBox.Text)
 ScriptListBackgroundFrame.Visible = false
 SearchBox.Visible = false
@@ -416,11 +431,8 @@ OpenCloseSearcherButton:TweenSize(UDim2.new(0, 80, 0, 80),"InOut","Sine",0.4)
 end
 end
 end)
-
-OpenCloseSearcherButton.TouchTap:Connect(function()
-writefile("ECCS_Searcher_V2.6/Executor.ECCS", ""..ExecutorTextBox.Text)
-OpenCloseSearcherButton:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.4)
-MainFrame:TweenSize(UDim2.new(0, 500, 0, 450),"InOut","Sine",0.4)
+end
+end
 end)
 
 spawn(function()
@@ -521,7 +533,7 @@ MainFrameBackground.Visible = false
 MenuBarFrameBackground.Visible = false
 
 spawn(function()
-while wait() do
+while task.wait() do
 if MainFrame.Size == UDim2.new(0, 500, 0, 450) then
 ScriptListBackgroundFrame.Visible = true
 SearchBox.Visible = true
@@ -638,6 +650,8 @@ Date.Text = os.date("%d.%m.%y")
 Date.TextColor3 = Color3.fromRGB(255, 255, 255)
 Date.TextSize = 15
 Date.AnchorPoint = Vector2.new(0.5, 0.5)
+Date.TextXAlignment = Enum.TextXAlignment.Right
+Date.TextYAlignment = Enum.TextYAlignment.Center
 
 Week.Name = "Week"
 Week.Parent = PlayerHello
@@ -649,6 +663,8 @@ Week.Text = os.date("%A")
 Week.TextColor3 = Color3.fromRGB(255, 255, 255)
 Week.TextSize = 15
 Week.AnchorPoint = Vector2.new(0.5, 0.5)
+Week.TextXAlignment = Enum.TextXAlignment.Left
+Week.TextYAlignment = Enum.TextYAlignment.Center
 
 spawn(function()
 while wait() do
@@ -2046,11 +2062,11 @@ end)
 
 
 TouchFlingButton.MouseButton1Click:Connect(function()
+if TouchFlingButton.TextColor3 == Color3.fromRGB(255, 0, 0) then
+TouchFlingButton.TextColor3 = Color3.fromRGB(0, 255, 0)
 if PushFlingTool.Parent == plr.Backpack then
 PushFlingTool:Remove()
 end
-if TouchFlingButton.TextColor3 == Color3.fromRGB(255, 0, 0) then
-TouchFlingButton.TextColor3 = Color3.fromRGB(0, 255, 0)
 HintWait.Size = UDim2.new(0, 0, 0, 5)
 HintWait:TweenSize(UDim2.new(0, 244, 0, 5),"Out","Linear",3)
 Hint.Text = "Touch Fling Enabled!"
@@ -2062,6 +2078,9 @@ ToggleVoidProtection(false)
 else
 if TouchFlingButton.TextColor3 == Color3.fromRGB(0, 255, 0) then
 TouchFlingButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+if PushFlingTool.Parent == plr.Backpack then
+PushFlingTool:Remove()
+end
 HintWait.Size = UDim2.new(0, 0, 0, 5)
 HintWait:TweenSize(UDim2.new(0, 244, 0, 5),"Out","Linear",3)
 Hint.Text = "Touch Fling Disabled!"
