@@ -191,6 +191,12 @@ Clock = Instance.new("TextLabel")
 Date = Instance.new("TextLabel")
 Week = Instance.new("TextLabel")
 ScriptsText = Instance.new("TextLabel")
+TouchFlingImg = Instance.new("ImageLabel")
+AntiFlingImg = Instance.new("ImageLabel")
+AntiAfkImg = Instance.new("ImageLabel")
+ShadersImg = Instance.new("ImageLabel")
+PushFlingImg = Instance.new("ImageLabel")
+RejoinImg = Instance.new("ImageLabel")
 
 local logTable = {}
 
@@ -702,9 +708,20 @@ PushFlingButton.BackgroundColor3 = Color3.fromRGB(66, 170, 255)
 PushFlingButton.Size = UDim2.new(0, 130, 0, 30)
 PushFlingButton.AutoButtonColor = false
 PushFlingButton.Font = Enum.Font.ArimoBold
-PushFlingButton.Text = "Push Fling"
+PushFlingButton.Text = " P-Fling"
 PushFlingButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 PushFlingButton.TextSize = 20
+PushFlingButton.TextXAlignment = Enum.TextXAlignment.Left
+PushFlingButton.TextYAlignment = Enum.TextYAlignment.Center
+
+PushFlingImg.Name = "PushFlingImg"
+PushFlingImg.Parent = PushFlingButton
+PushFlingImg.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+PushFlingImg.BackgroundTransparency = 1
+PushFlingImg.AnchorPoint = Vector2.new(0.5, 0.5)
+PushFlingImg.Position = UDim2.new(0.85, 0, 0.5, 0)
+PushFlingImg.Size = UDim2.new(0, 23, 0, 23)
+PushFlingImg.Image = "rbxassetid://9134785384"
 
 PushFlingButtonUICorner.Parent = PushFlingButton
 PushFlingButtonUICorner.CornerRadius = UDim.new(0, 10)
@@ -717,9 +734,20 @@ ShadersButton.BackgroundColor3 = Color3.fromRGB(66, 170, 255)
 ShadersButton.Size = UDim2.new(0, 130, 0, 30)
 ShadersButton.AutoButtonColor = false
 ShadersButton.Font = Enum.Font.ArimoBold
-ShadersButton.Text = "Shaders"
+ShadersButton.Text = " Shaders"
 ShadersButton.TextColor3 = Color3.fromRGB(255, 0, 0)
 ShadersButton.TextSize = 20
+ShadersButton.TextXAlignment = Enum.TextXAlignment.Left
+ShadersButton.TextYAlignment = Enum.TextYAlignment.Center
+
+ShadersImg.Name = "ShadersImg"
+ShadersImg.Parent = ShadersButton
+ShadersImg.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ShadersImg.BackgroundTransparency = 1
+ShadersImg.AnchorPoint = Vector2.new(0.5, 0.5)
+ShadersImg.Position = UDim2.new(0.85, 0, 0.5, 0)
+ShadersImg.Size = UDim2.new(0, 23, 0, 23)
+ShadersImg.Image = "rbxassetid://82516178946307"
 
 ShadersButtonUICorner.Parent = ShadersButton
 ShadersButtonUICorner.CornerRadius = UDim.new(0, 12)
@@ -732,9 +760,20 @@ RejoinButton.BackgroundColor3 = Color3.fromRGB(66, 170, 255)
 RejoinButton.Size = UDim2.new(0, 130, 0, 30)
 RejoinButton.AutoButtonColor = false
 RejoinButton.Font = Enum.Font.ArimoBold
-RejoinButton.Text = "Rejoin"
+RejoinButton.Text = " Rejoin"
 RejoinButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 RejoinButton.TextSize = 20
+RejoinButton.TextXAlignment = Enum.TextXAlignment.Left
+RejoinButton.TextYAlignment = Enum.TextYAlignment.Center
+
+RejoinImg.Name = "RejoinImg"
+RejoinImg.Parent = RejoinButton
+RejoinImg.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+RejoinImg.BackgroundTransparency = 1
+RejoinImg.AnchorPoint = Vector2.new(0.5, 0.5)
+RejoinImg.Position = UDim2.new(0.85, 0, 0.5, 0)
+RejoinImg.Size = UDim2.new(0, 23, 0, 23)
+RejoinImg.Image = "rbxassetid://127998086674176"
 
 RejoinButtonUICorner.Parent = RejoinButton
 RejoinButtonUICorner.CornerRadius = UDim.new(0, 10)
@@ -747,9 +786,20 @@ AntiAfkButton.BackgroundColor3 = Color3.fromRGB(66, 170, 255)
 AntiAfkButton.Size = UDim2.new(0, 130, 0, 30)
 AntiAfkButton.AutoButtonColor = false
 AntiAfkButton.Font = Enum.Font.ArimoBold
-AntiAfkButton.Text = "Anti Afk"
+AntiAfkButton.Text = " Anti Afk"
 AntiAfkButton.TextColor3 = Color3.fromRGB(255, 0, 0)
 AntiAfkButton.TextSize = 20
+AntiAfkButton.TextXAlignment = Enum.TextXAlignment.Left
+AntiAfkButton.TextYAlignment = Enum.TextYAlignment.Center
+
+AntiAfkImg.Name = "AntiAfkImg"
+AntiAfkImg.Parent = AntiAfkButton
+AntiAfkImg.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AntiAfkImg.BackgroundTransparency = 1
+AntiAfkImg.AnchorPoint = Vector2.new(0.5, 0.5)
+AntiAfkImg.Position = UDim2.new(0.85, 0, 0.5, 0)
+AntiAfkImg.Size = UDim2.new(0, 23, 0, 23)
+AntiAfkImg.Image = "rbxassetid://129851370008578"
 
 AntiAfkButtonUICorner.Parent = AntiAfkButton
 AntiAfkButtonUICorner.CornerRadius = UDim.new(0, 10)
@@ -762,9 +812,20 @@ TouchFlingButton.BackgroundColor3 = Color3.fromRGB(66, 170, 255)
 TouchFlingButton.Size = UDim2.new(0, 130, 0, 30)
 TouchFlingButton.AutoButtonColor = false
 TouchFlingButton.Font = Enum.Font.ArimoBold
-TouchFlingButton.Text = "Touch Fling"
+TouchFlingButton.Text = " T-Fling"
 TouchFlingButton.TextColor3 = Color3.fromRGB(255, 0, 0)
 TouchFlingButton.TextSize = 20
+TouchFlingButton.TextXAlignment = Enum.TextXAlignment.Left
+TouchFlingButton.TextYAlignment = Enum.TextYAlignment.Center
+
+TouchFlingImg.Name = "TouchFlingImg"
+TouchFlingImg.Parent = TouchFlingButton
+TouchFlingImg.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TouchFlingImg.BackgroundTransparency = 1
+TouchFlingImg.AnchorPoint = Vector2.new(0.5, 0.5)
+TouchFlingImg.Position = UDim2.new(0.85, 0, 0.5, 0)
+TouchFlingImg.Size = UDim2.new(0, 23, 0, 23)
+TouchFlingImg.Image = "rbxassetid://85283665776150"
 
 TouchFlingButtonUICorner.Parent = TouchFlingButton
 TouchFlingButtonUICorner.CornerRadius = UDim.new(0, 10)
@@ -777,9 +838,20 @@ AntiFlingButton.BackgroundColor3 = Color3.fromRGB(66, 170, 255)
 AntiFlingButton.Size = UDim2.new(0, 130, 0, 30)
 AntiFlingButton.AutoButtonColor = false
 AntiFlingButton.Font = Enum.Font.ArimoBold
-AntiFlingButton.Text = "Anti Fling"
+AntiFlingButton.Text = " Anti Fling"
 AntiFlingButton.TextColor3 = Color3.fromRGB(255, 0, 0)
 AntiFlingButton.TextSize = 20
+AntiFlingButton.TextXAlignment = Enum.TextXAlignment.Left
+AntiFlingButton.TextYAlignment = Enum.TextYAlignment.Center
+
+AntiFlingImg.Name = "AntiFlingImg"
+AntiFlingImg.Parent = AntiFlingButton
+AntiFlingImg.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AntiFlingImg.BackgroundTransparency = 1
+AntiFlingImg.AnchorPoint = Vector2.new(0.5, 0.5)
+AntiFlingImg.Position = UDim2.new(0.85, 0, 0.5, 0)
+AntiFlingImg.Size = UDim2.new(0, 20, 0, 20)
+AntiFlingImg.Image = "rbxassetid://81303447485944"
 
 AntiFlingButtonUICorner.Parent = AntiFlingButton
 AntiFlingButtonUICorner.CornerRadius = UDim.new(0, 10)
