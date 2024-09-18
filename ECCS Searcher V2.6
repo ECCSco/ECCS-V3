@@ -405,8 +405,6 @@ end
 end)
 
 spawn(function()
-for i = 1, 30 do
-wait()
 if game:GetService("UserInputService").TouchEnabled and game:GetService("UserInputService").KeyboardEnabled == false then
 OpenCloseSearcherButton.TouchTap:Connect(function()
 writefile("ECCS_Searcher_V2.6/Executor.ECCS", ""..ExecutorTextBox.Text)
@@ -437,7 +435,6 @@ OpenCloseSearcherButton:TweenSize(UDim2.new(0, 80, 0, 80),"InOut","Sine",0.4)
 end
 end
 end)
-end
 end
 end)
 
