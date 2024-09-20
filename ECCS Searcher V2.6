@@ -407,6 +407,17 @@ end)
 
 spawn(function()
 if game:GetService("UserInputService").TouchEnabled and game:GetService("UserInputService").KeyboardEnabled == false then
+CloseUIButton.MouseButton1Click:Connect(function()
+writefile("ECCS_Searcher_V2.6/Executor.ECCS", ExecutorTextBox.Text)
+ScriptListBackgroundFrame.Visible = false
+SearchBox.Visible = false
+ScriptListBackgroundFrame_2.Visible = false
+CloseUIButton.Visible = false
+MainFrameBackground.Visible = false
+MenuBarFrameBackground.Visible = false
+MainFrame:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.4)
+OpenCloseSearcherButton:TweenSize(UDim2.new(0, 80, 0, 80),"InOut","Sine",0.4)
+end)
 OpenCloseSearcherButton.Visible = true
 OpenCloseSearcherButton.Size = UDim2.new(0, 80, 0, 80)
 OpenCloseSearcherButton.TouchTap:Connect(function()
@@ -415,7 +426,16 @@ OpenCloseSearcherButton:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.4)
 MainFrame:TweenSize(UDim2.new(0, 500, 0, 450),"InOut","Sine",0.4)
 end)
 else
-OpenCloseSearcherButton.Image = "rbxassetid://"
+CloseUIButton.MouseButton1Click:Connect(function()
+writefile("ECCS_Searcher_V2.6/Executor.ECCS", ExecutorTextBox.Text)
+ScriptListBackgroundFrame.Visible = false
+SearchBox.Visible = false
+ScriptListBackgroundFrame_2.Visible = false
+CloseUIButton.Visible = false
+MainFrameBackground.Visible = false
+MenuBarFrameBackground.Visible = false
+MainFrame:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.4)
+end)
 HintWait.Size = UDim2.new(0, 0, 0, 5)
 HintWait:TweenSize(UDim2.new(0, 244, 0, 5),"Out","Linear",3)
 Hint.Text = "You are on PC, press 'Right Alt' to open or close UI"
@@ -2437,17 +2457,7 @@ writefile("ECCS_Searcher_V2.6/Executor.ECCS", ExecutorTextBox.Text)
 		refreshScripts(scriptsTbl)
 	end
 end)
-CloseUIButton.MouseButton1Click:Connect(function()
-writefile("ECCS_Searcher_V2.6/Executor.ECCS", ExecutorTextBox.Text)
-ScriptListBackgroundFrame.Visible = false
-SearchBox.Visible = false
-ScriptListBackgroundFrame_2.Visible = false
-CloseUIButton.Visible = false
-MainFrameBackground.Visible = false
-MenuBarFrameBackground.Visible = false
-MainFrame:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.4)
-OpenCloseSearcherButton:TweenSize(UDim2.new(0, 80, 0, 80),"InOut","Sine",0.4)
-end)
+
 
 InfoBoxDescription.MouseButton1Click:Connect(function()
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
