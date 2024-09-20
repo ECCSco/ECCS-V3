@@ -237,7 +237,7 @@ OpenCloseSearcherButton.AnchorPoint = Vector2.new(0.5, 0.5)
 OpenCloseSearcherButton.BackgroundTransparency = 1
 OpenCloseSearcherButton.Image = "rbxassetid://129764654684061"
 OpenCloseSearcherButton.AutoButtonColor = false
-
+OpenCloseSearcherButton.Visible = false
 OpenCloseSearcherButtonUICorner.Parent = OpenCloseSearcherButton
 OpenCloseSearcherButtonUICorner.CornerRadius = UDim.new(1, 0)
 
@@ -415,7 +415,7 @@ else
 HintWait.Size = UDim2.new(0, 0, 0, 5)
 HintWait:TweenSize(UDim2.new(0, 244, 0, 5),"Out","Linear",3)
 Hint.Text = "You are on PC, press 'Right Alt' to open or close UI"
-OpenCloseSearcherButton.Position = UDim2.new(9999999999, 0, 9999999999, 0)
+OpenCloseSearcherButton.Size = UDim2.new(0, 0, 0, 0)
 UserInputService.InputBegan:Connect(function(input)
 if input.KeyCode == Enum.KeyCode.RightAlt and MainFrame.Size == UDim2.new(0, 0, 0, 0) then
 writefile("ECCS_Searcher_V2.6/Executor.ECCS", ""..ExecutorTextBox.Text)
