@@ -230,7 +230,7 @@ UIGui.DisplayOrder = 99999999999999999999999999999999999999999999999999999999999
 game.CoreGui.UIGui.Enabled = true
 
 OpenCloseSearcherButton.Parent = UIGui
-OpenCloseSearcherButton.Size = UDim2.new(0, 80, 0, 80)
+OpenCloseSearcherButton.Size = UDim2.new(0, 0, 0, 0)
 OpenCloseSearcherButton.Position = UDim2.new(0.89, 0, 0.4, 0)
 OpenCloseSearcherButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 OpenCloseSearcherButton.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -238,6 +238,7 @@ OpenCloseSearcherButton.BackgroundTransparency = 1
 OpenCloseSearcherButton.Image = "rbxassetid://129764654684061"
 OpenCloseSearcherButton.AutoButtonColor = false
 OpenCloseSearcherButton.Visible = false
+
 OpenCloseSearcherButtonUICorner.Parent = OpenCloseSearcherButton
 OpenCloseSearcherButtonUICorner.CornerRadius = UDim.new(1, 0)
 
@@ -406,6 +407,8 @@ end)
 
 spawn(function()
 if game:GetService("UserInputService").TouchEnabled and game:GetService("UserInputService").KeyboardEnabled == false then
+OpenCloseSearcherButton.Visible = true
+OpenCloseSearcherButton.Size = UDim2.new(0, 80, 0, 80)
 OpenCloseSearcherButton.TouchTap:Connect(function()
 writefile("ECCS_Searcher_V2.6/Executor.ECCS", ""..ExecutorTextBox.Text)
 OpenCloseSearcherButton:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.4)
@@ -415,6 +418,7 @@ else
 HintWait.Size = UDim2.new(0, 0, 0, 5)
 HintWait:TweenSize(UDim2.new(0, 244, 0, 5),"Out","Linear",3)
 Hint.Text = "You are on PC, press 'Right Alt' to open or close UI"
+OpenCloseSearcherButton.Visible = false
 OpenCloseSearcherButton.Size = UDim2.new(0, 0, 0, 0)
 UserInputService.InputBegan:Connect(function(input)
 if input.KeyCode == Enum.KeyCode.RightAlt and MainFrame.Size == UDim2.new(0, 0, 0, 0) then
