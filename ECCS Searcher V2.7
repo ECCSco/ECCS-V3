@@ -2171,6 +2171,7 @@ CloseUIButton.Visible = false
 MainFrameBackground.Visible = false
 MenuBarFrameBackground.Visible = false
 ScriptsMode1.Visible = false
+MenuBarFrame.Visible = false
 MainFrame:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.4)
 OpenCloseSearcherButton:TweenSize(UDim2.new(0, 80, 0, 80),"InOut","Sine",0.4)
 end)
@@ -2217,12 +2218,13 @@ end
 end)
 CloseUIButton.MouseButton1Click:Connect(function()
 writefile("ECCS_Searcher_V2.7/Executor.ECCS", ExecutorTextBox.Text)
-ScriptListBackgroundFrame.Visible = false
 SearchBox.Visible = false
 ScriptListBackgroundFrame_2.Visible = false
 CloseUIButton.Visible = false
 MainFrameBackground.Visible = false
 MenuBarFrameBackground.Visible = false
+ScriptsMode1.Visible = false
+MenuBarFrame.Visible = false
 MainFrame:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.4)
 end)
 HintWait.Size = UDim2.new(0, 0, 0, 5)
@@ -2237,12 +2239,13 @@ MainFrame:TweenSize(UDim2.new(0, 500, 0, 450),"InOut","Sine",0.4)
 else
 if input.KeyCode == Enum.KeyCode.RightAlt and MainFrame.Size == UDim2.new(0, 500, 0, 450) then
 writefile("ECCS_Searcher_V2.7/Executor.ECCS", ExecutorTextBox.Text)
-ScriptListBackgroundFrame.Visible = false
 SearchBox.Visible = false
 ScriptListBackgroundFrame_2.Visible = false
 CloseUIButton.Visible = false
 MainFrameBackground.Visible = false
 MenuBarFrameBackground.Visible = false
+ScriptsMode1.Visible = false
+MenuBarFrame.Visible = false
 MainFrame:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.4)
 end
 end
