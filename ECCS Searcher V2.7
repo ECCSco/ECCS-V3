@@ -2185,11 +2185,13 @@ end)
 else
 RejoinButton.MouseButton1Click:Connect(function()
 MainFrame:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.3)
-MenuBarFrame.Visible = false
-ScriptListBackgroundFrame.Visible = false
 SearchBox.Visible = false
 ScriptListBackgroundFrame_2.Visible = false
 CloseUIButton.Visible = false
+MainFrameBackground.Visible = false
+MenuBarFrameBackground.Visible = false
+ScriptsMode1.Visible = false
+MenuBarFrame.Visible = false
 if #game.Players:GetPlayers() <= 1 then
 game.Players.LocalPlayer:Kick("Rejoining...")
 local Rejoin = coroutine.create(function()
