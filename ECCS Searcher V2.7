@@ -175,13 +175,9 @@ ExecutorBackground = Instance.new("Frame")
 ExecutorBackgroundUICorner = Instance.new("UICorner")
 PlayerHello = Instance.new("TextLabel")
 PlayerHelloUICorner = Instance.new("UICorner")
-PlayerIcon = Instance.new("ImageLabel")
-PlayerIconUICorner = Instance.new("UICorner")
 HomeScriptsFrame = Instance.new("Frame")
 HomeScriptsFrameUICorner = Instance.new("UICorner")
 Clock = Instance.new("TextLabel")
-Date = Instance.new("TextLabel")
-Week = Instance.new("TextLabel")
 ScriptsText = Instance.new("TextLabel")
 TouchFlingImg = Instance.new("ImageLabel")
 AntiFlingImg = Instance.new("ImageLabel")
@@ -204,7 +200,16 @@ ScriptImgUICorner = Instance.new("UICorner")
 CommentUICorner = Instance.new("UICorner")
 ScriptsMode1 = Instance.new("TextButton")
 ScriptsMode1UICorner = Instance.new("UICorner")
- 
+PluginButtonsFrame = Instance.new("ScrollingFrame")
+PluginButtonsFrameBackground = Instance.new("ImageLabel")
+PluginButtonsFrameUICorner = Instance.new("UICorner")
+UIGridLayoutPlugins = Instance.new("UIGridLayout")
+UIPaddingPlugins = Instance.new("UIPadding")
+PluginsTextLabel = Instance.new("TextLabel")
+AddPluginTextBox = Instance.new("TextBox")
+AddPluginTextBoxUICorner = Instance.new("UICorner")
+
+local Plugin = {}
 local OnTop = 999999
 local logTable = {}
  
@@ -545,13 +550,13 @@ CloseUIButton.Visible = false
 MainFrameBackground.Visible = false
 MenuBarFrameBackground.Visible = false
 ScriptsMode1.Visible = false
-TweenService:Create(MenuBarFrame, TweenInfo.new(0), {Transparency = 1}):Play()
-TweenService:Create(ScriptListBackgroundFrame_2, TweenInfo.new(0), {Transparency = 1}):Play()
-TweenService:Create(CloseUIButton, TweenInfo.new(0), {Transparency = 1}):Play()
-TweenService:Create(MainFrameBackground, TweenInfo.new(0), {Transparency = 1}):Play()
-TweenService:Create(MenuBarFrameBackground, TweenInfo.new(0), {Transparency = 1}):Play()
-TweenService:Create(ScriptsMode1, TweenInfo.new(0), {Transparency = 1}):Play()
-TweenService:Create(SearchBox, TweenInfo.new(0), {Transparency = 1}):Play()
+TweenService:Create(MenuBarFrame, TweenInfo.new(), {Transparency = 1}):Play()
+TweenService:Create(ScriptListBackgroundFrame_2, TweenInfo.new(), {Transparency = 1}):Play()
+TweenService:Create(CloseUIButton, TweenInfo.new(), {Transparency = 1}):Play()
+TweenService:Create(MainFrameBackground, TweenInfo.new(), {Transparency = 1}):Play()
+TweenService:Create(MenuBarFrameBackground, TweenInfo.new(), {Transparency = 1}):Play()
+TweenService:Create(ScriptsMode1, TweenInfo.new(), {Transparency = 1}):Play()
+TweenService:Create(SearchBox, TweenInfo.new(), {Transparency = 1}):Play()
 end
 end
 end)
@@ -575,7 +580,7 @@ HomeButton.LayoutOrder = 1
 HomeButton.Size = UDim2.new(0, 45, 0, 45)
 HomeButton.AutoButtonColor = false
 HomeButton.Image = "rbxassetid://72187700093513"
- 
+
 HomeButton.MouseButton1Click:Connect(function()
 if HeadFrame.Position == UDim2.new(-0.5, 0, 0, 0) or HeadFrame.Position == UDim2.new(1.5, 0, 0, 0) then
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
@@ -596,8 +601,8 @@ HomeFrame.Size = UDim2.new(0, 410, 0, 230)
 DevDesc.Name = "DevDesc"
 DevDesc.Parent = HomeFrame
 DevDesc.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-DevDesc.Position = UDim2.new(0, 5, 0, 155)
-DevDesc.Size = UDim2.new(0, 250, 0, 70)
+DevDesc.Position = UDim2.new(0, 5, 0, 175)
+DevDesc.Size = UDim2.new(0, 250, 0, 50)
 DevDesc.Font = Enum.Font.ArimoBold
 DevDesc.Text = "ERROR_CODE                  <font color=\"#9C9C9C\">\nH.Developer                    </font>"
 DevDesc.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -610,8 +615,8 @@ DevIcon.Name = "DevIcon"
 DevIcon.Parent = DevDesc
 DevIcon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 DevIcon.AnchorPoint = Vector2.new(0.5, 0.5)
-DevIcon.Position = UDim2.new(0.15, 0, 0.5, 0)
-DevIcon.Size = UDim2.new(0, 60, 0, 60)
+DevIcon.Position = UDim2.new(0.1, 0, 0.5, 0)
+DevIcon.Size = UDim2.new(0, 40, 0, 40)
 DevIcon.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=3323558881&width=999&height=999&format=png"
  
 DevIconUI.Parent = DevIcon
@@ -624,74 +629,105 @@ PlayerHello.Name = "PlayerHello"
 PlayerHello.Parent = HomeFrame
 PlayerHello.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 PlayerHello.Position = UDim2.new(0, 5, 0, 5)
-PlayerHello.Size = UDim2.new(0, 250, 0, 145)
+PlayerHello.Size = UDim2.new(0, 250, 0, 165)
 PlayerHello.Font = Enum.Font.ArimoBold
-PlayerHello.Text = "<font color=\"#FF0000\">Hello,\n</font>"..game.Players.LocalPlayer.DisplayName
+PlayerHello.Text = "<font color=\"#FF0000\">Hello,  \n</font>"..game.Players.LocalPlayer.DisplayName.."  "
 PlayerHello.TextColor3 = Color3.fromRGB(255, 255, 255)
-PlayerHello.TextSize = 15
+PlayerHello.TextSize = 18
 PlayerHello.RichText = true
 PlayerHello.TextXAlignment = Enum.TextXAlignment.Right
 PlayerHello.TextYAlignment = Enum.TextYAlignment.Top
  
+
+AddPluginTextBox.Name = "AddPluginTextBox"
+AddPluginTextBox.Parent = PlayerHello
+AddPluginTextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AddPluginTextBox.Position = UDim2.new(0, 5, 0, 5)
+AddPluginTextBox.Size = UDim2.new(0, 100, 0, 52)
+AddPluginTextBox.ClearTextOnFocus = false
+AddPluginTextBox.Font = Enum.Font.ArimoBold
+AddPluginTextBox.PlaceholderText = "Plugin here..."
+AddPluginTextBox.Text = ""
+AddPluginTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+AddPluginTextBox.TextScaled = true
+AddPluginTextBox.TextSize = 14.000
+AddPluginTextBox.TextWrapped = true
+AddPluginTextBox.PlaceholderColor3 = Color3.fromRGB(150, 150, 150)
+AddPluginTextBox.TextXAlignment = Enum.TextXAlignment.Center
+AddPluginTextBox.TextYAlignment = Enum.TextYAlignment.Center
+
+AddPluginTextBoxUICorner.CornerRadius = UDim.new(0, 10)
+AddPluginTextBoxUICorner.Parent = AddPluginTextBox
+
 Clock.Name = "Clock"
 Clock.Parent = PlayerHello
 Clock.BackgroundTransparency = 1
-Clock.Position = UDim2.new(0.5, 0, 0.65, 0)
-Clock.Size = UDim2.new(0, 10, 0, 10)
+Clock.Position = UDim2.new(0.12, 0, 0.67, 0)
+Clock.Size = UDim2.new(0, 48, 0, 90)
 Clock.Font = Enum.Font.ArimoBold
-Clock.Text = os.date("%H:%M")
+Clock.Text = os.date("%H\n%M")
 Clock.TextColor3 = Color3.fromRGB(255, 255, 255)
-Clock.TextSize = 50
+Clock.TextSize = 40
 Clock.AnchorPoint = Vector2.new(0.5, 0.5)
- 
-Date.Name = "Date"
-Date.Parent = PlayerHello
-Date.BackgroundTransparency = 1
-Date.Position = UDim2.new(0.88, 0, 0.94, 0)
-Date.Size = UDim2.new(0, 50, 0, 10)
-Date.Font = Enum.Font.ArimoBold
-Date.Text = os.date("%d.%m.%y")
-Date.TextColor3 = Color3.fromRGB(255, 255, 255)
-Date.TextSize = 15
-Date.AnchorPoint = Vector2.new(0.5, 0.5)
-Date.TextXAlignment = Enum.TextXAlignment.Right
-Date.TextYAlignment = Enum.TextYAlignment.Center
- 
-Week.Name = "Week"
-Week.Parent = PlayerHello
-Week.BackgroundTransparency = 1
-Week.Position = UDim2.new(0.12, 0, 0.94, 0)
-Week.Size = UDim2.new(0, 50, 0, 10)
-Week.Font = Enum.Font.ArimoBold
-Week.Text = os.date("%A")
-Week.TextColor3 = Color3.fromRGB(255, 255, 255)
-Week.TextSize = 15
-Week.AnchorPoint = Vector2.new(0.5, 0.5)
-Week.TextXAlignment = Enum.TextXAlignment.Left
-Week.TextYAlignment = Enum.TextYAlignment.Center
+Clock.TextXAlignment = Enum.TextXAlignment.Center
+Clock.TextYAlignment = Enum.TextYAlignment.Center
  
 spawn(function()
 while wait() do
-Clock.Text = os.date("%H:%M")
-Date.Text = os.date("%d.%m.%y")
-Week.Text = os.date("%A")
+Clock.Text = os.date("%H\n%M")
 end
 end)
  
-PlayerIcon.Name = "PlayerIcon"
-PlayerIcon.Parent = PlayerHello
-PlayerIcon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-PlayerIcon.AnchorPoint = Vector2.new(0.5, 0.5)
-PlayerIcon.Position = UDim2.new(0.15, 0, 0.25, 0)
-PlayerIcon.Size = UDim2.new(0, 60, 0, 60)
-PlayerIcon.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=999&height=999&format=png"
- 
-PlayerIconUICorner.CornerRadius = UDim.new(0, 10)
-PlayerIconUICorner.Parent = PlayerIcon
- 
 PlayerHelloUICorner.CornerRadius = UDim.new(0, 10)
 PlayerHelloUICorner.Parent = PlayerHello
- 
+
+PluginButtonsFrameBackground.Name = "PluginButtonsFrameBackground"
+PluginButtonsFrameBackground.Parent = PlayerHello
+PluginButtonsFrameBackground.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+PluginButtonsFrameBackground.ImageTransparency = 0.9
+PluginButtonsFrameBackground.Transparency = 1
+PluginButtonsFrameBackground.AnchorPoint = Vector2.new(0.5, 0.5)
+PluginButtonsFrameBackground.Position = UDim2.new(0.605, 0, 0.67, 0)
+PluginButtonsFrameBackground.Size = UDim2.new(0, 190, 0, 100)
+
+PluginButtonsFrameUICorner.CornerRadius = UDim.new(0, 10)
+PluginButtonsFrameUICorner.Parent = PluginButtonsFrameBackground
+
+PluginButtonsFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+PluginButtonsFrame.Transparency = 1
+PluginButtonsFrame.Active = true
+PluginButtonsFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+PluginButtonsFrame.Position = UDim2.new(0.605, 0, 0.67, 0)
+PluginButtonsFrame.Size = UDim2.new(0, 190, 0, 100)
+PluginButtonsFrame.Name = "PluginButtonsFrame"
+PluginButtonsFrame.Parent = PlayerHello
+PluginButtonsFrame.ScrollBarThickness = 0
+
+PluginsTextLabel.Name = "PluginsTextLabel"
+PluginsTextLabel.Parent = PlayerHello
+PluginsTextLabel.BackgroundTransparency = 1
+PluginsTextLabel.Position = UDim2.new(0.6, 0, 0.3, 0)
+PluginsTextLabel.Size = UDim2.new(0, 65, 0, 25)
+PluginsTextLabel.Font = Enum.Font.ArimoBold
+PluginsTextLabel.Text = "Plugins"
+PluginsTextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+PluginsTextLabel.TextSize = 15
+PluginsTextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+PluginsTextLabel.TextXAlignment = Enum.TextXAlignment.Center
+PluginsTextLabel.TextYAlignment = Enum.TextYAlignment.Bottom
+
+UIGridLayoutPlugins.Parent = PluginButtonsFrame
+UIGridLayoutPlugins.HorizontalAlignment = Enum.HorizontalAlignment.Left
+UIGridLayoutPlugins.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayoutPlugins.VerticalAlignment = Enum.VerticalAlignment.Top
+UIGridLayoutPlugins.CellSize = UDim2.new(0, 40, 0, 40)
+
+UIPaddingPlugins.Parent = PluginButtonsFrame
+UIPaddingPlugins.PaddingBottom = UDim.new(0, 5)
+UIPaddingPlugins.PaddingLeft = UDim.new(0, 7.5)
+UIPaddingPlugins.PaddingRight = UDim.new(0, 0)
+UIPaddingPlugins.PaddingTop = UDim.new(0, 5)
+
 HomeScriptsFrame.Name = "HomeScriptsFrame"
 HomeScriptsFrame.Parent = HomeFrame
 HomeScriptsFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -860,7 +896,7 @@ ScriptsText.BackgroundTransparency = 1
 ScriptsText.Position = UDim2.new(0.5, 0, 0.95, 0)
 ScriptsText.Size = UDim2.new(0, 50, 0, 10)
 ScriptsText.Font = Enum.Font.ArimoBold
-ScriptsText.Text = "Quick Script"
+ScriptsText.Text = "Quick Scripts"
 ScriptsText.TextColor3 = Color3.fromRGB(255, 255, 255)
 ScriptsText.TextSize = 15
 ScriptsText.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -880,7 +916,7 @@ ExecutorMenuButton.Font = Enum.Font.ArimoBold
 ExecutorMenuButton.Text = "</>"
 ExecutorMenuButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 ExecutorMenuButton.TextSize = 30
- 
+
 ExecutorMenuButton.MouseButton1Click:Connect(function()
 if HeadFrame.Position == UDim2.new(-0.5, 0, 0, 0) or HeadFrame.Position == UDim2.new(1.5, 0, 0, 0) then
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
@@ -903,7 +939,6 @@ ExecutorBackgroundUICorner.Parent = ExecutorBackground
  
 ExecutorMenuScrollingFrame.CanvasSize = UDim2.new(0, 0, 18.2, 0)
 ExecutorMenuScrollingFrame.ScrollBarImageColor3 = Color3.new(0, 0, 0)
-ExecutorMenuScrollingFrame.ScrollBarThickness = 8
 ExecutorMenuScrollingFrame.Active = true
 ExecutorMenuScrollingFrame.BackgroundTransparency = 1
 ExecutorMenuScrollingFrame.Position = UDim2.new(0, 0, 0.02, 0)
@@ -1074,7 +1109,7 @@ ConsoleButton.LayoutOrder = 1
 ConsoleButton.Size = UDim2.new(0, 45, 0, 45)
 ConsoleButton.AutoButtonColor = false
 ConsoleButton.Image = "rbxassetid://83607435557383"
- 
+
 ConsoleButton.MouseButton1Click:Connect(function()
 if HeadFrame.Position == UDim2.new(-0.5, 0, 0, 0) or HeadFrame.Position == UDim2.new(1.5, 0, 0, 0) then
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
@@ -1095,7 +1130,7 @@ SearcherMenuButton.LayoutOrder = 1
 SearcherMenuButton.Size = UDim2.new(0, 45, 0, 45)
 SearcherMenuButton.AutoButtonColor = false
 SearcherMenuButton.Image = "rbxassetid://119784725955851"
- 
+
 SearcherMenuButton.MouseButton1Click:Connect(function()
 if HeadFrame.Position == UDim2.new(-0.5, 0, 0, 0) or HeadFrame.Position == UDim2.new(1.5, 0, 0, 0) then
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
@@ -1196,7 +1231,7 @@ SImgUICorner.Parent = SImg
 SImgShadow.Name = "SImgShadow"
 SImgShadow.Parent = SImg
 SImgShadow.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-SImgShadow.BackgroundTransparency = 0.3
+SImgShadow.BackgroundTransparency = 0.5
 SImgShadow.AnchorPoint = Vector2.new(0.5, 0.5)
 SImgShadow.Position = UDim2.new(0.5, 0, 0.5, 0)
 SImgShadow.Size = UDim2.new(0, 395, 0, 220)
@@ -1393,7 +1428,7 @@ SImgUICorner_2.Parent = SImg_2
 SImgShadow_2.Name = "SImgShadow"
 SImgShadow_2.Parent = SImg_2
 SImgShadow_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-SImgShadow_2.BackgroundTransparency = 0.3
+SImgShadow_2.BackgroundTransparency = 0.5
 SImgShadow_2.AnchorPoint = Vector2.new(0.5, 0.5)
 SImgShadow_2.Position = UDim2.new(0.5, 0, 0.5, 0)
 SImgShadow_2.Size = UDim2.new(0, 395, 0, 220)
@@ -1849,9 +1884,17 @@ end
 if not isfolder("ECCS_Searcher_V2.7/MainFramePng") then
 createfolders("ECCS_Searcher_V2.7/MainFramePng")
 end
- 
+
+if not isfolder("ECCS_Searcher_V2.7/Plugins") then
+createfolders("ECCS_Searcher_V2.7/Plugins")
+end
+
 if not isfile("ECCS_Searcher_V2.7/Executor.ECCS") then
 writefile("ECCS_Searcher_V2.7/Executor.ECCS", ExecutorTextBox.Text)
+end
+
+if not isfile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS") then
+writefile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS", "")
 end
  
 if not isfile("ECCS_Searcher_V2.7/AutoExecute.ECCS") then
@@ -1882,7 +1925,7 @@ else
 MainFrame.Image = getcustomasset("ECCS_Searcher_V2.7/MainFramePng/URLIMGFrame.png")
 end
 end)
- 
+
 local Frame = ({
 ["01 01"] = "rbxassetid://16779094159",
 [(function(Year)
@@ -1916,7 +1959,29 @@ File2 = readfile("ECCS_Searcher_V2.7/AutoExecute.ECCS")
 spawn(function()
 loadstring(File2)()
 end)
- 
+
+File3 = readfile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS")
+spawn(function()
+loadstring(File3)()
+end)
+
+AddPluginTextBox.FocusLost:Connect(function(enterPressed)
+if enterPressed then
+Plugin[#Plugin + 1] = AddPluginTextBox.Text
+writefile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS", (table.concat(Plugin, " ")))
+HintWait.Size = UDim2.new(0, 0, 0, 5)
+HintWait:TweenSize(UDim2.new(0, 244, 0, 5),"Out","Linear",3)
+Hint.Text = "In order to finish installing the plugin, you need to re-join"
+AddPluginTextBox.Text = ""
+end
+end)
+
+spawn(function()
+while wait() do
+PluginButtonsFrameBackground.Image = MainFrame.Image
+end
+end)
+
 local function TeleportTO(posX,posY,posZ,player,method)
 pcall(function()
 if method == "safe" then    
@@ -2403,11 +2468,14 @@ function tableConcat(t1,t2)
     end
     return t1
 end
- 
+
+
+
+PluginButtonsFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
 ScriptListFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
-ScriptListFrame.ScrollBarImageTransparency = 1
 HeadFrame.InfoBox.Comments.AutomaticCanvasSize = Enum.AutomaticSize.Y
-HeadFrame.InfoBox.Comments.ScrollBarImageColor3 = Color3.new(0, 0, 0)
+ScriptListFrame.ScrollBarImageTransparency = 1
+PluginButtonsFrame.ScrollBarImageTransparency = 1
 HeadFrame.InfoBox.Comments.ScrollBarImageTransparency = 1
 ExecutorMenuScrollingFrame.ScrollBarImageTransparency = 1
 ScriptListBackgroundFrame.ScrollBarImageTransparency = 1
