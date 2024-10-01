@@ -177,7 +177,6 @@ PlayerHello = Instance.new("Frame")
 PlayerHelloUICorner = Instance.new("UICorner")
 HomeScriptsFrame = Instance.new("Frame")
 HomeScriptsFrameUICorner = Instance.new("UICorner")
-Clock = Instance.new("TextLabel")
 ScriptsText = Instance.new("TextLabel")
 TouchFlingImg = Instance.new("ImageLabel")
 AntiFlingImg = Instance.new("ImageLabel")
@@ -650,25 +649,6 @@ AddPluginTextBox.TextYAlignment = Enum.TextYAlignment.Center
 
 AddPluginTextBoxUICorner.CornerRadius = UDim.new(0, 10)
 AddPluginTextBoxUICorner.Parent = AddPluginTextBox
-
-Clock.Name = "Clock"
-Clock.Parent = PlayerHello
-Clock.BackgroundTransparency = 1
-Clock.Position = UDim2.new(0.115, 0, 0.67, 0)
-Clock.Size = UDim2.new(0, 48, 0, 90)
-Clock.Font = Enum.Font.ArimoBold
-Clock.Text = os.date("%H\n%M")
-Clock.TextColor3 = Color3.fromRGB(255, 255, 255)
-Clock.TextSize = 40
-Clock.AnchorPoint = Vector2.new(0.5, 0.5)
-Clock.TextXAlignment = Enum.TextXAlignment.Center
-Clock.TextYAlignment = Enum.TextYAlignment.Center
- 
-spawn(function()
-while wait() do
-Clock.Text = os.date("%H\n%M")
-end
-end)
  
 PlayerHelloUICorner.CornerRadius = UDim.new(0, 10)
 PlayerHelloUICorner.Parent = PlayerHello
@@ -676,11 +656,11 @@ PlayerHelloUICorner.Parent = PlayerHello
 PluginButtonsFrameBackground.Name = "PluginButtonsFrameBackground"
 PluginButtonsFrameBackground.Parent = PlayerHello
 PluginButtonsFrameBackground.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-PluginButtonsFrameBackground.ImageTransparency = 0.9
+PluginButtonsFrameBackground.ImageTransparency = 0.8
 PluginButtonsFrameBackground.Transparency = 1
 PluginButtonsFrameBackground.AnchorPoint = Vector2.new(0.5, 0.5)
-PluginButtonsFrameBackground.Position = UDim2.new(0.605, 0, 0.67, 0)
-PluginButtonsFrameBackground.Size = UDim2.new(0, 190, 0, 100)
+PluginButtonsFrameBackground.Position = UDim2.new(0.5, 0, 0.675, 0)
+PluginButtonsFrameBackground.Size = UDim2.new(0, 242, 0, 100)
 
 PluginButtonsFrameUICorner.CornerRadius = UDim.new(0, 10)
 PluginButtonsFrameUICorner.Parent = PluginButtonsFrameBackground
@@ -689,8 +669,8 @@ PluginButtonsFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 PluginButtonsFrame.Transparency = 1
 PluginButtonsFrame.Active = true
 PluginButtonsFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-PluginButtonsFrame.Position = UDim2.new(0.605, 0, 0.67, 0)
-PluginButtonsFrame.Size = UDim2.new(0, 190, 0, 100)
+PluginButtonsFrame.Position = UDim2.new(0.5, 0, 0.675, 0)
+PluginButtonsFrame.Size = UDim2.new(0, 242, 0, 100)
 PluginButtonsFrame.Name = "PluginButtonsFrame"
 PluginButtonsFrame.Parent = PlayerHello
 PluginButtonsFrame.ScrollBarThickness = 0
@@ -698,7 +678,7 @@ PluginButtonsFrame.ScrollBarThickness = 0
 PluginsTextLabel.Name = "PluginsTextLabel"
 PluginsTextLabel.Parent = PlayerHello
 PluginsTextLabel.BackgroundTransparency = 1
-PluginsTextLabel.Position = UDim2.new(0.6, 0, 0.3, 0)
+PluginsTextLabel.Position = UDim2.new(0.5, 0, 0.3, 0)
 PluginsTextLabel.Size = UDim2.new(0, 65, 0, 25)
 PluginsTextLabel.Font = Enum.Font.ArimoBold
 PluginsTextLabel.Text = "Plugins"
@@ -712,11 +692,11 @@ UIGridLayoutPlugins.Parent = PluginButtonsFrame
 UIGridLayoutPlugins.HorizontalAlignment = Enum.HorizontalAlignment.Left
 UIGridLayoutPlugins.SortOrder = Enum.SortOrder.LayoutOrder
 UIGridLayoutPlugins.VerticalAlignment = Enum.VerticalAlignment.Top
-UIGridLayoutPlugins.CellSize = UDim2.new(0, 40, 0, 40)
+UIGridLayoutPlugins.CellSize = UDim2.new(0, 35, 0, 35)
 
 UIPaddingPlugins.Parent = PluginButtonsFrame
 UIPaddingPlugins.PaddingBottom = UDim.new(0, 5)
-UIPaddingPlugins.PaddingLeft = UDim.new(0, 7.5)
+UIPaddingPlugins.PaddingLeft = UDim.new(0, 5)
 UIPaddingPlugins.PaddingRight = UDim.new(0, 0)
 UIPaddingPlugins.PaddingTop = UDim.new(0, 5)
 
