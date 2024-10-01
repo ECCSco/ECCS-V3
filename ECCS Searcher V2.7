@@ -1960,7 +1960,7 @@ end)
 AddPluginTextBox.FocusLost:Connect(function(enterPressed)
 if enterPressed then
 Plugin[#Plugin + 1] = AddPluginTextBox.Text
-writefile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS", (table.concat(Plugin, " ")))
+writefile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS", (table.concat(Plugin, "\n\n")))
 HintWait.Size = UDim2.new(0, 0, 0, 5)
 HintWait:TweenSize(UDim2.new(0, 244, 0, 5),"Out","Linear",3)
 Hint.Text = "In order to finish installing the plugin, you need to re-join"
