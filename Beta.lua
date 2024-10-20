@@ -279,6 +279,15 @@ ColorResultFrameUICorner = Instance.new("UICorner")
 TextBoxThemeValue_1 = Instance.new("TextBox")
 TextBoxThemeValue_2 = Instance.new("TextBox")
 TextBoxThemeValue_3 = Instance.new("TextBox")
+HomeButton_2 = Instance.new("ImageButton")
+ExecutorButton_2 = Instance.new("ImageButton")
+SearcherButton_2 = Instance.new("ImageButton")
+OpenLibraryButton_2 = Instance.new("ImageButton")
+HomeButton_2UICorner = Instance.new("UICorner")
+ExecutorButton_2UICorner = Instance.new("UICorner")
+SearcherButton_2UICorner = Instance.new("UICorner")
+OpenLibraryButton_2UICorner = Instance.new("UICorner")
+HoldButtonFrame = Instance.new("Frame")
 
 
 
@@ -290,16 +299,11 @@ TextBoxThemeValue_3 = Instance.new("TextBox")
 
 
 
-
-
-
-
-
-
-
+local holdTime = 0.5
+local isHolding = false
+local holdStart
 local ScripsLibraryData
 local FavoritesData
-local NewThemesData = game:HttpGet("https://raw.githubusercontent.com/ECCSco/ECCS-Searcher-DATA/refs/heads/main/CustomTheme.lua")
 local Favorites = {}
 local NewTheme = {}
 local Plugin = {}
@@ -350,6 +354,12 @@ TextBoxThemeValue_3.Parent = UIGui
 TextBoxThemeValue_3.Text = "137"
 TextBoxThemeValue_3.Visible = false
 
+HoldButtonFrame.Name = "HoldButtonFrame"
+HoldButtonFrame.Parent = UIGui
+HoldButtonFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+HoldButtonFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+HoldButtonFrame.Size = UDim2.new(0, 0, 0, 0)
+
 OpenCloseSearcherButton.Parent = UIGui
 OpenCloseSearcherButton.Size = UDim2.new(0, 0, 0, 0)
 OpenCloseSearcherButton.Position = UDim2.new(0.89, 0, 0.4, 0)
@@ -363,6 +373,12 @@ OpenCloseSearcherButton.Visible = false
 OpenCloseSearcherButtonUICorner.Parent = OpenCloseSearcherButton
 OpenCloseSearcherButtonUICorner.CornerRadius = UDim.new(1, 0)
  
+spawn(function()
+while task.wait() do
+HoldButtonFrame.Position = OpenCloseSearcherButton.Position
+end
+end)
+
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = UIGui
 MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -676,6 +692,7 @@ MainFrameBackground.Visible = true
 MenuBarFrameBackground.Visible = true
 ECCSSearcherSettingsButton.Visible = true
 MenuBarFrame.Visible = true
+HoldButtonFrame.Visible = false
 TweenService:Create(MainFrameUIStroke, TweenInfo.new(0.5), {Transparency = 0}):Play()
 TweenService:Create(MenuBarFrame, TweenInfo.new(0.5), {Transparency = 0}):Play()
 TweenService:Create(ScriptListBackgroundFrame_2, TweenInfo.new(0.5), {Transparency = 0.4}):Play()
@@ -691,6 +708,7 @@ SearchBox.Visible = false
 SearcherSettingsFrame.Visible = false
 ScriptListBackgroundFrame_2.Visible = false
 CloseUIButton.Visible = false
+HoldButtonFrame.Visible = true
 MainFrameBackground.Visible = false
 SearcherSettingsFrame.Size = UDim2.new(0, 0, 0, 0)
 MenuBarFrameBackground.Visible = false
@@ -2605,7 +2623,61 @@ HintWait:TweenSize(UDim2.new(0, 250, 0, 60),"Out","Linear",3)
 Hint.Text = " Field not filled in"
 end
 if RTextBox.Text ~= "" and GTextBox.Text ~= "" and BTextBox.Text ~= "" and CustomThemeName.Text ~= "" then
-loadstring(NewThemesData)()
+CustomTheme = Instance.new("TextButton")
+CustomThemeImg = Instance.new("ImageLabel")
+CustomThemeUICorner = Instance.new("UICorner")
+CustomThemeUIStroke = Instance.new("UIStroke")
+
+CustomTheme.Name = CustomThemeName.Text
+CustomTheme.Parent = ThemeBackground
+CustomTheme.BackgroundTransparency = 1
+CustomTheme.AutoButtonColor = false
+CustomTheme.Text = CustomThemeName.Text
+CustomTheme.Font = Enum.Font.ArimoBold
+CustomTheme.TextColor3 = Color3.fromRGB(255, 255, 255)
+CustomTheme.TextSize = 10
+CustomTheme.TextXAlignment = Enum.TextXAlignment.Center
+CustomTheme.TextYAlignment = Enum.TextYAlignment.Bottom
+
+CustomThemeUICorner.CornerRadius = UDim.new(0, 10)
+CustomThemeUICorner.Parent = CustomTheme
+
+CustomThemeUIStroke.Parent = CustomTheme
+CustomThemeUIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+CustomThemeUIStroke.Color = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+CustomThemeUIStroke.Thickness = 1.5
+
+CustomThemeImg.Name = "CustomThemeImg"
+CustomThemeImg.Parent = CustomTheme
+CustomThemeImg.BackgroundTransparency = 1
+CustomThemeImg.AnchorPoint = Vector2.new(0.5, 0.5)
+CustomThemeImg.Position = UDim2.new(0.5, 0, 0.5, 0)
+CustomThemeImg.Size = UDim2.new(0, 50, 0, 50)
+CustomThemeImg.Image = "rbxassetid://87037152011988"
+CustomThemeImg.ImageColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+
+CustomTheme.MouseButton1Click:Connect(function()
+writefile("ECCS_Searcher_V2.7/Themes/RedValue.ECCS", RTextBox.Text)
+writefile("ECCS_Searcher_V2.7/Themes/GreenValue.ECCS", GTextBox.Text)
+writefile("ECCS_Searcher_V2.7/Themes/BlueValue.ECCS", BTextBox.Text)
+CloseUIButton.TextColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+MainFrameUIStroke.Color = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+ScriptImg.BackgroundColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+InfoBoxDescription.BackgroundColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+HintWait.BackgroundColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+ECCSSearcherSettingsButton.ImageColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+TabsLine.BackgroundColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+HomeButton.ImageColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+ExecutorMenuButton.ImageColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+ScriptsLibraryButton.ImageColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+SearcherMenuButton.ImageColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+SImg.BackgroundColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+SImg_2.BackgroundColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+Comment.BackgroundColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+ThemesHeadFrame.BackgroundColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+PaidModeButtonPart1.BackgroundColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+PaidModeUIStroke.Color = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+end)
 TweenService:Create(BlockBackgroundSettings, TweenInfo.new(0.5), {Transparency = 1}):Play()
 TweenService:Create(BackFromSettingButton, TweenInfo.new(0.5), {Transparency = 1}):Play()
 TweenService:Create(RTextBox, TweenInfo.new(0.5), {Transparency = 1}):Play()
@@ -2697,7 +2769,62 @@ BackButtonInfoBox.MouseButton1Click:Connect(function()
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 NoComments.Visible = false
 end)
+
+local function onButtonHold()
+if HoldButtonFrame.Size == UDim2.new(0, 0, 0, 0) then
+HoldButtonFrame:TweenSize(UDim2.new(0, 150, 0, 150),"Out","Linear",0.4)
+end
+if HoldButtonFrame.Size == UDim2.new(0, 150, 0, 150) then
+HoldButtonFrame:TweenSize(UDim2.new(0, 0, 0, 0),"Out","Linear",0.4)
+end
+end
  
+OpenCloseSearcherButton.MouseButton1Down:Connect(function()
+isHolding = true
+holdStart = tick()
+end)
+ 
+OpenCloseSearcherButton.MouseButton1Up:Connect(function()
+isHolding = false
+if tick() - holdStart >= holdTime then
+onButtonHold()
+end
+end)
+ 
+OpenCloseSearcherButton.MouseLeave:Connect(function()
+isHolding = false
+end)
+
+spawn(function()
+while task.wait() do
+if HoldButtonFrame.Size == UDim2.new(0, 0, 0, 0) then
+HoldButtonFrame.Visible = false
+end
+end
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function HoverButton(Out, In, Obj)
     Out = Out or Obj.Size
@@ -3211,6 +3338,7 @@ end)
 OpenCloseSearcherButton.Visible = true
 OpenCloseSearcherButton.Size = UDim2.new(0, 80, 0, 80)
 OpenCloseSearcherButton.TouchTap:Connect(function()
+HoldButtonFrame:TweenSize(UDim2.new(0, 0, 0, 0),"Out","Linear",0.2)
 TweenService:Create(MainFrame, TweenInfo.new(0.5), {ImageTransparency = 0}):Play()
 writefile("ECCS_Searcher_V2.7/Executor.ECCS", ""..ExecutorTextBox.Text)
 OpenCloseSearcherButton:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.4)
