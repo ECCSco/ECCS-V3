@@ -2457,7 +2457,6 @@ ThemesHeadFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 ThemesHeadFrame.Name = "ThemesHeadFrame"
 ThemesHeadFrame.Parent = SearcherSettingsFrame
 ThemesHeadFrame.Visible = false
-ThemesHeadFrame.Image = MainFrame.Image
 
 ThemesHeadFrameUICorner.CornerRadius = UDim.new(0, 10)
 ThemesHeadFrameUICorner.Parent = ThemesHeadFrame
@@ -3746,6 +3745,7 @@ end)
 spawn(function()
 while wait() do
 PluginButtonsFrameBackground.Image = MainFrame.Image
+ThemesHeadFrame.Image = MainFrame.Image
 end
 end)
 
