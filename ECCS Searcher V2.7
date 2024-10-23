@@ -3496,7 +3496,7 @@ currentColor = Color3.fromRGB(255, 255, 255)
 end)
 
 Pencil.MouseButton1Click:Connect(function()
-currentColor = Color3.fromRGB(RedCanvasColor, GreenCanvasColor, BlueCanvasColor)
+currentColor = Color3.fromRGB(RedCanvasColor.Text, GreenCanvasColor.Text, BlueCanvasColor.Text)
 end)
 
 RedCanvasColor.FocusLost:Connect(function(enterPressed)
