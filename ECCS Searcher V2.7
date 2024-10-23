@@ -3733,14 +3733,6 @@ ClearCanvas.ImageColor3 = Color3.fromRGB(TextBoxThemeValue_1.Text, TextBoxThemeV
 Eraser.ImageColor3 = Color3.fromRGB(TextBoxThemeValue_1.Text, TextBoxThemeValue_2.Text, TextBoxThemeValue_3.Text)
 Pencil.ImageColor3 = Color3.fromRGB(TextBoxThemeValue_1.Text, TextBoxThemeValue_2.Text, TextBoxThemeValue_3.Text)
 
-
-
-
-
-
-
-
-
 InstallPluginButton.MouseButton1Click:Connect(function()
 Plugin[#Plugin + 1] = AddPluginTextBox.Text
 writefile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS", (table.concat(Plugin, "\n\n")))
