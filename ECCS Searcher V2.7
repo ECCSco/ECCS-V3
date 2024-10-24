@@ -4404,6 +4404,22 @@ function refreshScripts(scriptTbl)
     
     addScripts(scriptTbl)
 end
+
+local function abbreviateNumber(number)
+    local suffixes = {"", "K", "M", "B"}
+    local suffixIndex = 1
+ 
+    while number >= 1000 and suffixIndex < #suffixes do
+        number = number / 1000
+        suffixIndex = suffixIndex + 1
+    end
+ 
+   if number % 1 == 0 then
+        return string.format("%.0f%s", number, suffixes[suffixIndex])
+    else
+        return string.format("%.1f%s", number, suffixes[suffixIndex])
+    end
+end
  
 function addScripts(scriptTbl)
     for i, v in pairs(scriptTbl) do
@@ -4418,14 +4434,23 @@ function addScripts(scriptTbl)
                 newScript.ScriptAuthor.Text = "By ".. v.owner.username
                 newScript.ScriptGame.Text = v.game.name
                 newScript.Parent = Scripts
-                newScript.ViewsLabel.Text = " "..v.views
+                local function updateLabel()
+                local number = v.views
+                newScript.ViewsLabel.Text = " "..abbreviateNumber(number)
+                end
+                updateLabel()
+                 
             else
                 newScript = Script:Clone()
                 newScript.ScriptTitle.Text = v.title
                 newScript.ScriptAuthor.Text = "By ".. v.owner.username
                 newScript.ScriptGame.Text = v.game.name
                 newScript.Parent = Scripts
-                newScript.ViewsLabel.Text = " "..v.views
+                local function updateLabel()
+                local number = v.views
+                newScript.ViewsLabel.Text = " "..abbreviateNumber(number)
+                end
+                updateLabel()
             end
             if v.isPatched == true then
             newScript.Patched.Visible = true
