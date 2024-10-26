@@ -229,9 +229,9 @@ DeleteFavoritesUICorner = Instance.new("UICorner")
 DeleteFavoritesImg = Instance.new("ImageLabel")
 InfoBoxDescriptionUICorner = Instance.new("UICorner")
 SearchBoxImg = Instance.new("ImageLabel")
-DeleteLibrary = Instance.new("TextButton")
-DeleteLibraryUICorner = Instance.new("UICorner")
-DeleteLibraryImg = Instance.new("ImageLabel")
+SystemRecovery = Instance.new("TextButton")
+SystemRecoveryUICorner = Instance.new("UICorner")
+SystemRecoveryImg = Instance.new("ImageLabel")
 PaidModeUICorner = Instance.new("UICorner")
 PaidModeUIStroke = Instance.new("UIStroke")
 DeleteThemes = Instance.new("TextButton")
@@ -294,16 +294,6 @@ AntiFlingButton_2 = Instance.new("ImageButton")
 AntiFlingButtonUICorner_2 = Instance.new("UICorner")
 SearcherSettingsButton_2 = Instance.new("ImageButton")
 SearcherSettingsButtonUICorner_2 = Instance.new("UICorner")
-AddPluginButton = Instance.new("TextButton")
-AddPluginButtonUICorner = Instance.new("UICorner")
-AddPluginButtonImg = Instance.new("ImageLabel")
-AddPluginButtonUIStroke = Instance.new("UIStroke")
-BlockPluginsBackground = Instance.new("ImageButton")
-BlockPluginsBackgroundUICorner = Instance.new("UICorner")
-InstallPluginButton = Instance.new("TextButton")
-InstallPluginButtonUICorner = Instance.new("UICorner")
-CloseInstalling = Instance.new("TextButton")
-CloseInstallingUICorner = Instance.new("UICorner")
 Canvas = Instance.new("ImageButton")
 CanvasUICorner = Instance.new("UICorner")
 Canvas_2 = Instance.new("Frame")
@@ -518,7 +508,7 @@ SearchBoxImg_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 SearchBoxImg_2.BackgroundTransparency = 1
 SearchBoxImg_2.AnchorPoint = Vector2.new(0.5, 0.5)
 SearchBoxImg_2.Position = UDim2.new(0.15, 0, 0.5, 0)
-SearchBoxImg_2.Size = UDim2.new(0, 25, 0, 25)
+SearchBoxImg_2.Size = UDim2.new(0, 18, 0, 18)
 SearchBoxImg_2.Image = "rbxassetid://119784725955851"
 SearchBoxImg_2.ImageColor3 = Color3.fromRGB(150, 150, 150)
 
@@ -1004,6 +994,29 @@ PluginButtonsFrame.Name = "PluginButtonsFrame"
 PluginButtonsFrame.Parent = PlayerHello
 PluginButtonsFrame.ScrollBarThickness = 0
 
+UIGridLayoutPlugins.Parent = PluginButtonsFrame
+UIGridLayoutPlugins.HorizontalAlignment = Enum.HorizontalAlignment.Left
+UIGridLayoutPlugins.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayoutPlugins.VerticalAlignment = Enum.VerticalAlignment.Top
+UIGridLayoutPlugins.CellSize = UDim2.new(0, 43, 0, 43)
+
+UIPaddingPlugins.Parent = PluginButtonsFrame
+UIPaddingPlugins.PaddingBottom = UDim.new(0, 5)
+UIPaddingPlugins.PaddingLeft = UDim.new(0, 4)
+UIPaddingPlugins.PaddingRight = UDim.new(0, 0)
+UIPaddingPlugins.PaddingTop = UDim.new(0, 5)
+
+AddPluginButton = Instance.new("TextButton")
+AddPluginButtonUICorner = Instance.new("UICorner")
+AddPluginButtonImg = Instance.new("ImageLabel")
+AddPluginButtonUIStroke = Instance.new("UIStroke")
+BlockPluginsBackground = Instance.new("ImageButton")
+BlockPluginsBackgroundUICorner = Instance.new("UICorner")
+InstallPluginButton = Instance.new("TextButton")
+InstallPluginButtonUICorner = Instance.new("UICorner")
+CloseInstalling = Instance.new("TextButton")
+CloseInstallingUICorner = Instance.new("UICorner")
+
 AddPluginButton.Parent = PluginButtonsFrame
 AddPluginButton.BackgroundTransparency = 1
 AddPluginButton.AutoButtonColor = false
@@ -1042,18 +1055,6 @@ PluginsTextLabel.TextSize = 15
 PluginsTextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 PluginsTextLabel.TextXAlignment = Enum.TextXAlignment.Center
 PluginsTextLabel.TextYAlignment = Enum.TextYAlignment.Bottom
-
-UIGridLayoutPlugins.Parent = PluginButtonsFrame
-UIGridLayoutPlugins.HorizontalAlignment = Enum.HorizontalAlignment.Left
-UIGridLayoutPlugins.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayoutPlugins.VerticalAlignment = Enum.VerticalAlignment.Top
-UIGridLayoutPlugins.CellSize = UDim2.new(0, 43, 0, 43)
-
-UIPaddingPlugins.Parent = PluginButtonsFrame
-UIPaddingPlugins.PaddingBottom = UDim.new(0, 5)
-UIPaddingPlugins.PaddingLeft = UDim.new(0, 4)
-UIPaddingPlugins.PaddingRight = UDim.new(0, 0)
-UIPaddingPlugins.PaddingTop = UDim.new(0, 5)
 
 BlockPluginsBackground.Parent = PlayerHello
 BlockPluginsBackground.Size =  PluginButtonsFrameBackground.Size
@@ -1120,6 +1121,7 @@ InstallPluginButton.Size = UDim2.new(0, 238, 0, 35)
 InstallPluginButton.Position = UDim2.new(0, 4, 0, 100)
 InstallPluginButton.Font = Enum.Font.ArimoBold
 InstallPluginButton.AutoButtonColor = false
+InstallPluginButton.Transparency = 1
 InstallPluginButton.Text = "Install Plugin"
 InstallPluginButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 InstallPluginButton.TextSize = 25
@@ -2866,29 +2868,29 @@ DeleteFavoritesImg.Position = UDim2.new(0.9, 0, 0.5, 0)
 DeleteFavoritesImg.Size = UDim2.new(0, 18, 0, 18)
 DeleteFavoritesImg.Image = "rbxassetid://140134024072804"
 
-DeleteLibrary.Parent = PaidMode
-DeleteLibrary.Size = UDim2.new(0, 110, 0, 30)
-DeleteLibrary.Position = UDim2.new(0.24, 0, 2.5, 0)
-DeleteLibrary.AnchorPoint = Vector2.new(0.5, 0.5)
-DeleteLibrary.AutoButtonColor = false
-DeleteLibrary.Text = " Del Library"
-DeleteLibrary.Font = Enum.Font.ArimoBold
-DeleteLibrary.TextColor3 = Color3.fromRGB(255, 255, 255)
-DeleteLibrary.TextSize = 15
-DeleteLibrary.BackgroundColor3 = Color3.fromRGB(66, 170, 255)
-DeleteLibrary.TextXAlignment = Enum.TextXAlignment.Left
-DeleteLibrary.TextYAlignment = Enum.TextYAlignment.Center
+SystemRecovery.Parent = PaidMode
+SystemRecovery.Size = UDim2.new(0, 110, 0, 30)
+SystemRecovery.Position = UDim2.new(0.24, 0, 2.5, 0)
+SystemRecovery.AnchorPoint = Vector2.new(0.5, 0.5)
+SystemRecovery.AutoButtonColor = false
+SystemRecovery.Text = " Recovery"
+SystemRecovery.Font = Enum.Font.ArimoBold
+SystemRecovery.TextColor3 = Color3.fromRGB(255, 255, 255)
+SystemRecovery.TextSize = 15
+SystemRecovery.BackgroundColor3 = Color3.fromRGB(66, 170, 255)
+SystemRecovery.TextXAlignment = Enum.TextXAlignment.Left
+SystemRecovery.TextYAlignment = Enum.TextYAlignment.Center
 
-DeleteLibraryUICorner.CornerRadius = UDim.new(0, 10)
-DeleteLibraryUICorner.Parent = DeleteLibrary
+SystemRecoveryUICorner.CornerRadius = UDim.new(0, 10)
+SystemRecoveryUICorner.Parent = SystemRecovery
 
-DeleteLibraryImg.Name = "DeleteLibraryImg"
-DeleteLibraryImg.Parent = DeleteLibrary
-DeleteLibraryImg.BackgroundTransparency = 1
-DeleteLibraryImg.AnchorPoint = Vector2.new(0.5, 0.5)
-DeleteLibraryImg.Position = UDim2.new(0.9, 0, 0.5, 0)
-DeleteLibraryImg.Size = UDim2.new(0, 18, 0, 18)
-DeleteLibraryImg.Image = "rbxassetid://74930626023683"
+SystemRecoveryImg.Name = "SystemRecoveryImg"
+SystemRecoveryImg.Parent = SystemRecovery
+SystemRecoveryImg.BackgroundTransparency = 1
+SystemRecoveryImg.AnchorPoint = Vector2.new(0.5, 0.5)
+SystemRecoveryImg.Position = UDim2.new(0.9, 0, 0.5, 0)
+SystemRecoveryImg.Size = UDim2.new(0, 18, 0, 18)
+SystemRecoveryImg.Image = "rbxassetid://81491263776644"
 
 DeleteThemes.Parent = PaidMode
 DeleteThemes.Size = UDim2.new(0, 110, 0, 30)
@@ -3600,10 +3602,6 @@ if not isfile("ECCS_Searcher_V2.7/Themes/BlueValue.ECCS") then
 writefile("ECCS_Searcher_V2.7/Themes/BlueValue.ECCS", TextBoxThemeValue_3.Text)
 end
 
-if not isfile("ECCS_Searcher_V2.7/ScriptsLibrary.ECCS") then
-writefile("ECCS_Searcher_V2.7/ScriptsLibrary.ECCS", "")
-end
-
 spawn(function()
 if not isfile("ECCS_Searcher_V2.7/MainFramePng/URLIMGFrame.png") then
 local success, response = pcall(function()
@@ -3681,30 +3679,113 @@ DeletePlugins.MouseButton1Click:Connect(function()
 writefile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS", "")
 HintWait.Size = UDim2.new(0, 0, 0, 60)
 HintWait:TweenSize(UDim2.new(0, 250, 0, 60),"Out","Linear",3)
-Hint.Text = " Rejoin To Finish Deleting Plugings!"
+Hint.Text = " To Finish Deleting You Need To Rejoin!"
 end)
 
 DeleteFavorites.MouseButton1Click:Connect(function()
 writefile("ECCS_Searcher_V2.7/Favorites.ECCS", "")
 HintWait.Size = UDim2.new(0, 0, 0, 60)
 HintWait:TweenSize(UDim2.new(0, 250, 0, 60),"Out","Linear",3)
-Hint.Text = " Rejoin To Finish Deleting Favorites!"
+Hint.Text = " Favorites Are Deleted!"
 end)
 
-DeleteLibrary.MouseButton1Click:Connect(function()
-writefile("ECCS_Searcher_V2.7/ScriptsLibrary.ECCS", "")
+SystemRecovery.MouseButton1Click:Connect(function()
+writefile("ECCS_Searcher_V2.7/Executor.ECCS", "")
+writefile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS", "")
+writefile("ECCS_Searcher_V2.7/Favorites.ECCS", "")
+writefile("ECCS_Searcher_V2.7/Themes/RedValue.ECCS", TextBoxThemeValue_1.Text)
+writefile("ECCS_Searcher_V2.7/Themes/GreenValue.ECCS", TextBoxThemeValue_2.Text)
+writefile("ECCS_Searcher_V2.7/Themes/BlueValue.ECCS", TextBoxThemeValue_3.Text)
+local success, response = pcall(function()
+return
+game:HttpGet("https://i.ibb.co/tXzb5Sp/i.png")
+end)
+ 
+if success then
+MainImageURl = "https://i.ibb.co/tXzb5Sp/i.png"
+DataMatch = MainImageURl:match("^.+(%..+)$")
+URLIMGFrame = "MainImageURl" ..DataMatch
+ 
+writefile("ECCS_Searcher_V2.7/MainFramePng/URLIMGFrame.png", response)
+ 
+MainFrame.Image = getcustomasset("ECCS_Searcher_V2.7/MainFramePng/URLIMGFrame.png")
+ 
+else
+MainFrame.Image = "rbxassetid://127287682439217"
+end
+
+ScriptListBackgroundFrame.Visible = false
+SearchBox.Visible = false
+SearcherSettingsFrame.Visible = false
+ScriptListBackgroundFrame_2.Visible = false
+CloseUIButton.Visible = false
+MainFrameBackground.Visible = false
+SearcherSettingsFrame.Size = UDim2.new(0, 0, 0, 0)
+MenuBarFrameBackground.Visible = false
+ECCSSearcherSettingsButton.Visible = false
+TweenService:Create(MainFrame, TweenInfo.new(0.5), {ImageTransparency = 1}):Play()
+MainFrame:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.3)
+if #game.Players:GetPlayers() <= 1 then
+game.Players.LocalPlayer:Kick("Recovery...")
+local Rejoin = coroutine.create(function()
+local Success, ErrorMessage = pcall(function()
+TeleportService:Teleport(game.PlaceId, plr)
+end)
+if ErrorMessage and not Success then
+warn(ErrorMessage)
+end
+end)
+coroutine.resume(Rejoin)
+else
+local Rejoin = coroutine.create(function()
+local Success, ErrorMessage = pcall(function()
+TeleportService:Teleport(game.PlaceId, plr)
+end)
+if ErrorMessage and not Success then
+warn(ErrorMessage)
+end
+end)
+coroutine.resume(Rejoin)
+end
 HintWait.Size = UDim2.new(0, 0, 0, 60)
 HintWait:TweenSize(UDim2.new(0, 250, 0, 60),"Out","Linear",3)
-Hint.Text = " Rejoin To Finish Deleting Library!"
+Hint.Text = " System recovery..."
 end)
 
 DeleteThemes.MouseButton1Click:Connect(function()
 writefile("ECCS_Searcher_V2.7/Themes/RedValue.ECCS", "51")
 writefile("ECCS_Searcher_V2.7/Themes/GreenValue.ECCS", "153")
 writefile("ECCS_Searcher_V2.7/Themes/BlueValue.ECCS", "137")
+CloseUIButton.TextColor3 = Color3.fromRGB(51, 153, 137)
+MainFrameUIStroke.Color = Color3.fromRGB(51, 153, 137)
+ScriptImg.BackgroundColor3 = Color3.fromRGB(51, 153, 137)
+InfoBoxDescription.BackgroundColor3 = Color3.fromRGB(51, 153, 137)
+HintWait.BackgroundColor3 = Color3.fromRGB(51, 153, 137)
+ECCSSearcherSettingsButton.ImageColor3 = Color3.fromRGB(51, 153, 137)
+TabsLine.BackgroundColor3 = Color3.fromRGB(51, 153, 137)
+HomeButton.ImageColor3 = Color3.fromRGB(51, 153, 137)
+ExecutorMenuButton.ImageColor3 = Color3.fromRGB(51, 153, 137)
+OpenPaintButton.ImageColor3 = Color3.fromRGB(51, 153, 137)
+SearcherMenuButton.ImageColor3 = Color3.fromRGB(51, 153, 137)
+SImg.BackgroundColor3 = Color3.fromRGB(51, 153, 137)
+SImg_2.BackgroundColor3 = Color3.fromRGB(51, 153, 137)
+Comment.BackgroundColor3 = Color3.fromRGB(51, 153, 137)
+ThemesHeadFrame.BackgroundColor3 = Color3.fromRGB(51, 153, 137)
+PaidModeButtonPart1.BackgroundColor3 = Color3.fromRGB(51, 153, 137)
+PaidModeUIStroke.Color = Color3.fromRGB(51, 153, 137)
+HomeButton_2.ImageColor3 = Color3.fromRGB(51, 153, 137)
+ExecutorButton_2.ImageColor3 = Color3.fromRGB(51, 153, 137)
+SearcherButton_2.ImageColor3 = Color3.fromRGB(51, 153, 137)
+OpenPaintButton_2.ImageColor3 = Color3.fromRGB(51, 153, 137)
+TouchFlingButton_2.ImageColor3 = Color3.fromRGB(51, 153, 137)
+AntiFlingButton_2.ImageColor3 = Color3.fromRGB(51, 153, 137)
+SearcherSettingsButton_2.ImageColor3 = Color3.fromRGB(51, 153, 137)
+ClearCanvas.ImageColor3 = Color3.fromRGB(51, 153, 137)
+Eraser.ImageColor3 = Color3.fromRGB(51, 153, 137)
+Pencil.ImageColor3 = Color3.fromRGB(51, 153, 137)
 HintWait.Size = UDim2.new(0, 0, 0, 60)
 HintWait:TweenSize(UDim2.new(0, 250, 0, 60),"Out","Linear",3)
-Hint.Text = " Rejoin To Finish Deleting Themes!"
+Hint.Text = "  Themes Are Deleted!"
 end)
 
 CloseUIButton.TextColor3 = Color3.fromRGB(TextBoxThemeValue_1.Text, TextBoxThemeValue_2.Text, TextBoxThemeValue_3.Text)
