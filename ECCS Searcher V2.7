@@ -229,9 +229,9 @@ DeleteFavoritesUICorner = Instance.new("UICorner")
 DeleteFavoritesImg = Instance.new("ImageLabel")
 InfoBoxDescriptionUICorner = Instance.new("UICorner")
 SearchBoxImg = Instance.new("ImageLabel")
-SystemRecovery = Instance.new("TextButton")
-SystemRecoveryUICorner = Instance.new("UICorner")
-SystemRecoveryImg = Instance.new("ImageLabel")
+DeleteHistory = Instance.new("TextButton")
+DeleteHistoryUICorner = Instance.new("UICorner")
+DeleteHistoryImg = Instance.new("ImageLabel")
 PaidModeUICorner = Instance.new("UICorner")
 PaidModeUIStroke = Instance.new("UIStroke")
 DeleteThemes = Instance.new("TextButton")
@@ -316,6 +316,9 @@ GreenCanvasColorUIStroke = Instance.new("UIStroke")
 BlueCanvasColor = Instance.new("TextBox")
 BlueCanvasColorUICorner = Instance.new("UICorner")
 BlueCanvasColorUIStroke = Instance.new("UIStroke")
+HistoryScrollingFrame = Instance.new("ScrollingFrame")
+HistoryFrameBackground = Instance.new("Frame")
+HistoryFrameBackgroundUICorner = Instance.new("UICorner")
 
 local currentColor = Color3.fromRGB(0, 0, 0)
 local drawing = false
@@ -328,6 +331,7 @@ local actionPerformed = false
 local initialPosition
 local Favorites = {}
 local Plugin = {}
+local History = {}
 local OnTop = 999999
 
 local function GetPing()
@@ -2868,29 +2872,29 @@ DeleteFavoritesImg.Position = UDim2.new(0.9, 0, 0.5, 0)
 DeleteFavoritesImg.Size = UDim2.new(0, 18, 0, 18)
 DeleteFavoritesImg.Image = "rbxassetid://140134024072804"
 
-SystemRecovery.Parent = PaidMode
-SystemRecovery.Size = UDim2.new(0, 110, 0, 30)
-SystemRecovery.Position = UDim2.new(0.24, 0, 2.5, 0)
-SystemRecovery.AnchorPoint = Vector2.new(0.5, 0.5)
-SystemRecovery.AutoButtonColor = false
-SystemRecovery.Text = " Recovery"
-SystemRecovery.Font = Enum.Font.ArimoBold
-SystemRecovery.TextColor3 = Color3.fromRGB(255, 255, 255)
-SystemRecovery.TextSize = 15
-SystemRecovery.BackgroundColor3 = Color3.fromRGB(66, 170, 255)
-SystemRecovery.TextXAlignment = Enum.TextXAlignment.Left
-SystemRecovery.TextYAlignment = Enum.TextYAlignment.Center
+DeleteHistory.Parent = PaidMode
+DeleteHistory.Size = UDim2.new(0, 110, 0, 30)
+DeleteHistory.Position = UDim2.new(0.24, 0, 2.5, 0)
+DeleteHistory.AnchorPoint = Vector2.new(0.5, 0.5)
+DeleteHistory.AutoButtonColor = false
+DeleteHistory.Text = " Del History"
+DeleteHistory.Font = Enum.Font.ArimoBold
+DeleteHistory.TextColor3 = Color3.fromRGB(255, 255, 255)
+DeleteHistory.TextSize = 15
+DeleteHistory.BackgroundColor3 = Color3.fromRGB(66, 170, 255)
+DeleteHistory.TextXAlignment = Enum.TextXAlignment.Left
+DeleteHistory.TextYAlignment = Enum.TextYAlignment.Center
 
-SystemRecoveryUICorner.CornerRadius = UDim.new(0, 10)
-SystemRecoveryUICorner.Parent = SystemRecovery
+DeleteHistoryUICorner.CornerRadius = UDim.new(0, 10)
+DeleteHistoryUICorner.Parent = DeleteHistory
 
-SystemRecoveryImg.Name = "SystemRecoveryImg"
-SystemRecoveryImg.Parent = SystemRecovery
-SystemRecoveryImg.BackgroundTransparency = 1
-SystemRecoveryImg.AnchorPoint = Vector2.new(0.5, 0.5)
-SystemRecoveryImg.Position = UDim2.new(0.9, 0, 0.5, 0)
-SystemRecoveryImg.Size = UDim2.new(0, 18, 0, 18)
-SystemRecoveryImg.Image = "rbxassetid://81491263776644"
+DeleteHistoryImg.Name = "DeleteHistoryImg"
+DeleteHistoryImg.Parent = DeleteHistory
+DeleteHistoryImg.BackgroundTransparency = 1
+DeleteHistoryImg.AnchorPoint = Vector2.new(0.5, 0.5)
+DeleteHistoryImg.Position = UDim2.new(0.9, 0, 0.5, 0)
+DeleteHistoryImg.Size = UDim2.new(0, 18, 0, 18)
+DeleteHistoryImg.Image = "rbxassetid://118831113405601"
 
 DeleteThemes.Parent = PaidMode
 DeleteThemes.Size = UDim2.new(0, 110, 0, 30)
@@ -3096,6 +3100,26 @@ while task.wait() do
 ColorResultFrame.BackgroundColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
 end
 end)
+
+HistoryFrameBackground.Name = "HistoryFrameBackground"
+HistoryFrameBackground.Position = UDim2.new(0, 0, 0, 40)
+HistoryFrameBackground.Parent = SearchBox
+HistoryFrameBackground.Size = UDim2.new(0, 396, 0, 100)
+HistoryFrameBackground.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+HistoryFrameBackground.Visible = false
+
+HistoryFrameBackgroundUICorner.Parent = HistoryFrameBackground
+HistoryFrameBackgroundUICorner.CornerRadius = UDim.new(0, 10)
+
+HistoryScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+HistoryScrollingFrame.Transparency = 1
+HistoryScrollingFrame.Active = true
+HistoryScrollingFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+HistoryScrollingFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+HistoryScrollingFrame.Size = UDim2.new(0, 396, 0, 100)
+HistoryScrollingFrame.Name = "HistoryScrollingFrame"
+HistoryScrollingFrame.Parent = HistoryFrameBackground
+HistoryScrollingFrame.ScrollBarThickness = 0
 
 SetCustomTheme.MouseButton1Click:Connect(function()
 if CustomThemeName.Text == "" then
@@ -3583,11 +3607,11 @@ writefile("ECCS_Searcher_V2.7/Executor.ECCS", ExecutorTextBox.Text)
 end
 
 if not isfile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS") then
-writefile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS", "")
+writefile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS", " ")
 end
  
 if not isfile("ECCS_Searcher_V2.7/Favorites.ECCS") then
-writefile("ECCS_Searcher_V2.7/Favorites.ECCS", "")
+writefile("ECCS_Searcher_V2.7/Favorites.ECCS", " ")
 end
 
 if not isfile("ECCS_Searcher_V2.7/Themes/RedValue.ECCS") then
@@ -3600,6 +3624,10 @@ end
 
 if not isfile("ECCS_Searcher_V2.7/Themes/BlueValue.ECCS") then
 writefile("ECCS_Searcher_V2.7/Themes/BlueValue.ECCS", TextBoxThemeValue_3.Text)
+end
+
+if not isfile("ECCS_Searcher_V2.7/History.ECCS") then
+writefile("ECCS_Searcher_V2.7/History.ECCS", "")
 end
 
 spawn(function()
@@ -3675,6 +3703,8 @@ TextBoxThemeValue_2.Text = File5
 File6 = readfile("ECCS_Searcher_V2.7/Themes/BlueValue.ECCS")
 TextBoxThemeValue_3.Text = File6
 
+File7 = readfile("ECCS_Searcher_V2.7/History.ECCS")
+
 DeletePlugins.MouseButton1Click:Connect(function()
 writefile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS", "")
 HintWait.Size = UDim2.new(0, 0, 0, 60)
@@ -3689,67 +3719,11 @@ HintWait:TweenSize(UDim2.new(0, 250, 0, 60),"Out","Linear",3)
 Hint.Text = " Favorites Are Deleted!"
 end)
 
-SystemRecovery.MouseButton1Click:Connect(function()
-writefile("ECCS_Searcher_V2.7/Executor.ECCS", "")
-writefile("ECCS_Searcher_V2.7/Plugins/Plugin.ECCS", "")
-writefile("ECCS_Searcher_V2.7/Favorites.ECCS", "")
-writefile("ECCS_Searcher_V2.7/Themes/RedValue.ECCS", TextBoxThemeValue_1.Text)
-writefile("ECCS_Searcher_V2.7/Themes/GreenValue.ECCS", TextBoxThemeValue_2.Text)
-writefile("ECCS_Searcher_V2.7/Themes/BlueValue.ECCS", TextBoxThemeValue_3.Text)
-local success, response = pcall(function()
-return
-game:HttpGet("https://i.ibb.co/tXzb5Sp/i.png")
-end)
- 
-if success then
-MainImageURl = "https://i.ibb.co/tXzb5Sp/i.png"
-DataMatch = MainImageURl:match("^.+(%..+)$")
-URLIMGFrame = "MainImageURl" ..DataMatch
- 
-writefile("ECCS_Searcher_V2.7/MainFramePng/URLIMGFrame.png", response)
- 
-MainFrame.Image = getcustomasset("ECCS_Searcher_V2.7/MainFramePng/URLIMGFrame.png")
- 
-else
-MainFrame.Image = "rbxassetid://127287682439217"
-end
-
-ScriptListBackgroundFrame.Visible = false
-SearchBox.Visible = false
-SearcherSettingsFrame.Visible = false
-ScriptListBackgroundFrame_2.Visible = false
-CloseUIButton.Visible = false
-MainFrameBackground.Visible = false
-SearcherSettingsFrame.Size = UDim2.new(0, 0, 0, 0)
-MenuBarFrameBackground.Visible = false
-ECCSSearcherSettingsButton.Visible = false
-TweenService:Create(MainFrame, TweenInfo.new(0.5), {ImageTransparency = 1}):Play()
-MainFrame:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.3)
-if #game.Players:GetPlayers() <= 1 then
-game.Players.LocalPlayer:Kick("Recovery...")
-local Rejoin = coroutine.create(function()
-local Success, ErrorMessage = pcall(function()
-TeleportService:Teleport(game.PlaceId, plr)
-end)
-if ErrorMessage and not Success then
-warn(ErrorMessage)
-end
-end)
-coroutine.resume(Rejoin)
-else
-local Rejoin = coroutine.create(function()
-local Success, ErrorMessage = pcall(function()
-TeleportService:Teleport(game.PlaceId, plr)
-end)
-if ErrorMessage and not Success then
-warn(ErrorMessage)
-end
-end)
-coroutine.resume(Rejoin)
-end
+DeleteHistory.MouseButton1Click:Connect(function()
+writefile("ECCS_Searcher_V2.7/History.ECCS", "")
 HintWait.Size = UDim2.new(0, 0, 0, 60)
 HintWait:TweenSize(UDim2.new(0, 250, 0, 60),"Out","Linear",3)
-Hint.Text = " System recovery..."
+Hint.Text = " History Deleted!"
 end)
 
 DeleteThemes.MouseButton1Click:Connect(function()
@@ -4392,7 +4366,7 @@ function tableConcat(t1,t2)
     return t1
 end
 
-
+HistoryScrollingFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
 ThemeBackground.AutomaticCanvasSize = Enum.AutomaticSize.Y
 PluginButtonsFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
 ScriptListFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
@@ -4403,7 +4377,7 @@ PluginButtonsFrame.ScrollBarImageTransparency = 1
 HeadFrame.InfoBox.Comments.ScrollBarImageTransparency = 1
 ExecutorMenuScrollingFrame.ScrollBarImageTransparency = 1
 ScriptListBackgroundFrame.ScrollBarImageTransparency = 1
- 
+HistoryScrollingFrame.ScrollBarImageTransparency = 1
  
 VerifiedScript = VerifiedScriptFrame:Clone()
 Script = ScriptFrame:Clone()
@@ -4604,9 +4578,86 @@ Hint.Text = " Link Copied Into Your Clipboard!"
     
     pagefetchrunning = false
 end
- 
+for s in string.gmatch(File7, '([^,]+)') do
+    table.insert(History, s:match("^%s*(.-)%s*$"))
+end
+
+local function findResult(tbl, value)
+    local index = table.find(tbl, value)
+    if index then
+        return true
+    else
+        return false
+    end
+end
+
+local function updateSuggestions()
+    local inputText = SearchBox.Text:lower()
+    HistoryScrollingFrame:ClearAllChildren()
+    HistoryFrameBackground.Visible = false
+
+    if #inputText > 0 then
+        local yOffset = 0
+        for _, word in ipairs(History) do
+            if word:lower():find(inputText) then
+                SuggestionButton = Instance.new("TextButton")
+                SuggestionButton.Parent = HistoryScrollingFrame
+                SuggestionButton.Size = UDim2.new(1, 0, 0, 35)
+                SuggestionButton.Position = UDim2.new(0, 0, 0, yOffset)
+                SuggestionButton.Text = word
+				SuggestionButton.TextXAlignment = Enum.TextXAlignment.Left
+				SuggestionButton.TextYAlignment = Enum.TextYAlignment.Center
+				SuggestionButton.Font = Enum.Font.ArimoBold
+				SuggestionButton.TextScaled = true
+				SuggestionButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+				SuggestionButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+				SuggestionButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+                SuggestionButton.MouseButton1Click:Connect(function()
+                    SearchBox.Text = word
+                    HistoryFrameBackground.Visible = false
+                    HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0), "InOut", "Sine", 0.3)
+                    CloseSearcherSettingsButton.Visible = false
+                    SearcherSettingsFrame:TweenSize(UDim2.new(0, 0, 0, 0), "InOut", "Sine", 0.4)
+                    writefile("ECCS_Searcher_V2.7/Executor.ECCS", ExecutorTextBox.Text)
+                    SearchBox_2.Text = SearchBox.Text
+                    if SearchBox_2.Text ~= "" then
+                        SearchBoxImg_2.Visible = false
+                    else
+                        SearchBoxImg_2.Visible = true
+                    end
+                    gquery = SearchBox.Text
+                    page = 1
+                    local scriptsTbl = fetchScripts(SearchBox.Text, 1)
+                    refreshScripts(scriptsTbl)
+                end)
+                yOffset = yOffset + 35
+                HistoryFrameBackground.Visible = true
+            end
+        end
+    end
+end
+
+SearchBox:GetPropertyChangedSignal("Text"):Connect(updateSuggestions)
+
 SearchBox.FocusLost:Connect(function(enterPressed)
     if enterPressed then
+if SearchBox.Text ~= " " then
+local newText = SearchBox.Text
+        local exists = false
+        for _, word in ipairs(History) do
+            if word:lower() == newText:lower() then
+                exists = true
+                break
+            end
+        end
+        if not exists then
+HistoryFrameBackground.Visible = false
+table.insert(History, newText)
+writefile("ECCS_Searcher_V2.7/History.ECCS", table.concat(History, ", "))
+
+        end
+        updateSuggestions()
+HistoryFrameBackground.Visible = false
 HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0),"InOut","Sine",0.3)
 CloseSearcherSettingsButton.Visible = false
 SearcherSettingsFrame:TweenSize(UDim2.new(0, 0, 0, 0),"InOut","Sine",0.4)
@@ -4624,6 +4675,7 @@ end
         local scriptsTbl = fetchScripts(SearchBox.Text, 1)
         refreshScripts(scriptsTbl)
     end
+end
 end)
 
 SearchBox_2.FocusLost:Connect(function(enterPressed)
