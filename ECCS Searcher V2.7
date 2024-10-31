@@ -4832,6 +4832,8 @@ ScriptListFrame:GetPropertyChangedSignal("CanvasPosition"):Connect(function()
         addScripts(fetchScripts(gquery, page))
     end
 end)
+spawn(function()
+while wait() do
 local Frame = ({
 ["01 01"] = "rbxassetid://16779094159",
 [(function(Year)
@@ -4857,3 +4859,5 @@ end)(tonumber(os.date"%Y"))] = "rbxassetid://16779090090",
 if Frame then
 MainFrame.Image = Frame
 end
+end
+end)
