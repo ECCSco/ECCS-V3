@@ -4634,6 +4634,9 @@ local function updateSuggestions()
                 yOffset = yOffset + 35
                 HistoryFrameBackground.Visible = true
             end
+	    if SearchBox.Text == word or SearchBox_2.Text == word then
+     HistoryFrameBackground.Visible = false
+     end
         end
     end
 end
