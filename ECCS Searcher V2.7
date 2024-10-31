@@ -3116,7 +3116,7 @@ HistoryScrollingFrame.Transparency = 1
 HistoryScrollingFrame.Active = true
 HistoryScrollingFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 HistoryScrollingFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
-HistoryScrollingFrame.Size = UDim2.new(0, 396, 0, 100)
+HistoryScrollingFrame.Size = UDim2.new(0, 396, 0, 90)
 HistoryScrollingFrame.Name = "HistoryScrollingFrame"
 HistoryScrollingFrame.Parent = HistoryFrameBackground
 HistoryScrollingFrame.ScrollBarThickness = 0
@@ -3654,6 +3654,32 @@ else
 MainFrame.Image = getcustomasset("ECCS_Searcher_V2.7/MainFramePng/URLIMGFrame.png")
 end
 end)
+
+local Frame = ({
+["01 01"] = "rbxassetid://16779094159",
+[(function(Year)
+local A = math.floor(Year/100)
+local B = math.floor((13+8*A)/25)
+local C = (15-B+A-math.floor(A/4))%30
+local D = (4+A-math.floor(A/4))%7
+local E = (19*(Year%19)+C)%30
+local F = (2*(Year%4)+4*(Year%7)+6*E+D)%7
+local G = (22+E+F)
+if E == 29 and F == 6 then
+return "04 19"
+elseif E == 28 and F == 6 then
+return "04 18"
+elseif 31 < G then
+return ("04 %02d"):format(G-31)
+end
+return ("03 %02d"):format(G)
+end)(tonumber(os.date"%Y"))] = "rbxassetid://16779090090",
+["10 31"] = "rbxassetid://16779133028",
+["12 25"] = "rbxassetid://16779174392"
+})[os.date("%m %d")]
+if Frame then
+MainFrame.Image = Frame
+end
 
 File1 = readfile("ECCS_Searcher_V2.7/Executor.ECCS")
 ExecutorTextBox.Text = File1
@@ -4831,33 +4857,4 @@ ScriptListFrame:GetPropertyChangedSignal("CanvasPosition"):Connect(function()
         pagefetchrunning = true
         addScripts(fetchScripts(gquery, page))
     end
-end)
-spawn(function()
-while wait() do
-local Frame = ({
-["01 01"] = "rbxassetid://16779094159",
-[(function(Year)
-local A = math.floor(Year/100)
-local B = math.floor((13+8*A)/25)
-local C = (15-B+A-math.floor(A/4))%30
-local D = (4+A-math.floor(A/4))%7
-local E = (19*(Year%19)+C)%30
-local F = (2*(Year%4)+4*(Year%7)+6*E+D)%7
-local G = (22+E+F)
-if E == 29 and F == 6 then
-return "04 19"
-elseif E == 28 and F == 6 then
-return "04 18"
-elseif 31 < G then
-return ("04 %02d"):format(G-31)
-end
-return ("03 %02d"):format(G)
-end)(tonumber(os.date"%Y"))] = "rbxassetid://16779090090",
-["10 31"] = "rbxassetid://16779133028",
-["12 25"] = "rbxassetid://16779174392"
-})[os.date("%m %d")]
-if Frame then
-MainFrame.Image = Frame
-end
-end
 end)
