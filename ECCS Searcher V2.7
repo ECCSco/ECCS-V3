@@ -3657,7 +3657,7 @@ end)
 
 spawn(function()
 while wait() do
-local Frame = ({
+local ButtonImages = ({
 ["01 01"] = "rbxassetid://16779094159",
 [(function(Year)
 local A = math.floor(Year/100)
@@ -3676,11 +3676,13 @@ return ("04 %02d"):format(G-31)
 end
 return ("03 %02d"):format(G)
 end)(tonumber(os.date"%Y"))] = "rbxassetid://16779090090",
-["11 1"] = "rbxassetid://16779133028",
+["11 01"] = "rbxassetid://102482922102785",
 ["12 25"] = "rbxassetid://16779174392"
 })[os.date("%m %d")]
-if Frame then
-MainFrame.Image = Frame
+if ButtonImages then
+OpenCloseSearcherButton.Image = ButtonImages
+else
+OpenCloseSearcherButton.Image = "rbxassetid://111251069774118"
 end
 end
 end)
