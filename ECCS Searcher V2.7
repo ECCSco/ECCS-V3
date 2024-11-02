@@ -3702,7 +3702,7 @@ end
 UserInputService.InputBegan:Connect(resetIdleTime)
 mouse.Move:Connect(resetIdleTime)
 
-while  wait(1) do
+while wait(1) do
     idleTime = idleTime + 1
     if idleTime == 1200 then
         BackgroundAfk.Visible = true
