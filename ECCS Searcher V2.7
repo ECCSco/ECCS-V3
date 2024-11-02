@@ -3701,7 +3701,7 @@ end
 
 UserInputService.InputBegan:Connect(resetIdleTime)
 mouse.Move:Connect(resetIdleTime)
-
+spawn(function()
 while wait(1) do
     idleTime = idleTime + 1
     if idleTime == 1200 then
@@ -3709,7 +3709,7 @@ while wait(1) do
         bounceLabel()
     end
 end
-
+end)
 function createfolders(path)
  local pathtbl = string.split(path, "/")
  for i, v in pairs(pathtbl) do
