@@ -319,6 +319,8 @@ BlueCanvasColorUIStroke = Instance.new("UIStroke")
 HistoryScrollingFrame = Instance.new("ScrollingFrame")
 HistoryFrameBackground = Instance.new("Frame")
 HistoryFrameBackgroundUICorner = Instance.new("UICorner")
+BackgroundAfk = Instance.new("Frame")
+AfkTextLabelLogo = Instance.new("TextLabel")
 
 local currentColor = Color3.fromRGB(0, 0, 0)
 local drawing = false
@@ -344,6 +346,7 @@ Color3.fromRGB(255, 165, 0)
 local Circles = {}
 local OnTop = 999999
 local ClickOnDeveloperValue = 0
+local idleTime = 0
 
 local function GetPing()
 return (game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue())/1000
@@ -3652,6 +3655,60 @@ HoverButton(nil, UDim2.new(0, 50, 0, 50), HomeButton)
 HoverButton(nil, UDim2.new(0, 50, 0, 50), ExecutorMenuButton)
 HoverButton(nil, UDim2.new(0, 50, 0, 50), SearcherMenuButton)
 HoverButton(nil, UDim2.new(0, 50, 0, 50), OpenPaintButton)
+
+BackgroundAfk.Parent = UIGui
+BackgroundAfk.AnchorPoint = Vector2.new(0.5, 0.5)
+BackgroundAfk.Position = UDim2.new(0.475, 0, 0.41, 0)
+BackgroundAfk.Size = UDim2.new(1.05, 0, 1.1, 0)
+BackgroundAfk.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+BackgroundAfk.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BackgroundAfk.BorderSizePixel = 100
+BackgroundAfk.Visible = false
+
+AfkTextLabelLogo.Parent = BackgroundAfk
+AfkTextLabelLogo.Size = UDim2.new(0.25, 0, 0.2, 0)
+AfkTextLabelLogo.Position = UDim2.new(0, 0, 0, 0)
+AfkTextLabelLogo.Text = "ECCS"
+AfkTextLabelLogo.TextColor3 = Color3.new(1, 1, 1)
+AfkTextLabelLogo.BackgroundTransparency = 1
+AfkTextLabelLogo.Font = Enum.Font.ArimoBold
+AfkTextLabelLogo.TextSize = 100
+
+local function brightColor()
+return Color3.fromHSV(math.random(), 1, 1)
+end
+
+local function bounceLabel()
+    local direction = Vector2.new(1, 1).unit
+    while BackgroundAfk.Visible do
+        AfkTextLabelLogo.Position = AfkTextLabelLogo.Position + UDim2.new(direction.X * 0.005, 0, direction.Y * 0.005, 0)
+        if AfkTextLabelLogo.Position.X.Scale <= 0 or AfkTextLabelLogo.Position.X.Scale >= 0.8 then
+            direction = Vector2.new(-direction.X, direction.Y)
+            AfkTextLabelLogo.TextColor3 = brightColor()
+        end
+        if AfkTextLabelLogo.Position.Y.Scale <= 0 or AfkTextLabelLogo.Position.Y.Scale >= 0.9 then
+            direction = Vector2.new(direction.X, -direction.Y)
+            AfkTextLabelLogo.TextColor3 = brightColor()
+        end
+        task.wait()
+    end
+end
+
+local function resetIdleTime()
+    idleTime = 0
+    BackgroundAfk.Visible = false
+end
+
+userInputService.InputBegan:Connect(resetIdleTime)
+mouse.Move:Connect(resetIdleTime)
+
+while  wait(1) do
+    idleTime = idleTime + 1
+    if idleTime == 1200 then
+        BackgroundAfk.Visible = true
+        bounceLabel()
+    end
+end
 
 function createfolders(path)
  local pathtbl = string.split(path, "/")
