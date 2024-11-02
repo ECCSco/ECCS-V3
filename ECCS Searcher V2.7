@@ -64,7 +64,7 @@ CopyScriptsButton_2 = Instance.new("TextButton")
 CopyScriptsButtonUICorner_2 = Instance.new("UICorner")
 HomeButton = Instance.new("ImageButton")
 HomeFrame = Instance.new("Frame")
-DevIcon = Instance.new("ImageLabel")
+DevIcon = Instance.new("ImageButton")
 DevIconUI = Instance.new("UICorner")
 DevDesc = Instance.new("TextLabel")
 DevDescUICorner = Instance.new("UICorner")
@@ -332,7 +332,18 @@ local initialPosition
 local Favorites = {}
 local Plugin = {}
 local History = {}
+local Colors = {
+Color3.fromRGB(255, 0, 0),
+Color3.fromRGB(0, 255, 0),
+Color3.fromRGB(0, 0, 255),
+Color3.fromRGB(255, 255, 0),
+Color3.fromRGB(0, 255, 255),
+Color3.fromRGB(255, 0, 255),
+Color3.fromRGB(255, 165, 0)
+}
+local Circles = {}
 local OnTop = 999999
+local ClickOnDeveloperValue = 0
 
 local function GetPing()
 return (game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue())/1000
@@ -367,7 +378,7 @@ UIGui.DisplayOrder = OnTop
 end
 end)
 game.CoreGui.UIGui.Enabled = true
- 
+
 TextBoxThemeValue_1.Parent = UIGui
 TextBoxThemeValue_1.Text = "51"
 TextBoxThemeValue_1.Visible = false
@@ -961,7 +972,8 @@ DevIcon.AnchorPoint = Vector2.new(0.5, 0.5)
 DevIcon.Position = UDim2.new(0.1, 0, 0.5, 0)
 DevIcon.Size = UDim2.new(0, 40, 0, 40)
 DevIcon.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=3323558881&width=999&height=999&format=png"
- 
+DevIcon.AutoButtonColor = false 
+
 DevIconUI.Parent = DevIcon
 DevIconUI.CornerRadius = UDim.new(0, 10)
  
@@ -3456,6 +3468,77 @@ BlockPluginsBackground.Visible = false
 AddPluginTextBox.Visible = false
 CloseInstalling.Visible = false
 InstallPluginButton.Visible = false
+end)
+
+DevIcon.MouseButton1Click:Connect(function()
+ClickOnDeveloperValue = ClickOnDeveloperValue + 1
+if ClickOnDeveloperValue == 5 then
+ClickOnDeveloperValue = 0
+for i = 1, 7 do
+    Circle = Instance.new("Frame")
+    Circle.Size = UDim2.new(0, 200, 0, 200) 
+    Circle.Position = UDim2.new(math.random(), 0, math.random(), 0)
+    Circle.BackgroundColor3 = Colors[i]
+
+    Corner = Instance.new("UICorner")
+    Corner.CornerRadius = UDim.new(1, 0)
+    Corner.Parent = Circle
+
+    Circle.Parent = UIGui
+    table.insert(Circles, Circle)
+end
+
+local function moveCircle(Circle)
+    local direction = Vector2.new(math.random(-1, 1), math.random(-1, 1)).unit
+    local speed = math.random(10, 10) 
+    while true do
+        local newPos = Circle.Position + UDim2.new(direction.X * speed / 2000, 0, direction.Y * speed / 2000, 0)
+        if newPos.X.Scale < 0 or newPos.X.Scale > 0.9 then 
+            direction = Vector2.new(-direction.X, direction.Y)
+        end
+        if newPos.Y.Scale < 0 or newPos.Y.Scale > 0.9 then  
+            direction = Vector2.new(direction.X, -direction.Y)
+        end
+        Circle.Position = UDim2.new(math.clamp(newPos.X.Scale, 0, 0.9), 0, math.clamp(newPos.Y.Scale, 0, 0.9), 0)
+        task.wait()  
+    end
+end
+
+local function createFireworkEffect(position)
+    for i = 1, 100 do 
+        local Particle = Instance.new("Frame")
+        Particle.Size = UDim2.new(0, 50, 0, 50)
+        Particle.Position = position
+        Particle.BackgroundColor3 = Color3.fromRGB(math.random(0, 255), math.random(0, 255), math.random(0, 255))
+
+        Corner = Instance.new("UICorner")
+        Corner.CornerRadius = UDim.new(1, 0)  
+        Corner.Parent = Particle
+
+        Particle.Parent = UIGui
+
+        local direction = Vector2.new(math.random(-1, 1), math.random(-1, 1)).unit
+        local speed = math.random(50, 100)
+        coroutine.wrap(function()
+            for j = 1, 40 do  
+                Particle.Position = Particle.Position + UDim2.new(direction.X * speed / 2000, 0, direction.Y * speed / 2000, 0)
+                task.wait()  
+            end
+            Particle:Destroy()
+        end)()
+    end
+end
+
+for _, Circle in ipairs(Circles) do
+    coroutine.wrap(moveCircle)(Circle)
+    Circle.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            createFireworkEffect(Circle.Position)
+            Circle:Destroy()
+        end
+    end)
+end
+end
 end)
 
 currentColor = Color3.fromRGB(RedCanvasColor.Text, GreenCanvasColor.Text, BlueCanvasColor.Text)
