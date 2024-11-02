@@ -3699,7 +3699,7 @@ local function resetIdleTime()
     BackgroundAfk.Visible = false
 end
 
-userInputService.InputBegan:Connect(resetIdleTime)
+UserInputService.InputBegan:Connect(resetIdleTime)
 mouse.Move:Connect(resetIdleTime)
 
 while  wait(1) do
