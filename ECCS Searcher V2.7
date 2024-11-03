@@ -3680,7 +3680,7 @@ end
 local function bounceLabel()
     local direction = Vector2.new(1, 1).unit
     while BackgroundAfk.Visible do
-        AfkTextLabelLogo.Position = AfkTextLabelLogo.Position + UDim2.new(direction.X * 0.001, 0, direction.Y * 0.001, 0)
+        AfkTextLabelLogo.Position = AfkTextLabelLogo.Position + UDim2.new(direction.X * 0.0025, 0, direction.Y * 0.0025, 0)
         if AfkTextLabelLogo.Position.X.Scale <= 0 or AfkTextLabelLogo.Position.X.Scale >= 0.8 then
             direction = Vector2.new(-direction.X, direction.Y)
             AfkTextLabelLogo.TextColor3 = brightColor()
