@@ -3703,7 +3703,7 @@ mouse.Move:Connect(resetIdleTime)
 spawn(function()
 while wait(1) do
     idleTime = idleTime + 1
-    if idleTime == 2 then
+    if idleTime == 1200 then
         BackgroundAfk.Visible = true
         bounceLabel()
     end
