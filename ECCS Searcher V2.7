@@ -3534,11 +3534,9 @@ end
 
 for _, Circle in ipairs(Circles) do
     coroutine.wrap(moveCircle)(Circle)
-    Circle.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+    Circle.MouseEnter:Connect(function()
             createFireworkEffect(Circle.Position)
             Circle:Destroy()
-        end
     end)
 end
 end
