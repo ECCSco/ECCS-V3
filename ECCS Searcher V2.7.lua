@@ -155,12 +155,10 @@ KeySystemImg = Instance.new("ImageLabel")
 KeySystem_2 = Instance.new("TextLabel")
 KeySystemUICorner_2 = Instance.new("UICorner")
 KeySystemImg_2 = Instance.new("ImageLabel")
-ViewsLabel = Instance.new("TextLabel")
-ViewsLabelUICorner = Instance.new("UICorner")
-ViewsLabelImg = Instance.new("ImageLabel")
-ViewsLabel_2 = Instance.new("TextLabel")
-ViewsLabelUICorner_2 = Instance.new("UICorner")
-ViewsLabelImg_2 = Instance.new("ImageLabel")
+ConnectionSpeedLabel = Instance.new("TextLabel")
+ConnectionSpeedLabelUICorner = Instance.new("UICorner")
+ConnectionSpeedLabel_2 = Instance.new("TextLabel")
+ConnectionSpeedLabelUICorner_2 = Instance.new("UICorner")
 SImg = Instance.new("ImageLabel")
 SImgUICorner = Instance.new("UICorner")
 SImg_2 = Instance.new("ImageLabel")
@@ -1875,28 +1873,19 @@ ExecuteButton.TextYAlignment = Enum.TextYAlignment.Center
 UICorner_7.CornerRadius = UDim.new(0, 10)
 UICorner_7.Parent = ExecuteButton
  
-ViewsLabel.Name = "ViewsLabel"
-ViewsLabel.Parent = ScriptFrame
-ViewsLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ViewsLabel.Position = UDim2.new(0.025, 0, 0.85, 0)
-ViewsLabel.Size = UDim2.new(0, 85, 0, 25)
-ViewsLabel.Font = Enum.Font.ArimoBold
-ViewsLabel.Text = "Views"
-ViewsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-ViewsLabel.TextSize = 17
-ViewsLabel.TextXAlignment = Enum.TextXAlignment.Left
-ViewsLabel.TextYAlignment = Enum.TextYAlignment.Center
+ConnectionSpeedLabel.Name = "ConnectionSpeedLabel"
+ConnectionSpeedLabel.Parent = ScriptFrame
+ConnectionSpeedLabel.Position = UDim2.new(0.025, 0, 0.85, 0)
+ConnectionSpeedLabel.Size = UDim2.new(0, 85, 0, 25)
+ConnectionSpeedLabel.Font = Enum.Font.ArimoBold
+ConnectionSpeedLabel.Text = "KB/s"
+ConnectionSpeedLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+ConnectionSpeedLabel.TextScaled = true
+ConnectionSpeedLabel.TextXAlignment = Enum.TextXAlignment.Left
+ConnectionSpeedLabel.TextYAlignment = Enum.TextYAlignment.Center
  
-ViewsLabelUICorner.CornerRadius = UDim.new(0, 10)
-ViewsLabelUICorner.Parent = ViewsLabel
- 
-ViewsLabelImg.Name = "ViewsLabelImg"
-ViewsLabelImg.Parent = ViewsLabel
-ViewsLabelImg.BackgroundTransparency = 1
-ViewsLabelImg.AnchorPoint = Vector2.new(0.5, 0.5)
-ViewsLabelImg.Position = UDim2.new(0.85, 0, 0.5, 0)
-ViewsLabelImg.Size = UDim2.new(0, 18, 0, 18)
-ViewsLabelImg.Image = "rbxassetid://89862544327844"
+ConnectionSpeedLabelUICorner.CornerRadius = UDim.new(0, 10)
+ConnectionSpeedLabelUICorner.Parent = ConnectionSpeedLabel
  
 KeySystem.Name = "KeySystem"
 KeySystem.Parent = ScriptFrame
@@ -2138,28 +2127,19 @@ ExecuteButton_2.TextSize = 17
 ExecuteButton_2.TextXAlignment = Enum.TextXAlignment.Left
 ExecuteButton_2.TextYAlignment = Enum.TextYAlignment.Center
  
-ViewsLabel_2.Name = "ViewsLabel"
-ViewsLabel_2.Parent = VerifiedScriptFrame
-ViewsLabel_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ViewsLabel_2.Position = UDim2.new(0.025, 0, 0.85, 0)
-ViewsLabel_2.Size = UDim2.new(0, 85, 0, 25)
-ViewsLabel_2.Font = Enum.Font.ArimoBold
-ViewsLabel_2.Text = "Views"
-ViewsLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-ViewsLabel_2.TextSize = 17
-ViewsLabel_2.TextXAlignment = Enum.TextXAlignment.Left
-ViewsLabel_2.TextYAlignment = Enum.TextYAlignment.Center
+ConnectionSpeedLabel_2.Name = "ConnectionSpeedLabel"
+ConnectionSpeedLabel_2.Parent = VerifiedScriptFrame
+ConnectionSpeedLabel_2.Position = UDim2.new(0.025, 0, 0.85, 0)
+ConnectionSpeedLabel_2.Size = UDim2.new(0, 85, 0, 25)
+ConnectionSpeedLabel_2.Font = Enum.Font.ArimoBold
+ConnectionSpeedLabel_2.Text = "KB/s"
+ConnectionSpeedLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+ConnectionSpeedLabel_2.TextScaled = true
+ConnectionSpeedLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+ConnectionSpeedLabel_2.TextYAlignment = Enum.TextYAlignment.Center
  
-ViewsLabelUICorner_2.CornerRadius = UDim.new(0, 10)
-ViewsLabelUICorner_2.Parent = ViewsLabel_2
- 
-ViewsLabelImg_2.Name = "ViewsLabelImg"
-ViewsLabelImg_2.Parent = ViewsLabel_2
-ViewsLabelImg_2.BackgroundTransparency = 1
-ViewsLabelImg_2.AnchorPoint = Vector2.new(0.5, 0.5)
-ViewsLabelImg_2.Position = UDim2.new(0.85, 0, 0.5, 0)
-ViewsLabelImg_2.Size = UDim2.new(0, 18, 0, 18)
-ViewsLabelImg_2.Image = "rbxassetid://89862544327844"
+ConnectionSpeedLabelUICorner_2.CornerRadius = UDim.new(0, 10)
+ConnectionSpeedLabelUICorner_2.Parent = ConnectionSpeedLabel_2
  
 ExecuteImg_2.Name = "ExecuteImg_1"
 ExecuteImg_2.Parent = ExecuteButton_2
@@ -2608,6 +2588,8 @@ SearcherSettingsButton_2.ImageColor3 = Color3.fromRGB(51, 153, 137)
 ClearCanvas.ImageColor3 = Color3.fromRGB(51, 153, 137)
 Eraser.ImageColor3 = Color3.fromRGB(51, 153, 137)
 Pencil.ImageColor3 = Color3.fromRGB(51, 153, 137)
+ConnectionSpeedLabel.BackgroundColor3 = Color3.fromRGB(51, 153, 137)
+ConnectionSpeedLabel_2.BackgroundColor3 = Color3.fromRGB(51, 153, 137)
 end)
 
 RustTheme.Parent = ThemeBackground
@@ -2668,6 +2650,8 @@ SearcherSettingsButton_2.ImageColor3 = Color3.fromRGB(237, 94, 38)
 ClearCanvas.ImageColor3 = Color3.fromRGB(237, 94, 38)
 Eraser.ImageColor3 = Color3.fromRGB(237, 94, 38)
 Pencil.ImageColor3 = Color3.fromRGB(237, 94, 38)
+ConnectionSpeedLabel.BackgroundColor3 = Color3.fromRGB(237, 94, 38)
+ConnectionSpeedLabel_2.BackgroundColor3 = Color3.fromRGB(237, 94, 38)
 end)
 
 DarkTheme.Parent = ThemeBackground
@@ -2728,6 +2712,8 @@ SearcherSettingsButton_2.ImageColor3 = Color3.fromRGB(70, 130, 180)
 ClearCanvas.ImageColor3 = Color3.fromRGB(70, 130, 180)
 Eraser.ImageColor3 = Color3.fromRGB(70, 130, 180)
 Pencil.ImageColor3 = Color3.fromRGB(70, 130, 180)
+ConnectionSpeedLabel.BackgroundColor3 = Color3.fromRGB(70, 130, 180)
+ConnectionSpeedLabel_2.BackgroundColor3 = Color3.fromRGB(70, 130, 180)
 end)
 
 SerikaTheme.Parent = ThemeBackground
@@ -2788,6 +2774,8 @@ SearcherSettingsButton_2.ImageColor3 = Color3.fromRGB(226, 183, 20)
 ClearCanvas.ImageColor3 = Color3.fromRGB(226, 183, 20)
 Eraser.ImageColor3 = Color3.fromRGB(226, 183, 20)
 Pencil.ImageColor3 = Color3.fromRGB(226, 183, 20)
+ConnectionSpeedLabel.BackgroundColor3 = Color3.fromRGB(226, 183, 20)
+ConnectionSpeedLabel_2.BackgroundColor3 = Color3.fromRGB(226, 183, 20)
 end)
 
 PaidMode.Name = "PaidMode"
@@ -3222,6 +3210,8 @@ SearcherSettingsButton_2.ImageColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Te
 ClearCanvas.ImageColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
 Eraser.ImageColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
 Pencil.ImageColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+ConnectionSpeedLabel.BackgroundColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
+ConnectionSpeedLabel_2.BackgroundColor3 = Color3.fromRGB(RTextBox.Text, GTextBox.Text, BTextBox.Text)
 end)
 
 TweenService:Create(BlockBackgroundSettings, TweenInfo.new(0.5), {Transparency = 1}):Play()
@@ -3700,6 +3690,7 @@ end
 
 UserInputService.InputBegan:Connect(resetIdleTime)
 mouse.Move:Connect(resetIdleTime)
+
 spawn(function()
 while wait(1) do
     idleTime = idleTime + 1
@@ -3709,6 +3700,7 @@ while wait(1) do
     end
 end
 end)
+
 function createfolders(path)
  local pathtbl = string.split(path, "/")
  for i, v in pairs(pathtbl) do
@@ -3934,6 +3926,8 @@ SearcherSettingsButton_2.ImageColor3 = Color3.fromRGB(TextBoxThemeValue_1.Text, 
 ClearCanvas.ImageColor3 = Color3.fromRGB(TextBoxThemeValue_1.Text, TextBoxThemeValue_2.Text, TextBoxThemeValue_3.Text)
 Eraser.ImageColor3 = Color3.fromRGB(TextBoxThemeValue_1.Text, TextBoxThemeValue_2.Text, TextBoxThemeValue_3.Text)
 Pencil.ImageColor3 = Color3.fromRGB(TextBoxThemeValue_1.Text, TextBoxThemeValue_2.Text, TextBoxThemeValue_3.Text)
+ConnectionSpeedLabel.BackgroundColor3 = Color3.fromRGB(TextBoxThemeValue_1.Text, TextBoxThemeValue_2.Text, TextBoxThemeValue_3.Text)
+ConnectionSpeedLabel_2.BackgroundColor3 = Color3.fromRGB(TextBoxThemeValue_1.Text, TextBoxThemeValue_2.Text, TextBoxThemeValue_3.Text)
 
 InstallPluginButton.MouseButton1Click:Connect(function()
 Plugin[#Plugin + 1] = AddPluginTextBox.Text
@@ -4607,20 +4601,22 @@ function refreshScripts(scriptTbl)
     addScripts(scriptTbl)
 end
 
-local function abbreviateNumber(number)
-    local suffixes = {"", "K", "M", "B"}
-    local suffixIndex = 1
+local function ConnectionSpeed()
+    local StartTime = tick()
+	local Data = url
+    local EndTime = tick()
+    local DataSize = #Data
+    local TimeTaken = EndTime - StartTime 
+    local Speed = (DataSize / 1024) / TimeTaken
+    return Speed
+end
  
-    while number >= 1000 and suffixIndex < #suffixes do
-        number = number / 1000
-        suffixIndex = suffixIndex + 1
-    end
- 
-   if number % 1 == 0 then
-        return string.format("%.0f%s", number, suffixes[suffixIndex])
-    else
-        return string.format("%.1f%s", number, suffixes[suffixIndex])
-    end
+local function FormatNumber(num)
+if num >= 1000 then
+return string.format("%.2f", num / 1000) .. " KB/s"
+else
+return string.format("%.2f", num) .. " B/s"
+end
 end
  
 function addScripts(scriptTbl)
@@ -4636,23 +4632,16 @@ function addScripts(scriptTbl)
                 newScript.ScriptAuthor.Text = "By ".. v.owner.username
                 newScript.ScriptGame.Text = v.game.name
                 newScript.Parent = Scripts
-                local function updateLabel()
-                local number = v.views
-                newScript.ViewsLabel.Text = " "..abbreviateNumber(number)
-                end
-                updateLabel()
-                 
+				local Speed = ConnectionSpeed()
+				newScript.ConnectionSpeedLabel.Text = " "..FormatNumber(Speed)
             else
                 newScript = Script:Clone()
                 newScript.ScriptTitle.Text = v.title
                 newScript.ScriptAuthor.Text = "By ".. v.owner.username
                 newScript.ScriptGame.Text = v.game.name
                 newScript.Parent = Scripts
-                local function updateLabel()
-                local number = v.views
-                newScript.ViewsLabel.Text = " "..abbreviateNumber(number)
-                end
-                updateLabel()
+                local Speed = ConnectionSpeed()
+			    newScript.ConnectionSpeedLabel.Text = " "..FormatNumber(Speed)
             end
             if v.isPatched == true then
             newScript.Patched.Visible = true
@@ -4664,7 +4653,6 @@ function addScripts(scriptTbl)
             else
             newScript.KeySystem.Visible = false
             end
- 
 if v.game.name == "Universal Script 📌" then
 newScript.SImg.Image = MainFrame.Image
 else
@@ -4759,6 +4747,11 @@ local function updateSuggestions()
 				SuggestionButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 				SuggestionButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
                 SuggestionButton.MouseButton1Click:Connect(function()
+					spawn(function()
+					for i = 1,10 do
+					HistoryFrameBackground.Visible = false
+					end
+					end)
                     SearchBox.Text = word
                     HistoryFrameBackground.Visible = false
                     HeadFrame:TweenPosition(UDim2.new(0.5, 0, 0, 0), "InOut", "Sine", 0.3)
