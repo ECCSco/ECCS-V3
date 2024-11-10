@@ -1878,9 +1878,9 @@ ConnectionSpeedLabel.Parent = ScriptFrame
 ConnectionSpeedLabel.Position = UDim2.new(0.025, 0, 0.85, 0)
 ConnectionSpeedLabel.Size = UDim2.new(0, 85, 0, 25)
 ConnectionSpeedLabel.Font = Enum.Font.ArimoBold
-ConnectionSpeedLabel.Text = "KB/s"
+ConnectionSpeedLabel.Text = "0 KB/s"
 ConnectionSpeedLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-ConnectionSpeedLabel.TextScaled = true
+ConnectionSpeedLabel.TextSize = 0
 ConnectionSpeedLabel.TextXAlignment = Enum.TextXAlignment.Left
 ConnectionSpeedLabel.TextYAlignment = Enum.TextYAlignment.Center
  
@@ -2132,9 +2132,9 @@ ConnectionSpeedLabel_2.Parent = VerifiedScriptFrame
 ConnectionSpeedLabel_2.Position = UDim2.new(0.025, 0, 0.85, 0)
 ConnectionSpeedLabel_2.Size = UDim2.new(0, 85, 0, 25)
 ConnectionSpeedLabel_2.Font = Enum.Font.ArimoBold
-ConnectionSpeedLabel_2.Text = "KB/s"
+ConnectionSpeedLabel_2.Text = "0 KB/s"
 ConnectionSpeedLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-ConnectionSpeedLabel_2.TextScaled = true
+ConnectionSpeedLabel_2.TextSize = 17
 ConnectionSpeedLabel_2.TextXAlignment = Enum.TextXAlignment.Left
 ConnectionSpeedLabel_2.TextYAlignment = Enum.TextYAlignment.Center
  
@@ -4600,22 +4600,12 @@ function refreshScripts(scriptTbl)
     
     addScripts(scriptTbl)
 end
-
---[[local function ConnectionSpeed()
-    local StartTime = tick()
-    local Data = url
-    local EndTime = tick()
-    local DataSize = #Data
-    local TimeTaken = EndTime - StartTime 
-    local Speed = (DataSize / 1024) / TimeTaken
-    return Speed
-end]]
  
 local function FormatNumber(num)
 if num >= 1000 then
-return string.format("%.2f", num / 1000) .. " KB/s"
+return string.format("%.0f", num / 1000) .. " KB/s"
 else
-return string.format("%.2f", num) .. " B/s"
+return string.format("%.0f", num) .. " B/s"
 end
 end
  
