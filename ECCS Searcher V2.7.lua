@@ -4601,15 +4601,15 @@ function refreshScripts(scriptTbl)
     addScripts(scriptTbl)
 end
 
-local function ConnectionSpeed()
+--[[local function ConnectionSpeed()
     local StartTime = tick()
-	local Data = url
+    local Data = url
     local EndTime = tick()
     local DataSize = #Data
     local TimeTaken = EndTime - StartTime 
     local Speed = (DataSize / 1024) / TimeTaken
     return Speed
-end
+end]]
  
 local function FormatNumber(num)
 if num >= 1000 then
@@ -4632,6 +4632,15 @@ function addScripts(scriptTbl)
                 newScript.ScriptAuthor.Text = "By ".. v.owner.username
                 newScript.ScriptGame.Text = v.game.name
                 newScript.Parent = Scripts
+					local function ConnectionSpeed()
+    local StartTime = tick()
+    local Data = url
+    local EndTime = tick()
+    local DataSize = #Data
+    local TimeTaken = EndTime - StartTime 
+    local Speed = (DataSize / 1024) / TimeTaken
+    return Speed
+end
 				local Speed = ConnectionSpeed()
 				newScript.ConnectionSpeedLabel.Text = " "..FormatNumber(Speed)
             else
@@ -4640,6 +4649,15 @@ function addScripts(scriptTbl)
                 newScript.ScriptAuthor.Text = "By ".. v.owner.username
                 newScript.ScriptGame.Text = v.game.name
                 newScript.Parent = Scripts
+					local function ConnectionSpeed()
+    local StartTime = tick()
+    local Data = url
+    local EndTime = tick()
+    local DataSize = #Data
+    local TimeTaken = EndTime - StartTime 
+    local Speed = (DataSize / 1024) / TimeTaken
+    return Speed
+end
                 local Speed = ConnectionSpeed()
 			    newScript.ConnectionSpeedLabel.Text = " "..FormatNumber(Speed)
             end
