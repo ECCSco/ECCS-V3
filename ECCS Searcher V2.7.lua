@@ -1880,7 +1880,7 @@ ConnectionSpeedLabel.Size = UDim2.new(0, 85, 0, 25)
 ConnectionSpeedLabel.Font = Enum.Font.ArimoBold
 ConnectionSpeedLabel.Text = "0 KB/s"
 ConnectionSpeedLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-ConnectionSpeedLabel.TextSize = 0
+ConnectionSpeedLabel.TextSize = 17
 ConnectionSpeedLabel.TextXAlignment = Enum.TextXAlignment.Left
 ConnectionSpeedLabel.TextYAlignment = Enum.TextYAlignment.Center
  
