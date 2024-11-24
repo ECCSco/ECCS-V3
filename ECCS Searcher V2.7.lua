@@ -961,9 +961,9 @@ DevDesc.TextXAlignment = Enum.TextXAlignment.Right
 DevDesc.TextYAlignment = Enum.TextYAlignment.Center
 
 if DevDesc.Text == "07 10" then
-DevDesc.Text = "🎂ERROR_CODE🎂               <font color=\"#9C9C9C\">\nH.Developer                    </font>"
+DevDesc.Text = "🎂SHON🎂                         <font color=\"#9C9C9C\">\nH.Developer                    </font>"
 else
-DevDesc.Text = "ERROR_CODE                  <font color=\"#9C9C9C\">\nH.Developer                    </font>"
+DevDesc.Text = "SHON                         <font color=\"#9C9C9C\">\nH.Developer                    </font>"
 end
 
 DevIcon.Name = "DevIcon"
