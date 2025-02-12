@@ -281,19 +281,14 @@ SystemButton = Instance.new("TextButton")
 SystemButtonUICorner = Instance.new("UICorner")
 ThemeBackgroundImg = Instance.new("ImageLabel")
 ThemeBackgroundImgUICorner = Instance.new("UICorner")
-Volume = Instance.new("TextLabel")
-VolumeFrame = Instance.new("Frame")
-VolumeSlider = Instance.new("ImageButton")
-VolumeSliderUICorner = Instance.new("UICorner")
-VolumeFrameUICorner = Instance.new("UICorner")
 DescScrollingFrame = Instance.new("ScrollingFrame")
 UISoundBarClick = Instance.new("Sound")
 OpenCloseSound = Instance.new("Sound")
 OpenSecondBarSound = Instance.new("Sound")
 OtheButtonsClickSound = Instance.new("Sound")
-VolumeText = Instance.new("TextLabel")
+SettingsButtonsFrame = Instance.new("Frame")
+SettingsButtonsFrameUIGridLayout = Instance.new("UIGridLayout")
 
-local VolumeValue = 100
 local SoundsVolume = 1
 local UITab = 1
 local SystemTab = 0
@@ -546,7 +541,7 @@ MainFrame.BackgroundTransparency = 1
 
 MainFrameUIStroke.Parent = MainFrame
 MainFrameUIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-MainFrameUIStroke.Thickness = 1.5
+MainFrameUIStroke.Thickness = 1
 MainFrameUIStroke.Transparency = 1
 
 MainFrameBackground.Name = "MainFrame"
@@ -2039,7 +2034,8 @@ Content.TextWrapped = true
 Content.TextXAlignment = Enum.TextXAlignment.Left
 Content.TextYAlignment = Enum.TextYAlignment.Center
 Content.TextScaled = true
- 
+Content.RichText = true
+
 Author_2.Name = "Author"
 Author_2.Parent = Comment
 Author_2.BackgroundTransparency = 1
@@ -2298,44 +2294,6 @@ PaidModeButtonPart2.AnchorPoint = Vector2.new(0, 0.5)
 
 PaidModeButtonPart2UICorner.CornerRadius = UDim.new(1, 0)
 PaidModeButtonPart2UICorner.Parent = PaidModeButtonPart2
-
-Volume.Name = "Volume"
-Volume.Parent = PaidMode
-Volume.BackgroundTransparency = 1
-Volume.Size = UDim2.new(0, 100, 0, 50)
-Volume.Position = UDim2.new(0.5, 0, 3, 0)
-Volume.AnchorPoint = Vector2.new(0.5, 0.5)
-Volume.Font = Enum.Font.ArimoBold
-Volume.Text = "100"
-Volume.TextColor3 = Color3.fromRGB(255, 255, 255)
-Volume.TextSize = 40
-
-VolumeText.Name = "VolumeText"
-VolumeText.Parent = PaidMode
-VolumeText.BackgroundTransparency = 1
-VolumeText.Size = UDim2.new(0, 100, 0, 50)
-VolumeText.Position = UDim2.new(0.5, 0, 1.5, 0)
-VolumeText.AnchorPoint = Vector2.new(0.5, 0.5)
-VolumeText.Font = Enum.Font.ArimoBold
-VolumeText.Text = "Volume:"
-VolumeText.TextColor3 = Color3.fromRGB(255, 255, 255)
-VolumeText.TextSize = 30
-
-VolumeFrame.Size = UDim2.new(0, 450, 0, 10)
-VolumeFrame.Position = UDim2.new(0.5, 0, 2.2, 0)
-VolumeFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-VolumeFrame.Parent = PaidMode
- 
-VolumeFrameUICorner.CornerRadius = UDim.new(1, 0)
-VolumeFrameUICorner.Parent = VolumeFrame
- 
-VolumeSlider.Size = UDim2.new(0, 27, 0, 27)
-VolumeSlider.Position = UDim2.new(0.94, 0, -1, 0)
-VolumeSlider.Parent = VolumeFrame
-VolumeSlider.AutoButtonColor = false
- 
-VolumeSliderUICorner.CornerRadius = UDim.new(1, 0)
-VolumeSliderUICorner.Parent = VolumeSlider
 
 BlockBackgroundSettings.Parent = SearcherSettingsFrameMain
 BlockBackgroundSettings.Size = UDim2.new(0, 485, 0, 233)
@@ -2974,40 +2932,6 @@ if dragging_3 and (input.UserInputType == Enum.UserInputType.MouseMovement or in
 updateSlider_3(input)
 end
 end)
-
-
-local function updateSlider_4(input)
-local position_4 = math.clamp(input.Position.X - VolumeFrame.AbsolutePosition.X - VolumeSlider.AbsoluteSize.X / 2, 0, VolumeFrame.AbsoluteSize.X - VolumeSlider.AbsoluteSize.X)
-VolumeSlider.Position = UDim2.new(0, position_4, -1, 0)
-VolumeValue = math.floor((position_4 / (VolumeFrame.AbsoluteSize.X - VolumeSlider.AbsoluteSize.X)) * 100)
-Volume.Text = tostring(VolumeValue)
-SoundsVolume = position_4 / (VolumeFrame.AbsoluteSize.X - VolumeSlider.AbsoluteSize.X)
-UINoScriptsFound.Volume = SoundsVolume
-PopSound.Volume = SoundsVolume
-UISoundBarClick.Volume = SoundsVolume
-OpenCloseSound.Volume = SoundsVolume
-OpenSecondBarSound.Volume = SoundsVolume
-OtheButtonsClickSound.Volume = SoundsVolume
-end
-
-VolumeSlider.InputBegan:Connect(function(input)
-if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-dragging_4 = true
-updateSlider_4(input)
-input.Changed:Connect(function()
-if input.UserInputState == Enum.UserInputState.End then
-dragging_4 = false
-end
-end)
-end
-end)
-
-UserInputService.InputChanged:Connect(function(input)
-if dragging_4 and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
-updateSlider_4(input)
-end
-end)
-
 
 BackgroundAfk.Parent = UIGui
 BackgroundAfk.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -3787,7 +3711,6 @@ RSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 GSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 BSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 SetCustomTheme.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
-VolumeSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 updateSaves()
 end)
 
@@ -3876,7 +3799,6 @@ RSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 GSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 BSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 SetCustomTheme.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
-VolumeSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 updateSaves()
 end)
 
@@ -3965,7 +3887,6 @@ RSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 GSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 BSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 SetCustomTheme.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
-VolumeSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 updateSaves()
 end)
 
@@ -4054,7 +3975,6 @@ RSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 GSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 BSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 SetCustomTheme.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
-VolumeSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 updateSaves()
 end)
 
@@ -4132,7 +4052,6 @@ RSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 GSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 BSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 SetCustomTheme.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
-VolumeSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 updateSaves()
 end)
 
@@ -4269,7 +4188,6 @@ RSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 GSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 BSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 SetCustomTheme.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
-VolumeSlider.BackgroundColor3 = Color3.fromRGB(tonumber(R), tonumber(G), tonumber(B))
 
 for f in string.gmatch(File3, '([^\n]+)') do
 table.insert(Plugin, f:match("^%s*(.-)%s*$"))
@@ -5042,7 +4960,7 @@ scriptObj = fixScript(scriptObj)
 commentsUIListLayout = HeadFrame.InfoBox.Comments.UIListLayout:Clone()
 HeadFrame.InfoBox.Comments:ClearAllChildren()
 commentsUIListLayout.Parent = HeadFrame.InfoBox.Comments
- 
+
 task.spawn(function()
 for _, v in pairs(fetchComments(scriptObj["_id"])) do
  
@@ -5055,9 +4973,40 @@ newComment.DislikeCount.Text = v.dislikeCount
 if Content.Visible == true then
 NoComments.Visible = false
 end
+local function escapeHtml(text)
+local replacements = {
+["&"] = "&amp;",
+["<"] = "&lt;",
+[">"] = "&gt;",
+['"'] = "&quot;",
+["'"] = "&#039;"
+}
+return text:gsub("[&<>\"']", replacements)
+end
+
+local function formatText(text)
+local formattedText = ""
+
+for _, part in ipairs(string.split(text, " ")) do
+part = escapeHtml(part)
+if string.sub(part, 1, 1) == "@" then
+formattedText = formattedText .. "<font color='#0000FF'>"..part.."</font> "
+else
+formattedText = formattedText .. "<font color='#FFFFFF'>"..part.."</font> "
+end
+end
+
+return formattedText
+end
+
+local text = v.text
+local formattedText = formatText(text)
+newComment.Content.Text = formattedText
 end
 end)
 end
+
+
 function refreshScripts(scriptTbl)
 if #scriptTbl <= 0 then
 HintWait.Size = UDim2.new(0, 0, 0, 60)
